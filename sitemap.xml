@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://robotshell.com/about/index.html</loc>
+    
+    <lastmod>2017-11-04T17:04:19.517Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://robotshell.com/2017/11/04/Linux-%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7%E4%B9%8BRabbitvcs/</loc>
     
     <lastmod>2017-11-04T16:25:32.242Z</lastmod>
@@ -152,13 +159,6 @@
     <loc>http://robotshell.com/categories/index.html</loc>
     
     <lastmod>2017-11-04T14:54:31.010Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://robotshell.com/about/index.html</loc>
-    
-    <lastmod>2017-11-04T14:54:31.009Z</lastmod>
     
   </url>
   
