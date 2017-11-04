@@ -97,7 +97,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="机器人," />
+  <meta name="keywords" content="工具," />
 
 
 
@@ -115,22 +115,26 @@
 
 
 
-<meta name="description" content="最近在安排国庆的旅行计划，目的地是鲁迅的故乡绍兴。鲁迅有本散文集《朝花夕拾》，又名《旧事重提》。回顾整理以往的经验，故名《旧日往昔》。  机器人OS 不同于传统的OS，不同之处在于交互方式的不同。人机交互界面（HMI)，简化思考无外乎就是输入输出（I/O)，之前的自动化测试可以很大程度上覆盖需求，是否就是很大程度上模拟了输入输出，并分析了输出的结果（不知者无畏）? 长远考虑，从稳定性或者测试效率">
-<meta name="keywords" content="机器人">
+<meta name="description" content="新公司的文档管理居然使用ｓｖｎ，不知道适合原因．很久不用有一些忘却了.之前在ｗｉｎ下用的是TortoiseSVN，在ｕｂｕｎｔｕ下，与之及其相似的是ｒａｂｂｉｔｖｃｓ．官网地址">
+<meta name="keywords" content="工具">
 <meta property="og:type" content="article">
-<meta property="og:title" content="语音交互系统的自动化测试思考">
-<meta property="og:url" content="http://robotshell.com/2017/09/01/语音交互系统的自动化测试思考/index.html">
+<meta property="og:title" content="Linux 版本控制工具之Ｒａｂｂｉｔｖｃｓ">
+<meta property="og:url" content="http://robotshell.com/2017/11/04/Linux-版本控制工具之Rabbitvcs/index.html">
 <meta property="og:site_name" content="Robot Shell">
-<meta property="og:description" content="最近在安排国庆的旅行计划，目的地是鲁迅的故乡绍兴。鲁迅有本散文集《朝花夕拾》，又名《旧事重提》。回顾整理以往的经验，故名《旧日往昔》。  机器人OS 不同于传统的OS，不同之处在于交互方式的不同。人机交互界面（HMI)，简化思考无外乎就是输入输出（I/O)，之前的自动化测试可以很大程度上覆盖需求，是否就是很大程度上模拟了输入输出，并分析了输出的结果（不知者无畏）? 长远考虑，从稳定性或者测试效率">
+<meta property="og:description" content="新公司的文档管理居然使用ｓｖｎ，不知道适合原因．很久不用有一些忘却了.之前在ｗｉｎ下用的是TortoiseSVN，在ｕｂｕｎｔｕ下，与之及其相似的是ｒａｂｂｉｔｖｃｓ．官网地址">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ovfro7ddi.bkt.clouddn.com/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8E%9F%E7%90%86.png">
-<meta property="og:image" content="http://ovfro7ddi.bkt.clouddn.com/%E9%80%BB%E8%BE%91%E6%A1%86%E6%9E%B6-%E8%87%AA%E5%8A%A8%E5%8C%96.jpg">
-<meta property="og:image" content="http://ovfro7ddi.bkt.clouddn.com/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%AE%9E%E7%8E%B0.png">
-<meta property="og:updated_time" content="2017-09-03T04:25:48.569Z">
+<meta property="og:image" content="http://rabbitvcs.org/images/screenshots/nautilus-git-showcase.png">
+<meta property="og:image" content="http://rabbitvcs.org/images/screenshots/gedit-git-showcase.png">
+<meta property="og:image" content="http://rabbitvcs.org/images/screenshots/thunar-git-showcase.png">
+<meta property="og:image" content="http://rabbitvcs.org/images/screenshots/command-line-showcase.png">
+<meta property="og:image" content="http://rabbitvcs.org/images/screenshots/nautilus-svn-showcase.png">
+<meta property="og:image" content="http://rabbitvcs.org/images/screenshots/git-log-showcase.png">
+<meta property="og:image" content="http://rabbitvcs.org/images/screenshots/i18n-showcase.png">
+<meta property="og:updated_time" content="2017-11-04T04:08:10.582Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="语音交互系统的自动化测试思考">
-<meta name="twitter:description" content="最近在安排国庆的旅行计划，目的地是鲁迅的故乡绍兴。鲁迅有本散文集《朝花夕拾》，又名《旧事重提》。回顾整理以往的经验，故名《旧日往昔》。  机器人OS 不同于传统的OS，不同之处在于交互方式的不同。人机交互界面（HMI)，简化思考无外乎就是输入输出（I/O)，之前的自动化测试可以很大程度上覆盖需求，是否就是很大程度上模拟了输入输出，并分析了输出的结果（不知者无畏）? 长远考虑，从稳定性或者测试效率">
-<meta name="twitter:image" content="http://ovfro7ddi.bkt.clouddn.com/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8E%9F%E7%90%86.png">
+<meta name="twitter:title" content="Linux 版本控制工具之Ｒａｂｂｉｔｖｃｓ">
+<meta name="twitter:description" content="新公司的文档管理居然使用ｓｖｎ，不知道适合原因．很久不用有一些忘却了.之前在ｗｉｎ下用的是TortoiseSVN，在ｕｂｕｎｔｕ下，与之及其相似的是ｒａｂｂｉｔｖｃｓ．官网地址">
+<meta name="twitter:image" content="http://rabbitvcs.org/images/screenshots/nautilus-git-showcase.png">
 
 
 
@@ -160,13 +164,13 @@
 
 
 
-  <link rel="canonical" href="http://robotshell.com/2017/09/01/语音交互系统的自动化测试思考/"/>
+  <link rel="canonical" href="http://robotshell.com/2017/11/04/Linux-版本控制工具之Rabbitvcs/"/>
 
 
 
 
 
-  <title>语音交互系统的自动化测试思考 | Robot Shell</title>
+  <title>Linux 版本控制工具之Ｒａｂｂｉｔｖｃｓ | Robot Shell</title>
   
 
 
@@ -357,7 +361,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2017/09/01/语音交互系统的自动化测试思考/">
+    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2017/11/04/Linux-版本控制工具之Rabbitvcs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="robot">
@@ -374,7 +378,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">语音交互系统的自动化测试思考</h1>
+          <h1 class="post-title" itemprop="name headline">Linux 版本控制工具之Ｒａｂｂｉｔｖｃｓ</h1>
         
 
         <div class="post-meta">
@@ -386,8 +390,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-01T00:00:00+08:00">
-                2017-09-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-04T12:08:10+08:00">
+                2017-11-04
               </time>
             
 
@@ -402,8 +406,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-09-03T12:25:48+08:00">
-                2017-09-03
+              <time title="更新于" itemprop="dateModified" datetime="2017-11-04T12:08:10+08:00">
+                2017-11-04
               </time>
             
           </span>
@@ -421,8 +425,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/旧日往昔/" itemprop="url" rel="index">
-                    <span itemprop="name">旧日往昔</span>
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
                   </a>
                 </span>
 
@@ -463,16 +467,16 @@
       
 
       
-        <blockquote>
-<p>最近在安排国庆的旅行计划，目的地是鲁迅的故乡绍兴。鲁迅有本散文集《朝花夕拾》，又名《旧事重提》。回顾整理以往的经验，故名《旧日往昔》。</p>
-</blockquote>
-<p>机器人OS 不同于传统的OS，不同之处在于交互方式的不同。人机交互界面（HMI)，简化思考无外乎就是输入输出（I/O)，之前的自动化测试可以很大程度上覆盖需求，是否就是很大程度上模拟了输入输出，并分析了输出的结果（不知者无畏）?</p>
-<p>长远考虑，从稳定性或者测试效率考虑，搞搞自动化测试应该利大于投入吧？<br><a id="more"></a></p>
-<h3 id="原理上能否实现？"><a href="#原理上能否实现？" class="headerlink" title="原理上能否实现？"></a>原理上能否实现？</h3><p>基本思路如下图：<br><img src="http://ovfro7ddi.bkt.clouddn.com/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8E%9F%E7%90%86.png" alt="自动化思路"><br>结合机器人OS，输入有（asr/keyevent/mic matrix/visual) 输出有（tts/display/app/motion)，这些在framework部中基本都对应一个server，真实的输入输出由与其绑定的运行在其他进程中的service实现。server的作用基本就是消息转发。对应于系统的整体框架图，基本就是下图中红线框出的部分。<br><img src="http://ovfro7ddi.bkt.clouddn.com/%E9%80%BB%E8%BE%91%E6%A1%86%E6%9E%B6-%E8%87%AA%E5%8A%A8%E5%8C%96.jpg" alt="逻辑框架自动化"><br>特别说明AppServer 也作为一个输出Server，它输出的是对应用的调度动作。<br>综上：在架构实现上需要在（替换/插入）测试service的地方需要在现有代码中做判断：在正常使用时加载正常的service，在测试环境下替换加载测试用的service。测试用service在独立apk中实现，通过service的绑定机制绑定到对应server中。</p>
-<h3 id="可以这样实现："><a href="#可以这样实现：" class="headerlink" title="可以这样实现："></a>可以这样实现：</h3><p>基于以上原理，实现一个autotest的apk，在测试模式下替换了正常的AsrService，当机器人开始listen的时候从模拟asr的service中返回预先写好的剧本中的一句话，实现可控输入。<br>操作说明：<br>1、打开自动测试开关<br>修改配置项 auto_test_replace_asr的值为true。<br>2、编写剧本文件<br>目前是固定的文件名（autotest.txt)，稍后实现可选择加载不同的剧本文件<br>每行一个输入语句，换行即为下一条输入。<br>将剧本 push 到 机器人的 sdcard下。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 这是注释</div><div class="line">你好</div><div class="line">slient 2</div><div class="line">loop 5</div><div class="line">今天天气怎么样？</div><div class="line">end</div></pre></td></tr></table></figure></p>
-<p>3、安装机器人AutoTest.apk。<br>4、重启机器人，等待进入执行脚本，执行过程中可根据具体测试用例，认为制造些异常（例如断网等），目前还不支持模拟摸头，唤醒词模拟等(lll￢ω￢)，所以需要手动<br>5、测试过程中，更新autotest.txt 文件<br>修改完重新push后，打开autotest 应用的界面，点击重新加载剧本即可。</p>
-<h3 id="长远实现："><a href="#长远实现：" class="headerlink" title="长远实现："></a>长远实现：</h3><p>1、补全可自动化测试的模块<br>实现HeadServiceTest, MicServiceTest, VisualServiceTest, 在自动化时挂载入系统模拟 这几类输入<br>实现TTSServiceTest，DisplayServiceTest, MotionServiceTest, AppServiceTest, 在自动化时插入系统中，获取相应模块执行的结果并记录。<br>2、脚本语法丰富（注释/Listen/Head/Mic/Visual）关键字的简单实现，记录结果的简单语法实现（Speak/App/Show/Do)<br>3、分析：比较输入脚本和记录的输出结果，分析bug<br>4、报告：根据分析结果提供可视化的报告。<br><img src="http://ovfro7ddi.bkt.clouddn.com/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%AE%9E%E7%8E%B0.png" alt="自动化实现"></p>
-
+        <p>新公司的文档管理居然使用ｓｖｎ，不知道适合原因．很久不用有一些忘却了.之前在ｗｉｎ下用的是TortoiseSVN，在ｕｂｕｎｔｕ下，与之及其相似的是ｒａｂｂｉｔｖｃｓ．<br><a href="http://rabbitvcs.org/" target="_blank" rel="external">官网地址</a><br><a id="more"></a><br>下面是来自官方打介绍</p>
+<h2 id="特性介绍"><a href="#特性介绍" class="headerlink" title="特性介绍"></a>特性介绍</h2><h3 id="Nautilus"><a href="#Nautilus" class="headerlink" title="Nautilus"></a>Nautilus</h3><p>Seamlessly integrates into Nautilus workflow<br><img src="http://rabbitvcs.org/images/screenshots/nautilus-git-showcase.png" alt="Nautilus"></p>
+<h3 id="Gedit"><a href="#Gedit" class="headerlink" title="Gedit"></a>Gedit</h3><p>Provides menus for accessing version control tools<br><img src="http://rabbitvcs.org/images/screenshots/gedit-git-showcase.png" alt="Gedit"></p>
+<h3 id="Thunar"><a href="#Thunar" class="headerlink" title="Thunar"></a>Thunar</h3><p>Seamlessly integrates into Thunar workflow<br><img src="http://rabbitvcs.org/images/screenshots/thunar-git-showcase.png" alt="Thunar"></p>
+<h3 id="Command-Line-Interface"><a href="#Command-Line-Interface" class="headerlink" title="Command Line Interface"></a>Command Line Interface</h3><p>An easy to use tool to launch our dialogs<br><img src="http://rabbitvcs.org/images/screenshots/command-line-showcase.png" alt="Command Line Interface"></p>
+<h3 id="Subversion"><a href="#Subversion" class="headerlink" title="Subversion"></a>Subversion</h3><p>Supports most Subversion functionality<br><img src="http://rabbitvcs.org/images/screenshots/nautilus-svn-showcase.png" alt="Subversion"></p>
+<h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><p>Supports most Git functionality<br><img src="http://rabbitvcs.org/images/screenshots/git-log-showcase.png" alt="Git"></p>
+<h3 id="Fully-Internationalized"><a href="#Fully-Internationalized" class="headerlink" title="Fully Internationalized"></a>Fully Internationalized</h3><p>Partial-to-full support for 26 languages!<br><img src="http://rabbitvcs.org/images/screenshots/i18n-showcase.png" alt="Fully Internationalized"></p>
+<h2 id="Ubuntu安装方法"><a href="#Ubuntu安装方法" class="headerlink" title="Ubuntu安装方法"></a>Ubuntu安装方法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">### 添加源</span></div><div class="line">$ sudo add-apt-repository ppa:rabbitvcs/ppa</div><div class="line"><span class="comment">### 导入key</span></div><div class="line">$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 34EF4A35</div><div class="line"><span class="comment">### 更新源</span></div><div class="line">$ sudo apt-get update</div><div class="line"><span class="comment">### 安装依赖</span></div><div class="line">$ sudo apt-get install python-nautilus python-configobj python-gtk2 python-glade2 python-svn python-dbus python-dulwich subversion meld</div><div class="line"><span class="comment">### 安装ＲabbitVCS</span></div><div class="line">$ sudo apt-get install rabbitvcs-cli  rabbitvcs-core rabbitvcs-gedit rabbitvcs-nautilus3</div><div class="line"><span class="comment">### 如安装失败使用　rabbitvcs-nautilus3 替换为　rabbitvcs-nautilus</span></div></pre></td></tr></table></figure>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2>
       
     </div>
     
@@ -521,7 +525,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://robotshell.com/2017/09/01/语音交互系统的自动化测试思考/" title="语音交互系统的自动化测试思考">http://robotshell.com/2017/09/01/语音交互系统的自动化测试思考/</a>
+    <a href="http://robotshell.com/2017/11/04/Linux-版本控制工具之Rabbitvcs/" title="Linux 版本控制工具之Ｒａｂｂｉｔｖｃｓ">http://robotshell.com/2017/11/04/Linux-版本控制工具之Rabbitvcs/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -536,7 +540,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/机器人/" rel="tag"># 机器人</a>
+            <a href="/tags/工具/" rel="tag"># 工具</a>
           
         </div>
       
@@ -549,8 +553,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/31/基于RT-Linux机器人控制系统实时性的探讨/" rel="next" title="基于RT-Linux机器人控制系统实时性的探讨">
-                <i class="fa fa-chevron-left"></i> 基于RT-Linux机器人控制系统实时性的探讨
+              <a href="/2017/10/26/纵论物联网（一）：无线技术分类/" rel="next" title="纵论物联网（一）：无线技术分类">
+                <i class="fa fa-chevron-left"></i> 纵论物联网（一）：无线技术分类
               </a>
             
           </div>
@@ -558,10 +562,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/26/纵论物联网（七）：面向智能家居的物联网解决方案/" rel="prev" title="纵论物联网（七）：面向智能家居的物联网解决方案">
-                纵论物联网（七）：面向智能家居的物联网解决方案 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -757,7 +757,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#原理上能否实现？"><span class="nav-number">1.</span> <span class="nav-text">原理上能否实现？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可以这样实现："><span class="nav-number">2.</span> <span class="nav-text">可以这样实现：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#长远实现："><span class="nav-number">3.</span> <span class="nav-text">长远实现：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#特性介绍"><span class="nav-number">1.</span> <span class="nav-text">特性介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Nautilus"><span class="nav-number">1.1.</span> <span class="nav-text">Nautilus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gedit"><span class="nav-number">1.2.</span> <span class="nav-text">Gedit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thunar"><span class="nav-number">1.3.</span> <span class="nav-text">Thunar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Command-Line-Interface"><span class="nav-number">1.4.</span> <span class="nav-text">Command Line Interface</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Subversion"><span class="nav-number">1.5.</span> <span class="nav-text">Subversion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git"><span class="nav-number">1.6.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fully-Internationalized"><span class="nav-number">1.7.</span> <span class="nav-text">Fully Internationalized</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu安装方法"><span class="nav-number">2.</span> <span class="nav-text">Ubuntu安装方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用方法"><span class="nav-number">3.</span> <span class="nav-text">使用方法</span></a></li></ol></div>
             
 
           </div>

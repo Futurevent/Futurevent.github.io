@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://robotshell.com/"/>
-  <updated>2017-11-01T05:15:57.089Z</updated>
+  <updated>2017-11-04T04:08:10.582Z</updated>
   <id>http://robotshell.com/</id>
   
   <author>
@@ -16,35 +16,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>纵论物联网</title>
-    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    <id>http://robotshell.com/2017/10/26/纵论物联网/</id>
-    <published>2017-10-25T16:00:00.000Z</published>
-    <updated>2017-11-01T05:15:57.089Z</updated>
+    <title>Linux 版本控制工具之Ｒａｂｂｉｔｖｃｓ</title>
+    <link href="http://robotshell.com/2017/11/04/Linux-%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7%E4%B9%8BRabbitvcs/"/>
+    <id>http://robotshell.com/2017/11/04/Linux-版本控制工具之Rabbitvcs/</id>
+    <published>2017-11-04T04:08:10.000Z</published>
+    <updated>2017-11-04T04:08:10.582Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;最近在网上看到一篇介绍物联网的系列文章《纵论物联网》，但是很遗憾，都是来回转载的，也没有找到出处，零零散散的，东一篇西一篇，看起来很不方便。现汇总收集如下，既做整理，也做收藏。&lt;br&gt;
+      &lt;p&gt;新公司的文档管理居然使用ｓｖｎ，不知道适合原因．很久不用有一些忘却了.之前在ｗｉｎ下用的是TortoiseSVN，在ｕｂｕｎｔｕ下，与之及其相似的是ｒａｂｂｉｔｖｃｓ．&lt;br&gt;&lt;a href=&quot;http://rabbitvcs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网地址&lt;/a&gt;&lt;br&gt;
     
     </summary>
     
-      <category term="物联网" scheme="http://robotshell.com/categories/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+      <category term="工具" scheme="http://robotshell.com/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="物联网" scheme="http://robotshell.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+      <category term="工具" scheme="http://robotshell.com/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
-    <title>纵论物联网（十）：物联网应用层协议</title>
-    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E5%8D%81%EF%BC%89%EF%BC%9A%E7%89%A9%E8%81%94%E7%BD%91%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE/"/>
-    <id>http://robotshell.com/2017/10/26/纵论物联网（十）：物联网应用层协议/</id>
+    <title>纵论物联网（一）：无线技术分类</title>
+    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E6%97%A0%E7%BA%BF%E6%8A%80%E6%9C%AF%E5%88%86%E7%B1%BB/"/>
+    <id>http://robotshell.com/2017/10/26/纵论物联网（一）：无线技术分类/</id>
     <published>2017-10-25T16:00:00.000Z</published>
-    <updated>2017-10-26T16:01:51.648Z</updated>
+    <updated>2017-10-26T14:28:29.516Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;导语&lt;br&gt;物联网的关键技术主要解决三个方面的问题：&lt;u&gt;物体的识别、物体的连接、物体的数据交换&lt;/u&gt;。每个方面都有一些技术解决方案，在前面的文章中，我们介绍了RFID、NFC等物体识别及电子标签的技术，也介绍了物联网节点组网与接入的技术。这篇文章主要讲一下物联网的数据是如何处理的。&lt;br&gt;&lt;img src=&quot;http://ovfro7ddi.bkt.clouddn.com/%E7%89%A9%E8%81%94%E7%BD%91%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%EF%BC%91.JPEG&quot; alt=&quot;keyTec&quot;&gt;&lt;br&gt;物联网关键技术大全&lt;br&gt;
+      &lt;p&gt;物联网的关键技术包括三个方面：物体的识别、物体的连接以及对数据的操作。随着联网物体的数量越来越多，无线技术在物联网中发挥的作用也越来越大。&lt;br&gt;&lt;img src=&quot;http://p1.pstatp.com/large/22d2000589af2a27d43f&quot; alt=&quot;纵论物联网（一）：无线技术分类&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;物联网无线技术分类&quot;&gt;&lt;a href=&quot;#物联网无线技术分类&quot; class=&quot;headerlink&quot; title=&quot;物联网无线技术分类&quot;&gt;&lt;/a&gt;物联网无线技术分类&lt;/h1&gt;
     
     </summary>
     
@@ -76,46 +77,6 @@
   </entry>
   
   <entry>
-    <title>纵论物联网（五）：除了Linux，还有什么物联网操作系统</title>
-    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%BA%94%EF%BC%89%EF%BC%9A%E9%99%A4%E4%BA%86Linux%EF%BC%8C%E8%BF%98%E6%9C%89%E4%BB%80%E4%B9%88%E7%89%A9%E8%81%94%E7%BD%91%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    <id>http://robotshell.com/2017/10/26/纵论物联网（五）：除了Linux，还有什么物联网操作系统/</id>
-    <published>2017-10-25T16:00:00.000Z</published>
-    <updated>2017-10-26T15:09:19.893Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在前面介绍物联网终端设备的文章中，我们已经简单地介绍了物联网操作系统。物联网操作系统的种类非常多，不过其中有很大一部分是基于Linux系统改造的，还有一些系统是商业公司或开源组织开发的，当然微软公司也开发了一系列面向嵌入式应用的操作系统。&lt;br&gt;&lt;img src=&quot;http://p1.pstatp.com/large/26e400043526f2087cb0&quot; alt=&quot;物联网操作系统&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="物联网" scheme="http://robotshell.com/categories/%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-    
-      <category term="物联网" scheme="http://robotshell.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>纵论物联网（八）：面向可穿戴设备的无线物联网技术</title>
-    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E9%9D%A2%E5%90%91%E5%8F%AF%E7%A9%BF%E6%88%B4%E8%AE%BE%E5%A4%87%E7%9A%84%E6%97%A0%E7%BA%BF%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF/"/>
-    <id>http://robotshell.com/2017/10/26/纵论物联网（八）：面向可穿戴设备的无线物联网技术/</id>
-    <published>2017-10-25T16:00:00.000Z</published>
-    <updated>2017-10-26T15:31:58.322Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;导语&lt;br&gt;智能手环、智能手表为代表的可穿戴设备，在短短几年时间内，就已经在全世界普及开来。可穿戴设备是物联网领域很重要的一种设备类型，特点是功耗低、体积小、电量有限 。本文主要介绍可应用于可穿戴设备的无线技术有哪些？&lt;br&gt;&lt;img src=&quot;http://ovfro7ddi.bkt.clouddn.com/%E9%9D%A2%E5%90%91%E5%8F%AF%E7%A9%BF%E6%88%B4%E8%AE%BE%E5%A4%87%E7%9A%84%E6%97%A0%E7%BA%BF%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF1.JPEG&quot; alt=&quot;纵论物联网（八）：面向可穿戴设备的无线物联网技术&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="物联网" scheme="http://robotshell.com/categories/%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-    
-      <category term="物联网" scheme="http://robotshell.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-  </entry>
-  
-  <entry>
     <title>纵论物联网（二）：LPWAN技术 - 物联网</title>
     <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9ALPWAN%E6%8A%80%E6%9C%AF/"/>
     <id>http://robotshell.com/2017/10/26/纵论物联网（二）：LPWAN技术/</id>
@@ -134,35 +95,15 @@
   </entry>
   
   <entry>
-    <title>纵论物联网（七）：面向智能家居的物联网解决方案</title>
-    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%B8%83%EF%BC%89%EF%BC%9A%E9%9D%A2%E5%90%91%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    <id>http://robotshell.com/2017/10/26/纵论物联网（七）：面向智能家居的物联网解决方案/</id>
+    <title>纵论物联网（五）：除了Linux，还有什么物联网操作系统</title>
+    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%BA%94%EF%BC%89%EF%BC%9A%E9%99%A4%E4%BA%86Linux%EF%BC%8C%E8%BF%98%E6%9C%89%E4%BB%80%E4%B9%88%E7%89%A9%E8%81%94%E7%BD%91%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://robotshell.com/2017/10/26/纵论物联网（五）：除了Linux，还有什么物联网操作系统/</id>
     <published>2017-10-25T16:00:00.000Z</published>
-    <updated>2017-10-26T15:22:57.878Z</updated>
+    <updated>2017-10-26T15:09:19.893Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;导语&lt;br&gt;智能家居是非常广泛的一类物联网应用。目前国内最常用的面向智能家居的无线协议有WiFi、Zigbee、433MHz无线技术，另外还有基于电力线载波的有线解决方案。今天我们聊一下常用于智能家居的技术有哪些？&lt;br&gt;&lt;img src=&quot;http://ovfro7ddi.bkt.clouddn.com/%E9%9D%A2%E5%90%91%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%881.JPEG&quot; alt=&quot;面向智能家居的物联网解决方案&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="物联网" scheme="http://robotshell.com/categories/%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-    
-      <category term="物联网" scheme="http://robotshell.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>纵论物联网（三）：3GPP物联网技术</title>
-    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A3GPP%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF/"/>
-    <id>http://robotshell.com/2017/10/26/纵论物联网（三）：3GPP物联网技术/</id>
-    <published>2017-10-25T16:00:00.000Z</published>
-    <updated>2017-10-26T14:55:45.074Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;导语&lt;br&gt;随着物联网应用的发展，对于大范围组网的需求越来越多，LPWAN技术备受关注。前面的LPWAN技术文章介绍过，LPWAN技术可根据工作频段分为两类：一类是工作于未授权频段的无线技术，以LoRa、SigFox为代表；一类是工作于授权频段下的无线技术，以3GPP支持的2/3/4G蜂窝通信技术为代表。&lt;br&gt;&lt;img src=&quot;http://ovfro7ddi.bkt.clouddn.com/%EF%BC%93GPP%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF%EF%BC%91.JPEG&quot; alt=&quot;3GPP物联网技术&quot;&gt;&lt;br&gt;
+      &lt;p&gt;在前面介绍物联网终端设备的文章中，我们已经简单地介绍了物联网操作系统。物联网操作系统的种类非常多，不过其中有很大一部分是基于Linux系统改造的，还有一些系统是商业公司或开源组织开发的，当然微软公司也开发了一系列面向嵌入式应用的操作系统。&lt;br&gt;&lt;img src=&quot;http://p1.pstatp.com/large/26e400043526f2087cb0&quot; alt=&quot;物联网操作系统&quot;&gt;&lt;br&gt;
     
     </summary>
     
@@ -195,16 +136,95 @@
   </entry>
   
   <entry>
-    <title>纵论物联网（一）：无线技术分类</title>
-    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E6%97%A0%E7%BA%BF%E6%8A%80%E6%9C%AF%E5%88%86%E7%B1%BB/"/>
-    <id>http://robotshell.com/2017/10/26/纵论物联网（一）：无线技术分类/</id>
+    <title>纵论物联网（三）：3GPP物联网技术</title>
+    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A3GPP%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF/"/>
+    <id>http://robotshell.com/2017/10/26/纵论物联网（三）：3GPP物联网技术/</id>
     <published>2017-10-25T16:00:00.000Z</published>
-    <updated>2017-10-26T14:28:29.516Z</updated>
+    <updated>2017-10-26T14:55:45.074Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;物联网的关键技术包括三个方面：物体的识别、物体的连接以及对数据的操作。随着联网物体的数量越来越多，无线技术在物联网中发挥的作用也越来越大。&lt;br&gt;&lt;img src=&quot;http://p1.pstatp.com/large/22d2000589af2a27d43f&quot; alt=&quot;纵论物联网（一）：无线技术分类&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;物联网无线技术分类&quot;&gt;&lt;a href=&quot;#物联网无线技术分类&quot; class=&quot;headerlink&quot; title=&quot;物联网无线技术分类&quot;&gt;&lt;/a&gt;物联网无线技术分类&lt;/h1&gt;
+      &lt;p&gt;导语&lt;br&gt;随着物联网应用的发展，对于大范围组网的需求越来越多，LPWAN技术备受关注。前面的LPWAN技术文章介绍过，LPWAN技术可根据工作频段分为两类：一类是工作于未授权频段的无线技术，以LoRa、SigFox为代表；一类是工作于授权频段下的无线技术，以3GPP支持的2/3/4G蜂窝通信技术为代表。&lt;br&gt;&lt;img src=&quot;http://ovfro7ddi.bkt.clouddn.com/%EF%BC%93GPP%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF%EF%BC%91.JPEG&quot; alt=&quot;3GPP物联网技术&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="物联网" scheme="http://robotshell.com/categories/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+    
+      <category term="物联网" scheme="http://robotshell.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>纵论物联网（十）：物联网应用层协议</title>
+    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E5%8D%81%EF%BC%89%EF%BC%9A%E7%89%A9%E8%81%94%E7%BD%91%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE/"/>
+    <id>http://robotshell.com/2017/10/26/纵论物联网（十）：物联网应用层协议/</id>
+    <published>2017-10-25T16:00:00.000Z</published>
+    <updated>2017-10-26T16:01:51.648Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;导语&lt;br&gt;物联网的关键技术主要解决三个方面的问题：&lt;u&gt;物体的识别、物体的连接、物体的数据交换&lt;/u&gt;。每个方面都有一些技术解决方案，在前面的文章中，我们介绍了RFID、NFC等物体识别及电子标签的技术，也介绍了物联网节点组网与接入的技术。这篇文章主要讲一下物联网的数据是如何处理的。&lt;br&gt;&lt;img src=&quot;http://ovfro7ddi.bkt.clouddn.com/%E7%89%A9%E8%81%94%E7%BD%91%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%EF%BC%91.JPEG&quot; alt=&quot;keyTec&quot;&gt;&lt;br&gt;物联网关键技术大全&lt;br&gt;
+    
+    </summary>
+    
+      <category term="物联网" scheme="http://robotshell.com/categories/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+    
+      <category term="物联网" scheme="http://robotshell.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>纵论物联网</title>
+    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    <id>http://robotshell.com/2017/10/26/纵论物联网/</id>
+    <published>2017-10-25T16:00:00.000Z</published>
+    <updated>2017-11-04T03:20:30.402Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近在网上看到一篇介绍物联网的系列文章《纵论物联网》，但是很遗憾，都是来回转载的，也没有找到出处，零零散散的，东一篇西一篇，看起来很不方便。现汇总收集如下，既做整理，也做收藏。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="物联网" scheme="http://robotshell.com/categories/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+    
+      <category term="物联网" scheme="http://robotshell.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>纵论物联网（八）：面向可穿戴设备的无线物联网技术</title>
+    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E9%9D%A2%E5%90%91%E5%8F%AF%E7%A9%BF%E6%88%B4%E8%AE%BE%E5%A4%87%E7%9A%84%E6%97%A0%E7%BA%BF%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF/"/>
+    <id>http://robotshell.com/2017/10/26/纵论物联网（八）：面向可穿戴设备的无线物联网技术/</id>
+    <published>2017-10-25T16:00:00.000Z</published>
+    <updated>2017-10-26T15:31:58.322Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;导语&lt;br&gt;智能手环、智能手表为代表的可穿戴设备，在短短几年时间内，就已经在全世界普及开来。可穿戴设备是物联网领域很重要的一种设备类型，特点是功耗低、体积小、电量有限 。本文主要介绍可应用于可穿戴设备的无线技术有哪些？&lt;br&gt;&lt;img src=&quot;http://ovfro7ddi.bkt.clouddn.com/%E9%9D%A2%E5%90%91%E5%8F%AF%E7%A9%BF%E6%88%B4%E8%AE%BE%E5%A4%87%E7%9A%84%E6%97%A0%E7%BA%BF%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF1.JPEG&quot; alt=&quot;纵论物联网（八）：面向可穿戴设备的无线物联网技术&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="物联网" scheme="http://robotshell.com/categories/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+    
+      <category term="物联网" scheme="http://robotshell.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>纵论物联网（七）：面向智能家居的物联网解决方案</title>
+    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%B8%83%EF%BC%89%EF%BC%9A%E9%9D%A2%E5%90%91%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <id>http://robotshell.com/2017/10/26/纵论物联网（七）：面向智能家居的物联网解决方案/</id>
+    <published>2017-10-25T16:00:00.000Z</published>
+    <updated>2017-10-26T15:22:57.878Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;导语&lt;br&gt;智能家居是非常广泛的一类物联网应用。目前国内最常用的面向智能家居的无线协议有WiFi、Zigbee、433MHz无线技术，另外还有基于电力线载波的有线解决方案。今天我们聊一下常用于智能家居的技术有哪些？&lt;br&gt;&lt;img src=&quot;http://ovfro7ddi.bkt.clouddn.com/%E9%9D%A2%E5%90%91%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%881.JPEG&quot; alt=&quot;面向智能家居的物联网解决方案&quot;&gt;&lt;br&gt;
     
     </summary>
     
@@ -240,29 +260,6 @@
   </entry>
   
   <entry>
-    <title>敏捷. 硝烟中的scrum和xp</title>
-    <link href="http://robotshell.com/2017/08/31/%E6%95%8F%E6%8D%B7%EF%BC%9A%E7%A1%9D%E7%83%9F%E4%B8%AD%E7%9A%84scrum%E5%92%8Cxp/"/>
-    <id>http://robotshell.com/2017/08/31/敏捷：硝烟中的scrum和xp/</id>
-    <published>2017-08-30T16:00:00.000Z</published>
-    <updated>2017-08-31T16:20:30.869Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;最近在安排国庆的旅行计划，目的地是鲁迅的故乡绍兴。鲁迅有本散文集《朝花夕拾》，又名《旧事重提》。回顾整理以往的经验，故名《旧日往昔》。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;本文是一篇读书笔记，作于2012年3月6日…&lt;br&gt;&lt;img src=&quot;http://ovfro7ddi.bkt.clouddn.com/scrum%20cover.jpg&quot; alt=&quot;scrum cover&quot;&gt;&lt;br&gt;scrum不能解决问题，解决问题靠开发团队自己&lt;br&gt;
-    
-    </summary>
-    
-      <category term="旧日往昔" scheme="http://robotshell.com/categories/%E6%97%A7%E6%97%A5%E5%BE%80%E6%98%94/"/>
-    
-    
-      <category term="项目管理" scheme="http://robotshell.com/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
     <title>基于RT-Linux机器人控制系统实时性的探讨</title>
     <link href="http://robotshell.com/2017/08/31/%E5%9F%BA%E4%BA%8ERT-Linux%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E5%AE%9E%E6%97%B6%E6%80%A7%E7%9A%84%E6%8E%A2%E8%AE%A8/"/>
     <id>http://robotshell.com/2017/08/31/基于RT-Linux机器人控制系统实时性的探讨/</id>
@@ -282,6 +279,29 @@
     
     
       <category term="机器人" scheme="http://robotshell.com/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>敏捷. 硝烟中的scrum和xp</title>
+    <link href="http://robotshell.com/2017/08/31/%E6%95%8F%E6%8D%B7%EF%BC%9A%E7%A1%9D%E7%83%9F%E4%B8%AD%E7%9A%84scrum%E5%92%8Cxp/"/>
+    <id>http://robotshell.com/2017/08/31/敏捷：硝烟中的scrum和xp/</id>
+    <published>2017-08-30T16:00:00.000Z</published>
+    <updated>2017-08-31T16:20:30.869Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;最近在安排国庆的旅行计划，目的地是鲁迅的故乡绍兴。鲁迅有本散文集《朝花夕拾》，又名《旧事重提》。回顾整理以往的经验，故名《旧日往昔》。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;本文是一篇读书笔记，作于2012年3月6日…&lt;br&gt;&lt;img src=&quot;http://ovfro7ddi.bkt.clouddn.com/scrum%20cover.jpg&quot; alt=&quot;scrum cover&quot;&gt;&lt;br&gt;scrum不能解决问题，解决问题靠开发团队自己&lt;br&gt;
+    
+    </summary>
+    
+      <category term="旧日往昔" scheme="http://robotshell.com/categories/%E6%97%A7%E6%97%A5%E5%BE%80%E6%98%94/"/>
+    
+    
+      <category term="项目管理" scheme="http://robotshell.com/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/"/>
     
   </entry>
   
@@ -418,30 +438,6 @@
     
     
       <category term="Machine Learning" scheme="http://robotshell.com/tags/Machine-Learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo Quick Start</title>
-    <link href="http://robotshell.com/2017/07/29/Hexo%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/"/>
-    <id>http://robotshell.com/2017/07/29/Hexo快速入门/</id>
-    <published>2017-07-28T16:00:00.000Z</published>
-    <updated>2017-08-29T16:08:25.314Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is my very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Blog 写作 教程" scheme="http://robotshell.com/categories/Blog-%E5%86%99%E4%BD%9C-%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="Hexo 教程" scheme="http://robotshell.com/categories/Blog-%E5%86%99%E4%BD%9C-%E6%95%99%E7%A8%8B/Hexo-%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="hexo" scheme="http://robotshell.com/tags/hexo/"/>
-    
-      <category term="tools" scheme="http://robotshell.com/tags/tools/"/>
     
   </entry>
   
