@@ -579,7 +579,7 @@ pre .meta {
   color: #b294bb;
 }
 pre .comment {
-  color: #969896;
+  color: #7fff00;
 }
 pre .variable,
 pre .attribute,
@@ -1948,7 +1948,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #185714;
+  background: #6f2134;
 }
 .links-of-blogroll {
   font-size: 13px;
