@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://robotshell.com/"/>
-  <updated>2018-02-06T13:32:49.615Z</updated>
+  <updated>2018-02-06T13:35:44.389Z</updated>
   <id>http://robotshell.com/</id>
   
   <author>
@@ -20,11 +20,11 @@
     <link href="http://robotshell.com/2018/02/06/Android%E5%8C%85%E7%AE%A1%E7%90%86%E4%B9%8BApp%E5%AE%89%E8%A3%85%E5%89%8D%E7%9A%84%E6%A0%A1%E9%AA%8C/"/>
     <id>http://robotshell.com/2018/02/06/Android包管理之App安装前的校验/</id>
     <published>2018-02-06T13:32:49.000Z</published>
-    <updated>2018-02-06T13:32:49.615Z</updated>
+    <updated>2018-02-06T13:35:44.389Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;初识Package-Verification&quot;&gt;&lt;a href=&quot;#初识Package-Verification&quot; class=&quot;headerlink&quot; title=&quot;初识Package Verification&quot;&gt;&lt;/a&gt;初识Package Verificati
+      &lt;h1 id=&quot;初识Package-Verification&quot;&gt;&lt;a href=&quot;#初识Package-Verification&quot; class=&quot;headerlink&quot; title=&quot;初识Package Verification&quot;&gt;&lt;/a&gt;初识Package Verification&lt;/h1&gt;&lt;p&gt;之前在做机器人操作系统的时候有过这样的需求，希望在安装应用的时候判断该应用是否符合机器人系统的操作规范，说白了就是需要扫描一下这个apk，是否符合某些规则。当然，这个需求可以在andoird 安装应用的过程实现。但是查看源码发现了Package Verification，这是一个没有多少文档介绍也没有相应demo的特性。&lt;br&gt;
     
     </summary>
     
@@ -181,36 +181,15 @@
   </entry>
   
   <entry>
-    <title>纵论物联网（九）：物联网设备的标识技术</title>
-    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%B9%9D%EF%BC%89%EF%BC%9A%E7%89%A9%E8%81%94%E7%BD%91%E8%AE%BE%E5%A4%87%E7%9A%84%E6%A0%87%E8%AF%86%E6%8A%80%E6%9C%AF/"/>
-    <id>http://robotshell.com/2017/10/26/纵论物联网（九）：物联网设备的标识技术/</id>
+    <title>纵论物联网（七）：面向智能家居的物联网解决方案</title>
+    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%B8%83%EF%BC%89%EF%BC%9A%E9%9D%A2%E5%90%91%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <id>http://robotshell.com/2017/10/26/纵论物联网（七）：面向智能家居的物联网解决方案/</id>
     <published>2017-10-25T16:00:00.000Z</published>
-    <updated>2017-11-04T16:43:57.982Z</updated>
+    <updated>2017-11-04T17:26:52.942Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;导语&lt;br&gt;物联网主要由三个方面关键技术：&lt;em&gt;连接&lt;/em&gt;、&lt;em&gt;标识&lt;/em&gt;以及&lt;em&gt;数据的操作&lt;/em&gt;。&lt;/p&gt;
-&lt;p&gt;在前面的文章中，我们已经谈了很多关于物联网中物体如何连接网络的技术，而实际上物体的标识才是物联网实现的第一步，就是我们要唯一地标识和区分每一个物体。&lt;br&gt;以RFID为代表的物体标识技术曾经几乎就是物联网的代名词，而今RFID的演进技术NFC又在各个领域发挥着重要作用。通过这篇文章，我们来聊一聊物联网设备的标识技术，RFID与NFC究竟有什么关系？&lt;br&gt;
-    
-    </summary>
-    
-      <category term="物联网" scheme="http://robotshell.com/categories/%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-    
-      <category term="物联网" scheme="http://robotshell.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>纵论物联网（六）：基于Linux的物联网操作系统</title>
-    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E5%9F%BA%E4%BA%8ELinux%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    <id>http://robotshell.com/2017/10/26/纵论物联网（六）：基于Linux的物联网操作系统/</id>
-    <published>2017-10-25T16:00:00.000Z</published>
-    <updated>2017-11-04T16:43:57.982Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;提到物联网操作系统，就不能不提Linux，因为Linux可能是目前在物联网设备中应用最广的操作系统了。前面的文章刚刚介绍了不少非Linux类的物联网操作系统，本文就来介绍一下目前常用的基于Linux的物联网操作系统。&lt;br&gt;&lt;img src=&quot;http://images.ofweek.com/Upload/News/2017-06/14/lime/1497400939793024893.jpg&quot; alt=&quot;基于Linux的物联网操作系统&quot;&gt;&lt;br&gt;
+      &lt;p&gt;导语&lt;br&gt;智能家居是非常广泛的一类物联网应用。目前国内最常用的面向智能家居的无线协议有WiFi、Zigbee、433MHz无线技术，另外还有基于电力线载波的有线解决方案。今天我们聊一下常用于智能家居的技术有哪些？&lt;br&gt;&lt;img src=&quot;http://ovfro7ddi.bkt.clouddn.com/%E9%9D%A2%E5%90%91%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%881.JPEG&quot; alt=&quot;面向智能家居的物联网解决方案&quot;&gt;&lt;br&gt;
     
     </summary>
     
@@ -263,35 +242,15 @@
   </entry>
   
   <entry>
-    <title>纵论物联网（七）：面向智能家居的物联网解决方案</title>
-    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%B8%83%EF%BC%89%EF%BC%9A%E9%9D%A2%E5%90%91%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    <id>http://robotshell.com/2017/10/26/纵论物联网（七）：面向智能家居的物联网解决方案/</id>
-    <published>2017-10-25T16:00:00.000Z</published>
-    <updated>2017-11-04T17:26:52.942Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;导语&lt;br&gt;智能家居是非常广泛的一类物联网应用。目前国内最常用的面向智能家居的无线协议有WiFi、Zigbee、433MHz无线技术，另外还有基于电力线载波的有线解决方案。今天我们聊一下常用于智能家居的技术有哪些？&lt;br&gt;&lt;img src=&quot;http://ovfro7ddi.bkt.clouddn.com/%E9%9D%A2%E5%90%91%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%881.JPEG&quot; alt=&quot;面向智能家居的物联网解决方案&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="物联网" scheme="http://robotshell.com/categories/%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-    
-      <category term="物联网" scheme="http://robotshell.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>纵论物联网（八）：面向可穿戴设备的无线物联网技术</title>
-    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E9%9D%A2%E5%90%91%E5%8F%AF%E7%A9%BF%E6%88%B4%E8%AE%BE%E5%A4%87%E7%9A%84%E6%97%A0%E7%BA%BF%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF/"/>
-    <id>http://robotshell.com/2017/10/26/纵论物联网（八）：面向可穿戴设备的无线物联网技术/</id>
+    <title>纵论物联网（六）：基于Linux的物联网操作系统</title>
+    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E5%9F%BA%E4%BA%8ELinux%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://robotshell.com/2017/10/26/纵论物联网（六）：基于Linux的物联网操作系统/</id>
     <published>2017-10-25T16:00:00.000Z</published>
     <updated>2017-11-04T16:43:57.982Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;导语&lt;br&gt;智能手环、智能手表为代表的可穿戴设备，在短短几年时间内，就已经在全世界普及开来。可穿戴设备是物联网领域很重要的一种设备类型，特点是功耗低、体积小、电量有限 。本文主要介绍可应用于可穿戴设备的无线技术有哪些？&lt;br&gt;&lt;img src=&quot;http://ovfro7ddi.bkt.clouddn.com/%E9%9D%A2%E5%90%91%E5%8F%AF%E7%A9%BF%E6%88%B4%E8%AE%BE%E5%A4%87%E7%9A%84%E6%97%A0%E7%BA%BF%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF1.JPEG&quot; alt=&quot;纵论物联网（八）：面向可穿戴设备的无线物联网技术&quot;&gt;&lt;br&gt;
+      &lt;p&gt;提到物联网操作系统，就不能不提Linux，因为Linux可能是目前在物联网设备中应用最广的操作系统了。前面的文章刚刚介绍了不少非Linux类的物联网操作系统，本文就来介绍一下目前常用的基于Linux的物联网操作系统。&lt;br&gt;&lt;img src=&quot;http://images.ofweek.com/Upload/News/2017-06/14/lime/1497400939793024893.jpg&quot; alt=&quot;基于Linux的物联网操作系统&quot;&gt;&lt;br&gt;
     
     </summary>
     
@@ -323,6 +282,47 @@
   </entry>
   
   <entry>
+    <title>纵论物联网（五）：除了Linux，还有什么物联网操作系统</title>
+    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%BA%94%EF%BC%89%EF%BC%9A%E9%99%A4%E4%BA%86Linux%EF%BC%8C%E8%BF%98%E6%9C%89%E4%BB%80%E4%B9%88%E7%89%A9%E8%81%94%E7%BD%91%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://robotshell.com/2017/10/26/纵论物联网（五）：除了Linux，还有什么物联网操作系统/</id>
+    <published>2017-10-25T16:00:00.000Z</published>
+    <updated>2017-11-04T16:43:57.982Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在前面介绍物联网终端设备的文章中，我们已经简单地介绍了物联网操作系统。物联网操作系统的种类非常多，不过其中有很大一部分是基于Linux系统改造的，还有一些系统是商业公司或开源组织开发的，当然微软公司也开发了一系列面向嵌入式应用的操作系统。&lt;br&gt;&lt;img src=&quot;http://p1.pstatp.com/large/26e400043526f2087cb0&quot; alt=&quot;物联网操作系统&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="物联网" scheme="http://robotshell.com/categories/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+    
+      <category term="物联网" scheme="http://robotshell.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>纵论物联网（九）：物联网设备的标识技术</title>
+    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%B9%9D%EF%BC%89%EF%BC%9A%E7%89%A9%E8%81%94%E7%BD%91%E8%AE%BE%E5%A4%87%E7%9A%84%E6%A0%87%E8%AF%86%E6%8A%80%E6%9C%AF/"/>
+    <id>http://robotshell.com/2017/10/26/纵论物联网（九）：物联网设备的标识技术/</id>
+    <published>2017-10-25T16:00:00.000Z</published>
+    <updated>2017-11-04T16:43:57.982Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;导语&lt;br&gt;物联网主要由三个方面关键技术：&lt;em&gt;连接&lt;/em&gt;、&lt;em&gt;标识&lt;/em&gt;以及&lt;em&gt;数据的操作&lt;/em&gt;。&lt;/p&gt;
+&lt;p&gt;在前面的文章中，我们已经谈了很多关于物联网中物体如何连接网络的技术，而实际上物体的标识才是物联网实现的第一步，就是我们要唯一地标识和区分每一个物体。&lt;br&gt;以RFID为代表的物体标识技术曾经几乎就是物联网的代名词，而今RFID的演进技术NFC又在各个领域发挥着重要作用。通过这篇文章，我们来聊一聊物联网设备的标识技术，RFID与NFC究竟有什么关系？&lt;br&gt;
+    
+    </summary>
+    
+      <category term="物联网" scheme="http://robotshell.com/categories/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+    
+      <category term="物联网" scheme="http://robotshell.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+  </entry>
+  
+  <entry>
     <title>纵论物联网（二）：LPWAN技术</title>
     <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9ALPWAN%E6%8A%80%E6%9C%AF/"/>
     <id>http://robotshell.com/2017/10/26/纵论物联网（二）：LPWAN技术/</id>
@@ -343,15 +343,15 @@
   </entry>
   
   <entry>
-    <title>纵论物联网（五）：除了Linux，还有什么物联网操作系统</title>
-    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%BA%94%EF%BC%89%EF%BC%9A%E9%99%A4%E4%BA%86Linux%EF%BC%8C%E8%BF%98%E6%9C%89%E4%BB%80%E4%B9%88%E7%89%A9%E8%81%94%E7%BD%91%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    <id>http://robotshell.com/2017/10/26/纵论物联网（五）：除了Linux，还有什么物联网操作系统/</id>
+    <title>纵论物联网（八）：面向可穿戴设备的无线物联网技术</title>
+    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E9%9D%A2%E5%90%91%E5%8F%AF%E7%A9%BF%E6%88%B4%E8%AE%BE%E5%A4%87%E7%9A%84%E6%97%A0%E7%BA%BF%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF/"/>
+    <id>http://robotshell.com/2017/10/26/纵论物联网（八）：面向可穿戴设备的无线物联网技术/</id>
     <published>2017-10-25T16:00:00.000Z</published>
     <updated>2017-11-04T16:43:57.982Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;在前面介绍物联网终端设备的文章中，我们已经简单地介绍了物联网操作系统。物联网操作系统的种类非常多，不过其中有很大一部分是基于Linux系统改造的，还有一些系统是商业公司或开源组织开发的，当然微软公司也开发了一系列面向嵌入式应用的操作系统。&lt;br&gt;&lt;img src=&quot;http://p1.pstatp.com/large/26e400043526f2087cb0&quot; alt=&quot;物联网操作系统&quot;&gt;&lt;br&gt;
+      &lt;p&gt;导语&lt;br&gt;智能手环、智能手表为代表的可穿戴设备，在短短几年时间内，就已经在全世界普及开来。可穿戴设备是物联网领域很重要的一种设备类型，特点是功耗低、体积小、电量有限 。本文主要介绍可应用于可穿戴设备的无线技术有哪些？&lt;br&gt;&lt;img src=&quot;http://ovfro7ddi.bkt.clouddn.com/%E9%9D%A2%E5%90%91%E5%8F%AF%E7%A9%BF%E6%88%B4%E8%AE%BE%E5%A4%87%E7%9A%84%E6%97%A0%E7%BA%BF%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF1.JPEG&quot; alt=&quot;纵论物联网（八）：面向可穿戴设备的无线物联网技术&quot;&gt;&lt;br&gt;
     
     </summary>
     
