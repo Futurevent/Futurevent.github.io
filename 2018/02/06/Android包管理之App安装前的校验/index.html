@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="android," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Robot Shell" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="初识Package Verification之前在做机器人操作系统的时候有过这样的需求，希望在安装应用的时候判断该应用是否符合机器人系统的操作规范，说白了就是需要扫描一下这个apk，是否符合某些规则。当然，这个需求可以在andoird 安装应用的过程实现。但是查看源码发现了Package Verification，这是一个没有多少文档介绍也没有相应demo的特性。最近在做车机系统的时候，大家讨论热">
+<meta name="keywords" content="android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android包管理之App安装前的校验">
+<meta property="og:url" content="http://robotshell.com/2018/02/06/Android包管理之App安装前的校验/index.html">
+<meta property="og:site_name" content="Robot Shell">
+<meta property="og:description" content="初识Package Verification之前在做机器人操作系统的时候有过这样的需求，希望在安装应用的时候判断该应用是否符合机器人系统的操作规范，说白了就是需要扫描一下这个apk，是否符合某些规则。当然，这个需求可以在andoird 安装应用的过程实现。但是查看源码发现了Package Verification，这是一个没有多少文档介绍也没有相应demo的特性。最近在做车机系统的时候，大家讨论热">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ovfro7ddi.bkt.clouddn.com/android-pkgverify.png">
+<meta property="og:image" content="http://ovfro7ddi.bkt.clouddn.com/Package%20Installer.jpg">
+<meta property="og:updated_time" content="2018-02-06T13:32:49.615Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android包管理之App安装前的校验">
+<meta name="twitter:description" content="初识Package Verification之前在做机器人操作系统的时候有过这样的需求，希望在安装应用的时候判断该应用是否符合机器人系统的操作规范，说白了就是需要扫描一下这个apk，是否符合某些规则。当然，这个需求可以在andoird 安装应用的过程实现。但是查看源码发现了Package Verification，这是一个没有多少文档介绍也没有相应demo的特性。最近在做车机系统的时候，大家讨论热">
+<meta name="twitter:image" content="http://ovfro7ddi.bkt.clouddn.com/android-pkgverify.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://robotshell.com/2018/02/06/Android包管理之App安装前的校验/"/>
+
+
+
+
+
+  <title>Android包管理之App安装前的校验 | Robot Shell</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?5d32bea2dc2845699d3ba9103c01cf71";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Robot Shell</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Futurevent</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-board">
+          <a href="/board" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            board
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2018/02/06/Android包管理之App安装前的校验/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="robot">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/robot.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Robot Shell">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android包管理之App安装前的校验</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-06T21:32:49+08:00">
+                2018-02-06
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-02-06T21:32:49+08:00">
+                2018-02-06
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="初识Package-Verification"><a href="#初识Package-Verification" class="headerlink" title="初识Package Verification"></a>初识Package Verification</h1><p>之前在做机器人操作系统的时候有过这样的需求，希望在安装应用的时候判断该应用是否符合机器人系统的操作规范，说白了就是需要扫描一下这个apk，是否符合某些规则。当然，这个需求可以在andoird 安装应用的过程实现。但是查看源码发现了Package Verification，这是一个没有多少文档介绍也没有相应demo的特性。<br>最近在做车机系统的时候，大家讨论热修复，聊到在海外渠道以及一些海外应用商店平台上，禁止带有热修复功能的应用上架，甚至带有热修复功能的app安装都不会成功。聊到此处想起了Package Verification，料想使用此特性实现的。<br>早在android J 中就在PackageManagerService源码中加入了此特性。大体思路是，在安装应用前会发送一个需要对此包进行验证的广播，该广播可叫做Verify Request，如果系统中有实现了该广播的Receiver，则该应用被叫做Verifier，则Verifier取得广播中携带的附属信息，包括包的路径等，则通过或是扫描该包或是对比其他信用，总之对要安装的这个应用做出校验，然后调用PowerManager的接口告诉PowerManagerService 本次校验是否通过，通过则继续执行安装过程，否则提示用户安装被拒绝。也可以讲，android通过这样的方式，将android包安装校验这一任务外包给了第三方应用（通常为应用商店等）进行校验。<br>比如校验不通过会弹出如下的界面(就算没见过这个，也见过类似的吧)：<br><img src="http://ovfro7ddi.bkt.clouddn.com/android-pkgverify.png" alt="package verifier failure"></p>
+<h1 id="使用Package-Verification"><a href="#使用Package-Verification" class="headerlink" title="使用Package Verification"></a>使用Package Verification</h1><h2 id="Verify-流程如下："><a href="#Verify-流程如下：" class="headerlink" title="Verify 流程如下："></a>Verify 流程如下：</h2><p><div id="flowchart-0" class="flow-chart"></div><br>其中verifier 检查要安装的应用这个子过程即可实现为一个独立应用，在其中做具体的校验逻辑。</p>
+<h2 id="Verify-过程中使用到的PackageManager-API"><a href="#Verify-过程中使用到的PackageManager-API" class="headerlink" title="Verify 过程中使用到的PackageManager API"></a>Verify 过程中使用到的PackageManager API</h2><h3 id="请求对即将安装的包进行验证"><a href="#请求对即将安装的包进行验证" class="headerlink" title="请求对即将安装的包进行验证"></a><a href="#请求">请求对即将安装的包进行验证</a></h3><p>PackageManagerService 会在应用安装前发送ACTION_PACKAGE_NEEDS_VERIFICATION 广播请求对要安装的包进行验证，它会携带PowerManager.EXTRA_VERIFICATION_ID 待Verifier验证结束后会使用该ID通知PackageManagerService验证结果。<br>另外几个在API中被hide的附属值为：</p>
+<ul>
+<li>EXTRA_VERIFICATION_URI</li>
+<li>EXTRA_VERIFICATION_INSTALLER_PACKAGE</li>
+<li>EXTRA_VERIFICATION_INSTALL_FLAGS</li>
+<li>EXTRA_VERIFICATION_INSTALLER_UID</li>
+<li>EXTRA_VERIFICATION_PACKAGE_NAME</li>
+<li>EXTRA_VERIFICATION_VERSION_CODE<br>另外，应用程序也可在自己的manifest中使用标签<package-verifier>来指定Verifier 例如：<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">package-verifier</span></span></div><div class="line"><span class="tag">    <span class="attr">android:name</span>=<span class="string">"org.mycompany.verifier"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:publicKey</span>=<span class="string">"Zm9vYmFy..."</span> /&gt;</span></div></pre></td></tr></table></figure>
+</package-verifier></li>
+</ul>
+<p>这类Verifier被叫做Sufficient Verifiers，配置中的publickey 为 应用安装完成后在/data/system/package.xml 中保存的对应应用的编码。</p>
+<h3 id="Verifier-的实现"><a href="#Verifier-的实现" class="headerlink" title="Verifier 的实现"></a>Verifier 的实现</h3><p>Verifier 需要具有权限PACKAGE_VERIFICATION_AGENT，然后实现接受ACTION_PACKAGE_NEEDS_VERIFICATION广播的BroadcastReceiver。待校验结束后调用PackageManager.verifyPendingInstall 返回校验结果，结果常量为：</p>
+<ul>
+<li>PowerManager.VERIFICATION_ALLOW</li>
+<li>PowerManager.VERIFICATION_REJECT<br>结果返回后会被PackageManagerService处理<a href="#响应">响应</a></li>
+</ul>
+<h2 id="Package-Verification-机制实现分析。"><a href="#Package-Verification-机制实现分析。" class="headerlink" title="Package Verification 机制实现分析。"></a>Package Verification 机制实现分析。</h2><p>Package Verification 机制的实现在PackageManagerService中，与应用的安装过程紧紧的结合在一起，但此处不在介绍安装过程。当安装进行到函数startCopy这一步时，在handleStartCopy方法中有如下代码<br><span id="请求"><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (ret == PackageManager.INSTALL_SUCCEEDED) &#123;</div><div class="line">    <span class="comment">// <span class="doctag">TODO:</span> http://b/22976637</span></div><div class="line">    <span class="comment">// Apps installed for "all" users use the device owner to verify the app</span></div><div class="line">    UserHandle verifierUser = getUser();</div><div class="line">    <span class="keyword">if</span> (verifierUser == UserHandle.ALL) &#123;</div><div class="line">        verifierUser = UserHandle.SYSTEM;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/*</span></div><div class="line"><span class="comment">     * Determine if we have any installed package verifiers. If we</span></div><div class="line"><span class="comment">     * do, then we'll defer to them to verify the packages.</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="comment">// mRequiredVerifierPackage 和 mOptionalVerifierPackage在</span></div><div class="line">    <span class="comment">// PackageManagerService初始化时初始化</span></div><div class="line">    <span class="keyword">final</span> <span class="keyword">int</span> requiredUid = mRequiredVerifierPackage == <span class="keyword">null</span> ? -<span class="number">1</span></div><div class="line">            : getPackageUid(mRequiredVerifierPackage, MATCH_DEBUG_TRIAGED_MISSING,</div><div class="line">                    verifierUser.getIdentifier());</div><div class="line"></div><div class="line">    <span class="keyword">final</span> <span class="keyword">int</span> optionalUid = mOptionalVerifierPackage == <span class="keyword">null</span> ? -<span class="number">1</span></div><div class="line">            : getPackageUid(mOptionalVerifierPackage, MATCH_DEBUG_TRIAGED_MISSING,</div><div class="line">                    verifierUser.getIdentifier());</div><div class="line"></div><div class="line">    <span class="keyword">final</span> <span class="keyword">int</span> installerUid =</div><div class="line">            verificationInfo == <span class="keyword">null</span> ? -<span class="number">1</span> : verificationInfo.installerUid;</div><div class="line">    <span class="keyword">if</span> (!origin.existing &amp;&amp; (requiredUid != -<span class="number">1</span> || optionalUid != -<span class="number">1</span>)</div><div class="line">            &amp;&amp; isVerificationEnabled(</div><div class="line">                    verifierUser.getIdentifier(), installFlags, installerUid)) &#123;</div><div class="line">        <span class="comment">// 开始构造请求Verify的广播的Intent</span></div><div class="line">        <span class="keyword">final</span> Intent verification = <span class="keyword">new</span> Intent(</div><div class="line">                Intent.ACTION_PACKAGE_NEEDS_VERIFICATION);</div><div class="line">        verification.addFlags(Intent.FLAG_RECEIVER_FOREGROUND);</div><div class="line">        verification.setDataAndType(Uri.fromFile(<span class="keyword">new</span> File(origin.resolvedPath)),</div><div class="line">                PACKAGE_MIME_TYPE);</div><div class="line">        verification.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);</div><div class="line"></div><div class="line">        <span class="comment">// Query all live verifiers based on current user state</span></div><div class="line">        <span class="comment">// 把当前所有能做校验的Receiver都找出来。</span></div><div class="line">        <span class="keyword">final</span> List&lt;ResolveInfo&gt; receivers = queryIntentReceiversInternal(verification,</div><div class="line">                PACKAGE_MIME_TYPE, <span class="number">0</span>, verifierUser.getIdentifier());</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (DEBUG_VERIFY) &#123;</div><div class="line">            Slog.d(TAG, <span class="string">"Found "</span> + receivers.size() + <span class="string">" verifiers for intent "</span></div><div class="line">                    + verification.toString() + <span class="string">" with "</span> + pkgLite.verifiers.length</div><div class="line">                    + <span class="string">" optional verifiers"</span>);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">// 生成此次的verificationId，用来唯一标识此次校验</span></div><div class="line">        <span class="keyword">final</span> <span class="keyword">int</span> verificationId = mPendingVerificationToken++;</div><div class="line">        <span class="comment">// 添加需要携带给Verifier 的数据</span></div><div class="line">        verification.putExtra(PackageManager.EXTRA_VERIFICATION_ID, verificationId);</div><div class="line"></div><div class="line">        verification.putExtra(PackageManager.EXTRA_VERIFICATION_INSTALLER_PACKAGE,</div><div class="line">                installerPackageName);</div><div class="line"></div><div class="line">        verification.putExtra(PackageManager.EXTRA_VERIFICATION_INSTALL_FLAGS,</div><div class="line">                installFlags);</div><div class="line"></div><div class="line">        verification.putExtra(PackageManager.EXTRA_VERIFICATION_PACKAGE_NAME,</div><div class="line">                pkgLite.packageName);</div><div class="line"></div><div class="line">        verification.putExtra(PackageManager.EXTRA_VERIFICATION_VERSION_CODE,</div><div class="line">                pkgLite.versionCode);</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (verificationInfo != <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="keyword">if</span> (verificationInfo.originatingUri != <span class="keyword">null</span>) &#123;</div><div class="line">                verification.putExtra(Intent.EXTRA_ORIGINATING_URI,</div><div class="line">                        verificationInfo.originatingUri);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span> (verificationInfo.referrer != <span class="keyword">null</span>) &#123;</div><div class="line">                verification.putExtra(Intent.EXTRA_REFERRER,</div><div class="line">                        verificationInfo.referrer);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span> (verificationInfo.originatingUid &gt;= <span class="number">0</span>) &#123;</div><div class="line">                verification.putExtra(Intent.EXTRA_ORIGINATING_UID,</div><div class="line">                        verificationInfo.originatingUid);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span> (verificationInfo.installerUid &gt;= <span class="number">0</span>) &#123;</div><div class="line">                verification.putExtra(PackageManager.EXTRA_VERIFICATION_INSTALLER_UID,</div><div class="line">                        verificationInfo.installerUid);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">// 创建PackageVerificationState 对像用来跟踪校验状态。</span></div><div class="line">        <span class="keyword">final</span> PackageVerificationState verificationState = <span class="keyword">new</span> PackageVerificationState(</div><div class="line">                requiredUid, args);</div><div class="line">        <span class="comment">// 把verificationState保存起来，方便以后查找使用。</span></div><div class="line">        mPendingVerification.append(verificationId, verificationState);</div><div class="line"></div><div class="line">        <span class="comment">// 获取到sufficientVerifiers，上文提到过，其中pkgLite经过解析manifest而来</span></div><div class="line">        <span class="keyword">final</span> List&lt;ComponentName&gt; sufficientVerifiers = matchVerifiers(pkgLite,</div><div class="line">                receivers, verificationState);</div><div class="line">        <span class="comment">// 这里应该是android6.0 后添加的，避免在校验的过程中系统进入休眠。</span></div><div class="line">        DeviceIdleController.LocalService idleController = getDeviceIdleController();</div><div class="line">        <span class="keyword">final</span> <span class="keyword">long</span> idleDuration = getVerificationTimeout();</div><div class="line"></div><div class="line">        <span class="comment">/*</span></div><div class="line"><span class="comment">         * If any sufficient verifiers were listed in the package</span></div><div class="line"><span class="comment">         * manifest, attempt to ask them.</span></div><div class="line"><span class="comment">         */</span></div><div class="line">        <span class="keyword">if</span> (sufficientVerifiers != <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="keyword">final</span> <span class="keyword">int</span> N = sufficientVerifiers.size();</div><div class="line">            <span class="keyword">if</span> (N == <span class="number">0</span>) &#123;</div><div class="line">                Slog.i(TAG, <span class="string">"Additional verifiers required, but none installed."</span>);</div><div class="line">                ret = PackageManager.INSTALL_FAILED_VERIFICATION_FAILURE;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</div><div class="line">                    <span class="keyword">final</span> ComponentName verifierComponent = sufficientVerifiers.get(i);</div><div class="line">                    <span class="comment">// 与doze模式相关，避免休眠</span></div><div class="line">                    idleController.addPowerSaveTempWhitelistApp(Process.myUid(),</div><div class="line">                            verifierComponent.getPackageName(), idleDuration,</div><div class="line">                            verifierUser.getIdentifier(), <span class="keyword">false</span>, <span class="string">"package verifier"</span>);</div><div class="line"></div><div class="line">                    <span class="keyword">final</span> Intent sufficientIntent = <span class="keyword">new</span> Intent(verification);</div><div class="line">                    sufficientIntent.setComponent(verifierComponent);</div><div class="line">                    <span class="comment">// 发送验证请求</span></div><div class="line">                    mContext.sendBroadcastAsUser(sufficientIntent, verifierUser);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (mOptionalVerifierPackage != <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="keyword">final</span> Intent optionalIntent = <span class="keyword">new</span> Intent(verification);</div><div class="line">            optionalIntent.setAction(<span class="string">"com.qualcomm.qti.intent.action.PACKAGE_NEEDS_OPTIONAL_VERIFICATION"</span>);</div><div class="line">            <span class="keyword">final</span> List&lt;ResolveInfo&gt; optional_receivers = queryIntentReceiversInternal(optionalIntent,</div><div class="line">                PACKAGE_MIME_TYPE, <span class="number">0</span>, verifierUser.getIdentifier());</div><div class="line">            <span class="keyword">final</span> ComponentName optionalVerifierComponent = matchComponentForVerifier(</div><div class="line">                mOptionalVerifierPackage, optional_receivers);</div><div class="line">            optionalIntent.setComponent(optionalVerifierComponent);</div><div class="line">            verificationState.addOptionalVerifier(optionalUid);</div><div class="line">            <span class="keyword">if</span> (mRequiredVerifierPackage != <span class="keyword">null</span>) &#123;</div><div class="line">                mContext.sendBroadcastAsUser(optionalIntent, verifierUser, android.Manifest.permission.PACKAGE_VERIFICATION_AGENT);</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                mContext.sendOrderedBroadcastAsUser(optionalIntent, verifierUser, android.Manifest.permission.PACKAGE_VERIFICATION_AGENT,</div><div class="line">                <span class="keyword">new</span> BroadcastReceiver() &#123;</div><div class="line">                    <span class="meta">@Override</span></div><div class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</div><div class="line">                        <span class="keyword">final</span> Message msg = mHandler.obtainMessage(CHECK_PENDING_VERIFICATION);</div><div class="line">                        msg.arg1 = verificationId;</div><div class="line">                        mHandler.sendMessageDelayed(msg, getVerificationTimeout());</div><div class="line">                    &#125;</div><div class="line">                &#125;, <span class="keyword">null</span>, <span class="number">0</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line">                mArgs = <span class="keyword">null</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">final</span> ComponentName requiredVerifierComponent = matchComponentForVerifier(</div><div class="line">                mRequiredVerifierPackage, receivers);</div><div class="line">        <span class="keyword">if</span> (ret == PackageManager.INSTALL_SUCCEEDED</div><div class="line">                &amp;&amp; mRequiredVerifierPackage != <span class="keyword">null</span>) &#123;</div><div class="line">            Trace.asyncTraceBegin(</div><div class="line">                    TRACE_TAG_PACKAGE_MANAGER, <span class="string">"verification"</span>, verificationId);</div><div class="line">            <span class="comment">/*</span></div><div class="line"><span class="comment">             * Send the intent to the required verification agent,</span></div><div class="line"><span class="comment">             * but only start the verification timeout after the</span></div><div class="line"><span class="comment">             * target BroadcastReceivers have run.</span></div><div class="line"><span class="comment">             */</span></div><div class="line">            verification.setComponent(requiredVerifierComponent);</div><div class="line">            idleController.addPowerSaveTempWhitelistApp(Process.myUid(),</div><div class="line">                    mRequiredVerifierPackage, idleDuration,</div><div class="line">                    verifierUser.getIdentifier(), <span class="keyword">false</span>, <span class="string">"package verifier"</span>);</div><div class="line">            <span class="comment">// 之前基础发送给各种verifier 进行校验，最后发送给required的verifier进行校验</span></div><div class="line">            mContext.sendOrderedBroadcastAsUser(verification, verifierUser,</div><div class="line">                    android.Manifest.permission.PACKAGE_VERIFICATION_AGENT,</div><div class="line">                    <span class="keyword">new</span> BroadcastReceiver() &#123;</div><div class="line">                        <span class="comment">// 此处巧妙，此Receiver做为orderedBroadcast的最后一站，将接收到intent。</span></div><div class="line">                        <span class="meta">@Override</span></div><div class="line">                        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</div><div class="line">                            <span class="keyword">final</span> Message msg = mHandler</div><div class="line">                                    .obtainMessage(CHECK_PENDING_VERIFICATION);</div><div class="line">                            msg.arg1 = verificationId;</div><div class="line">                            <span class="comment">// 延时发送校验结束的消息，即超时时间到后发送校验结束，由于未携带</span></div><div class="line">                            <span class="comment">// 校验结果，将被判定为REJECT.</span></div><div class="line">                            mHandler.sendMessageDelayed(msg, getVerificationTimeout());</div><div class="line">                        &#125;</div><div class="line">                    &#125;, <span class="keyword">null</span>, <span class="number">0</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line"></div><div class="line">            <span class="comment">/*</span></div><div class="line"><span class="comment">             * We don't want the copy to proceed until verification</span></div><div class="line"><span class="comment">             * succeeds, so null out this field.</span></div><div class="line"><span class="comment">             */</span></div><div class="line">            mArgs = <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">/*</span></div><div class="line"><span class="comment">         * No package verification is enabled, so immediately start</span></div><div class="line"><span class="comment">         * the remote call to initiate copy using temporary file.</span></div><div class="line"><span class="comment">         */</span></div><div class="line">        ret = args.copyApk(mContainerService, <span class="keyword">true</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">mRet = ret;</div></pre></td></tr></table></figure></span></p>
+<p>以上为发送校验请求，当校验结束后会需要调用verifyPendingInstall 方法通知PackageManagerService 校验结束了，该方法会发送消息PACKAE_VERIFIED给PackageManagerService的PackageHandler.handleMessage 处理，处理流程如下：<br><span id="响应"><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">case</span> PACKAGE_VERIFIED: &#123;</div><div class="line">    <span class="keyword">final</span> <span class="keyword">int</span> verificationId = msg.arg1;</div><div class="line"></div><div class="line">    <span class="keyword">final</span> PackageVerificationState state =</div><div class="line">    <span class="comment">// 通过verificationId 取得 校验状态对象，该对象用来跟踪校验过程的状态变化。</span></div><div class="line">    mPendingVerification.get(verificationId);</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (state == <span class="keyword">null</span>) &#123;</div><div class="line">        Slog.w(TAG, <span class="string">"Invalid verification token "</span> + verificationId + <span class="string">" received"</span>);</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">final</span> PackageVerificationResponse response = (PackageVerificationResponse) msg.obj;</div><div class="line"></div><div class="line">    <span class="comment">// 更新校验状态，会根据calleruid来判断是那个verifier校验的结果。</span></div><div class="line">    state.setVerifierResponse(response.callerUid, response.code);</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (state.isVerificationComplete()) &#123;</div><div class="line">        mPendingVerification.remove(verificationId);</div><div class="line"></div><div class="line">        <span class="keyword">final</span> InstallArgs args = state.getInstallArgs();</div><div class="line">        <span class="keyword">final</span> Uri originUri = Uri.fromFile(args.origin.resolvedFile);</div><div class="line"></div><div class="line">        <span class="keyword">int</span> ret;</div><div class="line">        <span class="keyword">if</span> (state.isInstallAllowed()) &#123;</div><div class="line">            ret = PackageManager.INSTALL_FAILED_INTERNAL_ERROR;</div><div class="line">            <span class="comment">// 校验通过会通知下verifier们校验最终通过了，大家都安心，其实没啥用。</span></div><div class="line">            broadcastPackageVerified(verificationId, originUri,</div><div class="line">                    response.code, state.getInstallArgs().getUser());</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                <span class="comment">// 继续安装流程</span></div><div class="line">                ret = args.copyApk(mContainerService, <span class="keyword">true</span>);</div><div class="line">            &#125; <span class="keyword">catch</span> (RemoteException e) &#123;</div><div class="line">                Slog.e(TAG, <span class="string">"Could not contact the ContainerService"</span>);</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="comment">// 校验失败，返回安装失败的结果。</span></div><div class="line">            ret = PackageManager.INSTALL_FAILED_VERIFICATION_FAILURE;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        Trace.asyncTraceEnd(</div><div class="line">                TRACE_TAG_PACKAGE_MANAGER, <span class="string">"verification"</span>, verificationId);</div><div class="line"></div><div class="line">        processPendingInstall(args, ret);</div><div class="line">        mHandler.sendEmptyMessage(MCS_UNBIND);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">break</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></span></p>
+<p>整个校验的流程其实挺简单的，实际上就是在应用安装的过程中横插了一杠，发送了请求校验的广播出去，然后停止安装，等着有能力校验的应用校验完成后，根据校验的结果继续完成安装过程。至于校验者应用，官方文档介绍，GooglePlay实现了这一校验功能，据说是会扫描采集安装包的信息到Google的后台按照一些规则计算衡量后判定是否符合安装的要求，这大概就是一些应用海外版不能具有某种“黑科技技术”实现的原因吧，因为人家的机子上都有GooglePlay对这些应用进行检查。<br>实际上现在国内许多手机厂商都会实现自己的Verifier，例如我使用的华为P9在安装一些应用的时候，华为的应用商店也会进行校验，然后弹出类似文章开头处的界面。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><h3 id="其他人介绍Package-Verifiers的文章"><a href="#其他人介绍Package-Verifiers的文章" class="headerlink" title="其他人介绍Package Verifiers的文章"></a>其他人介绍Package Verifiers的文章</h3><p><a href="http://irq5.io/2014/12/01/android-internals-package-verifiers/" target="_blank" rel="external">Android Internals: Package Verifiers</a></p>
+<h3 id="Package安装过程"><a href="#Package安装过程" class="headerlink" title="Package安装过程"></a>Package安装过程</h3><p>The following process executes in Package Manager Service.</p>
+<ul>
+<li>Waiting</li>
+<li>Add a package to the queue for the installation process</li>
+<li>Determine the appropriate location of the package installation</li>
+<li>Determine installation Install / Update new</li>
+<li>Copy the apk file to a given directory</li>
+<li>Determine the UID of the app</li>
+<li>Request the installd daemon process</li>
+<li>Create the application directory and set permissions</li>
+<li>Extraction of dex code to the cache directory</li>
+<li>To reflect and packages.list / system / data / packages.xml the latest status</li>
+<li>Broadcast to the system along with the name of the effect of the installation is complete package</li>
+<li>Intent.ACTION_PACKAGE_ADDED: If the new ( Intent.ACTION_PACKAGE_REPLACED): the case of an update</li>
+</ul>
+<p>流程如下图：<br><img src="http://ovfro7ddi.bkt.clouddn.com/Package%20Installer.jpg" alt="package installer"></p>
+<h3 id="PackageManager-详细介绍："><a href="#PackageManager-详细介绍：" class="headerlink" title="PackageManager 详细介绍："></a>PackageManager 详细介绍：</h3><ol>
+<li><a href="https://dzone.com/articles/depth-android-package-manager" target="_blank" rel="external">In Depth: Android Package Manager and Package Installer</a></li>
+<li><a href="http://dsas.blog.klab.org/archives/52069323.html#PackageManagerService.FileInstallArgs.doPostInstall" target="_blank" rel="external">Android パッケージインストール処理のしくみを追う</a><br><script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=>start: Start
+e=>end: end
+install=>operation: PackageManagerService 调用到handleStartCopy方法
+verifierOk=>condition: 获取系统中存在的Verifier,判断系统中是否存在Verifier。
+completeInstall=>operation: PackageManagerService完成安装
+requestVerify=>operation: 发出广播ACTION_PACKAGE_NEEDS_VERIFICATION，设置最大验证超时时长
+timeout=>condition: 是否超时
+verify=>subroutine: Verifier 接收到ACTION_PACKAGE_NEEDS_VERIFICATION广播并检查要安装的应用
+verifyResult=>condition: app是否允许安装
+verifyAllow=>operation: 调用PackageManager.verifyPendingInstall 参数为本次验证的任务ID，结果为VERIFICATION_ALLOW
+verifyReject=>operation: 调用PackageManager.verifyPendingInstall 参数为本次验证的任务ID，结果为VERIFICATION_REJECT
+handleVerifyResult=>condition: 判断返回的verify结果
+stopInstall=>operation: 终止安装，提醒安装被拒绝
+
+st->install->verifierOk
+verifierOk(no)->completeInstall
+verifierOk(yes)->requestVerify->verify->verifyResult
+verifyResult(no)->verifyReject->handleVerifyResult
+verifyResult(yes)->verifyAllow->handleVerifyResult
+handleVerifyResult(yes)->completeInstall
+handleVerifyResult(no)->stopInstall
+stopInstall->e
+completeInstall->e</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script></li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="robot WeChat Pay"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="robot Alipay"/>
+        <p>支付宝支付</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    robot
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://robotshell.com/2018/02/06/Android包管理之App安装前的校验/" title="Android包管理之App安装前的校验">http://robotshell.com/2018/02/06/Android包管理之App安装前的校验/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/android/" rel="tag"># android</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/04/android-O-电源管理之从automotive谈起/" rel="next" title="android O 电源管理之从automotive谈起">
+                <i class="fa fa-chevron-left"></i> android O 电源管理之从automotive谈起
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微薄</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDYzMy83MTg4"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/robot.png"
+              alt="robot" />
+          
+            <p class="site-author-name" itemprop="name">robot</p>
+            <p class="site-description motion-element" itemprop="description">Robot Shell is Future Event.</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Futurevent" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:zj2012zy@163.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#初识Package-Verification"><span class="nav-number">1.</span> <span class="nav-text">初识Package Verification</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用Package-Verification"><span class="nav-number">2.</span> <span class="nav-text">使用Package Verification</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Verify-流程如下："><span class="nav-number">2.1.</span> <span class="nav-text">Verify 流程如下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Verify-过程中使用到的PackageManager-API"><span class="nav-number">2.2.</span> <span class="nav-text">Verify 过程中使用到的PackageManager API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#请求对即将安装的包进行验证"><span class="nav-number">2.2.1.</span> <span class="nav-text">请求对即将安装的包进行验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Verifier-的实现"><span class="nav-number">2.2.2.</span> <span class="nav-text">Verifier 的实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Package-Verification-机制实现分析。"><span class="nav-number">2.3.</span> <span class="nav-text">Package Verification 机制实现分析。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">2.4.</span> <span class="nav-text">参考</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#其他人介绍Package-Verifiers的文章"><span class="nav-number">2.4.1.</span> <span class="nav-text">其他人介绍Package Verifiers的文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Package安装过程"><span class="nav-number">2.4.2.</span> <span class="nav-text">Package安装过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PackageManager-详细介绍："><span class="nav-number">2.4.3.</span> <span class="nav-text">PackageManager 详细介绍：</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017- - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">robot</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
