@@ -1,0 +1,1674 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="android," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Robot Shell" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="android o 在源码工程/package/service/目录下新增了一个目录Car, 做为android automotive的重要组成部分，这部分可理解为在android世界的基础上，调用android的api构造出的Vehicle框架，该框架将android这一系统获得从手机迁移到目前最大的智能设备————车上的能力。从automotive 开始分析android O 的电源管理，一方">
+<meta name="keywords" content="android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="android O 电源管理之从automotive谈起">
+<meta property="og:url" content="http://robotshell.com/2018/02/04/android-O-电源管理之从automotive谈起/index.html">
+<meta property="og:site_name" content="Robot Shell">
+<meta property="og:description" content="android o 在源码工程/package/service/目录下新增了一个目录Car, 做为android automotive的重要组成部分，这部分可理解为在android世界的基础上，调用android的api构造出的Vehicle框架，该框架将android这一系统获得从手机迁移到目前最大的智能设备————车上的能力。从automotive 开始分析android O 的电源管理，一方">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ovfro7ddi.bkt.clouddn.com/android%20automotive%20powermanagement%20arch.png">
+<meta property="og:image" content="http://ovfro7ddi.bkt.clouddn.com/Vehicle%20Power%20Ap%20State%20machine.png">
+<meta property="og:image" content="http://ovfro7ddi.bkt.clouddn.com/Android_Power_Arc.png">
+<meta property="og:image" content="http://ovfro7ddi.bkt.clouddn.com/PowerManagerService_class.png">
+<meta property="og:image" content="http://img.blog.csdn.net/20170412142548617?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQ2xpbmd0b00=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="http://ovfro7ddi.bkt.clouddn.com/Doze_DeviceIdleController_state.png">
+<meta property="og:image" content="http://ovfro7ddi.bkt.clouddn.com/wakelock_acquire_release.png">
+<meta property="og:image" content="http://ovfro7ddi.bkt.clouddn.com/UpdatePowerStateLocked.png">
+<meta property="og:updated_time" content="2018-02-03T16:21:45.915Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="android O 电源管理之从automotive谈起">
+<meta name="twitter:description" content="android o 在源码工程/package/service/目录下新增了一个目录Car, 做为android automotive的重要组成部分，这部分可理解为在android世界的基础上，调用android的api构造出的Vehicle框架，该框架将android这一系统获得从手机迁移到目前最大的智能设备————车上的能力。从automotive 开始分析android O 的电源管理，一方">
+<meta name="twitter:image" content="http://ovfro7ddi.bkt.clouddn.com/android%20automotive%20powermanagement%20arch.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://robotshell.com/2018/02/04/android-O-电源管理之从automotive谈起/"/>
+
+
+
+
+
+  <title>android O 电源管理之从automotive谈起 | Robot Shell</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?5d32bea2dc2845699d3ba9103c01cf71";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Robot Shell</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Futurevent</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-board">
+          <a href="/board" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            board
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2018/02/04/android-O-电源管理之从automotive谈起/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="robot">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/robot.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Robot Shell">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">android O 电源管理之从automotive谈起</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-04T00:15:49+08:00">
+                2018-02-04
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-02-04T00:21:45+08:00">
+                2018-02-04
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>android o 在源码工程/package/service/目录下新增了一个目录Car, 做为android automotive的重要组成部分，这部分可理解为在android世界的基础上，调用android的api构造出的Vehicle框架，该框架将android这一系统获得从手机迁移到目前最大的智能设备————车上的能力。<br>从automotive 开始分析android O 的电源管理，一方面可以站在android api用户的角度，从调用逐层的深入下去直达kernel，另一方面也可以帮助理清android automotive的框架结构。对于android automotive的框架结构的更详细的介绍可以参考另外的说明，本文当然重点还是在于从头到位的串讲下android O的电源管理。<br><a id="more"></a></p>
+<h1 id="android-O-automotive-框架层中的电源管理"><a href="#android-O-automotive-框架层中的电源管理" class="headerlink" title="android O automotive 框架层中的电源管理"></a>android O automotive 框架层中的电源管理</h1><h2 id="Car-Power-Management-框架"><a href="#Car-Power-Management-框架" class="headerlink" title="Car Power Management 框架"></a>Car Power Management 框架</h2><p>源码分析在关于<a href="http://www.robotshell.com/2018/02/03/Android-O-Vehicle%E4%B9%8BCar-Service/" target="_blank" rel="external">Android O Vehicle</a>的相关文章中有详细描述，此处不在赘述，上一张框架图如下：<br><img src="http://ovfro7ddi.bkt.clouddn.com/android%20automotive%20powermanagement%20arch.png" alt="car power"></p>
+<h2 id="androidO-automotive-中定义的AP-Power-状态"><a href="#androidO-automotive-中定义的AP-Power-状态" class="headerlink" title="androidO automotive 中定义的AP Power 状态"></a>androidO automotive 中定义的AP Power 状态</h2><p>Android Vehicle 的电源管理概括起来两件事：同步android与车载MCU的电源状态和通过PowerManager的API控制android的电源状态。</p>
+<p>AP 的官方文档解释：<br>Application Processor, aka SOC. The processor chip running Android. 可以简单理解为Android系统。</p>
+<p>车上的MCU通过gpio或数据总线等方式与AP进行沟通并对AP的电源进行管理，通过get和set属性AP_POWER_STATE的值实现.</p>
+<h3 id="AP-POWER-STATE-get的值（VMCU-–-gt-AP）"><a href="#AP-POWER-STATE-get的值（VMCU-–-gt-AP）" class="headerlink" title="AP_POWER_STATE get的值（VMCU –&gt; AP）"></a>AP_POWER_STATE get的值（VMCU –&gt; AP）</h3><p>android O 的automotive在VehicleProperty中定义了VehicleApPowerState，其中定义了五种状态, hal在监测到车身有如下五种状态间的变化时，向AP上报变化后的状态，如下：</p>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OFF</td>
+<td>0</td>
+<td>vehicle hal 不会向AP上报此状态</td>
+</tr>
+<tr>
+<td>DEEP_SLEEP</td>
+<td>1</td>
+<td>vehicle hal 不会向AP上报此状态</td>
+</tr>
+<tr>
+<td>ON_DISP_OFF</td>
+<td>2</td>
+<td>AP 运行但是灭屏</td>
+</tr>
+<tr>
+<td>ON_FULL</td>
+<td>3</td>
+<td>AP 运行且亮屏，此时用户可交互</td>
+</tr>
+<tr>
+<td>SHUTDOWN_PREPARE</td>
+<td>4</td>
+<td>电源管理请求AP关机，AP视情况进入SLEEP状态或者关机，也可以通过发送SHUTDOWN_POSTPONE请求延时关机</td>
+</tr>
+</tbody>
+</table>
+<p>SHUTDOWN_PREPARE 状态携带参数 VehicleApPowerStateShutdownParam，该参数有三个取值如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SHUTDOWN_IMMEDIATELY</td>
+<td>1</td>
+<td>AP 必须立即关机，延迟关机不被允许</td>
+</tr>
+<tr>
+<td>CAN_SLEEP</td>
+<td>2</td>
+<td>AP 可以使用深度睡眠来代替关机</td>
+</tr>
+<tr>
+<td>SHUTDOWN_ONLY</td>
+<td>3</td>
+<td>允许延迟关机</td>
+</tr>
+</tbody>
+</table>
+<p>这五种状态间的切换关系如下：<br><img src="http://ovfro7ddi.bkt.clouddn.com/Vehicle%20Power%20Ap%20State%20machine.png" alt="vehicle power state machine"></p>
+<h3 id="AP-POWER-STATE-set的值-AP-–-gt-VMCU"><a href="#AP-POWER-STATE-set的值-AP-–-gt-VMCU" class="headerlink" title="AP_POWER_STATE set的值 (AP –&gt; VMCU)"></a>AP_POWER_STATE set的值 (AP –&gt; VMCU)</h3><p>AP开机或其他业务需求触发或响应VMCU对AP的电源管理需求的过程中，需要向VMCU同步AP的电源变化，在VehiclePropertyType 中有如下定义:</p>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BOOT_COMPLETE</td>
+<td>0x1</td>
+<td>AP 已经完成启动</td>
+</tr>
+<tr>
+<td>DEEP_SLEEP_ENTRY</td>
+<td>0x2</td>
+<td>AP 正在进入deep sleep 状态</td>
+</tr>
+<tr>
+<td>DEEP_SLEEP_EXIT</td>
+<td>0x3</td>
+<td>AP 正在退出deep sleep 状态</td>
+</tr>
+<tr>
+<td>SHUTDOWN_POSTPONE</td>
+<td>0x4</td>
+<td>AP 请求延时关机，单次最大支持5000ms</td>
+</tr>
+<tr>
+<td>SHUTDOWN_START</td>
+<td>0x5</td>
+<td>AP 正在关机，可携带参数指定关机多久后开机</td>
+</tr>
+<tr>
+<td>DISPLAY_OFF</td>
+<td>0x6</td>
+<td>用户请求关闭显示</td>
+</tr>
+<tr>
+<td>DISPLAY_ON</td>
+<td>0x7</td>
+<td>用户请求打开显示</td>
+</tr>
+</tbody>
+</table>
+<p>以上为automotive 部分的电源管理，automotive 部分说明了对android电源管理的请求从VMCU来或者从调用Car接口来。但是automotive 对电源管理请求最终的处理，还得到android系统中，再进一步到kernel中去。</p>
+<hr>
+<h2 id="Android-电源管理"><a href="#Android-电源管理" class="headerlink" title="Android 电源管理"></a>Android 电源管理</h2><p>automotive 通过调用 PowerManager的API实现对Android的电源管理，android 系统的电源管理牵涉的模块非常的多，但是其主要框架是以PowerManagerService核心的，PowerManagerService 做为系统Service与其他系统Service 一起在SystemServer中被初始化。</p>
+<h3 id="android-的电源管理整体框架"><a href="#android-的电源管理整体框架" class="headerlink" title="android 的电源管理整体框架"></a>android 的电源管理整体框架</h3><p><img src="http://ovfro7ddi.bkt.clouddn.com/Android_Power_Arc.png" alt="电源管理框架"><br>由图可知，电源管理框架可分为如下基层：</p>
+<ul>
+<li>应用层：例如Vehicle的电源管理、设置等其他应用等。</li>
+<li>Framework层：主要实现android电源管理的策略，负责调度和通知其他模块对电源管理做出响应。主要分为JavaFramework 和以com_android_server_power_PowerManagerService.cpp为核心的nativeFramework。</li>
+<li>HAL层：主要包含传统的hardware_legacy中的power.c和android O 新增的Vendor Interface 对应的Hardware/Interface/Power 中的power.hal 部分。</li>
+<li>Kernel层：主要包含linux的电源管理策略，以及对suspend lock的控制和reboot系统调用。<h3 id="PowerManagerService-的基本结构"><a href="#PowerManagerService-的基本结构" class="headerlink" title="PowerManagerService 的基本结构"></a>PowerManagerService 的基本结构</h3><img src="http://ovfro7ddi.bkt.clouddn.com/PowerManagerService_class.png" alt="PowerManagerService 基本结构"></li>
+</ul>
+<h3 id="automotive-中调用到的PowerManager相关部分"><a href="#automotive-中调用到的PowerManager相关部分" class="headerlink" title="automotive 中调用到的PowerManager相关部分"></a>automotive 中调用到的PowerManager相关部分</h3><p>主要在SystemInterfaceImpl中</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shutdown</td>
+<td>Turn off the device</td>
+</tr>
+<tr>
+<td>goToSleep</td>
+<td>Forces the device to go to sleep</td>
+</tr>
+<tr>
+<td>PARTIAL_WAKE_LOCK</td>
+<td>Ensures that the CPU is running; the screen and keyboard backlight will be allowed to go off</td>
+</tr>
+<tr>
+<td>FULL_WAKE_LOCK</td>
+<td>Ensures that the screen and keyboard backlight are on</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>shutdown 会依次调用到<div id="flowchart-0" class="flow-chart"></div></li>
+<li>goToSleep<br>调用goToSleep的时候第三个参数为GO_TO_SLEEP_FLAG_NO_DOZE(Go to sleep flag: Skip dozing state and directly go to full sleep)<br>这里提到的Doze 模式,是android 6.0 后新增的特性<br><img src="http://img.blog.csdn.net/20170412142548617?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQ2xpbmd0b00=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="Doze"><br>如上图：Doze模式提供一个复发的maintenance window给app去使用网络和处理挂起的操作<br>Doze 模式下的限制:<ol>
+<li>网络访问功能被关闭</li>
+<li>系统会忽略wake locks，即app无法持续占有电源</li>
+<li>标准闹钟 AlarmManager（包括setExact()和setWindow()）都会被延时到下一个maintenance window才激活<br>3.1. 如果app仍需要在Doze时使闹钟生效，可以使用setAndAllowWhileIdle()或setExactAndAllowWhileIdle()<br>3.2. 使用函数setAlarmClock()设置的闹钟在Doze时仍会生效，系统会在闹钟生效前推出Doze。</li>
+<li>系统不会进行Wi-Fi扫描</li>
+<li>系统不允许异步Adapters运行</li>
+<li>系统不允许JobScheduler运行</li>
+</ol>
+</li>
+</ul>
+<p>Doze 主要由DeviceIdleController实现，在DeviceIdleController中通过设备逐渐的满足条件，使得系统一步步的进入到doze状态下，流程如下图(android O貌似与此图有些微不同)：<br><img src="http://ovfro7ddi.bkt.clouddn.com/Doze_DeviceIdleController_state.png" alt="Doze state"></p>
+<p>分析源码可知，goToSleep 的实现最终也是依赖WakeLock锁来实现的，实现的流程先省略。且往下看。</p>
+<h3 id="WakeLock"><a href="#WakeLock" class="headerlink" title="WakeLock"></a>WakeLock</h3><p>这里主要用到了两种锁如下</p>
+<table>
+<thead>
+<tr>
+<th>锁</th>
+<th>cpu</th>
+<th>display</th>
+<th>keyboard</th>
+<th>电源键影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PARTIAL_WAKE_LOCK = 0x00000001</td>
+<td>On</td>
+<td>off</td>
+<td>off</td>
+<td>不受</td>
+</tr>
+<tr>
+<td>FULL_WAKE_LOCK = 0x0000001a</td>
+<td>On</td>
+<td>Bright</td>
+<td>On</td>
+<td>受</td>
+</tr>
+</tbody>
+</table>
+<p>android 中其他锁的定义如下表：</p>
+<table>
+<thead>
+<tr>
+<th>锁类型</th>
+<th>cpu</th>
+<th>display</th>
+<th>keyboard</th>
+<th>电源键影响</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PARTIAL_WAKE_LOCK = 0x00000001</td>
+<td>on</td>
+<td>off</td>
+<td>off</td>
+<td>不受</td>
+<td></td>
+</tr>
+<tr>
+<td>SCREEN_DIM_WAKE_LOCK = 0x00000006</td>
+<td>on</td>
+<td>dim</td>
+<td>off</td>
+<td>受</td>
+<td></td>
+</tr>
+<tr>
+<td>SCREEN_BRIGHT_WAKE_LOCK = 0x0000000a</td>
+<td>on</td>
+<td>bright</td>
+<td>off</td>
+<td>受</td>
+<td></td>
+</tr>
+<tr>
+<td>FULL_WAKE_LOCK = 0x0000001a</td>
+<td>on</td>
+<td>bright</td>
+<td>off</td>
+<td>受</td>
+<td></td>
+</tr>
+<tr>
+<td>PROXIMITY_SCREEN_OFF_WAKE_LOCK = 0x00000020</td>
+<td>距离传感器导致的灭屏后on，否则可正常off</td>
+<td>距离传感器检测到有物体off,否则on</td>
+<td>off</td>
+<td>受</td>
+<td>需要设备支持距离传感器，不能和ACQUIRE_CAUSES_WAKEUP一起用</td>
+</tr>
+<tr>
+<td>DOZE_WAKE_LOCK = 0x00000040</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>受</td>
+<td>系统支持doze</td>
+</tr>
+<tr>
+<td>DRAW_WAKE_LOCK = 0x00000080</td>
+<td>on</td>
+<td>off</td>
+<td>off</td>
+<td>不受</td>
+<td>windowManager允许应用在dozing状态绘制屏幕</td>
+</tr>
+</tbody>
+</table>
+<p>配合锁使用的两个flag</p>
+<table>
+<thead>
+<tr>
+<th>flag</th>
+<th>说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACQUIRE_CAUSES_WAKEUP = 0x10000000</td>
+<td>正常情况下，获取wakelock是不会唤醒设备的，加上该标志之后，acquire wakelock也会唤醒设备</td>
+<td>不能和PARTIAL_WAKE_LOCK 一起用</td>
+</tr>
+<tr>
+<td>ON_AFTER_RELEASE = 0x20000000</td>
+<td>和用户体验有关，当wakelock释放后如果没有该标志，屏幕会立即黑屏，如果有该标志，屏幕会亮一小会然后在黑屏。</td>
+<td>不能和PARTIAL_WAKE_LOCK 一起用</td>
+</tr>
+</tbody>
+</table>
+<p>对于锁的使用无非就是两种操作，acquire和release。对于这两个过程，见如下流程图：<br><img src="http://ovfro7ddi.bkt.clouddn.com/wakelock_acquire_release.png" alt="wakelock acqure &amp; release"></p>
+<h3 id="Wakefulness"><a href="#Wakefulness" class="headerlink" title="Wakefulness"></a>Wakefulness</h3><p>PowerManagerService 中的 mWakefulness 用来指示当前设备所处的状态，它有四种取值</p>
+<table>
+<thead>
+<tr>
+<th>Wakefulness</th>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WAKEFULNESS_ASLEEP</td>
+<td>0</td>
+<td>表示系统当前处于休眠状态，只能通过调用wakeup()唤醒</td>
+</tr>
+<tr>
+<td>WAKEFULNESS_AWAKE</td>
+<td>1</td>
+<td>表示系统当前处于正常运行状态</td>
+</tr>
+<tr>
+<td>WAKEFULNESS_DREAMING</td>
+<td>2</td>
+<td>表示系统当前处于屏保状态</td>
+</tr>
+<tr>
+<td>WAKEFULNESS_DOZING</td>
+<td>3</td>
+<td>表示系统当前处于“Doze”状态，在该状态只有低功耗的屏保可以运行，其他应用进程将被挂起</td>
+</tr>
+</tbody>
+</table>
+<p>在PowerManagerService 中无论是开关机，还是影响电源管理的用户行为（UserActivity）的管理，还是对wakelock锁的使用，（PowerManagerService中有两个很重要的底层SuspendBlockerLock:CPU锁————PowerManagerService.WakeLocks和Display锁————PowerManagerService.Display，系统通过向设备节点文件/sys/power/wake_lock 和 /sys/power/wake_unlock写入这两个锁的名字来控制cpu和display），最终都会调用到一个很重要的方法updatePowerStateLocked，该方法是整个PowerManagerService的核心。<br>其大体调用逻辑如下：<br><img src="http://ovfro7ddi.bkt.clouddn.com/UpdatePowerStateLocked.png" alt="updatePowerStateLocked"></p>
+<hr>
+<h2 id="Android-HAL-及更底层的电源管理"><a href="#Android-HAL-及更底层的电源管理" class="headerlink" title="Android HAL 及更底层的电源管理"></a>Android HAL 及更底层的电源管理</h2><p>Android的电源管理提出wakelock的是一套全新的机制，借用C++里智能指针思想来设计电源的使用和分配。wake_lock保持使用计数，只不过这种“智能指针”的所使用的资源不再是内存，而是电量。应用程序会通过特定的WakeLock去访问硬件，然后硬件会根据引用计数是否为0来决定是不是需要关闭这一硬件的供电。 这种机制在SuspendBlockerImpl 中实现，通过对mReferenceCount的判断是否调用nativeAcquireSuspendBlocker和nativeReleaseSuspendBlocker, 底层调用通过向设备节点文件/sys/power/wake_lock 和 /sys/power/wake_unlock 里写入锁的名字实现对对应设备是否休眠的操作。</p>
+<h3 id="PowerManagerService-对应的-hardware-interface"><a href="#PowerManagerService-对应的-hardware-interface" class="headerlink" title="PowerManagerService 对应的 hardware interface"></a>PowerManagerService 对应的 hardware interface</h3><p>位置： hardware/interface/power/1.0/ 其中IPower.hal 提供如下四个接口：</p>
+<ul>
+<li>setInteractive(bool interactive)  设置系统是否交互状态，通常亮灭屏调用</li>
+<li>powerhint(Powerhint hint, int32_t data) 调整cpu频率等参数时用来传递hint</li>
+<li>setFeature(Feature feature, bool activate) 用来使能实际的feature</li>
+<li>getPlatformLowPowerStats()generates(vec<powerstateplatformsleepstate>), statuss retval);</powerstateplatformsleepstate></li>
+</ul>
+<hr>
+<h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><p>linux 电源管理相关blog: <a href="http://www.wowotech.net/sort/pm_subsystem" target="_blank" rel="external">电源管理子系统</a></p>
+<p><script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=>start: Start
+A=>operation: PowerManagerService.BinderService.shutdown
+B=>operation: PowerManagerService.shutdownOrRebootInternal
+C=>operation: ShutdownThread.shutdown
+D=>operation: shutdownInner
+E=>operation: beginShutdownSequence
+F=>operation: 在ShutdownThread的run方法中 AMS PMS 等Service的shutdown方法做清理工作
+G=>operation: PowerManagerService.lowLevelShutdown 修改属性sys.powerctl值为shutdown
+H=>operation: property_service 监测到属性变化后最终调用到init.cpp中的property_changed]
+I=>operation: 调用reboot.cpp的HandlePowerctlMessage->DoReboot中进行一些清理工作->RebotSystem 最终调用系统调用reboot
+e=>end: End
+
+st->A->B->C->D->E->F->G->H->I->e</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="robot WeChat Pay"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="robot Alipay"/>
+        <p>支付宝支付</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    robot
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://robotshell.com/2018/02/04/android-O-电源管理之从automotive谈起/" title="android O 电源管理之从automotive谈起">http://robotshell.com/2018/02/04/android-O-电源管理之从automotive谈起/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/android/" rel="tag"># android</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/03/Android-O-Vehicle之Car-Service/" rel="next" title="Android O Vehicle之Car Service">
+                <i class="fa fa-chevron-left"></i> Android O Vehicle之Car Service
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/06/Android包管理之App安装前的校验/" rel="prev" title="Android包管理之App安装前的校验">
+                Android包管理之App安装前的校验 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微薄</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDYzMy83MTg4"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/robot.png"
+              alt="robot" />
+          
+            <p class="site-author-name" itemprop="name">robot</p>
+            <p class="site-description motion-element" itemprop="description">Robot Shell is Future Event.</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Futurevent" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:zj2012zy@163.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#android-O-automotive-框架层中的电源管理"><span class="nav-number">1.</span> <span class="nav-text">android O automotive 框架层中的电源管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Car-Power-Management-框架"><span class="nav-number">1.1.</span> <span class="nav-text">Car Power Management 框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#androidO-automotive-中定义的AP-Power-状态"><span class="nav-number">1.2.</span> <span class="nav-text">androidO automotive 中定义的AP Power 状态</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AP-POWER-STATE-get的值（VMCU-–-gt-AP）"><span class="nav-number">1.2.1.</span> <span class="nav-text">AP_POWER_STATE get的值（VMCU –> AP）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AP-POWER-STATE-set的值-AP-–-gt-VMCU"><span class="nav-number">1.2.2.</span> <span class="nav-text">AP_POWER_STATE set的值 (AP –> VMCU)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-电源管理"><span class="nav-number">1.3.</span> <span class="nav-text">Android 电源管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#android-的电源管理整体框架"><span class="nav-number">1.3.1.</span> <span class="nav-text">android 的电源管理整体框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PowerManagerService-的基本结构"><span class="nav-number">1.3.2.</span> <span class="nav-text">PowerManagerService 的基本结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#automotive-中调用到的PowerManager相关部分"><span class="nav-number">1.3.3.</span> <span class="nav-text">automotive 中调用到的PowerManager相关部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WakeLock"><span class="nav-number">1.3.4.</span> <span class="nav-text">WakeLock</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Wakefulness"><span class="nav-number">1.3.5.</span> <span class="nav-text">Wakefulness</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-HAL-及更底层的电源管理"><span class="nav-number">1.4.</span> <span class="nav-text">Android HAL 及更底层的电源管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PowerManagerService-对应的-hardware-interface"><span class="nav-number">1.4.1.</span> <span class="nav-text">PowerManagerService 对应的 hardware interface</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资源"><span class="nav-number">1.5.</span> <span class="nav-text">参考资源</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017- - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">robot</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

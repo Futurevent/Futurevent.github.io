@@ -352,6 +352,959 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2018/02/06/Android包管理之App安装前的校验/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="robot">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/robot.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Robot Shell">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/06/Android包管理之App安装前的校验/" itemprop="url">Android包管理之App安装前的校验</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-06T21:32:49+08:00">
+                2018-02-06
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-02-06T21:35:44+08:00">
+                2018-02-06
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="初识Package-Verification"><a href="#初识Package-Verification" class="headerlink" title="初识Package Verification"></a>初识Package Verification</h1><p>之前在做机器人操作系统的时候有过这样的需求，希望在安装应用的时候判断该应用是否符合机器人系统的操作规范，说白了就是需要扫描一下这个apk，是否符合某些规则。当然，这个需求可以在andoird 安装应用的过程实现。但是查看源码发现了Package Verification，这是一个没有多少文档介绍也没有相应demo的特性。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/06/Android包管理之App安装前的校验/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2018/02/04/android-O-电源管理之从automotive谈起/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="robot">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/robot.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Robot Shell">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/04/android-O-电源管理之从automotive谈起/" itemprop="url">android O 电源管理之从automotive谈起</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-04T00:15:49+08:00">
+                2018-02-04
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-02-04T00:21:45+08:00">
+                2018-02-04
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>android o 在源码工程/package/service/目录下新增了一个目录Car, 做为android automotive的重要组成部分，这部分可理解为在android世界的基础上，调用android的api构造出的Vehicle框架，该框架将android这一系统获得从手机迁移到目前最大的智能设备————车上的能力。<br>从automotive 开始分析android O 的电源管理，一方面可以站在android api用户的角度，从调用逐层的深入下去直达kernel，另一方面也可以帮助理清android automotive的框架结构。对于android automotive的框架结构的更详细的介绍可以参考另外的说明，本文当然重点还是在于从头到位的串讲下android O的电源管理。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/04/android-O-电源管理之从automotive谈起/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2018/02/03/Android-O-Vehicle之Car-Service/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="robot">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/robot.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Robot Shell">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/03/Android-O-Vehicle之Car-Service/" itemprop="url">Android O Vehicle之Car Service</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-03T18:28:49+08:00">
+                2018-02-03
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-02-03T19:22:03+08:00">
+                2018-02-03
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Car Service 是 android O automotive 的核心实现。第一承担部分具体业务逻辑，第二向上为Car API 提供支撑，第三向下调用android api 或者调用 Vehicle Hal 获取车辆数据，控制车辆行为。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/03/Android-O-Vehicle之Car-Service/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2018/02/03/Android-O-Vehicle之架构介绍/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="robot">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/robot.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Robot Shell">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/03/Android-O-Vehicle之架构介绍/" itemprop="url">Android O Vehicle之架构介绍</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-03T18:28:31+08:00">
+                2018-02-03
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-02-03T21:55:29+08:00">
+                2018-02-03
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Android Automotive 是 Android Orea 中的一个特色功能，从AOSP的代码上看，android automotive 已经包含了从app层到framework层到hal层的各层级结构。本文简单介绍 Android Orea Vehicle 的架构形式<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/03/Android-O-Vehicle之架构介绍/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2018/01/08/Android-EventLog-Tags-说明/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="robot">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/robot.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Robot Shell">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/08/Android-EventLog-Tags-说明/" itemprop="url">Android-EventLog-Tags 说明</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-08T23:35:54+08:00">
+                2018-01-08
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-01-08T23:35:54+08:00">
+                2018-01-08
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Event Log, 官方的解释为</p>
+<blockquote>
+<p>System diagnostic event record. System diagnostic events are used to record certain system-level events (such as garbage collection, activity manager state, system watchdogs, and other low level activity), which may be automatically collected and analyzed during system development.<br>This is not the main “logcat” debugging log (Log)! These diagnostic events are for system integrators, not application authors.<br>Events use integer tag codes corresponding to /system/etc/event-log-tags. They carry a payload of one or more int, long, or String values. The event-log-tags file defines the payload contents for each type code.</p>
+</blockquote>
+<p>大概意思是说，是系统诊断事件的记录。这些事件都是系统级别事件，例如垃圾回收，ActivityManager的状态，系统看门够以及一些其他的事件。这些事件在系统开发的过程中会被自动的采集和分析。这些事件不是main debug调试log，它是给系统开发集成商看的，不是给应用开发者看的。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/08/Android-EventLog-Tags-说明/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2018/01/07/Linux-安装和使用Cisco-AnyConnect-Client/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="robot">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/robot.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Robot Shell">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/07/Linux-安装和使用Cisco-AnyConnect-Client/" itemprop="url">Linux-安装和使用Cisco AnyConnect Client</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-07T13:12:39+08:00">
+                2018-01-07
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-01-07T13:12:39+08:00">
+                2018-01-07
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>以前使用的vpn到期了，而且最近查的挺严，原先的好多vpn都用不了了，在同事的推荐下使用<a href="https://edgevpn.com/" target="_blank" rel="external"><strong>矩阵研究所</strong>
+</a>自己搭建的shadowsocks翻墙上网，他提供了windows、ios、android各平台的客户端，唯独未提供linux的客户端。不过他还好支持anyconnect，所以在linux还是可以配置anyconnect client 进行使用的。配置过程记录如下，供以后参考。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/07/Linux-安装和使用Cisco-AnyConnect-Client/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://robotshell.com/2017/11/04/Linux-版本控制工具之Rabbitvcs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -460,955 +1413,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/11/04/Linux-版本控制工具之Rabbitvcs/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2017/10/26/纵论物联网（七）：面向智能家居的物联网解决方案/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="robot">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/robot.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Robot Shell">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/26/纵论物联网（七）：面向智能家居的物联网解决方案/" itemprop="url">纵论物联网（七）：面向智能家居的物联网解决方案</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-26T00:00:00+08:00">
-                2017-10-26
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2017-11-05T01:26:52+08:00">
-                2017-11-05
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/物联网/" itemprop="url" rel="index">
-                    <span itemprop="name">物联网</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>导语<br>智能家居是非常广泛的一类物联网应用。目前国内最常用的面向智能家居的无线协议有WiFi、Zigbee、433MHz无线技术，另外还有基于电力线载波的有线解决方案。今天我们聊一下常用于智能家居的技术有哪些？<br><img src="http://ovfro7ddi.bkt.clouddn.com/%E9%9D%A2%E5%90%91%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%881.JPEG" alt="面向智能家居的物联网解决方案"><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/26/纵论物联网（七）：面向智能家居的物联网解决方案/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2017/10/26/纵论物联网（八）：面向可穿戴设备的无线物联网技术/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="robot">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/robot.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Robot Shell">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/26/纵论物联网（八）：面向可穿戴设备的无线物联网技术/" itemprop="url">纵论物联网（八）：面向可穿戴设备的无线物联网技术</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-26T00:00:00+08:00">
-                2017-10-26
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2017-11-05T00:43:57+08:00">
-                2017-11-05
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/物联网/" itemprop="url" rel="index">
-                    <span itemprop="name">物联网</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>导语<br>智能手环、智能手表为代表的可穿戴设备，在短短几年时间内，就已经在全世界普及开来。可穿戴设备是物联网领域很重要的一种设备类型，特点是功耗低、体积小、电量有限 。本文主要介绍可应用于可穿戴设备的无线技术有哪些？<br><img src="http://ovfro7ddi.bkt.clouddn.com/%E9%9D%A2%E5%90%91%E5%8F%AF%E7%A9%BF%E6%88%B4%E8%AE%BE%E5%A4%87%E7%9A%84%E6%97%A0%E7%BA%BF%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF1.JPEG" alt="纵论物联网（八）：面向可穿戴设备的无线物联网技术"><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/26/纵论物联网（八）：面向可穿戴设备的无线物联网技术/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2017/10/26/纵论物联网（五）：除了Linux，还有什么物联网操作系统/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="robot">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/robot.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Robot Shell">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/26/纵论物联网（五）：除了Linux，还有什么物联网操作系统/" itemprop="url">纵论物联网（五）：除了Linux，还有什么物联网操作系统</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-26T00:00:00+08:00">
-                2017-10-26
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2017-11-05T00:43:57+08:00">
-                2017-11-05
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/物联网/" itemprop="url" rel="index">
-                    <span itemprop="name">物联网</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>在前面介绍物联网终端设备的文章中，我们已经简单地介绍了物联网操作系统。物联网操作系统的种类非常多，不过其中有很大一部分是基于Linux系统改造的，还有一些系统是商业公司或开源组织开发的，当然微软公司也开发了一系列面向嵌入式应用的操作系统。<br><img src="http://p1.pstatp.com/large/26e400043526f2087cb0" alt="物联网操作系统"><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/26/纵论物联网（五）：除了Linux，还有什么物联网操作系统/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2017/10/26/纵论物联网（三）：3GPP物联网技术/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="robot">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/robot.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Robot Shell">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/26/纵论物联网（三）：3GPP物联网技术/" itemprop="url">纵论物联网（三）：3GPP物联网技术</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-26T00:00:00+08:00">
-                2017-10-26
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2017-11-05T12:54:25+08:00">
-                2017-11-05
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/物联网/" itemprop="url" rel="index">
-                    <span itemprop="name">物联网</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>导语<br>随着物联网应用的发展，对于大范围组网的需求越来越多，LPWAN技术备受关注。前面的LPWAN技术文章介绍过，LPWAN技术可根据工作频段分为两类：一类是工作于未授权频段的无线技术，以LoRa、SigFox为代表；一类是工作于授权频段下的无线技术，以3GPP支持的2/3/4G蜂窝通信技术为代表。<br><img src="http://ovfro7ddi.bkt.clouddn.com/%EF%BC%93GPP%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF%EF%BC%91.JPEG" alt="3GPP物联网技术"><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/26/纵论物联网（三）：3GPP物联网技术/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2017/10/26/纵论物联网（九）：物联网设备的标识技术/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="robot">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/robot.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Robot Shell">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/26/纵论物联网（九）：物联网设备的标识技术/" itemprop="url">纵论物联网（九）：物联网设备的标识技术</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-26T00:00:00+08:00">
-                2017-10-26
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2017-11-05T00:43:57+08:00">
-                2017-11-05
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/物联网/" itemprop="url" rel="index">
-                    <span itemprop="name">物联网</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>导语<br>物联网主要由三个方面关键技术：<em>连接</em>、<em>标识</em>以及<em>数据的操作</em>。</p>
-<p>在前面的文章中，我们已经谈了很多关于物联网中物体如何连接网络的技术，而实际上物体的标识才是物联网实现的第一步，就是我们要唯一地标识和区分每一个物体。<br>以RFID为代表的物体标识技术曾经几乎就是物联网的代名词，而今RFID的演进技术NFC又在各个领域发挥着重要作用。通过这篇文章，我们来聊一聊物联网设备的标识技术，RFID与NFC究竟有什么关系？<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/26/纵论物联网（九）：物联网设备的标识技术/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2017/10/26/纵论物联网/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="robot">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/robot.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Robot Shell">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/26/纵论物联网/" itemprop="url">纵论物联网</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-26T00:00:00+08:00">
-                2017-10-26
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2017-11-05T00:43:57+08:00">
-                2017-11-05
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/物联网/" itemprop="url" rel="index">
-                    <span itemprop="name">物联网</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>最近在网上看到一篇介绍物联网的系列文章《纵论物联网》，但是很遗憾，都是来回转载的，也没有找到出处，零零散散的，东一篇西一篇，看起来很不方便。现汇总收集如下，既做整理，也做收藏。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/26/纵论物联网/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1617,7 +1621,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2017/10/26/纵论物联网（一）：无线技术分类/">
+    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2017/10/26/纵论物联网（七）：面向智能家居的物联网解决方案/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="robot">
@@ -1636,7 +1640,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/26/纵论物联网（一）：无线技术分类/" itemprop="url">纵论物联网（一）：无线技术分类</a></h1>
+                <a class="post-title-link" href="/2017/10/26/纵论物联网（七）：面向智能家居的物联网解决方案/" itemprop="url">纵论物联网（七）：面向智能家居的物联网解决方案</a></h1>
         
 
         <div class="post-meta">
@@ -1664,7 +1668,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-11-05T00:43:57+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-11-05T01:26:52+08:00">
                 2017-11-05
               </time>
             
@@ -1721,11 +1725,10 @@
 
       
         
-          <p>物联网的关键技术包括三个方面：物体的识别、物体的连接以及对数据的操作。随着联网物体的数量越来越多，无线技术在物联网中发挥的作用也越来越大。<br><img src="http://p1.pstatp.com/large/22d2000589af2a27d43f" alt="纵论物联网（一）：无线技术分类"></p>
-<h1 id="物联网无线技术分类"><a href="#物联网无线技术分类" class="headerlink" title="物联网无线技术分类"></a>物联网无线技术分类</h1>
+          <p>导语<br>智能家居是非常广泛的一类物联网应用。目前国内最常用的面向智能家居的无线协议有WiFi、Zigbee、433MHz无线技术，另外还有基于电力线载波的有线解决方案。今天我们聊一下常用于智能家居的技术有哪些？<br><img src="http://ovfro7ddi.bkt.clouddn.com/%E9%9D%A2%E5%90%91%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%881.JPEG" alt="面向智能家居的物联网解决方案"><br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/10/26/纵论物联网（一）：无线技术分类/#more" rel="contents">
+            <a class="btn" href="/2017/10/26/纵论物联网（七）：面向智能家居的物联网解决方案/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1776,7 +1779,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2017/10/26/纵论物联网（十）：物联网应用层协议/">
+    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2017/10/26/纵论物联网（三）：3GPP物联网技术/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="robot">
@@ -1795,7 +1798,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/26/纵论物联网（十）：物联网应用层协议/" itemprop="url">纵论物联网（十）：物联网应用层协议</a></h1>
+                <a class="post-title-link" href="/2017/10/26/纵论物联网（三）：3GPP物联网技术/" itemprop="url">纵论物联网（三）：3GPP物联网技术</a></h1>
         
 
         <div class="post-meta">
@@ -1823,7 +1826,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-11-05T00:43:57+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-11-05T12:54:25+08:00">
                 2017-11-05
               </time>
             
@@ -1880,10 +1883,10 @@
 
       
         
-          <p>导语<br>物联网的关键技术主要解决三个方面的问题：<u>物体的识别、物体的连接、物体的数据交换</u>。每个方面都有一些技术解决方案，在前面的文章中，我们介绍了RFID、NFC等物体识别及电子标签的技术，也介绍了物联网节点组网与接入的技术。这篇文章主要讲一下物联网的数据是如何处理的。<br><img src="http://ovfro7ddi.bkt.clouddn.com/%E7%89%A9%E8%81%94%E7%BD%91%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%EF%BC%91.JPEG" alt="keyTec"><br>物联网关键技术大全<br>
+          <p>导语<br>随着物联网应用的发展，对于大范围组网的需求越来越多，LPWAN技术备受关注。前面的LPWAN技术文章介绍过，LPWAN技术可根据工作频段分为两类：一类是工作于未授权频段的无线技术，以LoRa、SigFox为代表；一类是工作于授权频段下的无线技术，以3GPP支持的2/3/4G蜂窝通信技术为代表。<br><img src="http://ovfro7ddi.bkt.clouddn.com/%EF%BC%93GPP%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF%EF%BC%91.JPEG" alt="3GPP物联网技术"><br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/10/26/纵论物联网（十）：物联网应用层协议/#more" rel="contents">
+            <a class="btn" href="/2017/10/26/纵论物联网（三）：3GPP物联网技术/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1974,7 +1977,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2558,6 +2561,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 
