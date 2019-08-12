@@ -13,8 +13,8 @@ http://robotshell.com/2017/11/04/Linux-版本控制工具之Rabbitvcs/
 http://robotshell.com/2017/10/26/纵论物联网（三）：3GPP物联网技术/
 http://robotshell.com/2017/10/26/纵论物联网（二）：LPWAN技术/
 http://robotshell.com/2017/10/26/纵论物联网（五）：除了Linux，还有什么物联网操作系统/
-http://robotshell.com/2017/10/26/纵论物联网（八）：面向可穿戴设备的无线物联网技术/
 http://robotshell.com/2017/10/26/纵论物联网（六）：基于Linux的物联网操作系统/
+http://robotshell.com/2017/10/26/纵论物联网（八）：面向可穿戴设备的无线物联网技术/
 http://robotshell.com/2017/10/26/纵论物联网（十）：物联网应用层协议/
 http://robotshell.com/2017/10/26/纵论物联网/
 http://robotshell.com/2017/10/26/纵论物联网（一）：无线技术分类/

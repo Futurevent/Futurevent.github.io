@@ -43,7 +43,7 @@
     <link href="http://robotshell.com/2018/06/21/android%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B9%8B%E5%B8%A7%E7%8E%87%E6%B5%8B%E8%AF%95/"/>
     <id>http://robotshell.com/2018/06/21/android性能优化之帧率测试/</id>
     <published>2018-06-21T10:17:49.000Z</published>
-    <updated>2019-08-12T08:08:28.690Z</updated>
+    <updated>2019-08-12T08:25:11.193Z</updated>
     
     <summary type="html">
     
@@ -334,15 +334,15 @@
   </entry>
   
   <entry>
-    <title>纵论物联网（八）：面向可穿戴设备的无线物联网技术</title>
-    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E9%9D%A2%E5%90%91%E5%8F%AF%E7%A9%BF%E6%88%B4%E8%AE%BE%E5%A4%87%E7%9A%84%E6%97%A0%E7%BA%BF%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF/"/>
-    <id>http://robotshell.com/2017/10/26/纵论物联网（八）：面向可穿戴设备的无线物联网技术/</id>
+    <title>纵论物联网（六）：基于Linux的物联网操作系统</title>
+    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E5%9F%BA%E4%BA%8ELinux%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://robotshell.com/2017/10/26/纵论物联网（六）：基于Linux的物联网操作系统/</id>
     <published>2017-10-25T16:00:00.000Z</published>
     <updated>2019-08-12T06:32:26.230Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;导语&lt;br&gt;智能手环、智能手表为代表的可穿戴设备，在短短几年时间内，就已经在全世界普及开来。可穿戴设备是物联网领域很重要的一种设备类型，特点是功耗低、体积小、电量有限 。本文主要介绍可应用于可穿戴设备的无线技术有哪些？&lt;br&gt;&lt;img src=&quot;http://ovfro7ddi.bkt.clouddn.com/%E9%9D%A2%E5%90%91%E5%8F%AF%E7%A9%BF%E6%88%B4%E8%AE%BE%E5%A4%87%E7%9A%84%E6%97%A0%E7%BA%BF%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF1.JPEG&quot; alt=&quot;纵论物联网（八）：面向可穿戴设备的无线物联网技术&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;提到物联网操作系统，就不能不提Linux，因为Linux可能是目前在物联网设备中应用最广的操作系统了。前面的文章刚刚介绍了不少非Linux类的物联网操作系统，本文就来介绍一下目前常用的基于Linux的物联网操作系统。&lt;br&gt;&lt;img src=&quot;http://images.ofweek.com/Upload/News/2017-06/14/lime/1497400939793024893.jpg&quot; alt=&quot;基于Linux的物联网操作系统&quot;&gt;&lt;/p&gt;
     
     </summary>
     
@@ -354,15 +354,15 @@
   </entry>
   
   <entry>
-    <title>纵论物联网（六）：基于Linux的物联网操作系统</title>
-    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E5%9F%BA%E4%BA%8ELinux%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    <id>http://robotshell.com/2017/10/26/纵论物联网（六）：基于Linux的物联网操作系统/</id>
+    <title>纵论物联网（八）：面向可穿戴设备的无线物联网技术</title>
+    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E9%9D%A2%E5%90%91%E5%8F%AF%E7%A9%BF%E6%88%B4%E8%AE%BE%E5%A4%87%E7%9A%84%E6%97%A0%E7%BA%BF%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF/"/>
+    <id>http://robotshell.com/2017/10/26/纵论物联网（八）：面向可穿戴设备的无线物联网技术/</id>
     <published>2017-10-25T16:00:00.000Z</published>
     <updated>2019-08-12T06:32:26.230Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;提到物联网操作系统，就不能不提Linux，因为Linux可能是目前在物联网设备中应用最广的操作系统了。前面的文章刚刚介绍了不少非Linux类的物联网操作系统，本文就来介绍一下目前常用的基于Linux的物联网操作系统。&lt;br&gt;&lt;img src=&quot;http://images.ofweek.com/Upload/News/2017-06/14/lime/1497400939793024893.jpg&quot; alt=&quot;基于Linux的物联网操作系统&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;导语&lt;br&gt;智能手环、智能手表为代表的可穿戴设备，在短短几年时间内，就已经在全世界普及开来。可穿戴设备是物联网领域很重要的一种设备类型，特点是功耗低、体积小、电量有限 。本文主要介绍可应用于可穿戴设备的无线技术有哪些？&lt;br&gt;&lt;img src=&quot;http://ovfro7ddi.bkt.clouddn.com/%E9%9D%A2%E5%90%91%E5%8F%AF%E7%A9%BF%E6%88%B4%E8%AE%BE%E5%A4%87%E7%9A%84%E6%97%A0%E7%BA%BF%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF1.JPEG&quot; alt=&quot;纵论物联网（八）：面向可穿戴设备的无线物联网技术&quot;&gt;&lt;/p&gt;
     
     </summary>
     
