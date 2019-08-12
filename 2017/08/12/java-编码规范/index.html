@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="java,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Robot Shell" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="1 介绍本规范参考java 官方编码规范，简化而来，更详细的介绍请参考Code Conventions for the Java TM Programming Language本规范适用但不限于OS Lite项目使用。">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java 编码规范">
+<meta property="og:url" content="http://robotshell.com/2017/08/12/java-编码规范/index.html">
+<meta property="og:site_name" content="Robot Shell">
+<meta property="og:description" content="1 介绍本规范参考java 官方编码规范，简化而来，更详细的介绍请参考Code Conventions for the Java TM Programming Language本规范适用但不限于OS Lite项目使用。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-12T06:32:26.230Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java 编码规范">
+<meta name="twitter:description" content="1 介绍本规范参考java 官方编码规范，简化而来，更详细的介绍请参考Code Conventions for the Java TM Programming Language本规范适用但不限于OS Lite项目使用。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://robotshell.com/2017/08/12/java-编码规范/">
+
+
+
+
+
+  <title>java 编码规范 | Robot Shell</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?5d32bea2dc2845699d3ba9103c01cf71";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Robot Shell</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Futurevent</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-board">
+          <a href="/board" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+            
+            board
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2017/08/12/java-编码规范/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="robot">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/robot.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Robot Shell">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">java 编码规范</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-12T18:49:21+08:00">
+                2017-08-12
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-12T14:32:26+08:00">
+                2019-08-12
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1 介绍"></a>1 介绍</h1><p>本规范参考java 官方编码规范，简化而来，更详细的介绍请参考<a href="http://www.oracle.com/technetwork/java/codeconvtoc-136057.html" target="_blank" rel="noopener">Code Conventions for the Java TM Programming Language</a><br>本规范适用但不限于OS Lite项目使用。</p>
+<a id="more"></a>
+<h1 id="2-文件名"><a href="#2-文件名" class="headerlink" title="2 文件名"></a>2 文件名</h1><p>这项目组列出了常用的文件名及其后缀。</p>
+<h2 id="2-1-文件后缀"><a href="#2-1-文件后缀" class="headerlink" title="2.1 文件后缀"></a>2.1 文件后缀</h2><p>Java程序应用下列文件后缀：</p>
+<table>
+<thead>
+<tr>
+<th>文件类别</th>
+<th>文件后缀</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Java源文件</td>
+<td>.java</td>
+</tr>
+<tr>
+<td>Java字节码文件</td>
+<td>.class</td>
+</tr>
+</tbody></table>
+<h2 id="2-2-常用文件"><a href="#2-2-常用文件" class="headerlink" title="2.2 常用文件"></a>2.2 常用文件</h2><p>常用的文件名包含：</p>
+<table>
+<thead>
+<tr>
+<th>文件名</th>
+<th>用处</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>README.md</td>
+<td>大的独立模块下用来说明该模块打使用注意事项等</td>
+</tr>
+</tbody></table>
+<h1 id="3-文件组织"><a href="#3-文件组织" class="headerlink" title="3 文件组织"></a>3 文件组织</h1><p>一个文件由被空行分隔而成的段落以及标识每个段落的注释共同构成。超过2000行的程序难以浏览，应当尽量避免。</p>
+<h2 id="3-1-Java源文件"><a href="#3-1-Java源文件" class="headerlink" title="3.1 Java源文件"></a>3.1 Java源文件</h2><p>若private类或interface与一个public类关系紧密，可以将它们放入同一个源文件，但是public类必须是这个文件中的第一个类或接口。</p>
+<p>Java源文件应遵守以下规范：</p>
+<ul>
+<li>开首注释</li>
+<li>包和引入语句</li>
+<li>类和接口声明</li>
+</ul>
+<h3 id="3-1-1-文件头注释"><a href="#3-1-1-文件头注释" class="headerlink" title="3.1.1 文件头注释"></a>3.1.1 文件头注释</h3><p>为了方便生成api ref，所有的源文件都应当有文件头注释例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* Version information</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* Date</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* Copyright notice</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-1-2-包和引入语句"><a href="#3-1-2-包和引入语句" class="headerlink" title="3.1.2 包和引入语句"></a>3.1.2 包和引入语句</h3><p>在多半Java源文件中，第一个非注释行是包语句。在它之后可以跟引入语句</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.turing123.robotframe;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.content.Context;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-1-3-类和接口声明"><a href="#3-1-3-类和接口声明" class="headerlink" title="3.1.3 类和接口声明"></a>3.1.3 类和接口声明</h3><p>下表描述了类和接口声明</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>类/接口声明的各项目</th>
+<th>注解</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>类/接口文档注释（/<em>*……</em>/）</td>
+<td>该注释中所需包含的信息，拜见”文档注释”</td>
+</tr>
+<tr>
+<td>2</td>
+<td>类或接口的声明</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>类的（静态）变量</td>
+<td>开头是类的公共常量，最后是私有常量。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>实例变量</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>5</td>
+<td>构造方法</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>成员方法</td>
+<td>这些方法应当按功能分组。例如，一个私有的类方法可以置于两个公有的实例方法之间。其目标是为了更便于浏览代码。</td>
+</tr>
+</tbody></table>
+<h1 id="4-缩进排版"><a href="#4-缩进排版" class="headerlink" title="4 缩进排版"></a>4 缩进排版</h1><p>4个空格作为缩进排版的一个单位。</p>
+<h2 id="4-1-行长度"><a href="#4-1-行长度" class="headerlink" title="4.1 行长度"></a>4.1 行长度</h2><p>尽量避免一行的长度跨越100个字符。</p>
+<h2 id="4-2-换行"><a href="#4-2-换行" class="headerlink" title="4.2 换行"></a>4.2 换行</h2><p>当一个表达式无法容纳在一行内时，可以根据如下规则断开之：</p>
+<ul>
+<li>在一个逗号后面断开</li>
+<li>在一个操纵符前面断开</li>
+<li>新的一行应当与上一行同一级别表达式的开首处对齐</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">prepare</span><span class="params">(@NonNull MessageInterceptor interceptor,</span></span></span><br><span class="line"><span class="function"><span class="params">                    @NonNull <span class="keyword">final</span> RobotFramePreparedListener listener)</span></span></span><br></pre></td></tr></table></figure>
+
+<p>if语句的换行,例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (behaviors == <span class="keyword">null</span></span><br><span class="line">    || behaviors.behaviors == <span class="keyword">null</span></span><br><span class="line">    || behaviors.behaviors.size() == <span class="number">0</span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>三元运算表达式打换行，例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">alpha = （aLongBooleanExpression） ？ beta : gamma;</span><br><span class="line"></span><br><span class="line">alpha = （aLongBooleanExpression）？</span><br><span class="line">         beta</span><br><span class="line">         : gamma;</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-注释"><a href="#5-注释" class="headerlink" title="5 注释"></a>5 注释</h1><h2 id="5-1-注释的格式"><a href="#5-1-注释的格式" class="headerlink" title="5.1 注释的格式"></a>5.1 注释的格式</h2><p>程序可以有4种实现注释的风格：块（block）、单行（single-line）、尾端（trailing）和行末（end-of-line）。</p>
+<h3 id="5-1-1-块注释"><a href="#5-1-1-块注释" class="headerlink" title="5.1.1 块注释"></a>5.1.1 块注释</h3><p>块注释每个文件的开端处以及每个方法之前。它们也可以被用于方法内部。在功能和方法内部的块注释应当和它们所描述的代码具有一样的缩进格局。</p>
+<p>块注释可以以/**开头</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Set NLP Sever's ApiKey and Secret.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> apiKey Your ApiKey.</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> secret Your Secret.</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-1-2-单行注释"><a href="#5-1-2-单行注释" class="headerlink" title="5.1.2 单行注释"></a>5.1.2 单行注释</h3><p>短注释可以显示在一行内,单行注释之前应当有一个空行。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> （condition） &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Handle thecondition. */</span></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-1-4-行末注释"><a href="#5-1-4-行末注释" class="headerlink" title="5.1.4 行末注释"></a>5.1.4 行末注释</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> （foo &gt; <span class="number">1</span>） &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Do adouble-flip.</span></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;          <span class="comment">// Explain why here.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//if （bar &gt; 1）&#123;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//    // Do a triple-flip.</span></span><br><span class="line"><span class="comment">//    ...</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br><span class="line"><span class="comment">//else &#123;</span></span><br><span class="line"><span class="comment">//    return false;</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="5-2-文档注释"><a href="#5-2-文档注释" class="headerlink" title="5.2 文档注释"></a>5.2 文档注释</h2><p>文档注释描述Java的类、接口、方法以及字段（field）。每个文档注释都邑被置于注释定界符/<em>*…</em>/之中，一个注释对应一个类、接口或成员。该注释应位于声明之前，该注释将被用来生成javadoc api ref.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Provide ASR function</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">ASR</span> <span class="keyword">extends</span> <span class="title">FunctionBase</span></span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Chat Mode: CHAT_MODE_AUTO</span></span><br><span class="line"><span class="comment">     * Robot framework's chat will auto running, you needn't care about asr and ask the cloud.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> CHAT_MODE_AUTO = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="6-声明"><a href="#6-声明" class="headerlink" title="6 声明"></a>6 声明</h1><h2 id="6-1-每行声明变量的数量"><a href="#6-1-每行声明变量的数量" class="headerlink" title="6.1 每行声明变量的数量"></a>6.1 每行声明变量的数量</h2><p>推荐一行一个声明，因为这样利于写注释</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> level;  <span class="comment">// indentation level</span></span><br><span class="line"><span class="keyword">int</span> size;   <span class="comment">// size of table</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="6-2-初始化"><a href="#6-2-初始化" class="headerlink" title="6.2 初始化"></a>6.2 初始化</h2><p>尽量在声明局部变量的同时初始化</p>
+<h2 id="6-3-布局"><a href="#6-3-布局" class="headerlink" title="6.3 布局"></a>6.3 布局</h2><p>只在代码块的开端处声明变量,不要在初次用到该变量时才声明它。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> myMethod（） &#123;</span><br><span class="line">    <span class="keyword">int</span> int1 = <span class="number">0</span>;         <span class="comment">// beginning of method block</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> （condition） &#123;</span><br><span class="line">        <span class="keyword">int</span> int2 = <span class="number">0</span>;     <span class="comment">// beginning of "if"block</span></span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-4-类和接口的声明"><a href="#6-4-类和接口的声明" class="headerlink" title="6.4 类和接口的声明"></a>6.4 类和接口的声明</h2><p>当编写类和接口是，应当遵守以下格局规范：</p>
+<ul>
+<li>在方法名与其参数列表之前的左括号”（”间不要有空格</li>
+<li>左大括号”{“位于声明语句同业的末尾</li>
+<li>右大括号”}”另起一行，与响应的声明语句对齐，除非是一个空语句，”}”应紧跟在”{“之后<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Behavior</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> String exception;</span><br><span class="line">    <span class="keyword">public</span> IntentInfo intent;</span><br><span class="line">    <span class="keyword">public</span> Recommend recommend;</span><br><span class="line">    <span class="keyword">public</span> List&lt;ResponseResult&gt; results;</span><br><span class="line">    <span class="keyword">public</span> List&lt;Sequence&gt; sequences;</span><br><span class="line">    <span class="keyword">public</span> Emotion emotion;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Behavior</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Behavior</span><span class="params">(String exception)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.exception = exception;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Behavior</span><span class="params">(String exception, IntentInfo intent, Recommend recommend,</span></span></span><br><span class="line"><span class="function"><span class="params">                    List&lt;ResponseResult&gt; results, List&lt;Sequence&gt; sequences,</span></span></span><br><span class="line"><span class="function"><span class="params">                    Emotion emotion)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.exception = exception;</span><br><span class="line">        <span class="keyword">this</span>.intent = intent;</span><br><span class="line">        <span class="keyword">this</span>.recommend = recommend;</span><br><span class="line">        <span class="keyword">this</span>.results = results;</span><br><span class="line">        <span class="keyword">this</span>.sequences = sequences;</span><br><span class="line">        <span class="keyword">this</span>.emotion = emotion;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="7-语句"><a href="#7-语句" class="headerlink" title="7 语句"></a>7 语句</h1><h2 id="7-1-简单语句"><a href="#7-1-简单语句" class="headerlink" title="7.1 简单语句"></a>7.1 简单语句</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">argv++;       <span class="comment">// Correct</span></span><br><span class="line">argc--;       <span class="comment">// Correct</span></span><br><span class="line">argv++; argc--;       <span class="comment">// AVOID!</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="7-2-复合语句"><a href="#7-2-复合语句" class="headerlink" title="7.2 复合语句"></a>7.2 复合语句</h2><ul>
+<li>被括此中的语句应当较之复合语句缩进一个层次</li>
+<li>左大括号”{“应位于复合语句开端行的行尾；右大括号”}”应另起一行并与复合语句首行对齐。</li>
+</ul>
+<h2 id="7-3-返回语句"><a href="#7-3-返回语句" class="headerlink" title="7.3 返回语句"></a>7.3 返回语句</h2><p>一个带返回值的return语句不应用小括号”（）”</p>
+<h2 id="7-4-if，if-else，if-else-if-else语句（if，-if-else，-if-else-if-elseStatements）"><a href="#7-4-if，if-else，if-else-if-else语句（if，-if-else，-if-else-if-elseStatements）" class="headerlink" title="7.4 if，if-else，if else-if else语句（if， if-else， if else-if elseStatements）"></a>7.4 if，if-else，if else-if else语句（if， if-else， if else-if elseStatements）</h2><p>if-else语句应当具有如下格示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> （condition） &#123;</span><br><span class="line">    statements;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> （condition） &#123;</span><br><span class="line">    statements;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    statements;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> （condition） &#123;</span><br><span class="line">    statements;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> （condition） &#123;</span><br><span class="line">    statements;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    statements;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-5-for语句"><a href="#7-5-for语句" class="headerlink" title="7.5 for语句"></a>7.5 for语句</h2><p>一个for语句应当具有如下格示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> （initialization; condition; ） &#123;</span><br><span class="line">    statements;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一个空的for语句应当具有如下格示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> （initialization; condition; ）;</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-6-while语句"><a href="#7-6-while语句" class="headerlink" title="7.6 while语句"></a>7.6 while语句</h2><p>一个while语句应当具有如下格示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> （condition） &#123;</span><br><span class="line">    statements;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一个空的while语句应当具有如下格示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> （condition）;</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-7-do-while语句"><a href="#7-7-do-while语句" class="headerlink" title="7.7 do-while语句"></a>7.7 do-while语句</h2><p>一个do-while语句应当具有如下格示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    statements;</span><br><span class="line">&#125; <span class="keyword">while</span> （condition）;</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-8-switch语句"><a href="#7-8-switch语句" class="headerlink" title="7.8 switch语句"></a>7.8 switch语句</h2><p>一个switch语句应当具有如下格示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> （condition） &#123;</span><br><span class="line"><span class="keyword">case</span> ABC:</span><br><span class="line">    statements;</span><br><span class="line">    <span class="comment">/* falls through */</span></span><br><span class="line"><span class="keyword">case</span> DEF:</span><br><span class="line">    statements;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> XYZ:</span><br><span class="line">    statements;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    statements;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-9-try-catch语句"><a href="#7-9-try-catch语句" class="headerlink" title="7.9 try-catch语句"></a>7.9 try-catch语句</h2><p>一个try-catch语句应当具有如下格示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    statements;</span><br><span class="line">&#125; <span class="keyword">catch</span> （ExceptionClass e） &#123;</span><br><span class="line">    statements;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    statements;</span><br><span class="line">&#125; <span class="keyword">catch</span> （ExceptionClass e） &#123;</span><br><span class="line">    statements;</span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    statements;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="8-空白"><a href="#8-空白" class="headerlink" title="8 空白"></a>8 空白</h1><h2 id="8-1-空行"><a href="#8-1-空行" class="headerlink" title="8.1 空行"></a>8.1 空行</h2><p>空行将逻辑相干的代码段分隔开。</p>
+<p>下列景象应当是应用两个空行：</p>
+<ul>
+<li>一个源文件的两个片段（section）之间</li>
+<li>类声明和接口声明之间</li>
+</ul>
+<p>下列景象应当是应用一个空行：</p>
+<ul>
+<li>两个方法之间</li>
+<li>方法内的局部变量和方法的第一条语句之间</li>
+</ul>
+<h2 id="8-2-空格"><a href="#8-2-空格" class="headerlink" title="8.2 空格"></a>8.2 空格</h2><p>下列情况当应用空格：<br> 一个紧跟着括号的关键字应当被空格分隔，例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> （<span class="keyword">true</span>） &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：空格不该该置于法名与其左括号之间。这将有助于区分关键字和方法调用。</p>
+<ul>
+<li>空白应当位于参数列表中逗号的后面</li>
+<li>所有的二元运算符，除了”.”，应当应用空格将之与操纵数分隔。一元操纵符和操纵数之间不因该加空格，比如：负号（”-“）、自增（”++”）和自减（”–”）。例如：</li>
+</ul>
+<h1 id="9-命名规范"><a href="#9-命名规范" class="headerlink" title="9 命名规范"></a>9 命名规范</h1><table>
+<thead>
+<tr>
+<th>标识符类型</th>
+<th>命名规范</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>包</td>
+<td>一个独一包名的前缀老是全部小写的ASCII字母并且是一个域名，这类命名规范可能以特定目次名的构成来区分部 门（department），项目（project）。</td>
+<td>com.turing123.robotframe</td>
+</tr>
+<tr>
+<td>类</td>
+<td>命名规范：类名是个一名词，采取大小写混淆的体式格式，每个单词的首字母大写。尽量使你的类名简洁而富于描述。应用完全单词，避免缩写词</td>
+<td>class Behavior</td>
+</tr>
+<tr>
+<td>接口</td>
+<td>命名规范：大小写规范与类名类似</td>
+<td>interface IASRCallback</td>
+</tr>
+<tr>
+<td>方法</td>
+<td>方法名是一个动词，采取大小写混淆的体式格式，第一个单词的首字母小写，其后单词的首字母大写。</td>
+<td>void onStartRecord()</td>
+</tr>
+<tr>
+<td>变量</td>
+<td>除了变量名外，所有实例，包含类，类常量，均采取大小写混淆的体式格式，第一个单词的首字母小写，其后单词的首字母大写。变量名不该以下划线或美元符号开首，尽管这在语法上是容许的。变量名应简短且富于描述。变量名的选用应当易于记忆，即，可以或许指出其用处。尽量避免单个字符的变量名，除非是一次性的姑且变量。姑且变量凡是被取名为i，j，k，m和n，它们一般用于整型；c，d，e，它们一般用于字符型。</td>
+<td>char c;</td>
+</tr>
+<tr>
+<td>实例变量</td>
+<td>大小写规范和变量名类似</td>
+<td></td>
+</tr>
+<tr>
+<td>常量</td>
+<td>类常量应当全部大写，单词间用下划线隔开</td>
+<td>public static final int CHAT_MODE_AUTO = 0</td>
+</tr>
+</tbody></table>
+<h1 id="10-Java源文件示例"><a href="#10-Java源文件示例" class="headerlink" title="10 Java源文件示例"></a>10 Java源文件示例</h1><p>下面的例子，显示了一公共类的Java源程序（仅作为示例）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.turing123.robotframe;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.content.Context;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;</span></span><br><span class="line"><span class="comment"> * The entry to use RobotFrame.&lt;br/&gt;&lt;br/&gt;</span></span><br><span class="line"><span class="comment"> * Usage:&lt;br/&gt;</span></span><br><span class="line"><span class="comment"> * The method &lt;font color="blue"&gt;prepare&lt;/font&gt; must be called prior to any method calling on this frame.</span></span><br><span class="line"><span class="comment"> * The normal steps to use this frame are as blow:&lt;br/&gt;</span></span><br><span class="line"><span class="comment"> * 1. call &lt;font color="blue"&gt;getInstance()&lt;/font&gt;&lt;br/&gt;</span></span><br><span class="line"><span class="comment"> * 2. call &lt;font color="blue"&gt;prepare(prepareListener)&lt;/font&gt;&lt;br/&gt;</span></span><br><span class="line"><span class="comment"> * 3. waiting for prepareListener callback&lt;br/&gt;</span></span><br><span class="line"><span class="comment"> * 4.1 if success, call &lt;font color="blue"&gt;start()&lt;/font&gt; to launch the robot up&lt;br/&gt;</span></span><br><span class="line"><span class="comment"> * 4.2 if error occurred, check and fix the issue according to error message&lt;br/&gt;</span></span><br><span class="line"><span class="comment"> * 5. if robot is attempting to shutdown, call method &lt;font color="blue"&gt;shutDown(shutdownListener)&lt;/font&gt;</span></span><br><span class="line"><span class="comment"> * first and wait until the shutdownListener called back.&lt;br/&gt;</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;</span></span><br><span class="line"><span class="comment"> * &lt;strong&gt;&lt;font color="red"&gt;WARNING: Any violation from the steps above will cause unpredictable</span></span><br><span class="line"><span class="comment"> * behaviors.&lt;/font&gt;&lt;/strong&gt;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RobotFrameManager</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Chat Mode: CHAT_MODE_AUTO</span></span><br><span class="line"><span class="comment">     * Robot framework's chat will auto running, you needn't care about asr and ask the cloud.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> CHAT_MODE_AUTO = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Chat Mode: CHAT_MODE_MANUAL</span></span><br><span class="line"><span class="comment">     * Robot framework‘s Chat requires manual call ASR and ask the cloud.</span></span><br><span class="line"><span class="comment">     * In this mode, the output mode only is &#123;<span class="doctag">@link</span> #OUTPUT_MODE_ASSEMBLE&#125;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> CHAT_MODE_MANUAL = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> RobotFrameManager mInstance = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> FrameService mService;</span><br><span class="line">    <span class="keyword">private</span> Context mContext;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">RobotFrameManager</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        mContext = context;</span><br><span class="line"></span><br><span class="line">        SystemProperties.getInstance().init(context);</span><br><span class="line"></span><br><span class="line">        mService = <span class="keyword">new</span> FrameService(context);</span><br><span class="line"></span><br><span class="line">        PluginService.setUp(mContext);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Be RobotFrame prepared, must be called prior to any calling to other method</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> states   the Frame working mode and states(if has)</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> listener the callback listener</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">prepare</span><span class="params">(<span class="keyword">int</span> states, @NonNull <span class="keyword">final</span> RobotFramePreparedListener listener)</span> </span>&#123;</span><br><span class="line">        mService.prepare(states,listener);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * The robot starting run</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span> <span class="keyword">throws</span> IllegalStateException </span>&#123;</span><br><span class="line">        mService.start();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Set NLP Sever's ApiKey and Secret.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> apiKey Your ApiKey.</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> secret Your Secret.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setApiKeyAndSecret</span><span class="params">(String apiKey, String secret)</span> </span>&#123;</span><br><span class="line">        Preconditions.checkNotNull(apiKey, <span class="keyword">true</span>);</span><br><span class="line">        Preconditions.checkNotNull(secret, <span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">        Settings.init(mContext);</span><br><span class="line">        Settings.put(SettingsKey.TURING_APIKEY, apiKey);</span><br><span class="line">        Settings.put(SettingsKey.TURING_SECRET, secret);</span><br><span class="line">        Settings.deInit();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="robot WeChat Pay">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="robot Alipay">
+        <p>支付宝支付</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    robot
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://robotshell.com/2017/08/12/java-编码规范/" title="java 编码规范">http://robotshell.com/2017/08/12/java-编码规范/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/07/机器学习学习笔记（二）/" rel="next" title="机器学习学习笔记（二）">
+                <i class="fa fa-chevron-left"></i> 机器学习学习笔记（二）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/19/Javah-命令详解/" rel="prev" title="Javah 命令详解">
+                Javah 命令详解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微薄</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDYzMy83MTg4"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image" src="/images/robot.png" alt="robot">
+          
+            <p class="site-author-name" itemprop="name">robot</p>
+            <p class="site-description motion-element" itemprop="description">Robot Shell is Future Event.</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Futurevent" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:zj2012zy@163.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-介绍"><span class="nav-number">1.</span> <span class="nav-text">1 介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-文件名"><span class="nav-number">2.</span> <span class="nav-text">2 文件名</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-文件后缀"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 文件后缀</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-常用文件"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 常用文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-文件组织"><span class="nav-number">3.</span> <span class="nav-text">3 文件组织</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Java源文件"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 Java源文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-1-文件头注释"><span class="nav-number">3.1.1.</span> <span class="nav-text">3.1.1 文件头注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-2-包和引入语句"><span class="nav-number">3.1.2.</span> <span class="nav-text">3.1.2 包和引入语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-3-类和接口声明"><span class="nav-number">3.1.3.</span> <span class="nav-text">3.1.3 类和接口声明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-缩进排版"><span class="nav-number">4.</span> <span class="nav-text">4 缩进排版</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-行长度"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 行长度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-换行"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 换行</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-注释"><span class="nav-number">5.</span> <span class="nav-text">5 注释</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-注释的格式"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 注释的格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-1-块注释"><span class="nav-number">5.1.1.</span> <span class="nav-text">5.1.1 块注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-2-单行注释"><span class="nav-number">5.1.2.</span> <span class="nav-text">5.1.2 单行注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-4-行末注释"><span class="nav-number">5.1.3.</span> <span class="nav-text">5.1.4 行末注释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-文档注释"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 文档注释</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-声明"><span class="nav-number">6.</span> <span class="nav-text">6 声明</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-每行声明变量的数量"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 每行声明变量的数量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-初始化"><span class="nav-number">6.2.</span> <span class="nav-text">6.2 初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-布局"><span class="nav-number">6.3.</span> <span class="nav-text">6.3 布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-4-类和接口的声明"><span class="nav-number">6.4.</span> <span class="nav-text">6.4 类和接口的声明</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-语句"><span class="nav-number">7.</span> <span class="nav-text">7 语句</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-简单语句"><span class="nav-number">7.1.</span> <span class="nav-text">7.1 简单语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-2-复合语句"><span class="nav-number">7.2.</span> <span class="nav-text">7.2 复合语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-3-返回语句"><span class="nav-number">7.3.</span> <span class="nav-text">7.3 返回语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-4-if，if-else，if-else-if-else语句（if，-if-else，-if-else-if-elseStatements）"><span class="nav-number">7.4.</span> <span class="nav-text">7.4 if，if-else，if else-if else语句（if， if-else， if else-if elseStatements）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-5-for语句"><span class="nav-number">7.5.</span> <span class="nav-text">7.5 for语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-6-while语句"><span class="nav-number">7.6.</span> <span class="nav-text">7.6 while语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-7-do-while语句"><span class="nav-number">7.7.</span> <span class="nav-text">7.7 do-while语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-8-switch语句"><span class="nav-number">7.8.</span> <span class="nav-text">7.8 switch语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-9-try-catch语句"><span class="nav-number">7.9.</span> <span class="nav-text">7.9 try-catch语句</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-空白"><span class="nav-number">8.</span> <span class="nav-text">8 空白</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#8-1-空行"><span class="nav-number">8.1.</span> <span class="nav-text">8.1 空行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-2-空格"><span class="nav-number">8.2.</span> <span class="nav-text">8.2 空格</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-命名规范"><span class="nav-number">9.</span> <span class="nav-text">9 命名规范</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-Java源文件示例"><span class="nav-number">10.</span> <span class="nav-text">10 Java源文件示例</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2017- - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">robot</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
