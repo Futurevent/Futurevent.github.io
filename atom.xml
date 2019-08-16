@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://robotshell.com/"/>
-  <updated>2019-08-12T06:32:26.234Z</updated>
+  <updated>2019-08-16T01:27:29.959Z</updated>
   <id>http://robotshell.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Harmony&amp;Fuchsia的相遇</title>
+    <link href="http://robotshell.com/2019/08/16/Harmony-Fuchsia%E7%9A%84%E7%9B%B8%E9%81%87/"/>
+    <id>http://robotshell.com/2019/08/16/Harmony-Fuchsia的相遇/</id>
+    <published>2019-08-16T01:27:29.000Z</published>
+    <updated>2019-08-16T01:27:29.959Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;一&quot;&gt;&lt;a href=&quot;#一&quot; class=&quot;headerlink&quot; title=&quot; 一 &quot;&gt;&lt;/a&gt;&lt;center&gt; 一 &lt;/center&gt;&lt;/h1&gt;&lt;p&gt;2019年8月9日华为正式发布鸿蒙系统，同时表示系统开源。鸿蒙系统的发布是在美国制裁华为的大背景下，华为手机业务极度依赖的android系统极有可能随时断供。在此节点下，自然而然的会让大众理解为是对android断供风险的抵御。但是，时代是进步的。华为重造一个android不过是重嚼别人嚼过的甘蔗，又有何味道呢。华为可是5G的引领者，5G绝非是速度更快的4G，它的领域是万物互联的新一片星辰大海。理所应当的（如果一切不是场战略骗局的话），鸿蒙系统当是这片大海中的一艘远洋巨舰。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="OS" scheme="http://robotshell.com/categories/OS/"/>
+    
+    
+      <category term="OS" scheme="http://robotshell.com/tags/OS/"/>
+    
+  </entry>
   
   <entry>
     <title>Robot OS 框架杂谈（二）：语音交互各厂产品</title>
@@ -43,7 +63,7 @@
     <link href="http://robotshell.com/2018/06/21/android%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B9%8B%E5%B8%A7%E7%8E%87%E6%B5%8B%E8%AF%95/"/>
     <id>http://robotshell.com/2018/06/21/android性能优化之帧率测试/</id>
     <published>2018-06-21T10:17:49.000Z</published>
-    <updated>2019-08-12T08:27:00.356Z</updated>
+    <updated>2019-08-12T08:27:41.881Z</updated>
     
     <summary type="html">
     
@@ -274,26 +294,6 @@
   </entry>
   
   <entry>
-    <title>纵论物联网（三）：3GPP物联网技术</title>
-    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A3GPP%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF/"/>
-    <id>http://robotshell.com/2017/10/26/纵论物联网（三）：3GPP物联网技术/</id>
-    <published>2017-10-25T16:00:00.000Z</published>
-    <updated>2019-08-12T06:32:26.230Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;导语&lt;br&gt;随着物联网应用的发展，对于大范围组网的需求越来越多，LPWAN技术备受关注。前面的LPWAN技术文章介绍过，LPWAN技术可根据工作频段分为两类：一类是工作于未授权频段的无线技术，以LoRa、SigFox为代表；一类是工作于授权频段下的无线技术，以3GPP支持的2/3/4G蜂窝通信技术为代表。&lt;br&gt;&lt;img src=&quot;http://ovfro7ddi.bkt.clouddn.com/%EF%BC%93GPP%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF%EF%BC%91.JPEG&quot; alt=&quot;3GPP物联网技术&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="物联网" scheme="http://robotshell.com/categories/%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-    
-      <category term="物联网" scheme="http://robotshell.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-  </entry>
-  
-  <entry>
     <title>纵论物联网（二）：LPWAN技术</title>
     <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9ALPWAN%E6%8A%80%E6%9C%AF/"/>
     <id>http://robotshell.com/2017/10/26/纵论物联网（二）：LPWAN技术/</id>
@@ -323,26 +323,6 @@
     <summary type="html">
     
       &lt;p&gt;在前面介绍物联网终端设备的文章中，我们已经简单地介绍了物联网操作系统。物联网操作系统的种类非常多，不过其中有很大一部分是基于Linux系统改造的，还有一些系统是商业公司或开源组织开发的，当然微软公司也开发了一系列面向嵌入式应用的操作系统。&lt;br&gt;&lt;img src=&quot;http://p1.pstatp.com/large/26e400043526f2087cb0&quot; alt=&quot;物联网操作系统&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="物联网" scheme="http://robotshell.com/categories/%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-    
-      <category term="物联网" scheme="http://robotshell.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>纵论物联网（六）：基于Linux的物联网操作系统</title>
-    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E5%9F%BA%E4%BA%8ELinux%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    <id>http://robotshell.com/2017/10/26/纵论物联网（六）：基于Linux的物联网操作系统/</id>
-    <published>2017-10-25T16:00:00.000Z</published>
-    <updated>2019-08-12T06:32:26.230Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;提到物联网操作系统，就不能不提Linux，因为Linux可能是目前在物联网设备中应用最广的操作系统了。前面的文章刚刚介绍了不少非Linux类的物联网操作系统，本文就来介绍一下目前常用的基于Linux的物联网操作系统。&lt;br&gt;&lt;img src=&quot;http://images.ofweek.com/Upload/News/2017-06/14/lime/1497400939793024893.jpg&quot; alt=&quot;基于Linux的物联网操作系统&quot;&gt;&lt;/p&gt;
     
     </summary>
     
@@ -394,15 +374,15 @@
   </entry>
   
   <entry>
-    <title>纵论物联网</title>
-    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    <id>http://robotshell.com/2017/10/26/纵论物联网/</id>
+    <title>纵论物联网（六）：基于Linux的物联网操作系统</title>
+    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E5%9F%BA%E4%BA%8ELinux%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://robotshell.com/2017/10/26/纵论物联网（六）：基于Linux的物联网操作系统/</id>
     <published>2017-10-25T16:00:00.000Z</published>
     <updated>2019-08-12T06:32:26.230Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;最近在网上看到一篇介绍物联网的系列文章《纵论物联网》，但是很遗憾，都是来回转载的，也没有找到出处，零零散散的，东一篇西一篇，看起来很不方便。现汇总收集如下，既做整理，也做收藏。&lt;/p&gt;
+      &lt;p&gt;提到物联网操作系统，就不能不提Linux，因为Linux可能是目前在物联网设备中应用最广的操作系统了。前面的文章刚刚介绍了不少非Linux类的物联网操作系统，本文就来介绍一下目前常用的基于Linux的物联网操作系统。&lt;br&gt;&lt;img src=&quot;http://images.ofweek.com/Upload/News/2017-06/14/lime/1497400939793024893.jpg&quot; alt=&quot;基于Linux的物联网操作系统&quot;&gt;&lt;/p&gt;
     
     </summary>
     
@@ -424,6 +404,26 @@
     
       &lt;p&gt;物联网的关键技术包括三个方面：物体的识别、物体的连接以及对数据的操作。随着联网物体的数量越来越多，无线技术在物联网中发挥的作用也越来越大。&lt;br&gt;&lt;img src=&quot;http://p1.pstatp.com/large/22d2000589af2a27d43f&quot; alt=&quot;纵论物联网（一）：无线技术分类&quot;&gt;&lt;/p&gt;
 &lt;h1 id=&quot;物联网无线技术分类&quot;&gt;&lt;a href=&quot;#物联网无线技术分类&quot; class=&quot;headerlink&quot; title=&quot;物联网无线技术分类&quot;&gt;&lt;/a&gt;物联网无线技术分类&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="物联网" scheme="http://robotshell.com/categories/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+    
+      <category term="物联网" scheme="http://robotshell.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>纵论物联网</title>
+    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    <id>http://robotshell.com/2017/10/26/纵论物联网/</id>
+    <published>2017-10-25T16:00:00.000Z</published>
+    <updated>2019-08-12T06:32:26.230Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近在网上看到一篇介绍物联网的系列文章《纵论物联网》，但是很遗憾，都是来回转载的，也没有找到出处，零零散散的，东一篇西一篇，看起来很不方便。现汇总收集如下，既做整理，也做收藏。&lt;/p&gt;
     
     </summary>
     
