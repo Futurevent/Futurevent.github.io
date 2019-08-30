@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://robotshell.com/2019/08/30/Google%E7%9A%84Fuchsia-OS%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88/</loc>
+    
+    <lastmod>2019-08-30T07:20:23.479Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://robotshell.com/2019/08/16/Harmony-Fuchsia%E7%9A%84%E7%9B%B8%E9%81%87/</loc>
     
     <lastmod>2019-08-16T01:27:29.959Z</lastmod>
@@ -23,14 +30,7 @@
   </url>
   
   <url>
-    <loc>http://robotshell.com/categories/index.html</loc>
-    
-    <lastmod>2019-08-12T06:32:26.234Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://robotshell.com/board/index.html</loc>
+    <loc>http://robotshell.com/draft/2017-08-23-%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86.html</loc>
     
     <lastmod>2019-08-12T06:32:26.234Z</lastmod>
     
@@ -58,7 +58,7 @@
   </url>
   
   <url>
-    <loc>http://robotshell.com/2018/02/03/Android-O-Vehicle%E4%B9%8B%E6%9E%B6%E6%9E%84%E4%BB%8B%E7%BB%8D/</loc>
+    <loc>http://robotshell.com/2018/03/13/ubuntu-grub-%E5%BC%95%E5%AF%BC%E4%B8%A2%E5%A4%B1%E4%BF%AE%E5%A4%8D/</loc>
     
     <lastmod>2019-08-12T06:32:26.234Z</lastmod>
     
@@ -66,6 +66,27 @@
   
   <url>
     <loc>http://robotshell.com/2018/02/04/android-O-%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86%E4%B9%8B%E4%BB%8Eautomotive%E8%B0%88%E8%B5%B7/</loc>
+    
+    <lastmod>2019-08-12T06:32:26.234Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://robotshell.com/categories/index.html</loc>
+    
+    <lastmod>2019-08-12T06:32:26.234Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://robotshell.com/board/index.html</loc>
+    
+    <lastmod>2019-08-12T06:32:26.234Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://robotshell.com/2018/06/26/Robot-OS-%E6%A1%86%E6%9E%B6%E6%9D%82%E8%B0%88%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E8%AF%AD%E9%9F%B3%E4%BA%A4%E4%BA%92%E5%90%84%E5%8E%82%E4%BA%A7%E5%93%81/</loc>
     
     <lastmod>2019-08-12T06:32:26.234Z</lastmod>
     
@@ -86,21 +107,7 @@
   </url>
   
   <url>
-    <loc>http://robotshell.com/2018/06/26/Robot-OS-%E6%A1%86%E6%9E%B6%E6%9D%82%E8%B0%88%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E8%AF%AD%E9%9F%B3%E4%BA%A4%E4%BA%92%E5%90%84%E5%8E%82%E4%BA%A7%E5%93%81/</loc>
-    
-    <lastmod>2019-08-12T06:32:26.234Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://robotshell.com/draft/2017-08-23-%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86.html</loc>
-    
-    <lastmod>2019-08-12T06:32:26.234Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://robotshell.com/2018/03/13/ubuntu-grub-%E5%BC%95%E5%AF%BC%E4%B8%A2%E5%A4%B1%E4%BF%AE%E5%A4%8D/</loc>
+    <loc>http://robotshell.com/2018/02/03/Android-O-Vehicle%E4%B9%8B%E6%9E%B6%E6%9E%84%E4%BB%8B%E7%BB%8D/</loc>
     
     <lastmod>2019-08-12T06:32:26.234Z</lastmod>
     
@@ -114,14 +121,7 @@
   </url>
   
   <url>
-    <loc>http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E9%9D%A2%E5%90%91%E5%8F%AF%E7%A9%BF%E6%88%B4%E8%AE%BE%E5%A4%87%E7%9A%84%E6%97%A0%E7%BA%BF%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF/</loc>
-    
-    <lastmod>2019-08-12T06:32:26.230Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E5%9F%BA%E4%BA%8ELinux%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
+    <loc>http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%BA%94%EF%BC%89%EF%BC%9A%E9%99%A4%E4%BA%86Linux%EF%BC%8C%E8%BF%98%E6%9C%89%E4%BB%80%E4%B9%88%E7%89%A9%E8%81%94%E7%BD%91%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
     
     <lastmod>2019-08-12T06:32:26.230Z</lastmod>
     
@@ -135,14 +135,21 @@
   </url>
   
   <url>
-    <loc>http://robotshell.com/2017/08/07/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/</loc>
+    <loc>http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E5%9F%BA%E4%BA%8ELinux%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
     
     <lastmod>2019-08-12T06:32:26.230Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%BA%94%EF%BC%89%EF%BC%9A%E9%99%A4%E4%BA%86Linux%EF%BC%8C%E8%BF%98%E6%9C%89%E4%BB%80%E4%B9%88%E7%89%A9%E8%81%94%E7%BD%91%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
+    <loc>http://robotshell.com/2017/08/07/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
+    
+    <lastmod>2019-08-12T06:32:26.230Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E9%9D%A2%E5%90%91%E5%8F%AF%E7%A9%BF%E6%88%B4%E8%AE%BE%E5%A4%87%E7%9A%84%E6%97%A0%E7%BA%BF%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF/</loc>
     
     <lastmod>2019-08-12T06:32:26.230Z</lastmod>
     
@@ -205,14 +212,14 @@
   </url>
   
   <url>
-    <loc>http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91/</loc>
+    <loc>http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E6%97%A0%E7%BA%BF%E6%8A%80%E6%9C%AF%E5%88%86%E7%B1%BB/</loc>
     
     <lastmod>2019-08-12T06:32:26.230Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E6%97%A0%E7%BA%BF%E6%8A%80%E6%9C%AF%E5%88%86%E7%B1%BB/</loc>
+    <loc>http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91/</loc>
     
     <lastmod>2019-08-12T06:32:26.230Z</lastmod>
     
@@ -233,13 +240,6 @@
   </url>
   
   <url>
-    <loc>http://robotshell.com/404.html</loc>
-    
-    <lastmod>2019-08-12T06:32:26.230Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://robotshell.com/2017/08/30/Android-FileObserver%20%E7%B1%BB%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
     
     <lastmod>2019-08-12T06:32:26.230Z</lastmod>
@@ -247,7 +247,21 @@
   </url>
   
   <url>
+    <loc>http://robotshell.com/404.html</loc>
+    
+    <lastmod>2019-08-12T06:32:26.230Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://robotshell.com/2017/08/29/atom%E9%85%8D%E7%BD%AE%E5%85%A5%E9%97%A8/</loc>
+    
+    <lastmod>2019-08-12T06:32:26.230Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://robotshell.com/2017/08/07/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/</loc>
     
     <lastmod>2019-08-12T06:32:26.230Z</lastmod>
     
@@ -262,13 +276,6 @@
   
   <url>
     <loc>http://robotshell.com/2017/07/29/Hexo%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</loc>
-    
-    <lastmod>2019-08-12T06:32:26.230Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://robotshell.com/2017/08/07/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
     
     <lastmod>2019-08-12T06:32:26.230Z</lastmod>
     

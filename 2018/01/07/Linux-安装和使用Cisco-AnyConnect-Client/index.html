@@ -483,11 +483,10 @@
 
 </li>
 </ol>
-<p>遇到提示直接y就可以了</p>
-<ol start="5">
-<li><p>重新载入 systemd，扫描新的或有变动的单元</p>
+<p>遇到提示直接y就可以了<br>5. 重新载入 systemd，扫描新的或有变动的单元</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl daemon-reload</span><br></pre></td></tr></table></figure>
-</li>
+
+<ol start="6">
 <li><p>这是vpnagented进程应该已经启动了，可使用如下方式进行检查：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ps auxw | grep vpnagentd | grep -v grep</span><br><span class="line">root      7677  0.1  0.0 259808 12720 ?        Sl   11:24   0:00 /opt/cisco/anyconnect/bin/vpnagentd</span><br></pre></td></tr></table></figure>
 </li>
@@ -519,14 +518,7 @@
 
 </li>
 </ol>
-<p>If you do not see this, but get a connect error instead, please see NOTE 1 - Connect Error below.</p>
-<ol start="3">
-<li>Ignore the message about entering your UCInetID and password, for now.</li>
-<li>Choose one of the choices by number and press return – usually UCI or UCIFull. (See the differences in the Tunnels below.) For instance, for UCI, press 3 and hit Enter.</li>
-<li>Enter your UCInetID and password in the Username and Password boxes and press return.</li>
-<li>At the accept? [y/n]: prompt, type y and press Enter. You may get several notices the first time about the downloader performing update checks. At the end you should see a &gt;&gt; state: Connected message and a new VPN&gt; prompt. You are now connected.</li>
-<li>Either leave the VPN&gt; prompt open or if you want your terminal back just type quit at the VPN&gt; prompt (the connection will remain active).</li>
-</ol>
+<p>If you do not see this, but get a connect error instead, please see NOTE 1 - Connect Error below.<br>3. Ignore the message about entering your UCInetID and password, for now.<br>4. Choose one of the choices by number and press return – usually UCI or UCIFull. (See the differences in the Tunnels below.) For instance, for UCI, press 3 and hit Enter.<br>5. Enter your UCInetID and password in the Username and Password boxes and press return.<br>6. At the accept? [y/n]: prompt, type y and press Enter. You may get several notices the first time about the downloader performing update checks. At the end you should see a &gt;&gt; state: Connected message and a new VPN&gt; prompt. You are now connected.<br>7. Either leave the VPN&gt; prompt open or if you want your terminal back just type quit at the VPN&gt; prompt (the connection will remain active).</p>
 
       
     </div>
@@ -730,7 +722,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

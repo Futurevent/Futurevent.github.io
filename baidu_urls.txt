@@ -1,3 +1,4 @@
+http://robotshell.com/2019/08/30/Google的Fuchsia-OS到底是什么/
 http://robotshell.com/2019/08/16/Harmony-Fuchsia的相遇/
 http://robotshell.com/2018/06/26/Robot-OS-框架杂谈（二）：语音交互各厂产品/
 http://robotshell.com/2018/06/21/android性能优化之帧率测试/
@@ -11,16 +12,16 @@ http://robotshell.com/2018/02/03/Android-O-Vehicle之架构介绍/
 http://robotshell.com/2018/01/08/Android-EventLog-Tags-说明/
 http://robotshell.com/2018/01/07/Linux-安装和使用Cisco-AnyConnect-Client/
 http://robotshell.com/2017/11/04/Linux-版本控制工具之Rabbitvcs/
-http://robotshell.com/2017/10/26/纵论物联网（二）：LPWAN技术/
-http://robotshell.com/2017/10/26/纵论物联网（五）：除了Linux，还有什么物联网操作系统/
 http://robotshell.com/2017/10/26/纵论物联网（八）：面向可穿戴设备的无线物联网技术/
-http://robotshell.com/2017/10/26/纵论物联网（十）：物联网应用层协议/
 http://robotshell.com/2017/10/26/纵论物联网（六）：基于Linux的物联网操作系统/
-http://robotshell.com/2017/10/26/纵论物联网（一）：无线技术分类/
+http://robotshell.com/2017/10/26/纵论物联网（五）：除了Linux，还有什么物联网操作系统/
+http://robotshell.com/2017/10/26/纵论物联网（十）：物联网应用层协议/
 http://robotshell.com/2017/10/26/纵论物联网/
+http://robotshell.com/2017/10/26/纵论物联网（一）：无线技术分类/
 http://robotshell.com/2017/10/26/纵论物联网（七）：面向智能家居的物联网解决方案/
 http://robotshell.com/2017/10/26/纵论物联网（三）：3GPP物联网技术/
 http://robotshell.com/2017/10/26/纵论物联网（九）：物联网设备的标识技术/
+http://robotshell.com/2017/10/26/纵论物联网（二）：LPWAN技术/
 http://robotshell.com/2017/09/01/语音交互系统的自动化测试思考/
 http://robotshell.com/2017/08/31/敏捷：硝烟中的scrum和xp/
 http://robotshell.com/2017/08/31/基于RT-Linux机器人控制系统实时性的探讨/

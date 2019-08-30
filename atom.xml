@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://robotshell.com/"/>
-  <updated>2019-08-16T01:27:29.959Z</updated>
+  <updated>2019-08-30T07:20:23.479Z</updated>
   <id>http://robotshell.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Google的Fuchsia OS到底是什么</title>
+    <link href="http://robotshell.com/2019/08/30/Google%E7%9A%84Fuchsia-OS%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+    <id>http://robotshell.com/2019/08/30/Google的Fuchsia-OS到底是什么/</id>
+    <published>2019-08-30T07:20:23.000Z</published>
+    <updated>2019-08-30T07:20:23.479Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2016年，谷歌开始了新一代操作系统Fuchsia OS的开发。该系统在当时被普遍认为是用来在将来替代Android系统的。然而，时间飞快，直到今日，Fuchsia OS似乎也没有太多的出现在大众的视野中，甚至很多从业人员对其也并不了解。实际上，Google也层低调的公布过一些进展，例如2017年的五月曾经发布过很有Fuchsia OS特征的Fuchsia OS的主界面，2018年层宣布Fuchsia OS成功在PiexlBook上成功运行。2019年的6月底，Goolge低调的上线了Fuchsia 的&lt;a href=&quot;https://fuchsia.dev/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;开发者网站&lt;/a&gt;，后又适逢华为鸿蒙系统的发布，而华为鸿蒙系统也被理解为是android系统的替代者，Fuchsia OS又重新回到了大众的视野。&lt;br&gt;随着人们对鸿蒙系统关注度的提高，我觉得最好能简要介绍下Fuchsia到底是什么。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="OS" scheme="http://robotshell.com/categories/OS/"/>
+    
+    
+      <category term="OS" scheme="http://robotshell.com/tags/OS/"/>
+    
+  </entry>
   
   <entry>
     <title>Harmony&amp;Fuchsia的相遇</title>
@@ -294,46 +314,6 @@
   </entry>
   
   <entry>
-    <title>纵论物联网（二）：LPWAN技术</title>
-    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9ALPWAN%E6%8A%80%E6%9C%AF/"/>
-    <id>http://robotshell.com/2017/10/26/纵论物联网（二）：LPWAN技术/</id>
-    <published>2017-10-25T16:00:00.000Z</published>
-    <updated>2019-08-12T06:32:26.230Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;不同的物联网技术适用于不同的应用场景。对于需要远距离大范围覆盖的场景来说，我们熟悉的蓝牙、WiFi、Zigbee这些技术都不适合，我们需要低功耗广域网（LPWAN：Low Power Wide Area Network）技术。&lt;br&gt;&lt;img src=&quot;http://ovfro7ddi.bkt.clouddn.com/LWPAN%E6%8A%80%E6%9C%AF%E4%B8%80.JPEG&quot; alt=&quot;LPWAN 技术特点&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="物联网" scheme="http://robotshell.com/categories/%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-    
-      <category term="物联网" scheme="http://robotshell.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>纵论物联网（五）：除了Linux，还有什么物联网操作系统</title>
-    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%BA%94%EF%BC%89%EF%BC%9A%E9%99%A4%E4%BA%86Linux%EF%BC%8C%E8%BF%98%E6%9C%89%E4%BB%80%E4%B9%88%E7%89%A9%E8%81%94%E7%BD%91%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    <id>http://robotshell.com/2017/10/26/纵论物联网（五）：除了Linux，还有什么物联网操作系统/</id>
-    <published>2017-10-25T16:00:00.000Z</published>
-    <updated>2019-08-12T06:32:26.230Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在前面介绍物联网终端设备的文章中，我们已经简单地介绍了物联网操作系统。物联网操作系统的种类非常多，不过其中有很大一部分是基于Linux系统改造的，还有一些系统是商业公司或开源组织开发的，当然微软公司也开发了一系列面向嵌入式应用的操作系统。&lt;br&gt;&lt;img src=&quot;http://p1.pstatp.com/large/26e400043526f2087cb0&quot; alt=&quot;物联网操作系统&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="物联网" scheme="http://robotshell.com/categories/%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-    
-      <category term="物联网" scheme="http://robotshell.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-  </entry>
-  
-  <entry>
     <title>纵论物联网（八）：面向可穿戴设备的无线物联网技术</title>
     <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E9%9D%A2%E5%90%91%E5%8F%AF%E7%A9%BF%E6%88%B4%E8%AE%BE%E5%A4%87%E7%9A%84%E6%97%A0%E7%BA%BF%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF/"/>
     <id>http://robotshell.com/2017/10/26/纵论物联网（八）：面向可穿戴设备的无线物联网技术/</id>
@@ -343,26 +323,6 @@
     <summary type="html">
     
       &lt;p&gt;导语&lt;br&gt;智能手环、智能手表为代表的可穿戴设备，在短短几年时间内，就已经在全世界普及开来。可穿戴设备是物联网领域很重要的一种设备类型，特点是功耗低、体积小、电量有限 。本文主要介绍可应用于可穿戴设备的无线技术有哪些？&lt;br&gt;&lt;img src=&quot;http://ovfro7ddi.bkt.clouddn.com/%E9%9D%A2%E5%90%91%E5%8F%AF%E7%A9%BF%E6%88%B4%E8%AE%BE%E5%A4%87%E7%9A%84%E6%97%A0%E7%BA%BF%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF1.JPEG&quot; alt=&quot;纵论物联网（八）：面向可穿戴设备的无线物联网技术&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="物联网" scheme="http://robotshell.com/categories/%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-    
-      <category term="物联网" scheme="http://robotshell.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>纵论物联网（十）：物联网应用层协议</title>
-    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E5%8D%81%EF%BC%89%EF%BC%9A%E7%89%A9%E8%81%94%E7%BD%91%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE/"/>
-    <id>http://robotshell.com/2017/10/26/纵论物联网（十）：物联网应用层协议/</id>
-    <published>2017-10-25T16:00:00.000Z</published>
-    <updated>2019-08-12T06:32:26.230Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;导语&lt;br&gt;物联网的关键技术主要解决三个方面的问题：&lt;u&gt;物体的识别、物体的连接、物体的数据交换&lt;/u&gt;。每个方面都有一些技术解决方案，在前面的文章中，我们介绍了RFID、NFC等物体识别及电子标签的技术，也介绍了物联网节点组网与接入的技术。这篇文章主要讲一下物联网的数据是如何处理的。&lt;br&gt;&lt;img src=&quot;http://ovfro7ddi.bkt.clouddn.com/%E7%89%A9%E8%81%94%E7%BD%91%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%EF%BC%91.JPEG&quot; alt=&quot;keyTec&quot;&gt;&lt;br&gt;物联网关键技术大全&lt;/p&gt;
     
     </summary>
     
@@ -394,16 +354,35 @@
   </entry>
   
   <entry>
-    <title>纵论物联网（一）：无线技术分类</title>
-    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E6%97%A0%E7%BA%BF%E6%8A%80%E6%9C%AF%E5%88%86%E7%B1%BB/"/>
-    <id>http://robotshell.com/2017/10/26/纵论物联网（一）：无线技术分类/</id>
+    <title>纵论物联网（五）：除了Linux，还有什么物联网操作系统</title>
+    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%BA%94%EF%BC%89%EF%BC%9A%E9%99%A4%E4%BA%86Linux%EF%BC%8C%E8%BF%98%E6%9C%89%E4%BB%80%E4%B9%88%E7%89%A9%E8%81%94%E7%BD%91%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://robotshell.com/2017/10/26/纵论物联网（五）：除了Linux，还有什么物联网操作系统/</id>
     <published>2017-10-25T16:00:00.000Z</published>
     <updated>2019-08-12T06:32:26.230Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;物联网的关键技术包括三个方面：物体的识别、物体的连接以及对数据的操作。随着联网物体的数量越来越多，无线技术在物联网中发挥的作用也越来越大。&lt;br&gt;&lt;img src=&quot;http://p1.pstatp.com/large/22d2000589af2a27d43f&quot; alt=&quot;纵论物联网（一）：无线技术分类&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;物联网无线技术分类&quot;&gt;&lt;a href=&quot;#物联网无线技术分类&quot; class=&quot;headerlink&quot; title=&quot;物联网无线技术分类&quot;&gt;&lt;/a&gt;物联网无线技术分类&lt;/h1&gt;
+      &lt;p&gt;在前面介绍物联网终端设备的文章中，我们已经简单地介绍了物联网操作系统。物联网操作系统的种类非常多，不过其中有很大一部分是基于Linux系统改造的，还有一些系统是商业公司或开源组织开发的，当然微软公司也开发了一系列面向嵌入式应用的操作系统。&lt;br&gt;&lt;img src=&quot;http://p1.pstatp.com/large/26e400043526f2087cb0&quot; alt=&quot;物联网操作系统&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="物联网" scheme="http://robotshell.com/categories/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+    
+      <category term="物联网" scheme="http://robotshell.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>纵论物联网（十）：物联网应用层协议</title>
+    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E5%8D%81%EF%BC%89%EF%BC%9A%E7%89%A9%E8%81%94%E7%BD%91%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE/"/>
+    <id>http://robotshell.com/2017/10/26/纵论物联网（十）：物联网应用层协议/</id>
+    <published>2017-10-25T16:00:00.000Z</published>
+    <updated>2019-08-12T06:32:26.230Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;导语&lt;br&gt;物联网的关键技术主要解决三个方面的问题：&lt;u&gt;物体的识别、物体的连接、物体的数据交换&lt;/u&gt;。每个方面都有一些技术解决方案，在前面的文章中，我们介绍了RFID、NFC等物体识别及电子标签的技术，也介绍了物联网节点组网与接入的技术。这篇文章主要讲一下物联网的数据是如何处理的。&lt;br&gt;&lt;img src=&quot;http://ovfro7ddi.bkt.clouddn.com/%E7%89%A9%E8%81%94%E7%BD%91%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%EF%BC%91.JPEG&quot; alt=&quot;keyTec&quot;&gt;&lt;br&gt;物联网关键技术大全&lt;/p&gt;
     
     </summary>
     
@@ -424,6 +403,27 @@
     <summary type="html">
     
       &lt;p&gt;最近在网上看到一篇介绍物联网的系列文章《纵论物联网》，但是很遗憾，都是来回转载的，也没有找到出处，零零散散的，东一篇西一篇，看起来很不方便。现汇总收集如下，既做整理，也做收藏。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="物联网" scheme="http://robotshell.com/categories/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+    
+      <category term="物联网" scheme="http://robotshell.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>纵论物联网（一）：无线技术分类</title>
+    <link href="http://robotshell.com/2017/10/26/%E7%BA%B5%E8%AE%BA%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E6%97%A0%E7%BA%BF%E6%8A%80%E6%9C%AF%E5%88%86%E7%B1%BB/"/>
+    <id>http://robotshell.com/2017/10/26/纵论物联网（一）：无线技术分类/</id>
+    <published>2017-10-25T16:00:00.000Z</published>
+    <updated>2019-08-12T06:32:26.230Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;物联网的关键技术包括三个方面：物体的识别、物体的连接以及对数据的操作。随着联网物体的数量越来越多，无线技术在物联网中发挥的作用也越来越大。&lt;br&gt;&lt;img src=&quot;http://p1.pstatp.com/large/22d2000589af2a27d43f&quot; alt=&quot;纵论物联网（一）：无线技术分类&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;物联网无线技术分类&quot;&gt;&lt;a href=&quot;#物联网无线技术分类&quot; class=&quot;headerlink&quot; title=&quot;物联网无线技术分类&quot;&gt;&lt;/a&gt;物联网无线技术分类&lt;/h1&gt;
     
     </summary>
     
