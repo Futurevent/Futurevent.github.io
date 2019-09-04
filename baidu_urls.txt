@@ -1,34 +1,34 @@
-http://robotshell.com/2019/08/30/Google的Fuchsia-OS到底是什么/
-http://robotshell.com/2019/08/16/Harmony-Fuchsia的相遇/
-http://robotshell.com/2018/06/26/Robot-OS-框架杂谈（二）：语音交互各厂产品/
-http://robotshell.com/2018/06/21/android性能优化之帧率测试/
-http://robotshell.com/2018/06/21/Robot-OS-框架杂谈/
-http://robotshell.com/2018/03/13/ubuntu-grub-引导丢失修复/
-http://robotshell.com/2018/03/11/android-O-电源管理之从设备唤醒谈起/
-http://robotshell.com/2018/02/06/Android包管理之App安装前的校验/
-http://robotshell.com/2018/02/04/android-O-电源管理之从automotive谈起/
-http://robotshell.com/2018/02/03/Android-O-Vehicle之Car-Service/
-http://robotshell.com/2018/02/03/Android-O-Vehicle之架构介绍/
-http://robotshell.com/2018/01/08/Android-EventLog-Tags-说明/
-http://robotshell.com/2018/01/07/Linux-安装和使用Cisco-AnyConnect-Client/
-http://robotshell.com/2017/11/04/Linux-版本控制工具之Rabbitvcs/
-http://robotshell.com/2017/10/26/纵论物联网（九）：物联网设备的标识技术/
-http://robotshell.com/2017/10/26/纵论物联网（二）：LPWAN技术/
-http://robotshell.com/2017/10/26/纵论物联网（八）：面向可穿戴设备的无线物联网技术/
-http://robotshell.com/2017/10/26/纵论物联网（五）：除了Linux，还有什么物联网操作系统/
-http://robotshell.com/2017/10/26/纵论物联网（六）：基于Linux的物联网操作系统/
-http://robotshell.com/2017/10/26/纵论物联网（十）：物联网应用层协议/
-http://robotshell.com/2017/10/26/纵论物联网/
-http://robotshell.com/2017/10/26/纵论物联网（一）：无线技术分类/
-http://robotshell.com/2017/10/26/纵论物联网（七）：面向智能家居的物联网解决方案/
-http://robotshell.com/2017/10/26/纵论物联网（三）：3GPP物联网技术/
-http://robotshell.com/2017/09/01/语音交互系统的自动化测试思考/
-http://robotshell.com/2017/08/31/敏捷：硝烟中的scrum和xp/
-http://robotshell.com/2017/08/31/基于RT-Linux机器人控制系统实时性的探讨/
-http://robotshell.com/2017/08/30/Android-FileObserver 类使用指南/
-http://robotshell.com/2017/08/29/atom配置入门/
-http://robotshell.com/2017/08/19/Javah-命令详解/
-http://robotshell.com/2017/08/12/java-编码规范/
-http://robotshell.com/2017/08/07/机器学习学习笔记（二）/
-http://robotshell.com/2017/08/07/机器学习学习笔记（一）/
-http://robotshell.com/2017/07/29/Hexo快速入门/
+http://robotshell.com/2019/08/30/os/what's fuchsia os/
+http://robotshell.com/2019/08/16/os/harmony&fuchsia/
+http://robotshell.com/2018/06/26/robot-os/arch/vui2/
+http://robotshell.com/2018/06/21/android/test/optimization frame rate/
+http://robotshell.com/2018/06/21/robot-os/arch/vui1/
+http://robotshell.com/2018/03/13/skill/grub repair/
+http://robotshell.com/2018/03/11/android/power wakeup/
+http://robotshell.com/2018/02/06/android/package verify/
+http://robotshell.com/2018/02/04/android/power automotive/
+http://robotshell.com/2018/02/03/android/carservice/
+http://robotshell.com/2018/02/03/android/vehcle arch/
+http://robotshell.com/2018/01/08/android/eventlog/
+http://robotshell.com/2018/01/07/tool/anyconnect/
+http://robotshell.com/2017/11/04/tool/rabbitvcs/
+http://robotshell.com/2017/10/26/iot/9/
+http://robotshell.com/2017/10/26/iot/2/
+http://robotshell.com/2017/10/26/iot/8/
+http://robotshell.com/2017/10/26/iot/5/
+http://robotshell.com/2017/10/26/iot/6/
+http://robotshell.com/2017/10/26/iot/10/
+http://robotshell.com/2017/10/26/iot/0/
+http://robotshell.com/2017/10/26/iot/1/
+http://robotshell.com/2017/10/26/iot/7/
+http://robotshell.com/2017/10/26/iot/3/
+http://robotshell.com/2017/09/01/robot-os/test/autotest/
+http://robotshell.com/2017/08/31/old/scrum&xp/
+http://robotshell.com/2017/08/31/robot-os/arch/rtlinux/
+http://robotshell.com/2017/08/30/android/fileobserver/
+http://robotshell.com/2017/08/29/blog-skill/atom-skill/atom config/
+http://robotshell.com/2017/08/19/java/javah/
+http://robotshell.com/2017/08/12/java/code standards/
+http://robotshell.com/2017/08/07/machine-learning/note2/
+http://robotshell.com/2017/08/07/machine-learning/note1/
+http://robotshell.com/2017/07/29/blog-skill/hexo-skill/HexoQuickStart/
