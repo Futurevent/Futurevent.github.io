@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://robotshell.com/2019/09/06/os/stories&modules/</loc>
+    <lastmod>2019-09-06</lastmod>
+  </url>  <url>
+    <loc>http://robotshell.com/2018/02/03/android/vehclearch/</loc>
+    <lastmod>2019-09-05</lastmod>
+  </url>  <url>
     <loc>http://robotshell.com/2019/08/30/os/what's%20fuchsia%20os/</loc>
     <lastmod>2019-09-04</lastmod>
   </url>  <url>
@@ -26,9 +32,6 @@
     <lastmod>2019-09-04</lastmod>
   </url>  <url>
     <loc>http://robotshell.com/2018/02/04/android/power%20automotive/</loc>
-    <lastmod>2019-09-04</lastmod>
-  </url>  <url>
-    <loc>http://robotshell.com/2018/02/03/android/vehcle%20arch/</loc>
     <lastmod>2019-09-04</lastmod>
   </url>  <url>
     <loc>http://robotshell.com/2018/02/03/android/carservice/</loc>
