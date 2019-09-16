@@ -97,7 +97,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="物联网,">
+  <meta name="keywords" content="OS,">
 
 
 
@@ -115,24 +115,18 @@
 
 
 
-<meta name="description" content="导语物联网主要由三个方面关键技术：_连接、标识_以及_数据的操作_。 在前面的文章中，我们已经谈了很多关于物联网中物体如何连接网络的技术，而实际上物体的标识才是物联网实现的第一步，就是我们要唯一地标识和区分每一个物体。以RFID为代表的物体标识技术曾经几乎就是物联网的代名词，而今RFID的演进技术NFC又在各个领域发挥着重要作用。通过这篇文章，我们来聊一聊物联网设备的标识技术，RFID与NFC究竟">
-<meta name="keywords" content="物联网">
+<meta name="description" content="Fuchsia简述的更多文章：Googel的Fuchsia OS到底是什么Fuchsia的APP变革 之前在文章《Fuchsia的APP变革》中介绍过，Fuchisa的交互单位是story，而story是由一系列来自不同APP的module组合而成的。这些不同的module之间自然的就会涉及到通信问题。所以实体（entities）就应用而生了。Entity就如同胶水一般将各个module粘合在一次">
+<meta name="keywords" content="OS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="纵论物联网（九）：物联网设备的标识技术">
-<meta property="og:url" content="http://robotshell.com/2017/10/26/iot/9/index.html">
+<meta property="og:title" content="Fuchsia：万物皆实体">
+<meta property="og:url" content="http://robotshell.com/2019/09/16/os/entity/index.html">
 <meta property="og:site_name" content="Robot Shell">
-<meta property="og:description" content="导语物联网主要由三个方面关键技术：_连接、标识_以及_数据的操作_。 在前面的文章中，我们已经谈了很多关于物联网中物体如何连接网络的技术，而实际上物体的标识才是物联网实现的第一步，就是我们要唯一地标识和区分每一个物体。以RFID为代表的物体标识技术曾经几乎就是物联网的代名词，而今RFID的演进技术NFC又在各个领域发挥着重要作用。通过这篇文章，我们来聊一聊物联网设备的标识技术，RFID与NFC究竟">
+<meta property="og:description" content="Fuchsia简述的更多文章：Googel的Fuchsia OS到底是什么Fuchsia的APP变革 之前在文章《Fuchsia的APP变革》中介绍过，Fuchisa的交互单位是story，而story是由一系列来自不同APP的module组合而成的。这些不同的module之间自然的就会涉及到通信问题。所以实体（entities）就应用而生了。Entity就如同胶水一般将各个module粘合在一次">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ovfro7ddi.bkt.clouddn.com/%E7%89%A9%E8%81%94%E7%BD%91%E8%AE%BE%E5%A4%87%E7%9A%84%E6%A0%87%E8%AF%86%E6%8A%80%E6%9C%AF1.JPEG">
-<meta property="og:image" content="http://ovfro7ddi.bkt.clouddn.com/%E7%89%A9%E8%81%94%E7%BD%91%E8%AE%BE%E5%A4%87%E7%9A%84%E6%A0%87%E8%AF%86%E6%8A%80%E6%9C%AF2.JPEG">
-<meta property="og:image" content="http://ovfro7ddi.bkt.clouddn.com/%E7%89%A9%E8%81%94%E7%BD%91%E8%AE%BE%E5%A4%87%E7%9A%84%E6%A0%87%E8%AF%86%E6%8A%80%E6%9C%AF3.JPEG">
-<meta property="og:image" content="http://ovfro7ddi.bkt.clouddn.com/%E7%89%A9%E8%81%94%E7%BD%91%E8%AE%BE%E5%A4%87%E7%9A%84%E6%A0%87%E8%AF%86%E6%8A%80%E6%9C%AF4.JPEG">
-<meta property="og:image" content="http://ovfro7ddi.bkt.clouddn.com/%E7%89%A9%E8%81%94%E7%BD%91%E8%AE%BE%E5%A4%87%E7%9A%84%E6%A0%87%E8%AF%86%E6%8A%80%E6%9C%AF5.JPEG">
-<meta property="og:updated_time" content="2019-09-04T10:04:14.915Z">
+<meta property="og:updated_time" content="2019-09-16T03:24:24.167Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="纵论物联网（九）：物联网设备的标识技术">
-<meta name="twitter:description" content="导语物联网主要由三个方面关键技术：_连接、标识_以及_数据的操作_。 在前面的文章中，我们已经谈了很多关于物联网中物体如何连接网络的技术，而实际上物体的标识才是物联网实现的第一步，就是我们要唯一地标识和区分每一个物体。以RFID为代表的物体标识技术曾经几乎就是物联网的代名词，而今RFID的演进技术NFC又在各个领域发挥着重要作用。通过这篇文章，我们来聊一聊物联网设备的标识技术，RFID与NFC究竟">
-<meta name="twitter:image" content="http://ovfro7ddi.bkt.clouddn.com/%E7%89%A9%E8%81%94%E7%BD%91%E8%AE%BE%E5%A4%87%E7%9A%84%E6%A0%87%E8%AF%86%E6%8A%80%E6%9C%AF1.JPEG">
+<meta name="twitter:title" content="Fuchsia：万物皆实体">
+<meta name="twitter:description" content="Fuchsia简述的更多文章：Googel的Fuchsia OS到底是什么Fuchsia的APP变革 之前在文章《Fuchsia的APP变革》中介绍过，Fuchisa的交互单位是story，而story是由一系列来自不同APP的module组合而成的。这些不同的module之间自然的就会涉及到通信问题。所以实体（entities）就应用而生了。Entity就如同胶水一般将各个module粘合在一次">
 
 
 
@@ -162,13 +156,13 @@
 
 
 
-  <link rel="canonical" href="http://robotshell.com/2017/10/26/iot/9/">
+  <link rel="canonical" href="http://robotshell.com/2019/09/16/os/entity/">
 
 
 
 
 
-  <title>纵论物联网（九）：物联网设备的标识技术 | Robot Shell</title>
+  <title>Fuchsia：万物皆实体 | Robot Shell</title>
   
 
 
@@ -357,7 +351,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2017/10/26/iot/9/">
+    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2019/09/16/os/entity/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="robot">
@@ -374,7 +368,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">纵论物联网（九）：物联网设备的标识技术</h1>
+          <h1 class="post-title" itemprop="name headline">Fuchsia：万物皆实体</h1>
         
 
         <div class="post-meta">
@@ -386,8 +380,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-26T00:00:00+08:00">
-                2017-10-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-16T11:24:24+08:00">
+                2019-09-16
               </time>
             
 
@@ -402,8 +396,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-04T18:04:14+08:00">
-                2019-09-04
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-16T11:24:24+08:00">
+                2019-09-16
               </time>
             
           </span>
@@ -421,8 +415,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iot/" itemprop="url" rel="index">
-                    <span itemprop="name">物联网</span>
+                  <a href="/categories/os/" itemprop="url" rel="index">
+                    <span itemprop="name">OS</span>
                   </a>
                 </span>
 
@@ -463,19 +457,32 @@
       
 
       
-        <p>导语<br>物联网主要由三个方面关键技术：_连接<em>、</em>标识_以及_数据的操作_。</p>
-<p>在前面的文章中，我们已经谈了很多关于物联网中物体如何连接网络的技术，而实际上物体的标识才是物联网实现的第一步，就是我们要唯一地标识和区分每一个物体。<br>以RFID为代表的物体标识技术曾经几乎就是物联网的代名词，而今RFID的演进技术NFC又在各个领域发挥着重要作用。通过这篇文章，我们来聊一聊物联网设备的标识技术，RFID与NFC究竟有什么关系？</p>
+        <p>Fuchsia简述的更多文章：<br><a href="https://www.robotshell.com/2019/08/30/os/what's%20fuchsia%20os/" target="_blank" rel="noopener">Googel的Fuchsia OS到底是什么</a><br><a href="https://www.robotshell.com/2019/09/06/os/stories&modules/" target="_blank" rel="noopener">Fuchsia的APP变革</a></p>
+<p>之前在文章《Fuchsia的APP变革》中介绍过，Fuchisa的交互单位是story，而story是由一系列来自不同APP的module组合而成的。这些不同的module之间自然的就会涉及到通信问题。所以实体（entities）就应用而生了。Entity就如同胶水一般将各个module粘合在一次，从而构成story来供用户使用。同时这些从数字世界中抽象出的一个个实体，将作为数据单元被Google Assist读取使用，从而让Assistant获得理解用户使用上下文的能力。</p>
 <a id="more"></a>
+<h1 id="Entity概述"><a href="#Entity概述" class="headerlink" title="Entity概述"></a>Entity概述</h1><p>Fuchsia的官方文档对Entity的描述如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">An entity is an identifiable person, place, thing, event, or concept</span><br><span class="line">which is represented within the Fuchsia platform as a structured data</span><br><span class="line">object which can be referenced, retrieved, presented, manipulated, or shared.</span><br></pre></td></tr></table></figure>
 
-<p><strong>RFID</strong><br>非接触式射频识别(RFID)本质上也是一种无线通信技术，也是通过无线电磁波来传送数据。不过和一般的通信技术不一样的是它的用途，不是打电话，或者发短信，RFID主要用来识别和跟踪物体上绑定的标签，从而实现对物体的管理。<br><img src="http://ovfro7ddi.bkt.clouddn.com/%E7%89%A9%E8%81%94%E7%BD%91%E8%AE%BE%E5%A4%87%E7%9A%84%E6%A0%87%E8%AF%86%E6%8A%80%E6%9C%AF1.JPEG" alt="RFID"><br>RFID技术广泛应用于仓储物流中，用于对货物进行跟踪</p>
-<p>RFID系统使用标签（Tag）来识别物体。除了标签，RFID系统还有一个双向无线收发机，被称为读写器（Interrogator/Reader），向标签发送信号，并读取标签的反馈。<br><img src="http://ovfro7ddi.bkt.clouddn.com/%E7%89%A9%E8%81%94%E7%BD%91%E8%AE%BE%E5%A4%87%E7%9A%84%E6%A0%87%E8%AF%86%E6%8A%80%E6%9C%AF2.JPEG" alt="RFID"><br>RFID系统由读写器与标签组成<br>RFID分为被动式RFID与主动式RFID。被动RFID一般是指不带电池的无源RFID，其完全依赖于接收电磁波来驱动电路工作，标签的可识别距离不会变化。主动RFID系统一般指有源的RFID标签，其可识别距离会随着电量的减少而降低。<br><img src="http://ovfro7ddi.bkt.clouddn.com/%E7%89%A9%E8%81%94%E7%BD%91%E8%AE%BE%E5%A4%87%E7%9A%84%E6%A0%87%E8%AF%86%E6%8A%80%E6%9C%AF3.JPEG" alt="ETC"><br>采用RFID技术的ETC系统让通行更加方便</p>
-<p>主动RFID一般识别距离都比较长，比如高速公路自动收费站以及自动停车场的ETC系统，一般都采用工作于2.4GHz的主动RFID。不过ETC标签中有一个电池，要是电池没电，就需要更换电池才可以工作。</p>
-<p>RFID标签<br>RFID标签由集成电路（IC: Integrated Circuit）和天线两个部分组成：<br>IC用来存储和处理数据，对RF信号进行调制和解调，另外还需要从读写器发出的信号中收集能量驱动自身工作。<br>天线的作用就是发射和接收无线信号。</p>
-<p>EPC码格式，EPC码可能逐渐会取代传统的UPC码，即商品条码</p>
-<p>RFID标签中存着什么？<br>RFID标签中存储的数据格式一般是<br>EPC（Electronic Product Code）码<br>。EPC码可以识别世界上所有的物体。EPC码的结构由EPCglobal Tag Data Standard标准定义，这个标准是一个公开标准，可以从EPCglobal Inc网站上面免费下载。</p>
-<p><strong>NFC技术</strong><br>说完RFID，再来说说近场通信（NFC: Near Field Communication）。NFC是目前手机非常常见的一个通信接口。可以让智能设备通过相互靠近的方式来交换数据。NFC设备也可以与一个无源的NFC标签之间进行通信，这个通信方式就和RFID是一样的。<br><img src="http://ovfro7ddi.bkt.clouddn.com/%E7%89%A9%E8%81%94%E7%BD%91%E8%AE%BE%E5%A4%87%E7%9A%84%E6%A0%87%E8%AF%86%E6%8A%80%E6%9C%AF4.JPEG" alt="NFC"><br>NFC的通信方式<br>NFC技术是由RFID技术演变而来，除了通信协议，NFC标准还规定了数据交换格式。在NFC单一芯片上结合了感应式读卡器、感应式卡片和点对点的功能，能在短距离内与兼容设备进行识别和数据交换。</p>
-<p>NFC与RFID的区别<br>（1）工作频段<br>NFC可以理解为RFID技术的一个子集，使用的是13.56MHz频段，而RFID还包括其他频段。<br>RFID的工作频段有很多，低频段有125KHz，高频段有13.56MHz，超高频段有433.92MHz、915MHz，还有微波频段的2.45GHz等。<br>（2）通信距离<br>NFC被称为近场通信，通信距离确实非常近，不超过0.1m。<br>RFID种类很多，可识别距离也不一样。像RFID门禁卡，识别距离和NFC差不多。但对于ETC这种应用场景，就要求识别距离比较长。长距离RFID的识别距离可达几十米甚至上百米。<br>（3）应用场景<br>RFID无论主动还是被动，主要工作还是用于对物体的识别，物流、运输、仓储都广泛使用了RFID技术来跟踪货物。<br>NFC芯片的集成度更高，包括了读卡器与标签于一体。另外NFC的双向通信能力得到了加强。也就是说，NFC不仅可以当做标签来做识别，还可以作为一种双向通信方式用于数据交换。目前NFC最常用于支付领域。<br><img src="http://ovfro7ddi.bkt.clouddn.com/%E7%89%A9%E8%81%94%E7%BD%91%E8%AE%BE%E5%A4%87%E7%9A%84%E6%A0%87%E8%AF%86%E6%8A%80%E6%9C%AF5.JPEG" alt="NFC"><br>NFC技术被广泛应用于支付场景</p>
-<p>总的来说，虽然NFC是在RFID技术基础上发展而来的，但是面向不同的应用场景，并不存在替代作用。况且现在RFID的应用场景还是非常多的，NFC暂时还比不了。<br>即使在支付领域和近距离物体识别领域，二维码在很多场景下也能起到NFC的作用，目前对智能手机来说，NFC还不是一个必需的通信接口。<br>如果希望了解更多关于物联网的信息，请继续关注“微说互联网”的“纵论物联网”系列。</p>
+<p>大体可以理解为，实体就是在Fuchsia平台上可操作、在不同进程间可分享的一种数据结构，这个数据对象可用来表示一个实际的物体信息，也可以用来表示一个抽象的概念相信。<br>根据文档的描述，实体的表示使用JSON格式。JSON格式不仅可读性很高，而且在不同变成语言中的解析方式都相同，这为Fuchsia的多语言编程打下了接触。同时，用来作为跨设备使用的支撑的Ledger被设计为用来处理JSON对象，这将有利于Ledger在设备之间更好的分享和追踪Entity对象。<br>举例来讲，一个典型的Entity使用场景是复制和粘贴，可以在Story一个module复制entity，然后粘贴到另一个entity中，例如复制联系人、待办事项、或者从一个播放器复制一个歌曲列表到另一个播放器等。然后，分享的实体中的信息可以被APP或者Google assistant读取，利用其中的关键信息做出对该实体的操作或者是根据这些信息可以更进一步的推荐其他信息，推荐的其他信息又是另外的一个个实体。甚至，根据官方文档的介绍，Fuchisa 不仅用在APP中，在浏览器中也可以根据网页的内容生成对应的实体，该实体同样可以在其他APP中被处理。</p>
+<h1 id="Entity特征"><a href="#Entity特征" class="headerlink" title="Entity特征"></a>Entity特征</h1><ul>
+<li>types: 指示实体的类别范围，使用schema的方式进行表示</li>
+<li>content： 实体中包含的数据，使用二进制或者是指定类型的数据结构表示</li>
+<li>provider： 实体的提供者</li>
+<li>reference： 实体的token，可使用它来找到并使用该实体。<h1 id="Entity分为两类"><a href="#Entity分为两类" class="headerlink" title="Entity分为两类"></a>Entity分为两类</h1></li>
+<li>瞬时实体：在运行时作为传输对象存在，例如<ul>
+<li>复制到剪切板上的一段文字</li>
+<li>从文本内容中抽取出来的一个电话号码</li>
+<li>没有被保存的截图</li>
+</ul>
+</li>
+<li>永久实体：可通过Provider获取到的实体，例如<ul>
+<li>邮件会话</li>
+<li>在相册中的照片</li>
+<li>联系人卡片</li>
+<li>日历中的事件提醒</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -533,7 +540,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://robotshell.com/2017/10/26/iot/9/" title="纵论物联网（九）：物联网设备的标识技术">http://robotshell.com/2017/10/26/iot/9/</a>
+    <a href="http://robotshell.com/2019/09/16/os/entity/" title="Fuchsia：万物皆实体">http://robotshell.com/2019/09/16/os/entity/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -548,7 +555,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/物联网/" rel="tag"># 物联网</a>
+            <a href="/tags/OS/" rel="tag"># OS</a>
           
         </div>
       
@@ -561,8 +568,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/26/iot/3/" rel="next" title="纵论物联网（三）：3GPP物联网技术">
-                <i class="fa fa-chevron-left"></i> 纵论物联网（三）：3GPP物联网技术
+              <a href="/2019/09/06/os/stories&modules/" rel="next" title="Fuchsia的APP变革">
+                <i class="fa fa-chevron-left"></i> Fuchsia的APP变革
               </a>
             
           </div>
@@ -570,10 +577,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/26/iot/5/" rel="prev" title="纵论物联网（五）：除了Linux，还有什么物联网操作系统">
-                纵论物联网（五）：除了Linux，还有什么物联网操作系统 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -653,8 +656,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image" src="/images/robot.png" alt="robot">
@@ -748,6 +760,22 @@ var jiathis_config={
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Entity概述"><span class="nav-number">1.</span> <span class="nav-text">Entity概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Entity特征"><span class="nav-number">2.</span> <span class="nav-text">Entity特征</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Entity分为两类"><span class="nav-number">3.</span> <span class="nav-text">Entity分为两类</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
