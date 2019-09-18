@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://robotshell.com/"/>
-  <updated>2019-09-16T03:24:24.167Z</updated>
+  <updated>2019-09-18T04:10:19.255Z</updated>
   <id>http://robotshell.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>android之SystemServer的启动</title>
+    <link href="http://robotshell.com/2019/09/18/android/BootSystemServer/"/>
+    <id>http://robotshell.com/2019/09/18/android/BootSystemServer/</id>
+    <published>2019-09-18T04:10:19.000Z</published>
+    <updated>2019-09-18T04:10:19.255Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Android系统中恐怕是没有任何一个进程有SystemServer重要了。Android的大量核心Service都运行在SystemServer上，这些核心的Service笼统的讲几乎能代表整个Android的Framework层。Android区别于Linux的关键又在于Framework层，所以更进一步讲SystemServer几乎又可代表整个Android系统了。&lt;br&gt;本文主要分析SystemServer的启动过程，分析的方法类似于从一个地方到另外一个地方的旅游，不只是单纯的到达目的地，也会欣赏沿路的风景。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="android" scheme="http://robotshell.com/categories/android/"/>
+    
+    
+      <category term="android" scheme="http://robotshell.com/tags/android/"/>
+    
+  </entry>
   
   <entry>
     <title>Fuchsia：万物皆实体</title>
@@ -355,15 +375,15 @@
   </entry>
   
   <entry>
-    <title>纵论物联网</title>
-    <link href="http://robotshell.com/2017/10/26/iot/0/"/>
-    <id>http://robotshell.com/2017/10/26/iot/0/</id>
+    <title>纵论物联网（十）：物联网应用层协议</title>
+    <link href="http://robotshell.com/2017/10/26/iot/10/"/>
+    <id>http://robotshell.com/2017/10/26/iot/10/</id>
     <published>2017-10-25T16:00:00.000Z</published>
-    <updated>2019-09-04T10:03:40.256Z</updated>
+    <updated>2019-09-04T10:04:52.189Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;最近在网上看到一篇介绍物联网的系列文章《纵论物联网》，但是很遗憾，都是来回转载的，也没有找到出处，零零散散的，东一篇西一篇，看起来很不方便。现汇总收集如下，既做整理，也做收藏。&lt;/p&gt;
+      &lt;p&gt;导语&lt;br&gt;物联网的关键技术主要解决三个方面的问题：&lt;u&gt;物体的识别、物体的连接、物体的数据交换&lt;/u&gt;。每个方面都有一些技术解决方案，在前面的文章中，我们介绍了RFID、NFC等物体识别及电子标签的技术，也介绍了物联网节点组网与接入的技术。这篇文章主要讲一下物联网的数据是如何处理的。&lt;br&gt;&lt;img src=&quot;http://ovfro7ddi.bkt.clouddn.com/%E7%89%A9%E8%81%94%E7%BD%91%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%EF%BC%91.JPEG&quot; alt=&quot;keyTec&quot;&gt;&lt;br&gt;物联网关键技术大全&lt;/p&gt;
     
     </summary>
     
@@ -375,15 +395,15 @@
   </entry>
   
   <entry>
-    <title>纵论物联网（六）：基于Linux的物联网操作系统</title>
-    <link href="http://robotshell.com/2017/10/26/iot/6/"/>
-    <id>http://robotshell.com/2017/10/26/iot/6/</id>
+    <title>纵论物联网</title>
+    <link href="http://robotshell.com/2017/10/26/iot/0/"/>
+    <id>http://robotshell.com/2017/10/26/iot/0/</id>
     <published>2017-10-25T16:00:00.000Z</published>
-    <updated>2019-09-04T10:04:45.254Z</updated>
+    <updated>2019-09-04T10:03:40.256Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;提到物联网操作系统，就不能不提Linux，因为Linux可能是目前在物联网设备中应用最广的操作系统了。前面的文章刚刚介绍了不少非Linux类的物联网操作系统，本文就来介绍一下目前常用的基于Linux的物联网操作系统。&lt;br&gt;&lt;img src=&quot;http://images.ofweek.com/Upload/News/2017-06/14/lime/1497400939793024893.jpg&quot; alt=&quot;基于Linux的物联网操作系统&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;最近在网上看到一篇介绍物联网的系列文章《纵论物联网》，但是很遗憾，都是来回转载的，也没有找到出处，零零散散的，东一篇西一篇，看起来很不方便。现汇总收集如下，既做整理，也做收藏。&lt;/p&gt;
     
     </summary>
     
@@ -405,26 +425,6 @@
     
       &lt;p&gt;物联网的关键技术包括三个方面：物体的识别、物体的连接以及对数据的操作。随着联网物体的数量越来越多，无线技术在物联网中发挥的作用也越来越大。&lt;br&gt;&lt;img src=&quot;http://p1.pstatp.com/large/22d2000589af2a27d43f&quot; alt=&quot;纵论物联网（一）：无线技术分类&quot;&gt;&lt;/p&gt;
 &lt;h1 id=&quot;物联网无线技术分类&quot;&gt;&lt;a href=&quot;#物联网无线技术分类&quot; class=&quot;headerlink&quot; title=&quot;物联网无线技术分类&quot;&gt;&lt;/a&gt;物联网无线技术分类&lt;/h1&gt;
-    
-    </summary>
-    
-      <category term="物联网" scheme="http://robotshell.com/categories/iot/"/>
-    
-    
-      <category term="物联网" scheme="http://robotshell.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>纵论物联网（二）：LPWAN技术</title>
-    <link href="http://robotshell.com/2017/10/26/iot/2/"/>
-    <id>http://robotshell.com/2017/10/26/iot/2/</id>
-    <published>2017-10-25T16:00:00.000Z</published>
-    <updated>2019-09-04T10:04:22.602Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;不同的物联网技术适用于不同的应用场景。对于需要远距离大范围覆盖的场景来说，我们熟悉的蓝牙、WiFi、Zigbee这些技术都不适合，我们需要低功耗广域网（LPWAN：Low Power Wide Area Network）技术。&lt;br&gt;&lt;img src=&quot;http://ovfro7ddi.bkt.clouddn.com/LWPAN%E6%8A%80%E6%9C%AF%E4%B8%80.JPEG&quot; alt=&quot;LPWAN 技术特点&quot;&gt;&lt;/p&gt;
     
     </summary>
     

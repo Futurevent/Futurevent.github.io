@@ -494,7 +494,8 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">经过markdown编辑器预览可以可以是：</span><br><span class="line">![markdown code](http://ovfro7ddi.bkt.clouddn.com/markdown%20code.png)</span><br><span class="line"></span><br><span class="line">### 实用插件配置</span><br><span class="line">#### __markdown 预览__</span><br><span class="line">![intro](https://user-images.githubusercontent.com/1908863/28227953-eb6eefa4-68a1-11e7-8769-96ea83facf3b.png)</span><br><span class="line">atom 默认已经安装了markdown的预览插件：markwon-preview 但是默认的往往功能不够强大，强烈建议卸载之（可以实用快捷键 __ctrl+shift+p__ 这个万能键，然后在弹出的框内输入uninstall package 就会列出提示，然后进入对应的界面卸载就可以了）</span><br><span class="line">建议安装插件：__markdown preview Enhanced__， 安装后使用快捷键 __ctrl+shift+m__ 进行预览，该预览插件支持 __mermaid__ 图形预览 和 __MathJax__ 数学公式预览</span><br><span class="line">markdown preview Enhanced 还有很多非常强大的功能：</span><br><span class="line">    - 更多介绍可参考 [markdown preview enhanced 简介](https://shd101wyy.github.io/markdown-preview-enhanced/#/zh-cn/)</span><br><span class="line">    - 项目[gitup](https://github.com/shd101wyy/markdown-preview-enhanced)</span><br><span class="line">#### __atom-mermaid__ 图形预览</span><br><span class="line">如下是mermaid的官方说明：</span><br><span class="line">&gt;Generation of diagrams and flowcharts from text in a similar manner as markdown.</span><br><span class="line">在atom 中使用 则需要安装包 __atom-mermaid__</span><br><span class="line"></span><br><span class="line">下图是从官网的介绍中获取的一张图：</span><br><span class="line">![intro](http://y-takey.github.io/atom-mermaid-example.gif)</span><br><span class="line">正如官方的描述，mermaid的作用就是使用简单的文本语法，使用文本来绘制图。更多mermaid的用法可以参考 [mermaid 官方介绍](https://mermaidjs.github.io/)。</span><br><span class="line">__但是划重点了啊__ 在markdown中使用，需要将其当做代码块输入，示例如下：</span><br></pre></td></tr></table></figure>
 
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A --&gt;B</span><br></pre></td></tr></table></figure></code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">而且必须指明语言类型为&quot;mermaid&quot;</span><br><span class="line">本文只解决了解的问题，此处不再做更详细的介绍，更多使用的详细语法，还请移步[官方介绍](https://mermaidjs.github.io/)</span><br><span class="line">#### __MathJax__ 数学公式</span><br><span class="line">如要在atom markdwon 预览使用 mathjax， 需要在 markdown-preview-enhanced 的设置项__【Math  Rendering option】__选项中指明使用 mathjax 渲染。除此之外倒是没有发现需要独立安装其他package。</span><br><span class="line">- MathJax 项目的[github](https://github.com/mathjax/MathJax)</span><br><span class="line">- MathJax 具体的[使用文档](http://docs.mathjax.org/en/latest/start.html)</span><br><span class="line"></span><br><span class="line">在markdown 中使用math jax 有两种用法：</span><br><span class="line">一种是行内公式，公式内容写在两个$中间，例如：</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;pre class=&quot;mermaid&quot;&gt;    graph LR
+A --&gt;B&lt;/pre&gt;</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">而且必须指明语言类型为&quot;mermaid&quot;</span><br><span class="line">本文只解决了解的问题，此处不再做更详细的介绍，更多使用的详细语法，还请移步[官方介绍](https://mermaidjs.github.io/)</span><br><span class="line">#### __MathJax__ 数学公式</span><br><span class="line">如要在atom markdwon 预览使用 mathjax， 需要在 markdown-preview-enhanced 的设置项__【Math  Rendering option】__选项中指明使用 mathjax 渲染。除此之外倒是没有发现需要独立安装其他package。</span><br><span class="line">- MathJax 项目的[github](https://github.com/mathjax/MathJax)</span><br><span class="line">- MathJax 具体的[使用文档](http://docs.mathjax.org/en/latest/start.html)</span><br><span class="line"></span><br><span class="line">在markdown 中使用math jax 有两种用法：</span><br><span class="line">一种是行内公式，公式内容写在两个$中间，例如：</span><br></pre></td></tr></table></figure>
 
 <p>$(x^{(i)}, y^{(i)})$:ith training example, 代表训练集中的第i个数据</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">这种写法的展现效果如下：</span><br><span class="line">&gt;$(x^&#123;(i)&#125;, y^&#123;(i)&#125;)$:ith training example, 代表训练集中的第i个数据</span><br><span class="line">另外一种是独立行公式，公式前后以$$为标记，例如：</span><br></pre></td></tr></table></figure>
@@ -712,7 +713,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-count">37</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -841,6 +842,14 @@ var jiathis_config={
     NexT.Mist
   </a>
 </div>
+
+
+  <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'dark'});
+    }
+  </script>
 
 
         
