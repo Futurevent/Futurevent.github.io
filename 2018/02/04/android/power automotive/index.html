@@ -123,19 +123,19 @@
 <meta property="og:site_name" content="Robot Shell">
 <meta property="og:description" content="android o 在源码工程/package/service/目录下新增了一个目录Car, 做为android automotive的重要组成部分，这部分可理解为在android世界的基础上，调用android的api构造出的Vehicle框架，该框架将android这一系统获得从手机迁移到目前最大的智能设备————车上的能力。从automotive 开始分析android O 的电源管理，一方">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://robotshell.com/2018/02/04/android/power%20automotive/AndroidAutomotivePowermanagementArch.png">
-<meta property="og:image" content="http://robotshell.com/2018/02/04/android/power%20automotive/VehiclePowerApStateMachine.png">
-<meta property="og:image" content="http://robotshell.com/2018/02/04/android/power%20automotive/AndroidPowerArc.png">
-<meta property="og:image" content="http://robotshell.com/2018/02/04/android/power%20automotive/PowerManagerServiceClass.png">
-<meta property="og:image" content="http://robotshell.com/2018/02/04/android/power%20automotive/Doze.png">
-<meta property="og:image" content="http://robotshell.com/2018/02/04/android/power%20automotive/DozeDeviceIdleControllerstate.png">
-<meta property="og:image" content="http://robotshell.com/2018/02/04/android/power%20automotive/WakelockAcquireRelease.png">
-<meta property="og:image" content="http://robotshell.com/2018/02/04/android/power%20automotive/UpdatePowerStateLocked.png">
-<meta property="og:updated_time" content="2019-09-04T10:06:47.153Z">
+<meta property="og:image" content="http://robotshell.com/2018/02/04/android/power%20automotive/02/04/android/power%20automotive/AndroidAutomotivePowermanagementArch.png">
+<meta property="og:image" content="http://robotshell.com/2018/02/04/android/power%20automotive/02/04/android/power%20automotive/VehiclePowerApStateMachine.png">
+<meta property="og:image" content="http://robotshell.com/2018/02/04/android/power%20automotive/02/04/android/power%20automotive/AndroidPowerArc.png">
+<meta property="og:image" content="http://robotshell.com/2018/02/04/android/power%20automotive/02/04/android/power%20automotive/PowerManagerServiceClass.png">
+<meta property="og:image" content="http://robotshell.com/2018/02/04/android/power%20automotive/02/04/android/power%20automotive/Doze.png">
+<meta property="og:image" content="http://robotshell.com/2018/02/04/android/power%20automotive/02/04/android/power%20automotive/DozeDeviceIdleControllerstate.png">
+<meta property="og:image" content="http://robotshell.com/2018/02/04/android/power%20automotive/02/04/android/power%20automotive/WakelockAcquireRelease.png">
+<meta property="og:image" content="http://robotshell.com/2018/02/04/android/power%20automotive/02/04/android/power%20automotive/UpdatePowerStateLocked.png">
+<meta property="og:updated_time" content="2019-09-21T15:21:18.732Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="android O 电源管理之从automotive谈起">
 <meta name="twitter:description" content="android o 在源码工程/package/service/目录下新增了一个目录Car, 做为android automotive的重要组成部分，这部分可理解为在android世界的基础上，调用android的api构造出的Vehicle框架，该框架将android这一系统获得从手机迁移到目前最大的智能设备————车上的能力。从automotive 开始分析android O 的电源管理，一方">
-<meta name="twitter:image" content="http://robotshell.com/2018/02/04/android/power%20automotive/AndroidAutomotivePowermanagementArch.png">
+<meta name="twitter:image" content="http://robotshell.com/2018/02/04/android/power%20automotive/02/04/android/power%20automotive/AndroidAutomotivePowermanagementArch.png">
 
 
 
@@ -277,7 +277,7 @@
       
         
         <li class="menu-item menu-item-board">
-          <a href="/board/" rel="section">
+          <a href="/board" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
             
@@ -405,8 +405,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-04T18:06:47+08:00">
-                2019-09-04
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-21T23:21:18+08:00">
+                2019-09-21
               </time>
             
           </span>
@@ -469,7 +469,7 @@
         <p>android o 在源码工程/package/service/目录下新增了一个目录Car, 做为android automotive的重要组成部分，这部分可理解为在android世界的基础上，调用android的api构造出的Vehicle框架，该框架将android这一系统获得从手机迁移到目前最大的智能设备————车上的能力。<br>从automotive 开始分析android O 的电源管理，一方面可以站在android api用户的角度，从调用逐层的深入下去直达kernel，另一方面也可以帮助理清android automotive的框架结构。对于android automotive的框架结构的更详细的介绍可以参考另外的说明，本文当然重点还是在于从头到位的串讲下android O的电源管理。</p>
 <a id="more"></a>
 <h1 id="android-O-automotive-框架层中的电源管理"><a href="#android-O-automotive-框架层中的电源管理" class="headerlink" title="android O automotive 框架层中的电源管理"></a>android O automotive 框架层中的电源管理</h1><h2 id="Car-Power-Management-框架"><a href="#Car-Power-Management-框架" class="headerlink" title="Car Power Management 框架"></a>Car Power Management 框架</h2><p>源码分析在关于<a href="http://www.robotshell.com/2018/02/03/Android-O-Vehicle%E4%B9%8BCar-Service/" target="_blank" rel="noopener">Android O Vehicle</a>的相关文章中有详细描述，此处不在赘述，上一张框架图如下：</p>
-<img src="/2018/02/04/android/power%20automotive/AndroidAutomotivePowermanagementArch.png" title="安卓汽车电源管理架构图">
+<img src="/2018/02/04/android/power automotive/02/04/android/power%20automotive/AndroidAutomotivePowermanagementArch.png" title="安卓汽车电源管理架构图">
 <h2 id="androidO-automotive-中定义的AP-Power-状态"><a href="#androidO-automotive-中定义的AP-Power-状态" class="headerlink" title="androidO automotive 中定义的AP Power 状态"></a>androidO automotive 中定义的AP Power 状态</h2><p>Android Vehicle 的电源管理概括起来两件事：同步android与车载MCU的电源状态和通过PowerManager的API控制android的电源状态。</p>
 <p>AP 的官方文档解释：<br>Application Processor, aka SOC. The processor chip running Android. 可以简单理解为Android系统。</p>
 <p>车上的MCU通过gpio或数据总线等方式与AP进行沟通并对AP的电源进行管理，通过get和set属性AP_POWER_STATE的值实现.</p>
@@ -534,7 +534,7 @@
 </tr>
 </tbody></table>
 <p>这五种状态间的切换关系如下：</p>
-<img src="/2018/02/04/android/power%20automotive/VehiclePowerApStateMachine.png" title="车辆电源状态机">
+<img src="/2018/02/04/android/power automotive/02/04/android/power%20automotive/VehiclePowerApStateMachine.png" title="车辆电源状态机">
 <h3 id="AP-POWER-STATE-set的值-AP-–-gt-VMCU"><a href="#AP-POWER-STATE-set的值-AP-–-gt-VMCU" class="headerlink" title="AP_POWER_STATE set的值 (AP –&gt; VMCU)"></a>AP_POWER_STATE set的值 (AP –&gt; VMCU)</h3><p>AP开机或其他业务需求触发或响应VMCU对AP的电源管理需求的过程中，需要向VMCU同步AP的电源变化，在VehiclePropertyType 中有如下定义:</p>
 <table>
 <thead>
@@ -583,13 +583,13 @@
 <p>以上为automotive 部分的电源管理，automotive 部分说明了对android电源管理的请求从VMCU来或者从调用Car接口来。但是automotive 对电源管理请求最终的处理，还得到android系统中，再进一步到kernel中去。</p>
 <hr>
 <h2 id="Android-电源管理"><a href="#Android-电源管理" class="headerlink" title="Android 电源管理"></a>Android 电源管理</h2><p>automotive 通过调用 PowerManager的API实现对Android的电源管理，android 系统的电源管理牵涉的模块非常的多，但是其主要框架是以PowerManagerService核心的，PowerManagerService 做为系统Service与其他系统Service 一起在SystemServer中被初始化。</p>
-<h3 id="android-的电源管理整体框架"><a href="#android-的电源管理整体框架" class="headerlink" title="android 的电源管理整体框架"></a>android 的电源管理整体框架</h3><img src="/2018/02/04/android/power%20automotive/AndroidPowerArc.png" title="安卓电源框架">
+<h3 id="android-的电源管理整体框架"><a href="#android-的电源管理整体框架" class="headerlink" title="android 的电源管理整体框架"></a>android 的电源管理整体框架</h3><img src="/2018/02/04/android/power automotive/02/04/android/power%20automotive/AndroidPowerArc.png" title="安卓电源框架">
 <p>由图可知，电源管理框架可分为如下基层：</p>
 <ul>
 <li>应用层：例如Vehicle的电源管理、设置等其他应用等。</li>
 <li>Framework层：主要实现android电源管理的策略，负责调度和通知其他模块对电源管理做出响应。主要分为JavaFramework 和以com_android_server_power_PowerManagerService.cpp为核心的nativeFramework。</li>
 <li>HAL层：主要包含传统的hardware_legacy中的power.c和android O 新增的Vendor Interface 对应的Hardware/Interface/Power 中的power.hal 部分。</li>
-<li>Kernel层：主要包含linux的电源管理策略，以及对suspend lock的控制和reboot系统调用。<h3 id="PowerManagerService-的基本结构"><a href="#PowerManagerService-的基本结构" class="headerlink" title="PowerManagerService 的基本结构"></a>PowerManagerService 的基本结构</h3><img src="/2018/02/04/android/power%20automotive/PowerManagerServiceClass.png" title="PowerManagerService关键类图">
+<li>Kernel层：主要包含linux的电源管理策略，以及对suspend lock的控制和reboot系统调用。<h3 id="PowerManagerService-的基本结构"><a href="#PowerManagerService-的基本结构" class="headerlink" title="PowerManagerService 的基本结构"></a>PowerManagerService 的基本结构</h3><img src="/2018/02/04/android/power automotive/02/04/android/power%20automotive/PowerManagerServiceClass.png" title="PowerManagerService关键类图">
 <h3 id="automotive-中调用到的PowerManager相关部分"><a href="#automotive-中调用到的PowerManager相关部分" class="headerlink" title="automotive 中调用到的PowerManager相关部分"></a>automotive 中调用到的PowerManager相关部分</h3>主要在SystemInterfaceImpl中</li>
 </ul>
 <table>
@@ -618,7 +618,7 @@
 </tbody></table>
 <ul>
 <li>shutdown 会依次调用到<div id="flowchart-0" class="flow-chart"></div></li>
-<li>goToSleep<br>调用goToSleep的时候第三个参数为GO_TO_SLEEP_FLAG_NO_DOZE(Go to sleep flag: Skip dozing state and directly go to full sleep)<br>这里提到的Doze 模式,是android 6.0 后新增的特性<img src="/2018/02/04/android/power%20automotive/Doze.png" title="Doze">
+<li>goToSleep<br>调用goToSleep的时候第三个参数为GO_TO_SLEEP_FLAG_NO_DOZE(Go to sleep flag: Skip dozing state and directly go to full sleep)<br>这里提到的Doze 模式,是android 6.0 后新增的特性<img src="/2018/02/04/android/power automotive/02/04/android/power%20automotive/Doze.png" title="Doze">
 如上图：Doze模式提供一个复发的maintenance window给app去使用网络和处理挂起的操作<br>Doze 模式下的限制:<ol>
 <li>网络访问功能被关闭</li>
 <li>系统会忽略wake locks，即app无法持续占有电源</li>
@@ -630,7 +630,7 @@
 </li>
 </ul>
 <p>Doze 主要由DeviceIdleController实现，在DeviceIdleController中通过设备逐渐的满足条件，使得系统一步步的进入到doze状态下，流程如下图(android O貌似与此图有些微不同)：</p>
-<img src="/2018/02/04/android/power%20automotive/DozeDeviceIdleControllerstate.png" title="DozeState">
+<img src="/2018/02/04/android/power automotive/02/04/android/power%20automotive/DozeDeviceIdleControllerstate.png" title="DozeState">
 <p>分析源码可知，goToSleep 的实现最终也是依赖WakeLock锁来实现的，实现的流程先省略。且往下看。</p>
 <h3 id="WakeLock"><a href="#WakeLock" class="headerlink" title="WakeLock"></a>WakeLock</h3><p>这里主要用到了两种锁如下</p>
 <table>
@@ -748,7 +748,7 @@
 </tr>
 </tbody></table>
 <p>对于锁的使用无非就是两种操作，acquire和release。对于这两个过程，见如下流程图：</p>
-<img src="/2018/02/04/android/power%20automotive/WakelockAcquireRelease.png" title="WakeLock 申请与释放的流程图">
+<img src="/2018/02/04/android/power automotive/02/04/android/power%20automotive/WakelockAcquireRelease.png" title="WakeLock 申请与释放的流程图">
 <h3 id="Wakefulness"><a href="#Wakefulness" class="headerlink" title="Wakefulness"></a>Wakefulness</h3><p>PowerManagerService 中的 mWakefulness 用来指示当前设备所处的状态，它有四种取值</p>
 <table>
 <thead>
@@ -780,7 +780,7 @@
 </tr>
 </tbody></table>
 <p>在PowerManagerService 中无论是开关机，还是影响电源管理的用户行为（UserActivity）的管理，还是对wakelock锁的使用，（PowerManagerService中有两个很重要的底层SuspendBlockerLock:CPU锁————PowerManagerService.WakeLocks和Display锁————PowerManagerService.Display，系统通过向设备节点文件/sys/power/wake_lock 和 /sys/power/wake_unlock写入这两个锁的名字来控制cpu和display），最终都会调用到一个很重要的方法updatePowerStateLocked，该方法是整个PowerManagerService的核心。<br>其大体调用逻辑如下：</p>
-<img src="/2018/02/04/android/power%20automotive/UpdatePowerStateLocked.png" title="UpdatePowerStateLocked流程图">
+<img src="/2018/02/04/android/power automotive/02/04/android/power%20automotive/UpdatePowerStateLocked.png" title="UpdatePowerStateLocked流程图">
 <hr>
 <h2 id="Android-HAL-及更底层的电源管理"><a href="#Android-HAL-及更底层的电源管理" class="headerlink" title="Android HAL 及更底层的电源管理"></a>Android HAL 及更底层的电源管理</h2><p>Android的电源管理提出wakelock的是一套全新的机制，借用C++里智能指针思想来设计电源的使用和分配。wake_lock保持使用计数，只不过这种“智能指针”的所使用的资源不再是内存，而是电量。应用程序会通过特定的WakeLock去访问硬件，然后硬件会根据引用计数是否为0来决定是不是需要关闭这一硬件的供电。 这种机制在SuspendBlockerImpl 中实现，通过对mReferenceCount的判断是否调用nativeAcquireSuspendBlocker和nativeReleaseSuspendBlocker, 底层调用通过向设备节点文件/sys/power/wake_lock 和 /sys/power/wake_unlock 里写入锁的名字实现对对应设备是否休眠的操作。</p>
 <h3 id="PowerManagerService-对应的-hardware-interface"><a href="#PowerManagerService-对应的-hardware-interface" class="headerlink" title="PowerManagerService 对应的 hardware interface"></a>PowerManagerService 对应的 hardware interface</h3><p>位置： hardware/interface/power/1.0/ 其中IPower.hal 提供如下四个接口：</p>
@@ -811,14 +811,6 @@ st->A->B->C->D->E->F->G->H->I->e</textarea><textarea id="flowchart-0-options" st
     
     
 
-    
-      <div>
-        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/images/qrcode_wechat_harmonyvsfuchsia.jpg" alt="robot wechat" style="width: 200px; max-width: 100%;">
-    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
-</div>
-
-      </div>
     
 
     
@@ -1007,7 +999,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-count">38</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1136,14 +1128,6 @@ var jiathis_config={
     NexT.Mist
   </a>
 </div>
-
-
-  <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
-  <script>
-    if (window.mermaid) {
-      mermaid.initialize({theme: 'dark'});
-    }
-  </script>
 
 
         

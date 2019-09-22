@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://robotshell.com/"/>
-  <updated>2019-09-18T04:10:19.255Z</updated>
+  <updated>2019-09-22T09:45:36.292Z</updated>
   <id>http://robotshell.com/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Fuchsia的运行初体验</title>
+    <link href="http://robotshell.com/2019/09/22/os/build/"/>
+    <id>http://robotshell.com/2019/09/22/os/build/</id>
+    <published>2019-09-22T09:45:36.000Z</published>
+    <updated>2019-09-22T09:45:36.292Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前几篇文章简单介绍了下Fuchsia中出现的与以往不同的概念。为了能够更直观的了解Fuchsia，这次让我们编译并运行Fuchsia。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="OS" scheme="http://robotshell.com/categories/os/"/>
+    
+    
+      <category term="OS" scheme="http://robotshell.com/tags/OS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>android之SystemServer的启动</title>
     <link href="http://robotshell.com/2019/09/18/android/BootSystemServer/"/>
     <id>http://robotshell.com/2019/09/18/android/BootSystemServer/</id>
     <published>2019-09-18T04:10:19.000Z</published>
-    <updated>2019-09-18T04:10:19.255Z</updated>
+    <updated>2019-09-21T15:21:18.856Z</updated>
     
     <summary type="html">
     
@@ -41,7 +61,7 @@
     <link href="http://robotshell.com/2019/09/16/os/entity/"/>
     <id>http://robotshell.com/2019/09/16/os/entity/</id>
     <published>2019-09-16T03:24:24.000Z</published>
-    <updated>2019-09-16T03:24:24.167Z</updated>
+    <updated>2019-09-22T04:37:08.818Z</updated>
     
     <summary type="html">
     
@@ -62,7 +82,7 @@
     <link href="http://robotshell.com/2019/09/06/os/stories&amp;modules/"/>
     <id>http://robotshell.com/2019/09/06/os/stories&amp;modules/</id>
     <published>2019-09-06T06:17:34.000Z</published>
-    <updated>2019-09-06T06:17:34.668Z</updated>
+    <updated>2019-09-21T15:21:18.856Z</updated>
     
     <summary type="html">
     
@@ -82,7 +102,7 @@
     <link href="http://robotshell.com/2019/08/30/os/what&#39;s%20fuchsia%20os/"/>
     <id>http://robotshell.com/2019/08/30/os/what&#39;s fuchsia os/</id>
     <published>2019-08-30T07:20:23.000Z</published>
-    <updated>2019-09-04T10:09:45.625Z</updated>
+    <updated>2019-09-21T15:21:18.768Z</updated>
     
     <summary type="html">
     
@@ -102,7 +122,7 @@
     <link href="http://robotshell.com/2019/08/16/os/harmony&amp;fuchsia/"/>
     <id>http://robotshell.com/2019/08/16/os/harmony&amp;fuchsia/</id>
     <published>2019-08-16T01:27:29.000Z</published>
-    <updated>2019-09-04T10:09:25.881Z</updated>
+    <updated>2019-09-21T15:21:18.756Z</updated>
     
     <summary type="html">
     
@@ -122,7 +142,7 @@
     <link href="http://robotshell.com/2018/06/26/robot-os/arch/vui2/"/>
     <id>http://robotshell.com/2018/06/26/robot-os/arch/vui2/</id>
     <published>2018-06-26T12:07:19.000Z</published>
-    <updated>2019-09-04T10:08:50.698Z</updated>
+    <updated>2019-09-21T15:21:18.756Z</updated>
     
     <summary type="html">
     
@@ -144,7 +164,7 @@
     <link href="http://robotshell.com/2018/06/21/android/test/optimization%20frame%20rate/"/>
     <id>http://robotshell.com/2018/06/21/android/test/optimization frame rate/</id>
     <published>2018-06-21T10:17:49.000Z</published>
-    <updated>2019-09-04T10:08:23.570Z</updated>
+    <updated>2019-09-21T15:21:18.752Z</updated>
     
     <summary type="html">
     
@@ -166,7 +186,7 @@
     <link href="http://robotshell.com/2018/06/21/robot-os/arch/vui1/"/>
     <id>http://robotshell.com/2018/06/21/robot-os/arch/vui1/</id>
     <published>2018-06-21T06:51:22.000Z</published>
-    <updated>2019-09-04T10:09:09.957Z</updated>
+    <updated>2019-09-21T15:21:18.752Z</updated>
     
     <summary type="html">
     
@@ -188,7 +208,7 @@
     <link href="http://robotshell.com/2018/03/13/skill/grub%20repair/"/>
     <id>http://robotshell.com/2018/03/13/skill/grub repair/</id>
     <published>2018-03-13T13:45:50.000Z</published>
-    <updated>2019-09-04T10:07:28.588Z</updated>
+    <updated>2019-09-21T15:21:18.752Z</updated>
     
     <summary type="html">
     
@@ -210,7 +230,7 @@
     <link href="http://robotshell.com/2018/03/11/android/power%20wakeup/"/>
     <id>http://robotshell.com/2018/03/11/android/power wakeup/</id>
     <published>2018-03-11T05:39:30.000Z</published>
-    <updated>2019-09-04T10:07:17.040Z</updated>
+    <updated>2019-09-21T15:21:18.752Z</updated>
     
     <summary type="html">
     
@@ -234,7 +254,7 @@
     <link href="http://robotshell.com/2018/02/06/android/package%20verify/"/>
     <id>http://robotshell.com/2018/02/06/android/package verify/</id>
     <published>2018-02-06T13:32:49.000Z</published>
-    <updated>2019-09-04T10:07:03.297Z</updated>
+    <updated>2019-09-21T15:21:18.752Z</updated>
     
     <summary type="html">
     
@@ -254,7 +274,7 @@
     <link href="http://robotshell.com/2018/02/04/android/power%20automotive/"/>
     <id>http://robotshell.com/2018/02/04/android/power automotive/</id>
     <published>2018-02-03T16:15:49.000Z</published>
-    <updated>2019-09-04T10:06:47.153Z</updated>
+    <updated>2019-09-21T15:21:18.732Z</updated>
     
     <summary type="html">
     
@@ -274,7 +294,7 @@
     <link href="http://robotshell.com/2018/02/03/android/carservice/"/>
     <id>http://robotshell.com/2018/02/03/android/carservice/</id>
     <published>2018-02-03T10:28:49.000Z</published>
-    <updated>2019-09-04T10:05:37.631Z</updated>
+    <updated>2019-09-21T15:21:18.732Z</updated>
     
     <summary type="html">
     
@@ -294,7 +314,7 @@
     <link href="http://robotshell.com/2018/02/03/android/vehclearch/"/>
     <id>http://robotshell.com/2018/02/03/android/vehclearch/</id>
     <published>2018-02-03T10:28:31.000Z</published>
-    <updated>2019-09-05T07:00:48.737Z</updated>
+    <updated>2019-09-21T15:21:18.732Z</updated>
     
     <summary type="html">
     
@@ -314,7 +334,7 @@
     <link href="http://robotshell.com/2018/01/08/android/eventlog/"/>
     <id>http://robotshell.com/2018/01/08/android/eventlog/</id>
     <published>2018-01-08T15:35:54.000Z</published>
-    <updated>2019-09-04T10:05:24.028Z</updated>
+    <updated>2019-09-21T15:21:18.732Z</updated>
     
     <summary type="html">
     
@@ -338,7 +358,7 @@
     <link href="http://robotshell.com/2018/01/07/tool/anyconnect/"/>
     <id>http://robotshell.com/2018/01/07/tool/anyconnect/</id>
     <published>2018-01-07T05:12:39.000Z</published>
-    <updated>2019-09-04T10:05:15.328Z</updated>
+    <updated>2019-09-21T15:21:18.732Z</updated>
     
     <summary type="html">
     
@@ -359,7 +379,7 @@
     <link href="http://robotshell.com/2017/11/04/tool/rabbitvcs/"/>
     <id>http://robotshell.com/2017/11/04/tool/rabbitvcs/</id>
     <published>2017-11-04T04:08:10.000Z</published>
-    <updated>2019-09-04T10:05:02.053Z</updated>
+    <updated>2019-09-21T15:21:18.732Z</updated>
     
     <summary type="html">
     
@@ -375,31 +395,11 @@
   </entry>
   
   <entry>
-    <title>纵论物联网（十）：物联网应用层协议</title>
-    <link href="http://robotshell.com/2017/10/26/iot/10/"/>
-    <id>http://robotshell.com/2017/10/26/iot/10/</id>
-    <published>2017-10-25T16:00:00.000Z</published>
-    <updated>2019-09-04T10:04:52.189Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;导语&lt;br&gt;物联网的关键技术主要解决三个方面的问题：&lt;u&gt;物体的识别、物体的连接、物体的数据交换&lt;/u&gt;。每个方面都有一些技术解决方案，在前面的文章中，我们介绍了RFID、NFC等物体识别及电子标签的技术，也介绍了物联网节点组网与接入的技术。这篇文章主要讲一下物联网的数据是如何处理的。&lt;br&gt;&lt;img src=&quot;http://ovfro7ddi.bkt.clouddn.com/%E7%89%A9%E8%81%94%E7%BD%91%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%EF%BC%91.JPEG&quot; alt=&quot;keyTec&quot;&gt;&lt;br&gt;物联网关键技术大全&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="物联网" scheme="http://robotshell.com/categories/iot/"/>
-    
-    
-      <category term="物联网" scheme="http://robotshell.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-  </entry>
-  
-  <entry>
     <title>纵论物联网</title>
     <link href="http://robotshell.com/2017/10/26/iot/0/"/>
     <id>http://robotshell.com/2017/10/26/iot/0/</id>
     <published>2017-10-25T16:00:00.000Z</published>
-    <updated>2019-09-04T10:03:40.256Z</updated>
+    <updated>2019-09-21T15:21:18.728Z</updated>
     
     <summary type="html">
     
@@ -415,16 +415,15 @@
   </entry>
   
   <entry>
-    <title>纵论物联网（一）：无线技术分类</title>
-    <link href="http://robotshell.com/2017/10/26/iot/1/"/>
-    <id>http://robotshell.com/2017/10/26/iot/1/</id>
+    <title>纵论物联网（十）：物联网应用层协议</title>
+    <link href="http://robotshell.com/2017/10/26/iot/10/"/>
+    <id>http://robotshell.com/2017/10/26/iot/10/</id>
     <published>2017-10-25T16:00:00.000Z</published>
-    <updated>2019-09-04T10:03:49.724Z</updated>
+    <updated>2019-09-21T15:21:18.732Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;物联网的关键技术包括三个方面：物体的识别、物体的连接以及对数据的操作。随着联网物体的数量越来越多，无线技术在物联网中发挥的作用也越来越大。&lt;br&gt;&lt;img src=&quot;http://p1.pstatp.com/large/22d2000589af2a27d43f&quot; alt=&quot;纵论物联网（一）：无线技术分类&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;物联网无线技术分类&quot;&gt;&lt;a href=&quot;#物联网无线技术分类&quot; class=&quot;headerlink&quot; title=&quot;物联网无线技术分类&quot;&gt;&lt;/a&gt;物联网无线技术分类&lt;/h1&gt;
+      &lt;p&gt;导语&lt;br&gt;物联网的关键技术主要解决三个方面的问题：&lt;u&gt;物体的识别、物体的连接、物体的数据交换&lt;/u&gt;。每个方面都有一些技术解决方案，在前面的文章中，我们介绍了RFID、NFC等物体识别及电子标签的技术，也介绍了物联网节点组网与接入的技术。这篇文章主要讲一下物联网的数据是如何处理的。&lt;br&gt;&lt;img src=&quot;http://ovfro7ddi.bkt.clouddn.com/%E7%89%A9%E8%81%94%E7%BD%91%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%EF%BC%91.JPEG&quot; alt=&quot;keyTec&quot;&gt;&lt;br&gt;物联网关键技术大全&lt;/p&gt;
     
     </summary>
     
