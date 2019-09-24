@@ -123,13 +123,16 @@
 <meta property="og:site_name" content="Robot Shell">
 <meta property="og:description" content="atom 编辑器就是这样一款利器，得益于其强大而方便的插件化安装，几乎可以满足你的任意写作需求。另外，它提供全平台支持，无论是windows还是ubuntu都有很好的支持，且使用体验完全一致。对于在多种操作系统上工作学习的同学来说，极大的减少了再各平台重复学习的成本。以上都是闲话… 获取atom 可从官方地址下载：Atom 各人有各人的需求，我主要是需要快速完成一些文档兼简要的写些另外的文档以记录">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ovfro7ddi.bkt.clouddn.com/markdown%20simple%20demo.png">
-<meta property="og:image" content="http://ovfro7ddi.bkt.clouddn.com/markdown%20table.png">
-<meta property="og:updated_time" content="2019-09-04T10:02:35.860Z">
+<meta property="og:image" content="http://robotshell.com/2017/08/29/blog-skill/atom-skill/atom%20config/markdownsimpledemo.png">
+<meta property="og:image" content="http://robotshell.com/2017/08/29/blog-skill/atom-skill/atom%20config/markdowntable.png">
+<meta property="og:image" content="http://robotshell.com/2017/08/29/blog-skill/atom-skill/atom%20config/markdowncode.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/1908863/28227953-eb6eefa4-68a1-11e7-8769-96ea83facf3b.png">
+<meta property="og:image" content="http://y-takey.github.io/atom-mermaid-example.gif">
+<meta property="og:updated_time" content="2019-09-24T07:31:26.700Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Atom配置入门">
 <meta name="twitter:description" content="atom 编辑器就是这样一款利器，得益于其强大而方便的插件化安装，几乎可以满足你的任意写作需求。另外，它提供全平台支持，无论是windows还是ubuntu都有很好的支持，且使用体验完全一致。对于在多种操作系统上工作学习的同学来说，极大的减少了再各平台重复学习的成本。以上都是闲话… 获取atom 可从官方地址下载：Atom 各人有各人的需求，我主要是需要快速完成一些文档兼简要的写些另外的文档以记录">
-<meta name="twitter:image" content="http://ovfro7ddi.bkt.clouddn.com/markdown%20simple%20demo.png">
+<meta name="twitter:image" content="http://robotshell.com/2017/08/29/blog-skill/atom-skill/atom%20config/markdownsimpledemo.png">
 
 
 
@@ -399,8 +402,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-04T18:02:35+08:00">
-                2019-09-04
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-24T15:31:26+08:00">
+                2019-09-24
               </time>
             
           </span>
@@ -480,35 +483,53 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">### 这是三级标题</span><br><span class="line">&gt;工欲善其事必先利其器——这是引用</span><br><span class="line">#### 简单语法</span><br><span class="line">- 标题</span><br><span class="line">- 列表</span><br><span class="line">- 待办事项</span><br><span class="line">- 引用</span><br><span class="line">- [ ] 这是未完成的待办事项</span><br><span class="line">- [x] 这是已完成的待办事项</span><br></pre></td></tr></table></figure>
 
-<p>经过markdown编辑器预览可以是：<br><img src="http://ovfro7ddi.bkt.clouddn.com/markdown%20simple%20demo.png" alt="markdown simple demo"></p>
+<p>经过markdown编辑器预览可以是：</p>
+<img src="/2017/08/29/blog-skill/atom-skill/atom%20config/markdownsimpledemo.png">
+
 <ul>
 <li>再比如如下的内容是一个表格：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">| 序号 | 内容 |</span><br><span class="line">| -- | -- |</span><br><span class="line">| 1 | 这是第一行 |</span><br><span class="line">| 2 | 这是第二行 |</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<p>经过markdown编辑器预览可以是：<br><img src="http://ovfro7ddi.bkt.clouddn.com/markdown%20table.png" alt="markdown table"></p>
+<p>经过markdown编辑器预览可以是：</p>
+<img src="/2017/08/29/blog-skill/atom-skill/atom%20config/markdowntable.png">
 <ul>
-<li>另外还可以插入高亮的代码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">\```java</span><br><span class="line">public class Demo &#123;</span><br><span class="line">    private String name;</span><br><span class="line">    private int age;</span><br><span class="line"></span><br><span class="line">    public Demo(String name, int age) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">\</span><br></pre></td></tr></table></figure>
+<li>另外还可以插入高亮的代码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class Demo &#123;</span><br><span class="line">    private String name;</span><br><span class="line">    private int age;</span><br><span class="line"></span><br><span class="line">    public Demo(String name, int age) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">经过markdown编辑器预览可以可以是：</span><br><span class="line">![markdown code](http://ovfro7ddi.bkt.clouddn.com/markdown%20code.png)</span><br><span class="line"></span><br><span class="line">### 实用插件配置</span><br><span class="line">#### __markdown 预览__</span><br><span class="line">![intro](https://user-images.githubusercontent.com/1908863/28227953-eb6eefa4-68a1-11e7-8769-96ea83facf3b.png)</span><br><span class="line">atom 默认已经安装了markdown的预览插件：markwon-preview 但是默认的往往功能不够强大，强烈建议卸载之（可以实用快捷键 __ctrl+shift+p__ 这个万能键，然后在弹出的框内输入uninstall package 就会列出提示，然后进入对应的界面卸载就可以了）</span><br><span class="line">建议安装插件：__markdown preview Enhanced__， 安装后使用快捷键 __ctrl+shift+m__ 进行预览，该预览插件支持 __mermaid__ 图形预览 和 __MathJax__ 数学公式预览</span><br><span class="line">markdown preview Enhanced 还有很多非常强大的功能：</span><br><span class="line">    - 更多介绍可参考 [markdown preview enhanced 简介](https://shd101wyy.github.io/markdown-preview-enhanced/#/zh-cn/)</span><br><span class="line">    - 项目[gitup](https://github.com/shd101wyy/markdown-preview-enhanced)</span><br><span class="line">#### __atom-mermaid__ 图形预览</span><br><span class="line">如下是mermaid的官方说明：</span><br><span class="line">&gt;Generation of diagrams and flowcharts from text in a similar manner as markdown.</span><br><span class="line">在atom 中使用 则需要安装包 __atom-mermaid__</span><br><span class="line"></span><br><span class="line">下图是从官网的介绍中获取的一张图：</span><br><span class="line">![intro](http://y-takey.github.io/atom-mermaid-example.gif)</span><br><span class="line">正如官方的描述，mermaid的作用就是使用简单的文本语法，使用文本来绘制图。更多mermaid的用法可以参考 [mermaid 官方介绍](https://mermaidjs.github.io/)。</span><br><span class="line">__但是划重点了啊__ 在markdown中使用，需要将其当做代码块输入，示例如下：</span><br></pre></td></tr></table></figure>
+<p>经过markdown编辑器预览可以可以是：</p>
+<img src="/2017/08/29/blog-skill/atom-skill/atom%20config/markdowncode.png">
 
-<pre><code>&lt;pre class=&quot;mermaid&quot;&gt;    graph LR
-A --&gt;B&lt;/pre&gt;</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">而且必须指明语言类型为&quot;mermaid&quot;</span><br><span class="line">本文只解决了解的问题，此处不再做更详细的介绍，更多使用的详细语法，还请移步[官方介绍](https://mermaidjs.github.io/)</span><br><span class="line">#### __MathJax__ 数学公式</span><br><span class="line">如要在atom markdwon 预览使用 mathjax， 需要在 markdown-preview-enhanced 的设置项__【Math  Rendering option】__选项中指明使用 mathjax 渲染。除此之外倒是没有发现需要独立安装其他package。</span><br><span class="line">- MathJax 项目的[github](https://github.com/mathjax/MathJax)</span><br><span class="line">- MathJax 具体的[使用文档](http://docs.mathjax.org/en/latest/start.html)</span><br><span class="line"></span><br><span class="line">在markdown 中使用math jax 有两种用法：</span><br><span class="line">一种是行内公式，公式内容写在两个$中间，例如：</span><br></pre></td></tr></table></figure>
+<h3 id="实用插件配置"><a href="#实用插件配置" class="headerlink" title="实用插件配置"></a>实用插件配置</h3><h4 id="markdown-预览"><a href="#markdown-预览" class="headerlink" title="markdown 预览"></a><strong>markdown 预览</strong></h4><p><img src="https://user-images.githubusercontent.com/1908863/28227953-eb6eefa4-68a1-11e7-8769-96ea83facf3b.png" alt="intro"><br>atom 默认已经安装了markdown的预览插件：markwon-preview 但是默认的往往功能不够强大，强烈建议卸载之（可以实用快捷键 <strong>ctrl+shift+p</strong> 这个万能键，然后在弹出的框内输入uninstall package 就会列出提示，然后进入对应的界面卸载就可以了）<br>建议安装插件：<strong>markdown preview Enhanced</strong>， 安装后使用快捷键 <strong>ctrl+shift+m</strong> 进行预览，该预览插件支持 <strong>mermaid</strong> 图形预览 和 <strong>MathJax</strong> 数学公式预览<br>markdown preview Enhanced 还有很多非常强大的功能：<br>    - 更多介绍可参考 <a href="https://shd101wyy.github.io/markdown-preview-enhanced/#/zh-cn/" target="_blank" rel="noopener">markdown preview enhanced 简介</a><br>    - 项目<a href="https://github.com/shd101wyy/markdown-preview-enhanced" target="_blank" rel="noopener">gitup</a></p>
+<h4 id="atom-mermaid-图形预览"><a href="#atom-mermaid-图形预览" class="headerlink" title="atom-mermaid 图形预览"></a><strong>atom-mermaid</strong> 图形预览</h4><p>如下是mermaid的官方说明：</p>
+<blockquote>
+<p>Generation of diagrams and flowcharts from text in a similar manner as markdown.<br>在atom 中使用 则需要安装包 <strong>atom-mermaid</strong></p>
+</blockquote>
+<p>下图是从官网的介绍中获取的一张图：<br><img src="http://y-takey.github.io/atom-mermaid-example.gif" alt="intro"><br>正如官方的描述，mermaid的作用就是使用简单的文本语法，使用文本来绘制图。更多mermaid的用法可以参考 <a href="https://mermaidjs.github.io/" target="_blank" rel="noopener">mermaid 官方介绍</a>。<br><strong>但是划重点了啊</strong> 在markdown中使用，需要将其当做代码块输入，示例如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;pre class=&quot;mermaid&quot;&gt;    graph LR</span><br><span class="line">A --&gt;B&lt;/pre&gt;</span><br></pre></td></tr></table></figure>
 
-<p>$(x^{(i)}, y^{(i)})$:ith training example, 代表训练集中的第i个数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">这种写法的展现效果如下：</span><br><span class="line">&gt;$(x^&#123;(i)&#125;, y^&#123;(i)&#125;)$:ith training example, 代表训练集中的第i个数据</span><br><span class="line">另外一种是独立行公式，公式前后以$$为标记，例如：</span><br></pre></td></tr></table></figure>
+<p>而且必须指明语言类型为”mermaid”<br>本文只解决了解的问题，此处不再做更详细的介绍，更多使用的详细语法，还请移步<a href="https://mermaidjs.github.io/" target="_blank" rel="noopener">官方介绍</a></p>
+<h4 id="MathJax-数学公式"><a href="#MathJax-数学公式" class="headerlink" title="MathJax 数学公式"></a><strong>MathJax</strong> 数学公式</h4><p>如要在atom markdwon 预览使用 mathjax， 需要在 markdown-preview-enhanced 的设置项<strong>【Math  Rendering option】</strong>选项中指明使用 mathjax 渲染。除此之外倒是没有发现需要独立安装其他package。</p>
+<ul>
+<li>MathJax 项目的<a href="https://github.com/mathjax/MathJax" target="_blank" rel="noopener">github</a></li>
+<li>MathJax 具体的<a href="http://docs.mathjax.org/en/latest/start.html" target="_blank" rel="noopener">使用文档</a></li>
+</ul>
+<p>在markdown 中使用math jax 有两种用法：<br>一种是行内公式，公式内容写在两个$中间，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(x^&#123;(i)&#125;, y^&#123;(i)&#125;)$:ith training example, 代表训练集中的第i个数据</span><br></pre></td></tr></table></figure>
 
+<p>这种写法的展现效果如下：</p>
+<blockquote>
+<p>$(x^{(i)}, y^{(i)})$:ith training example, 代表训练集中的第i个数据<br>另外一种是独立行公式，公式前后以$$为标记，例如：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">h_\theta(X)=\theta_0+\theta_1X</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+
+<p>这种写法的展现效果如下：</p>
+<blockquote>
 <p>$$<br>h_\theta(X)=\theta_0+\theta_1X<br>$$</p>
-<pre><code>这种写法的展现效果如下：
-&gt;$$
-h_\theta(X)=\theta_0+\theta_1X
-$$
+</blockquote>
+<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>如上所述，介绍了atom 编辑markdown的一些插件和方法，至于一些更常用的操作，比如，如何导出pdf等，可以百度一下了。<br>在atom 中使用markdown，可以有格式，有列表，有代码，有引用，有表格，有图标，有公式，基本可以满足所有的写作需求了。这还只是这些功能的皮毛而已，可见markdown真的是无敌的强大。</p>
 
-### 结语
-如上所述，介绍了atom 编辑markdown的一些插件和方法，至于一些更常用的操作，比如，如何导出pdf等，可以百度一下了。
-在atom 中使用markdown，可以有格式，有列表，有代码，有引用，有表格，有图标，有公式，基本可以满足所有的写作需求了。这还只是这些功能的皮毛而已，可见markdown真的是无敌的强大。</code></pre>
       
     </div>
     
@@ -801,7 +822,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本语法介绍"><span class="nav-number">1.</span> <span class="nav-text">基本语法介绍</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本语法介绍"><span class="nav-number">1.</span> <span class="nav-text">基本语法介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实用插件配置"><span class="nav-number">2.</span> <span class="nav-text">实用插件配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#markdown-预览"><span class="nav-number">2.1.</span> <span class="nav-text">markdown 预览</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#atom-mermaid-图形预览"><span class="nav-number">2.2.</span> <span class="nav-text">atom-mermaid 图形预览</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MathJax-数学公式"><span class="nav-number">2.3.</span> <span class="nav-text">MathJax 数学公式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结语"><span class="nav-number">3.</span> <span class="nav-text">结语</span></a></li></ol></div>
             
 
           </div>

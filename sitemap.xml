@@ -2,6 +2,104 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://robotshell.com/2017/10/26/iot/1/</loc>
+    
+    <lastmod>2019-09-24T07:49:34.635Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://robotshell.com/2017/10/26/iot/2/</loc>
+    
+    <lastmod>2019-09-24T07:47:22.351Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://robotshell.com/2018/02/06/android/package%20verify/</loc>
+    
+    <lastmod>2019-09-24T07:36:55.488Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://robotshell.com/2018/01/07/tool/anyconnect/</loc>
+    
+    <lastmod>2019-09-24T07:34:04.166Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://robotshell.com/2017/08/29/blog-skill/atom-skill/atom%20config/</loc>
+    
+    <lastmod>2019-09-24T07:31:26.700Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://robotshell.com/2017/08/31/old/scrum&xp/</loc>
+    
+    <lastmod>2019-09-24T07:24:05.307Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://robotshell.com/2018/02/03/android/vehclearch/</loc>
+    
+    <lastmod>2019-09-24T07:19:34.895Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://robotshell.com/2017/10/26/iot/10/</loc>
+    
+    <lastmod>2019-09-24T07:11:52.366Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://robotshell.com/2017/10/26/iot/9/</loc>
+    
+    <lastmod>2019-09-24T07:00:26.864Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://robotshell.com/2017/09/01/robot-os/test/autotest/</loc>
+    
+    <lastmod>2019-09-24T06:53:58.480Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://robotshell.com/2017/10/26/iot/8/</loc>
+    
+    <lastmod>2019-09-24T06:48:17.210Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://robotshell.com/2017/10/26/iot/7/</loc>
+    
+    <lastmod>2019-09-24T06:43:23.484Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://robotshell.com/2017/10/26/iot/3/</loc>
+    
+    <lastmod>2019-09-24T06:36:53.034Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://robotshell.com/2018/06/21/robot-os/arch/vui1/</loc>
+    
+    <lastmod>2019-09-24T06:21:53.392Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://robotshell.com/2019/09/22/os/build/</loc>
     
     <lastmod>2019-09-23T02:00:32.829Z</lastmod>
@@ -30,13 +128,6 @@
   </url>
   
   <url>
-    <loc>http://robotshell.com/2018/02/03/android/vehclearch/</loc>
-    
-    <lastmod>2019-09-05T07:00:48.737Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://robotshell.com/2019/08/30/os/what's%20fuchsia%20os/</loc>
     
     <lastmod>2019-09-04T10:09:45.625Z</lastmod>
@@ -47,13 +138,6 @@
     <loc>http://robotshell.com/2019/08/16/os/harmony&fuchsia/</loc>
     
     <lastmod>2019-09-04T10:09:25.881Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://robotshell.com/2018/06/21/robot-os/arch/vui1/</loc>
-    
-    <lastmod>2019-09-04T10:09:09.957Z</lastmod>
     
   </url>
   
@@ -86,13 +170,6 @@
   </url>
   
   <url>
-    <loc>http://robotshell.com/2018/02/06/android/package%20verify/</loc>
-    
-    <lastmod>2019-09-04T10:07:03.297Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://robotshell.com/2018/02/04/android/power%20automotive/</loc>
     
     <lastmod>2019-09-04T10:06:47.153Z</lastmod>
@@ -114,23 +191,9 @@
   </url>
   
   <url>
-    <loc>http://robotshell.com/2018/01/07/tool/anyconnect/</loc>
-    
-    <lastmod>2019-09-04T10:05:15.328Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://robotshell.com/2017/11/04/tool/rabbitvcs/</loc>
     
     <lastmod>2019-09-04T10:05:02.053Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://robotshell.com/2017/10/26/iot/10/</loc>
-    
-    <lastmod>2019-09-04T10:04:52.189Z</lastmod>
     
   </url>
   
@@ -142,13 +205,6 @@
   </url>
   
   <url>
-    <loc>http://robotshell.com/2017/10/26/iot/8/</loc>
-    
-    <lastmod>2019-09-04T10:04:39.062Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://robotshell.com/2017/10/26/iot/5/</loc>
     
     <lastmod>2019-09-04T10:04:29.950Z</lastmod>
@@ -156,58 +212,9 @@
   </url>
   
   <url>
-    <loc>http://robotshell.com/2017/10/26/iot/2/</loc>
-    
-    <lastmod>2019-09-04T10:04:22.602Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://robotshell.com/2017/10/26/iot/9/</loc>
-    
-    <lastmod>2019-09-04T10:04:14.915Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://robotshell.com/2017/10/26/iot/3/</loc>
-    
-    <lastmod>2019-09-04T10:04:06.871Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://robotshell.com/2017/10/26/iot/7/</loc>
-    
-    <lastmod>2019-09-04T10:03:58.792Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://robotshell.com/2017/10/26/iot/1/</loc>
-    
-    <lastmod>2019-09-04T10:03:49.724Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://robotshell.com/2017/10/26/iot/0/</loc>
     
     <lastmod>2019-09-04T10:03:40.256Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://robotshell.com/2017/09/01/robot-os/test/autotest/</loc>
-    
-    <lastmod>2019-09-04T10:03:24.353Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://robotshell.com/2017/08/31/old/scrum&xp/</loc>
-    
-    <lastmod>2019-09-04T10:03:08.354Z</lastmod>
     
   </url>
   
@@ -222,13 +229,6 @@
     <loc>http://robotshell.com/2017/08/30/android/fileobserver/</loc>
     
     <lastmod>2019-09-04T10:02:38.756Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://robotshell.com/2017/08/29/blog-skill/atom-skill/atom%20config/</loc>
-    
-    <lastmod>2019-09-04T10:02:35.860Z</lastmod>
     
   </url>
   
