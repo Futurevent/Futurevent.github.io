@@ -125,7 +125,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://robotshell.com/2018/02/03/android/vehclearch/vehicle_hal_arch.png">
 <meta property="og:image" content="http://ovfro7ddi.bkt.clouddn.com/android%20automotive%20powermanagement%20arch.png">
-<meta property="og:updated_time" content="2019-09-24T07:19:34.895Z">
+<meta property="og:updated_time" content="2019-09-24T07:59:23.382Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android O Vehicle之架构介绍">
 <meta name="twitter:description" content="Android Automotive 是 Android Orea 中的一个特色功能，从AOSP的代码上看，android automotive 已经包含了从app层到framework层到hal层的各层级结构。本文简单介绍 Android Orea Vehicle 的架构形式">
@@ -399,7 +399,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-24T15:19:34+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-24T15:59:23+08:00">
                 2019-09-24
               </time>
             
@@ -484,7 +484,7 @@
 </ul>
 <p>当调用getCarManager时会调用到mService的getCarService方法，再使用service name 与返回的对应Service的IBinder对象，一同创建出client端的manager对象。</p>
 <ul>
-<li>mServiceMap 用来保存getCarManager创建出的manager对象，当再次需要获取该manager时即从此map中返回。<br>接下来CarService <a href="http://www.robotshell.com/2018/02/03/Android-O-Vehicle%E4%B9%8BCar-Service/" target="_blank" rel="noopener">Android O Vehicle之Car Service</a></li>
+<li>mServiceMap 用来保存getCarManager创建出的manager对象，当再次需要获取该manager时即从此map中返回。<br>接下来CarService <a href="https://www.robotshell.com/2018/02/03/android/carservice/" target="_blank" rel="noopener">Android O Vehicle之Car Service</a></li>
 </ul>
 
       
