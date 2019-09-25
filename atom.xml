@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://robotshell.com/"/>
-  <updated>2019-09-23T02:00:32.829Z</updated>
+  <updated>2019-09-25T09:38:47.263Z</updated>
   <id>http://robotshell.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Fuchsia的数据存储变革</title>
+    <link href="http://robotshell.com/2019/09/25/os/ledger/"/>
+    <id>http://robotshell.com/2019/09/25/os/ledger/</id>
+    <published>2019-09-25T09:38:47.000Z</published>
+    <updated>2019-09-25T09:38:47.263Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;根据之前的介绍，Fuchsia引入了一个新的概念Story，Story由一系列的app组成用来完成独立的任务。在Fuchsia上，你可以快速的在不同的设备上切换以使用这些创建好的Story，而可以这样做的原因是，Fuchsia将这些Story的信息保存在了你的个人ledger中。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="OS" scheme="http://robotshell.com/categories/os/"/>
+    
+    
+      <category term="OS" scheme="http://robotshell.com/tags/OS/"/>
+    
+  </entry>
   
   <entry>
     <title>Fuchsia的运行初体验</title>
@@ -395,36 +415,16 @@
   </entry>
   
   <entry>
-    <title>纵论物联网（一）：无线技术分类</title>
-    <link href="http://robotshell.com/2017/10/26/iot/1/"/>
-    <id>http://robotshell.com/2017/10/26/iot/1/</id>
+    <title>纵论物联网（三）：3GPP物联网技术</title>
+    <link href="http://robotshell.com/2017/10/26/iot/3/"/>
+    <id>http://robotshell.com/2017/10/26/iot/3/</id>
     <published>2017-10-25T16:00:00.000Z</published>
-    <updated>2019-09-24T07:54:23.868Z</updated>
+    <updated>2019-09-24T06:36:53.034Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;物联网的关键技术包括三个方面：物体的识别、物体的连接以及对数据的操作。随着联网物体的数量越来越多，无线技术在物联网中发挥的作用也越来越大。&lt;br&gt;&lt;img src=&quot;http://p1.pstatp.com/large/22d2000589af2a27d43f&quot; alt=&quot;纵论物联网（一）：无线技术分类&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;物联网无线技术分类&quot;&gt;&lt;a href=&quot;#物联网无线技术分类&quot; class=&quot;headerlink&quot; title=&quot;物联网无线技术分类&quot;&gt;&lt;/a&gt;物联网无线技术分类&lt;/h1&gt;
-    
-    </summary>
-    
-      <category term="物联网" scheme="http://robotshell.com/categories/iot/"/>
-    
-    
-      <category term="物联网" scheme="http://robotshell.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>纵论物联网（六）：基于Linux的物联网操作系统</title>
-    <link href="http://robotshell.com/2017/10/26/iot/6/"/>
-    <id>http://robotshell.com/2017/10/26/iot/6/</id>
-    <published>2017-10-25T16:00:00.000Z</published>
-    <updated>2019-09-04T10:04:45.254Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;提到物联网操作系统，就不能不提Linux，因为Linux可能是目前在物联网设备中应用最广的操作系统了。前面的文章刚刚介绍了不少非Linux类的物联网操作系统，本文就来介绍一下目前常用的基于Linux的物联网操作系统。&lt;br&gt;&lt;img src=&quot;http://images.ofweek.com/Upload/News/2017-06/14/lime/1497400939793024893.jpg&quot; alt=&quot;基于Linux的物联网操作系统&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;导语&lt;br&gt;随着物联网应用的发展，对于大范围组网的需求越来越多，LPWAN技术备受关注。前面的LPWAN技术文章介绍过，LPWAN技术可根据工作频段分为两类：一类是工作于未授权频段的无线技术，以LoRa、SigFox为代表；一类是工作于授权频段下的无线技术，以3GPP支持的2/3/4G蜂窝通信技术为代表。&lt;/p&gt;
+&lt;img src=&quot;/2017/10/26/iot/3/３GPP物联网技术１.JPEG&quot; title=&quot;3GPP物联网技术&quot;&gt;
     
     </summary>
     

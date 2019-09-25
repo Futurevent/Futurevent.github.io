@@ -97,7 +97,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="机器人,">
+  <meta name="keywords" content="OS,">
 
 
 
@@ -115,23 +115,20 @@
 
 
 
-<meta name="description" content="大概是2015年开始，人工智能突起，出现了非常多家的机器人公司，其中有一类发力于家庭服务机器人。为了满足各家机器人的使用需要，各家争相开发自己的机器人OS，或者叫机器人框架。时至今日，有的机器人OS已经死亡，有的奄奄一息，有的还在继续成长，有的已经成熟。有幸接触了几家的OS，现罗列如下，以作纪念。">
-<meta name="keywords" content="机器人">
+<meta name="description" content="根据之前的介绍，Fuchsia引入了一个新的概念Story，Story由一系列的app组成用来完成独立的任务。在Fuchsia上，你可以快速的在不同的设备上切换以使用这些创建好的Story，而可以这样做的原因是，Fuchsia将这些Story的信息保存在了你的个人ledger中。">
+<meta name="keywords" content="OS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Robot OS 框架杂谈">
-<meta property="og:url" content="http://robotshell.com/2018/06/21/robot-os/arch/vui1/index.html">
+<meta property="og:title" content="Fuchsia的数据存储变革">
+<meta property="og:url" content="http://robotshell.com/2019/09/25/os/ledger/index.html">
 <meta property="og:site_name" content="Robot Shell">
-<meta property="og:description" content="大概是2015年开始，人工智能突起，出现了非常多家的机器人公司，其中有一类发力于家庭服务机器人。为了满足各家机器人的使用需要，各家争相开发自己的机器人OS，或者叫机器人框架。时至今日，有的机器人OS已经死亡，有的奄奄一息，有的还在继续成长，有的已经成熟。有幸接触了几家的OS，现罗列如下，以作纪念。">
+<meta property="og:description" content="根据之前的介绍，Fuchsia引入了一个新的概念Story，Story由一系列的app组成用来完成独立的任务。在Fuchsia上，你可以快速的在不同的设备上切换以使用这些创建好的Story，而可以这样做的原因是，Fuchsia将这些Story的信息保存在了你的个人ledger中。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://robotshell.com/2018/06/21/robot-os/arch/vui1/TuringOS1.5.png">
-<meta property="og:image" content="http://robotshell.com/2018/06/21/robot-os/arch/vui1/OSLite在android框架中的位置.png">
-<meta property="og:image" content="http://robotshell.com/2018/06/21/robot-os/arch/vui1/ROS框图.png">
-<meta property="og:image" content="http://robotshell.com/2018/06/21/robot-os/arch/vui1/XiaoWei框图.png">
-<meta property="og:updated_time" content="2019-09-24T06:21:53.392Z">
+<meta property="og:image" content="http://robotshell.com/2019/09/25/os/ledger/ledger_arch.png">
+<meta property="og:updated_time" content="2019-09-25T09:38:47.263Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Robot OS 框架杂谈">
-<meta name="twitter:description" content="大概是2015年开始，人工智能突起，出现了非常多家的机器人公司，其中有一类发力于家庭服务机器人。为了满足各家机器人的使用需要，各家争相开发自己的机器人OS，或者叫机器人框架。时至今日，有的机器人OS已经死亡，有的奄奄一息，有的还在继续成长，有的已经成熟。有幸接触了几家的OS，现罗列如下，以作纪念。">
-<meta name="twitter:image" content="http://robotshell.com/2018/06/21/robot-os/arch/vui1/TuringOS1.5.png">
+<meta name="twitter:title" content="Fuchsia的数据存储变革">
+<meta name="twitter:description" content="根据之前的介绍，Fuchsia引入了一个新的概念Story，Story由一系列的app组成用来完成独立的任务。在Fuchsia上，你可以快速的在不同的设备上切换以使用这些创建好的Story，而可以这样做的原因是，Fuchsia将这些Story的信息保存在了你的个人ledger中。">
+<meta name="twitter:image" content="http://robotshell.com/2019/09/25/os/ledger/ledger_arch.png">
 
 
 
@@ -161,13 +158,13 @@
 
 
 
-  <link rel="canonical" href="http://robotshell.com/2018/06/21/robot-os/arch/vui1/">
+  <link rel="canonical" href="http://robotshell.com/2019/09/25/os/ledger/">
 
 
 
 
 
-  <title>Robot OS 框架杂谈 | Robot Shell</title>
+  <title>Fuchsia的数据存储变革 | Robot Shell</title>
   
 
 
@@ -356,7 +353,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2018/06/21/robot-os/arch/vui1/">
+    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2019/09/25/os/ledger/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="robot">
@@ -373,7 +370,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Robot OS 框架杂谈</h1>
+          <h1 class="post-title" itemprop="name headline">Fuchsia的数据存储变革</h1>
         
 
         <div class="post-meta">
@@ -385,8 +382,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-21T14:51:22+08:00">
-                2018-06-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-25T17:38:47+08:00">
+                2019-09-25
               </time>
             
 
@@ -401,8 +398,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-24T14:21:53+08:00">
-                2019-09-24
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-25T17:38:47+08:00">
+                2019-09-25
               </time>
             
           </span>
@@ -420,19 +417,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/robot-os/" itemprop="url" rel="index">
-                    <span itemprop="name">机器人OS</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/robot-os/arch/" itemprop="url" rel="index">
-                    <span itemprop="name">架构</span>
+                  <a href="/categories/os/" itemprop="url" rel="index">
+                    <span itemprop="name">OS</span>
                   </a>
                 </span>
 
@@ -473,28 +459,22 @@
       
 
       
-        <p>大概是2015年开始，人工智能突起，出现了非常多家的机器人公司，其中有一类发力于家庭服务机器人。为了满足各家机器人的使用需要，各家争相开发自己的机器人OS，或者叫机器人框架。<br>时至今日，有的机器人OS已经死亡，有的奄奄一息，有的还在继续成长，有的已经成熟。有幸接触了几家的OS，现罗列如下，以作纪念。</p>
+        <p>根据之前的介绍，Fuchsia引入了一个新的概念Story，Story由一系列的app组成用来完成独立的任务。在Fuchsia上，你可以快速的在不同的设备上切换以使用这些创建好的Story，而可以这样做的原因是，Fuchsia将这些Story的信息保存在了你的个人ledger中。</p>
 <a id="more"></a>
-<h1 id="总章"><a href="#总章" class="headerlink" title="总章"></a>总章</h1><h2 id="何为机器人OS"><a href="#何为机器人OS" class="headerlink" title="何为机器人OS"></a>何为机器人OS</h2><p>目前或者说之前，大家通常的做法都是在andrid系统之上，添加诸如asr\tts\nlp等相关功能，添加自己的业务逻辑已实现自己的需求，这样的一套东西，合起来通常被叫做机器人OS。另外现在家庭娱乐类型的机器人基本都得联网使用，其核心处理逻辑，诸如语义理解、图像识别多需在线完成，所以机器人OS也该包含相应的云端服务。综上，机器人OS可以描述为，承载了交互规范，集成了机器人基本能力，对不同用户场景进行调度的一套框架；分为两大部分：终端展示层和云端核心大脑层。<br>本文重点描述各家终端机器人的框架</p>
-<h1 id="TuringOS-1-5"><a href="#TuringOS-1-5" class="headerlink" title="TuringOS 1.5"></a>TuringOS 1.5</h1><img src="/2018/06/21/robot-os/arch/vui1/TuringOS1.5.png" title="TuringOS 1.5 框图">
-<p>TuringOS1.5 是北京光年无限开发（图灵机器人）开发的基于android深度定制的机器人OS，其核心组成部分如上图。</p>
-<h2 id="图灵机器人OS开放生态"><a href="#图灵机器人OS开放生态" class="headerlink" title="图灵机器人OS开放生态"></a>图灵机器人OS开放生态</h2><p>这部分主要包含图灵的云端大脑（提供语义服务及场景决策相关），支持自定义意图的平台、终端的OS。终端的OS与android系统深度耦合，主要核心服务运行在SystemServer进程中。主要核心服务按照大的模块可分为两部分：基础支撑和交互逻辑。基础支撑主要定义了机器人的输入输出，输入包括asr(听)、机器视觉（看）、传感器（触），输出主要包括tts(说)、表情（情绪）、动作（身）、LED等。图灵将这样的一种多种输入与多种输出同时与用户交互定义为多模特输出。交互逻辑主要定义了语音交互的对话流程，既语音交互界面，类比触摸输入与屏幕展示，基础对话服务可理解为VUI（Voice user interface)的基础；交互逻辑的另一主要部分是场景切换逻辑，主要规定了场景的优先级及场景切换策略。场景管理切换主要依托于android的packagemanager 和 activiymanager进行，好处是利用了android已经有的机制，坏处是与android系统绑定太紧,对于想打造一款真正的类似windows/android这样的机器人操作系统来说，这样做是好的，但是对于大多数希望快速盈利的公司，这种深度耦合，增加了移植成本，所以turing的这种深耦合做法遭到了大家的鄙夷。<br>终端OS部分，另一重要的部分是对云端协议的解析，这是控制机器人的中枢指令，相当重要。另外终端OS也包含一些自由的资源文件、以及为保护这些所添加的加密芯片等。</p>
-<h2 id="图灵机器人SDK"><a href="#图灵机器人SDK" class="headerlink" title="图灵机器人SDK"></a>图灵机器人SDK</h2><p>turingOS 1.5设计之初就在为平台化做准备，所以为了支撑这一目标，提供了完备的SDK及SDK的使用文档，为了配合开发者为平台开发应用，还在OS内部集成了对开发好的应用进行合法性检查的模块。不同于别家的SDK，turingOS1.5的SDK 与android sdk融合在了一起，这样使的整个图灵OS看起来更像是一个完整的OS，而不是跑在android系统之上的一个APP，可惜了，在当时，这样的设计太过超前，在没有持续投入的情况下，伟大的目标往往是悲剧的开端。</p>
-<h2 id="图灵APK"><a href="#图灵APK" class="headerlink" title="图灵APK"></a>图灵APK</h2><p>图灵apk 主要有三方来源，一是自己开发的核心功能组件，二是自己开发的核心业务场景apk，三是授权开发者开发的场景apk。</p>
-<p>在此，turingOS1.5死的颇为可惜，哀悼与怀念三分钟。</p>
-<h1 id="TuringOS-Lite"><a href="#TuringOS-Lite" class="headerlink" title="TuringOS Lite"></a>TuringOS Lite</h1><img src="/2018/06/21/robot-os/arch/vui1/OSLite在android框架中的位置.png" title="OS Lite 框图">
-<p>turingOS Lite 与turingOS1.5思想上一脉相承，是turingOS1.5的子孙后代。上图为turingOSLite 在android整个框架中的位置，也大致分为三个部分</p>
-<h2 id="TuringOSLite-本体"><a href="#TuringOSLite-本体" class="headerlink" title="TuringOSLite 本体"></a>TuringOSLite 本体</h2><p>turingOSLite 其实早期被称作机器人开发框架，设计原则是小而轻便，灵活易替换易扩展。对于他来说重要的是概念，在这个框架上定义了三个核心的概念：场景（scenario）和功能（function),以及控制场景调用功能的事件拦截器。场景是机器人的业务单元，代表用户的应用场景。功能是机器人的固有能力，表达的是机器人的固有属性。除此之外对于turingOSLite一切具像的场景和功能都不重要，因为核心就是定义出这些概念，具体实现不同的开发者按照自己的思路去实现就好了。感觉这是图灵又走了另外一个极端，太实则太重，太虚则无力。当时的意图可能觉得图灵的核心是语义这些表象的东西定义好规范，让别人去照做也不影响核心业务。导致最后竞争力较弱，颇显惋惜。</p>
-<h2 id="TuringOS-Lite-API"><a href="#TuringOS-Lite-API" class="headerlink" title="TuringOS Lite API"></a>TuringOS Lite API</h2><p>实质上，TuringOSLite 可算作是个早产儿，发育还不足月。作为一个SDK，必须与开发出的应用绑定在一起，作为API只是对核心功能的暴露，虽然在逻辑分层上存在api这一层，但是它确是与核心服务物理上在一块的，此处还有较大改进空间。</p>
-<h2 id="TuringOS-Lite-场景"><a href="#TuringOS-Lite-场景" class="headerlink" title="TuringOS Lite 场景"></a>TuringOS Lite 场景</h2><p>此处的场景就不是以独立apk的形式存在了，物理上就是一个实现了Scenario接口的类，顶多算个个语义上的存在。当然可以按照TuringOSLite 插件的形式去开发这些类。</p>
-<h1 id="Roobo-ROS-AI"><a href="#Roobo-ROS-AI" class="headerlink" title="Roobo ROS.AI"></a>Roobo ROS.AI</h1><img src="/2018/06/21/robot-os/arch/vui1/ROS框图.png" title="ROS 框图">
-<p>为什么roobo的ROS（此ROS 非彼ROS）还活着，窃以为它介于TuringOS1.5 和 TuringOSLite 之间。ROS 也是基于android定制的，但是没有把核心服务死死的绑定到android的framework里，也向外提供api,但是使用此api开发的应用又都是实实在在的安卓apk。从框图上看，也可将其分为三部分。</p>
-<h2 id="ROS-核心服务群"><a href="#ROS-核心服务群" class="headerlink" title="ROS 核心服务群"></a>ROS 核心服务群</h2><p>核心服务主要包含两部分，管理核心服务的框架和具体的核心服务实现，核心服务框架为core.apk，具体的服务实现为各种service apk，这些service均挂载在core上由core统一对外提供服务。在core当中另外一个重要的工作是场景管理和焦点管理，焦点管理用来解决硬件资源使用冲突的问题，焦点这个思想应该是来源于android的音频焦点管理。</p>
-<h2 id="ROS-SDK"><a href="#ROS-SDK" class="headerlink" title="ROS SDK"></a>ROS SDK</h2><p>ROS 的SDK 主要包含两部分内容，能力API和负责场景APK和core之间的跨进程通信。实现还是相对巧妙的，SDK中有一默认的DefaultService，当Core去管理场景APK时，通过启动这个service从而带起整个场景APK的进程，然后创建通信渠道，发送指令。而这一切都在SDK中做好了，对于场景APK来说都是无感的，这样进一步降低了android app开发者在ROS上开发应用的难度。</p>
-<h2 id="ROS-App"><a href="#ROS-App" class="headerlink" title="ROS App"></a>ROS App</h2><p>ROS APP 与 android app 大体上无异，不同之处就在上面刚提到的app中的sdk部分创建的进程间通信渠道，另一不同之处在于清单文件中加了几个标识，以表明这是个ROS的场景，场景的名称叫什么，这些信息会被core收集，从而用来对其进行管理。</p>
-<p>总之，不错。</p>
-<h1 id="腾讯小薇"><a href="#腾讯小薇" class="headerlink" title="腾讯小薇"></a>腾讯小薇</h1><img src="/2018/06/21/robot-os/arch/vui1/XiaoWei框图.png" title="腾讯小微框图">
-<p>腾讯小薇是私以为就是个智能音箱方案，强用来做机器人略显不合适，具体结构见上图，有个特点就是，他的场景在未创建前都是通用的模板类，创建具体的skills对象时，结合skills 类和具体的 appkit组合而成处理具体业务的skills对象。还有两点长处：一是，跨平台：其核心控制层可按不同平台编译为不同的so库（c++开发）;二是，资源优势：毕竟腾讯家的音视频资源还是很有优势的。</p>
+<h1 id="那么，Ledger是什么？"><a href="#那么，Ledger是什么？" class="headerlink" title="那么，Ledger是什么？"></a>那么，Ledger是什么？</h1><p>Ledger翻译为中文是账本、分类帐的意思，一个组织或公司用来记录花销收入的账簿。在Fuchsia中，Ledger的含义是分布式存储系统，它位于Fuchsia四层结构的第三层Peridot中。Ledger可以跨设备保存你在应用/模块中的位置，并同步到你的Google账户。<br>Ledger为每一个用户运行的应用程序提供相互分离的数据存储，然后由Fuchsia的Framework通过组件上下文（component context）向（不同设备的）客户端应用程序提供这些数据。这些数据对模块和用户来说都是私有的，不同的用户互相看不到对方的数据，不同的模块也看不到互相的数据。存储的每一项数据都会在不同的设备间透明的进行同步。而任何数据的使用则都是优先使用离线备份，然后再向云端备份。不同设备是有可能对数据进行并发修改的，而并发修改产生冲突后的冲突解决策略，对每个应用来说则是可配置的。<br>数据按照key-value的形式进行存储，多个key-value组成的集合，叫做Page。Fuchisa提供了操作Page的API，可对page进行存储、原子读、快照操作，或者使用Observer来监测数据的变化。</p>
+<h1 id="什么情况下使用Ledger"><a href="#什么情况下使用Ledger" class="headerlink" title="什么情况下使用Ledger"></a>什么情况下使用Ledger</h1><p>Ledger为用户存储应用的使用数据，并在用户的不同设备间同步这些数据，当用户重置了设备，用户可以使用这些数据恢复被重置的设备。因为使用Ledger会消耗计算和存储资源，因此如果数据并不需要同步或者持久化，则不要使用Ledger。</p>
+<h1 id="Ledger长啥样"><a href="#Ledger长啥样" class="headerlink" title="Ledger长啥样"></a>Ledger长啥样</h1><img src="/2019/09/25/os/ledger/ledger_arch.png" title="Ledger示意图">
+<p>如图，Ledger由如下部分组成：</p>
+<h2 id="Storge：-用来存取本地数据"><a href="#Storge：-用来存取本地数据" class="headerlink" title="Storge： 用来存取本地数据"></a>Storge： 用来存取本地数据</h2><p>数据是使用key-value的形成组合而成的page，对page的操作是原子性的。每一次对page的提交可以进行多个key-value的增删改查。所有page的每一个commit会有0个、1个或2个(merged)parent commit, 所有这些commit会形成一个有向无环图（DAG）。</p>
+<p>Storge组件包含</p>
+<ul>
+<li>每一个page的提交记录</li>
+<li>保存每个页面状态的不可变存储对象</li>
+<li>同步元数据，包括每个对象的同步状态</li>
+</ul>
+<h2 id="和Storge进行交互的组件："><a href="#和Storge进行交互的组件：" class="headerlink" title="和Storge进行交互的组件："></a>和Storge进行交互的组件：</h2><h3 id="Local-client：通过FIDL向本地运行的应用程序提供数据"><a href="#Local-client：通过FIDL向本地运行的应用程序提供数据" class="headerlink" title="Local client：通过FIDL向本地运行的应用程序提供数据"></a>Local client：通过FIDL向本地运行的应用程序提供数据</h3><p>运行中的应用程序模块通过调用Local client提供的FIDL API将数据存储到Ledger中。当数据产生冲突时，Storge会通知Local client 冲突产生，Local Client使用App所选择的冲突解决策略解决冲突。</p>
+<h3 id="Cloud-sync：在设备间同步Ledger的状态"><a href="#Cloud-sync：在设备间同步Ledger的状态" class="headerlink" title="Cloud sync：在设备间同步Ledger的状态"></a>Cloud sync：在设备间同步Ledger的状态</h3><p>当有新的commit产生时，Storge会通知Cloud sync，Cloud sync会将Storge中新产生的commit所关联的存储对象推送到云端。而且，Cloud sync也会监视其他设备同步到云端的commit，并将它们下载并插入到Storge中。</p>
+<p>Ledger是一个分布式的存储系统，扮演着在不同设备间同步数据的角色。本文对Ledger的简要介绍，希望可以起到帮助理解的作用。</p>
 
       
     </div>
@@ -552,7 +532,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://robotshell.com/2018/06/21/robot-os/arch/vui1/" title="Robot OS 框架杂谈">http://robotshell.com/2018/06/21/robot-os/arch/vui1/</a>
+    <a href="http://robotshell.com/2019/09/25/os/ledger/" title="Fuchsia的数据存储变革">http://robotshell.com/2019/09/25/os/ledger/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -567,7 +547,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/机器人/" rel="tag"># 机器人</a>
+            <a href="/tags/OS/" rel="tag"># OS</a>
           
         </div>
       
@@ -580,8 +560,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/13/skill/grub repair/" rel="next" title="ubuntu grub 引导丢失修复">
-                <i class="fa fa-chevron-left"></i> ubuntu grub 引导丢失修复
+              <a href="/2019/09/22/os/build/" rel="next" title="Fuchsia的运行初体验">
+                <i class="fa fa-chevron-left"></i> Fuchsia的运行初体验
               </a>
             
           </div>
@@ -589,10 +569,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/21/android/test/optimization frame rate/" rel="prev" title="android性能优化之帧率测试">
-                android性能优化之帧率测试 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -786,7 +762,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#总章"><span class="nav-number">1.</span> <span class="nav-text">总章</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#何为机器人OS"><span class="nav-number">1.1.</span> <span class="nav-text">何为机器人OS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TuringOS-1-5"><span class="nav-number">2.</span> <span class="nav-text">TuringOS 1.5</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#图灵机器人OS开放生态"><span class="nav-number">2.1.</span> <span class="nav-text">图灵机器人OS开放生态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图灵机器人SDK"><span class="nav-number">2.2.</span> <span class="nav-text">图灵机器人SDK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图灵APK"><span class="nav-number">2.3.</span> <span class="nav-text">图灵APK</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TuringOS-Lite"><span class="nav-number">3.</span> <span class="nav-text">TuringOS Lite</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TuringOSLite-本体"><span class="nav-number">3.1.</span> <span class="nav-text">TuringOSLite 本体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TuringOS-Lite-API"><span class="nav-number">3.2.</span> <span class="nav-text">TuringOS Lite API</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TuringOS-Lite-场景"><span class="nav-number">3.3.</span> <span class="nav-text">TuringOS Lite 场景</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Roobo-ROS-AI"><span class="nav-number">4.</span> <span class="nav-text">Roobo ROS.AI</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ROS-核心服务群"><span class="nav-number">4.1.</span> <span class="nav-text">ROS 核心服务群</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ROS-SDK"><span class="nav-number">4.2.</span> <span class="nav-text">ROS SDK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ROS-App"><span class="nav-number">4.3.</span> <span class="nav-text">ROS App</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#腾讯小薇"><span class="nav-number">5.</span> <span class="nav-text">腾讯小薇</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#那么，Ledger是什么？"><span class="nav-number">1.</span> <span class="nav-text">那么，Ledger是什么？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么情况下使用Ledger"><span class="nav-number">2.</span> <span class="nav-text">什么情况下使用Ledger</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ledger长啥样"><span class="nav-number">3.</span> <span class="nav-text">Ledger长啥样</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Storge：-用来存取本地数据"><span class="nav-number">3.1.</span> <span class="nav-text">Storge： 用来存取本地数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#和Storge进行交互的组件："><span class="nav-number">3.2.</span> <span class="nav-text">和Storge进行交互的组件：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Local-client：通过FIDL向本地运行的应用程序提供数据"><span class="nav-number">3.2.1.</span> <span class="nav-text">Local client：通过FIDL向本地运行的应用程序提供数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cloud-sync：在设备间同步Ledger的状态"><span class="nav-number">3.2.2.</span> <span class="nav-text">Cloud sync：在设备间同步Ledger的状态</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
