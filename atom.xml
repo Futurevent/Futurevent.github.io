@@ -395,15 +395,16 @@
   </entry>
   
   <entry>
-    <title>纵论物联网</title>
-    <link href="http://robotshell.com/2017/10/26/iot/0/"/>
-    <id>http://robotshell.com/2017/10/26/iot/0/</id>
+    <title>纵论物联网（一）：无线技术分类</title>
+    <link href="http://robotshell.com/2017/10/26/iot/1/"/>
+    <id>http://robotshell.com/2017/10/26/iot/1/</id>
     <published>2017-10-25T16:00:00.000Z</published>
-    <updated>2019-09-24T07:58:22.913Z</updated>
+    <updated>2019-09-24T07:54:23.868Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;最近在网上看到一篇介绍物联网的系列文章《纵论物联网》，但是很遗憾，都是来回转载的，也没有找到出处，零零散散的，东一篇西一篇，看起来很不方便。现汇总收集如下，既做整理，也做收藏。&lt;/p&gt;
+      &lt;p&gt;物联网的关键技术包括三个方面：物体的识别、物体的连接以及对数据的操作。随着联网物体的数量越来越多，无线技术在物联网中发挥的作用也越来越大。&lt;br&gt;&lt;img src=&quot;http://p1.pstatp.com/large/22d2000589af2a27d43f&quot; alt=&quot;纵论物联网（一）：无线技术分类&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;物联网无线技术分类&quot;&gt;&lt;a href=&quot;#物联网无线技术分类&quot; class=&quot;headerlink&quot; title=&quot;物联网无线技术分类&quot;&gt;&lt;/a&gt;物联网无线技术分类&lt;/h1&gt;
     
     </summary>
     
@@ -415,16 +416,15 @@
   </entry>
   
   <entry>
-    <title>纵论物联网（八）：面向可穿戴设备的无线物联网技术</title>
-    <link href="http://robotshell.com/2017/10/26/iot/8/"/>
-    <id>http://robotshell.com/2017/10/26/iot/8/</id>
+    <title>纵论物联网（六）：基于Linux的物联网操作系统</title>
+    <link href="http://robotshell.com/2017/10/26/iot/6/"/>
+    <id>http://robotshell.com/2017/10/26/iot/6/</id>
     <published>2017-10-25T16:00:00.000Z</published>
-    <updated>2019-09-24T06:48:17.210Z</updated>
+    <updated>2019-09-04T10:04:45.254Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;导语&lt;br&gt;智能手环、智能手表为代表的可穿戴设备，在短短几年时间内，就已经在全世界普及开来。可穿戴设备是物联网领域很重要的一种设备类型，特点是功耗低、体积小、电量有限 。本文主要介绍可应用于可穿戴设备的无线技术有哪些？&lt;/p&gt;
-&lt;img src=&quot;/2017/10/26/iot/8/面向可穿戴设备的无线物联网技术1.JPEG&quot; title=&quot;纵论物联网（八）：面向可穿戴设备的无线物联网技术&quot;&gt;
+      &lt;p&gt;提到物联网操作系统，就不能不提Linux，因为Linux可能是目前在物联网设备中应用最广的操作系统了。前面的文章刚刚介绍了不少非Linux类的物联网操作系统，本文就来介绍一下目前常用的基于Linux的物联网操作系统。&lt;br&gt;&lt;img src=&quot;http://images.ofweek.com/Upload/News/2017-06/14/lime/1497400939793024893.jpg&quot; alt=&quot;基于Linux的物联网操作系统&quot;&gt;&lt;/p&gt;
     
     </summary>
     
