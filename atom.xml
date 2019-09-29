@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://robotshell.com/"/>
-  <updated>2019-09-25T09:38:47.263Z</updated>
+  <updated>2019-09-29T07:08:04.901Z</updated>
   <id>http://robotshell.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Fuchsia的fx命令</title>
+    <link href="http://robotshell.com/2019/09/29/os/fx/"/>
+    <id>http://robotshell.com/2019/09/29/os/fx/</id>
+    <published>2019-09-29T07:08:04.000Z</published>
+    <updated>2019-09-29T07:08:04.901Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前在介绍fuchsia的编译（fuchsia的编译参考文章：&lt;a href=&quot;https://www.robotshell.com/2019/09/22/os/build/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Fuchsia的运行初体验&lt;/a&gt;）的时候提到配置fuchsia的编译产品，以及编译fuchsia系统都会使用到fx命令。&lt;br&gt;fx对于Fuchsia的重要性，大概等于编译命令+adb 对于Android的重要性。而且fx有非常多的自命令，本文仅参考官方文档&lt;a href=&quot;https://fuchsia.dev/fuchsia-src/development/workflows/fx&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;fx workflows&lt;/a&gt;,对部分fx的自命令进行简单介绍。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="OS" scheme="http://robotshell.com/categories/os/"/>
+    
+    
+      <category term="OS" scheme="http://robotshell.com/tags/OS/"/>
+    
+  </entry>
   
   <entry>
     <title>Fuchsia的数据存储变革</title>
@@ -411,27 +431,6 @@
     
     
       <category term="工具" scheme="http://robotshell.com/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>纵论物联网（三）：3GPP物联网技术</title>
-    <link href="http://robotshell.com/2017/10/26/iot/3/"/>
-    <id>http://robotshell.com/2017/10/26/iot/3/</id>
-    <published>2017-10-25T16:00:00.000Z</published>
-    <updated>2019-09-24T06:36:53.034Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;导语&lt;br&gt;随着物联网应用的发展，对于大范围组网的需求越来越多，LPWAN技术备受关注。前面的LPWAN技术文章介绍过，LPWAN技术可根据工作频段分为两类：一类是工作于未授权频段的无线技术，以LoRa、SigFox为代表；一类是工作于授权频段下的无线技术，以3GPP支持的2/3/4G蜂窝通信技术为代表。&lt;/p&gt;
-&lt;img src=&quot;/2017/10/26/iot/3/３GPP物联网技术１.JPEG&quot; title=&quot;3GPP物联网技术&quot;&gt;
-    
-    </summary>
-    
-      <category term="物联网" scheme="http://robotshell.com/categories/iot/"/>
-    
-    
-      <category term="物联网" scheme="http://robotshell.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
     
   </entry>
   
