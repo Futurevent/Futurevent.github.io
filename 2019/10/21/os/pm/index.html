@@ -97,7 +97,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="物联网,">
+  <meta name="keywords" content="OS,">
 
 
 
@@ -115,27 +115,18 @@
 
 
 
-<meta name="description" content="导语物联网的关键技术主要解决三个方面的问题：物体的识别、物体的连接、物体的数据交换。每个方面都有一些技术解决方案，在前面的文章中，我们介绍了RFID、NFC等物体识别及电子标签的技术，也介绍了物联网节点组网与接入的技术。这篇文章主要讲一下物联网的数据是如何处理的。  物联网关键技术大全">
-<meta name="keywords" content="物联网">
+<meta name="description" content="上周，在Fuchsia OS上运行了第一个demo——HelloWorld，了解到编译完成后，需要使用fx的命令将编译好的Fuchisa的应用包传送到系统中，从而得到运行。本周简单介绍下Fuchsia Package。">
+<meta name="keywords" content="OS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="纵论物联网（十）：物联网应用层协议">
-<meta property="og:url" content="http://robotshell.com/2017/10/26/iot/10/index.html">
+<meta property="og:title" content="Fuchisa之PackageManager">
+<meta property="og:url" content="http://robotshell.com/2019/10/21/os/pm/index.html">
 <meta property="og:site_name" content="Robot Shell">
-<meta property="og:description" content="导语物联网的关键技术主要解决三个方面的问题：物体的识别、物体的连接、物体的数据交换。每个方面都有一些技术解决方案，在前面的文章中，我们介绍了RFID、NFC等物体识别及电子标签的技术，也介绍了物联网节点组网与接入的技术。这篇文章主要讲一下物联网的数据是如何处理的。  物联网关键技术大全">
+<meta property="og:description" content="上周，在Fuchsia OS上运行了第一个demo——HelloWorld，了解到编译完成后，需要使用fx的命令将编译好的Fuchisa的应用包传送到系统中，从而得到运行。本周简单介绍下Fuchsia Package。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://robotshell.com/2017/10/26/iot/10/物联网应用层协议１.JPEG">
-<meta property="og:image" content="http://robotshell.com/2017/10/26/iot/10/物联网应用层协议２.JPEG">
-<meta property="og:image" content="http://robotshell.com/2017/10/26/iot/10/物联网应用层协议３.JPEG">
-<meta property="og:image" content="http://robotshell.com/2017/10/26/iot/10/物联网应用层协议４.JPEG">
-<meta property="og:image" content="http://robotshell.com/2017/10/26/iot/10/物联网应用层协议５.JPEG">
-<meta property="og:image" content="http://robotshell.com/2017/10/26/iot/10/物联网应用层协议６.JPEG">
-<meta property="og:image" content="http://robotshell.com/2017/10/26/iot/10/物联网应用层协议７.JPEG">
-<meta property="og:image" content="http://robotshell.com/2017/10/26/iot/10/物联网应用层协议８.JPEG">
-<meta property="og:updated_time" content="2019-09-24T07:11:52.366Z">
+<meta property="og:updated_time" content="2019-10-21T09:29:16.180Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="纵论物联网（十）：物联网应用层协议">
-<meta name="twitter:description" content="导语物联网的关键技术主要解决三个方面的问题：物体的识别、物体的连接、物体的数据交换。每个方面都有一些技术解决方案，在前面的文章中，我们介绍了RFID、NFC等物体识别及电子标签的技术，也介绍了物联网节点组网与接入的技术。这篇文章主要讲一下物联网的数据是如何处理的。  物联网关键技术大全">
-<meta name="twitter:image" content="http://robotshell.com/2017/10/26/iot/10/物联网应用层协议１.JPEG">
+<meta name="twitter:title" content="Fuchisa之PackageManager">
+<meta name="twitter:description" content="上周，在Fuchsia OS上运行了第一个demo——HelloWorld，了解到编译完成后，需要使用fx的命令将编译好的Fuchisa的应用包传送到系统中，从而得到运行。本周简单介绍下Fuchsia Package。">
 
 
 
@@ -165,13 +156,13 @@
 
 
 
-  <link rel="canonical" href="http://robotshell.com/2017/10/26/iot/10/">
+  <link rel="canonical" href="http://robotshell.com/2019/10/21/os/pm/">
 
 
 
 
 
-  <title>纵论物联网（十）：物联网应用层协议 | Robot Shell</title>
+  <title>Fuchisa之PackageManager | Robot Shell</title>
   
 
 
@@ -360,7 +351,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2017/10/26/iot/10/">
+    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2019/10/21/os/pm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="robot">
@@ -377,7 +368,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">纵论物联网（十）：物联网应用层协议</h1>
+          <h1 class="post-title" itemprop="name headline">Fuchisa之PackageManager</h1>
         
 
         <div class="post-meta">
@@ -389,8 +380,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-26T00:00:00+08:00">
-                2017-10-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-21T17:29:16+08:00">
+                2019-10-21
               </time>
             
 
@@ -405,8 +396,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-24T15:11:52+08:00">
-                2019-09-24
+              <time title="更新于" itemprop="dateModified" datetime="2019-10-21T17:29:16+08:00">
+                2019-10-21
               </time>
             
           </span>
@@ -424,8 +415,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iot/" itemprop="url" rel="index">
-                    <span itemprop="name">物联网</span>
+                  <a href="/categories/os/" itemprop="url" rel="index">
+                    <span itemprop="name">OS</span>
                   </a>
                 </span>
 
@@ -466,38 +457,34 @@
       
 
       
-        <p>导语<br>物联网的关键技术主要解决三个方面的问题：<u>物体的识别、物体的连接、物体的数据交换</u>。每个方面都有一些技术解决方案，在前面的文章中，我们介绍了RFID、NFC等物体识别及电子标签的技术，也介绍了物联网节点组网与接入的技术。这篇文章主要讲一下物联网的数据是如何处理的。</p>
-<img src="/2017/10/26/iot/10/物联网应用层协议１.JPEG" title="KeyTec">
-<p>物联网关键技术大全</p>
+        <p>上周，在Fuchsia OS上运行了第一个demo——HelloWorld，了解到编译完成后，需要使用fx的命令将编译好的Fuchisa的应用包传送到系统中，从而得到运行。本周简单介绍下Fuchsia Package。</p>
 <a id="more"></a>
+<p>Fuchsia 系统内的包的管理和控制，通过PackageManager实现。pm 是一个控制台的工具，通过pm可以对包进行相关的操作。</p>
+<h1 id="pm"><a href="#pm" class="headerlink" title="pm"></a>pm</h1><p>pm 是package manager的命令行接口，主要提供如下功能：</p>
+<ul>
+<li>演示和执行pmd(解释见下文)的 api</li>
+<li>供开发人员使用的包相关的功能<ul>
+<li>打包</li>
+<li>安装包</li>
+<li>列出所有的包</li>
+<li>移除包</li>
+<li>包检验</li>
+</ul>
+</li>
+<li>向Amber提供包的摘要信息<br>pm可以运行在多个操作系统上，但在没有pmd的系统上只支持一部分操作。</li>
+</ul>
+<h1 id="pmd"><a href="#pmd" class="headerlink" title="pmd"></a>pmd</h1><p>pmd 是包管理的守护进程，它的职责是：</p>
+<ul>
+<li>激活包（使包在本地可用）</li>
+<li>为包提供服务服务包（提供对包的文件系统类型访问）</li>
+<li>管理包（对不在使用的包进行垃圾回收）</li>
+<li>枚举系统中的包，列出系统中可用的包。<br>pmd 只运行在fuchisia上。</li>
+</ul>
+<h1 id="fuchsia包的结构"><a href="#fuchsia包的结构" class="headerlink" title="fuchsia包的结构"></a>fuchsia包的结构</h1><p>fuchsia包是为fuchsia系统提供一个或多个程序、组件或服务的一个或多个文件集合。<br>包由一组元数据定义，这些元数据存储在Fuchsia顶层的目录中，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">meta/</span><br><span class="line">  package</span><br><span class="line">  contents</span><br></pre></td></tr></table></figure>
 
-<p>物联网应用层协议<br>LoRa、NB-IoT以及Zigbee、蓝牙主要解决的是物体互联以及接入网络的问题，从网络协议分层来看，基本上都属于数据链路层协议。对于物联网的数据交换，主要依靠应用层协议来解决。<br>在移动互联网中，最常用的应用层协议就是HTTP协议，HTTP协议同样可以用于物联网系统中。HTTP协议采取的是<br><strong>请求-响应（Request-Response）</strong><br>的通信机制，服务器没有办法主动给客户端发送消息。如果要实现这种消息推送，就需要借助WebSocket这种全双工的通信机制。<br>不过对于很多计算和存储资源有限的物联网节点，不太适合使用HTTP协议。除了HTTP协议以外，也有很多更适合于物联网应用的协议，比如MQTT、CoAP、AMQP、STOMP等。</p>
-<img src="/2017/10/26/iot/10/物联网应用层协议２.JPEG">
-<p>各个物联网软件平台最常使用的物联网协议</p>
-<p>发布-订阅机制<br>很多物联网应用层协议都是基于<br><strong>发布-订阅(Publish-Subscribe)</strong><br>机制，这种机制非常适合物联网系统应用。MQTT协议、STOMP协议、AMQP协议以及DDS协议都属于这种发布-订阅的机制。<br>每个传感器节点，采集的数据需要上传到网络，相当于是一个消息的发布，这个消息需要基于某个主题，比如传感器的类型。所有关心这个主题的节点，都可以通过订阅这个主题的消息，实时获取最新的数据。</p>
-<img src="/2017/10/26/iot/10/物联网应用层协议３.JPEG">
-<p>消息的发布和订阅是基于某个主题的，实现机制一般依赖于消息队列</p>
-<p><strong>MQTT协议</strong><br>消息队列遥测传输协议（MQTT : Message Queuing Telemetry Transport）是为大量计算能力有限，工作带宽有限、网络环境不可靠的传感器或控制器而设计的协议。</p>
-<img src="/2017/10/26/iot/10/物联网应用层协议４.JPEG">
-<p>MQTT协议基于TCP协议</p>
-<p>MQTT协议原来是IBM开发的一个即时通讯协议，基于TCP协议实现。MQTT客户端需要通过消息代理（MQTT Broker）来进行消息的发布和订阅。<br>MQTT协议的兼容性非常好，几乎支持所有平台，可以把各种物联网设备都连接起来。所以MQTT协议也是目前应用最广泛的物联网应用层协议。</p>
-<p><strong>CoAP协议</strong><br>受限应用协议（CoAP：Constrained Application Protocol）是6LowPAN协议栈中的应用层协议，基于REST（表述性状态传递）架构风格，支持REST交互。</p>
-<img src="/2017/10/26/iot/10/物联网应用层协议５.JPEG">
-<p>CoAP协议基于UDP协议</p>
-<p>CoAP基于UDP协议，其设计初衷就是尽可能地方便地转换为HTTP协议。CoAP让用户可以像使用HTTP协议一样，在资源受限的物联网设备中使用CoAP协议。</p>
-<p><strong>AMQP协议</strong><br>高级消息队列协议（AMQP：Advanced Message Queuing Protocol）是一个提供统一消息服务的应用层标准高级消息队列协议，为面向消息的中间件设计。</p>
-<img src="/2017/10/26/iot/10/物联网应用层协议６.JPEG">
-<p>AMQP的工作原理</p>
-<p>AMQP的工作原理与MQTT类似，也是基于发布-订阅机制。消息代理Broker的交换机组件（Exchange）会把接收到的消息，根据消息的主题，分配到不同的队列中，以便订阅者接收。<br>RabbitMQ就是在AMQP协议基础上实现的一个消息系统，遵循Mozilla Public License开源协议。RabbitMQ在互联网应用中常被用作消息服务器。</p>
-<p><strong>STOMP协议</strong><br>简单(流)文本定向消息协议（STOMP: Simple (or Streaming) Text Orientated Messaging Protocol)，提供了一个可互操作的连接格式，允许STOMP客户端与任意STOMP消息代理（Broker）进行交互。<br>STOMP协议由于设计简单，易于开发客户端，因此在多种语言和多种平台上得到广泛地应用。当前非常流行的开源消息服务器ActiveMQ、Apollo、RabbitMQ（需要插件）都支持STOMP协议。</p>
-<img src="/2017/10/26/iot/10/物联网应用层协议７.JPEG">
-<p>ActiveMQ支持TCP、XMPP、STOMP等协议进行消息传输</p>
-<p>STOMP基于TCP协议，客户端和服务器之间的通信是通过“帧”（Frame）来实现，每个帧由多“行”（Line）组成。STOMP协议定义了帧结构。</p>
-<p><em>Stomp帧格式</em><br>STOMP帧第一行是命令，紧跟着键值对形式的Header内容。然后是一个空行，最后是Body内容。<br>数据分发服务DDS<br>数据分发服务（DDS：Data Distribution Service for Real-Time Systems），是面向实时系统的数据分布服务，是由OMG组织提出的协议。</p>
-<img src="/2017/10/26/iot/10/物联网应用层协议８.JPEG">
-
-<p>DDS的数据分发的实时效率非常高，能做到秒级内同时分发百万条消息到众多设备。DDS在服务质量（QoS）上提供非常多的保障途径，因此适用于国防军事、工业控制这些高可靠性、可安全性应用领域的原因。不过DDS目前还只限于在有线网络部署，无线网络的可靠性可能满足不了DDS的QoS要求。</p>
-<p>总结<br>上面列出了一些比较常见的物联网应用层协议，但并不全面，还有一些相对更加小众的协议，公开资料也比较少。目前很难说哪种物联网应用层协议会实现垄断局面，还要看各自生态和市场需求的未来发展。<br>如果希望了解更多关于物联网的信息，请继续关注“微说互联网”的“纵论物联网”系列。</p>
+<h2 id="metadata"><a href="#metadata" class="headerlink" title="metadata"></a>metadata</h2><p>元数据文件包含一组基本的系统、开发人员和用户友好的数据。例如，包括人名、唯一名称、版本、开发人员名称、开发人员公钥和说明。</p>
+<h2 id="contents"><a href="#contents" class="headerlink" title="contents"></a>contents</h2><p>内容文件包含整个包中所有文件的严格完整清单。这些名称兼作打包路径和运行时表示路径。这些路径都有一个作为merkle树节点的hash值。merkle树在zircon中有大量的使用，后续专门介绍一下。</p>
 
       
     </div>
@@ -555,7 +542,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://robotshell.com/2017/10/26/iot/10/" title="纵论物联网（十）：物联网应用层协议">http://robotshell.com/2017/10/26/iot/10/</a>
+    <a href="http://robotshell.com/2019/10/21/os/pm/" title="Fuchisa之PackageManager">http://robotshell.com/2019/10/21/os/pm/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -570,7 +557,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/物联网/" rel="tag"># 物联网</a>
+            <a href="/tags/OS/" rel="tag"># OS</a>
           
         </div>
       
@@ -583,8 +570,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/26/iot/6/" rel="next" title="纵论物联网（六）：基于Linux的物联网操作系统">
-                <i class="fa fa-chevron-left"></i> 纵论物联网（六）：基于Linux的物联网操作系统
+              <a href="/2019/10/14/os/HelloWorld/" rel="next" title="Fuchisa运行Hello,World">
+                <i class="fa fa-chevron-left"></i> Fuchisa运行Hello,World
               </a>
             
           </div>
@@ -592,10 +579,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/26/iot/0/" rel="prev" title="纵论物联网">
-                纵论物联网 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -675,8 +658,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image" src="/images/robot.png" alt="robot">
@@ -770,6 +762,22 @@ var jiathis_config={
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pm"><span class="nav-number">1.</span> <span class="nav-text">pm</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pmd"><span class="nav-number">2.</span> <span class="nav-text">pmd</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fuchsia包的结构"><span class="nav-number">3.</span> <span class="nav-text">fuchsia包的结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#metadata"><span class="nav-number">3.1.</span> <span class="nav-text">metadata</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#contents"><span class="nav-number">3.2.</span> <span class="nav-text">contents</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

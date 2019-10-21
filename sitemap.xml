@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://robotshell.com/2019/10/21/os/pm/</loc>
+    
+    <lastmod>2019-10-21T09:29:16.180Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://robotshell.com/2019/10/14/os/HelloWorld/</loc>
     
     <lastmod>2019-10-14T08:16:38.470Z</lastmod>
@@ -296,13 +303,6 @@
   </url>
   
   <url>
-    <loc>http://robotshell.com/board/index.html</loc>
-    
-    <lastmod>2019-08-12T06:32:26.234Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://robotshell.com/about/index.html</loc>
     
     <lastmod>2019-08-12T06:32:26.234Z</lastmod>
@@ -310,7 +310,7 @@
   </url>
   
   <url>
-    <loc>http://robotshell.com/categories/index.html</loc>
+    <loc>http://robotshell.com/board/index.html</loc>
     
     <lastmod>2019-08-12T06:32:26.234Z</lastmod>
     
@@ -318,6 +318,13 @@
   
   <url>
     <loc>http://robotshell.com/draft/2017-08-23-%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86.html</loc>
+    
+    <lastmod>2019-08-12T06:32:26.234Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://robotshell.com/categories/index.html</loc>
     
     <lastmod>2019-08-12T06:32:26.234Z</lastmod>
     
