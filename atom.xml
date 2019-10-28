@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://robotshell.com/"/>
-  <updated>2019-10-21T09:29:16.180Z</updated>
+  <updated>2019-10-28T09:07:37.291Z</updated>
   <id>http://robotshell.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Fuchisa Component介绍</title>
+    <link href="http://robotshell.com/2019/10/28/os/component/"/>
+    <id>http://robotshell.com/2019/10/28/os/component/</id>
+    <published>2019-10-28T09:07:37.000Z</published>
+    <updated>2019-10-28T09:07:37.291Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在Fuchsia系统中，Component是最基本的执行单元，他们对外提供能力也消费其他组件的能力。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="OS" scheme="http://robotshell.com/categories/os/"/>
+    
+    
+      <category term="OS" scheme="http://robotshell.com/tags/OS/"/>
+    
+  </entry>
   
   <entry>
     <title>Fuchisa之PackageManager</title>
@@ -399,30 +419,6 @@
     <summary type="html">
     
       &lt;p&gt;Android Automotive 是 Android Orea 中的一个特色功能，从AOSP的代码上看，android automotive 已经包含了从app层到framework层到hal层的各层级结构。本文简单介绍 Android Orea Vehicle 的架构形式&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="android" scheme="http://robotshell.com/categories/android/"/>
-    
-    
-      <category term="android" scheme="http://robotshell.com/tags/android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android-EventLog-Tags 说明</title>
-    <link href="http://robotshell.com/2018/01/08/android/eventlog/"/>
-    <id>http://robotshell.com/2018/01/08/android/eventlog/</id>
-    <published>2018-01-08T15:35:54.000Z</published>
-    <updated>2019-09-04T10:05:24.028Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;Event Log, 官方的解释为&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;System diagnostic event record. System diagnostic events are used to record certain system-level events (such as garbage collection, activity manager state, system watchdogs, and other low level activity), which may be automatically collected and analyzed during system development.&lt;br&gt;This is not the main “logcat” debugging log (Log)! These diagnostic events are for system integrators, not application authors.&lt;br&gt;Events use integer tag codes corresponding to /system/etc/event-log-tags. They carry a payload of one or more int, long, or String values. The event-log-tags file defines the payload contents for each type code.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;大概意思是说，是系统诊断事件的记录。这些事件都是系统级别事件，例如垃圾回收，ActivityManager的状态，系统看门够以及一些其他的事件。这些事件在系统开发的过程中会被自动的采集和分析。这些事件不是main debug调试log，它是给系统开发集成商看的，不是给应用开发者看的。&lt;/p&gt;
     
     </summary>
     

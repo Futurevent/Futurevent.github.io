@@ -115,25 +115,18 @@
 
 
 
-<meta name="description" content="一 2019年8月9日华为正式发布鸿蒙系统，同时表示系统开源。鸿蒙系统的发布是在美国制裁华为的大背景下，华为手机业务极度依赖的android系统极有可能随时断供。在此节点下，自然而然的会让大众理解为是对android断供风险的抵御。但是，时代是进步的。华为重造一个android不过是重嚼别人嚼过的甘蔗，又有何味道呢。华为可是5G的引领者，5G绝非是速度更快的4G，它的领域是万物互联的新一片星辰大">
+<meta name="description" content="在Fuchsia系统中，Component是最基本的执行单元，他们对外提供能力也消费其他组件的能力。">
 <meta name="keywords" content="OS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Harmony&amp;Fuchsia的相遇">
-<meta property="og:url" content="http://robotshell.com/2019/08/16/os/harmony&fuchsia/index.html">
+<meta property="og:title" content="Fuchisa Component介绍">
+<meta property="og:url" content="http://robotshell.com/2019/10/28/os/component/index.html">
 <meta property="og:site_name" content="Robot Shell">
-<meta property="og:description" content="一 2019年8月9日华为正式发布鸿蒙系统，同时表示系统开源。鸿蒙系统的发布是在美国制裁华为的大背景下，华为手机业务极度依赖的android系统极有可能随时断供。在此节点下，自然而然的会让大众理解为是对android断供风险的抵御。但是，时代是进步的。华为重造一个android不过是重嚼别人嚼过的甘蔗，又有何味道呢。华为可是5G的引领者，5G绝非是速度更快的4G，它的领域是万物互联的新一片星辰大">
+<meta property="og:description" content="在Fuchsia系统中，Component是最基本的执行单元，他们对外提供能力也消费其他组件的能力。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://robotshell.com/2019/08/16/os/harmony&fuchsia/HarmonyHistory.jpg">
-<meta property="og:image" content="http://robotshell.com/2019/08/16/os/harmony&fuchsia/HarmonyArch.jpg">
-<meta property="og:image" content="http://robotshell.com/2019/08/16/os/harmony&fuchsia/HarmonySpecDistributed.jpg">
-<meta property="og:image" content="http://robotshell.com/2019/08/16/os/harmony&fuchsia/HarmonySpecDelay.jpg">
-<meta property="og:image" content="http://robotshell.com/2019/08/16/os/harmony&fuchsia/HarmonySpecKernel.jpg">
-<meta property="og:image" content="http://robotshell.com/2019/08/16/os/harmony&fuchsia/FuchsiaLayer.jpg">
-<meta property="og:updated_time" content="2019-09-04T10:09:25.881Z">
+<meta property="og:updated_time" content="2019-10-28T09:07:37.291Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Harmony&amp;Fuchsia的相遇">
-<meta name="twitter:description" content="一 2019年8月9日华为正式发布鸿蒙系统，同时表示系统开源。鸿蒙系统的发布是在美国制裁华为的大背景下，华为手机业务极度依赖的android系统极有可能随时断供。在此节点下，自然而然的会让大众理解为是对android断供风险的抵御。但是，时代是进步的。华为重造一个android不过是重嚼别人嚼过的甘蔗，又有何味道呢。华为可是5G的引领者，5G绝非是速度更快的4G，它的领域是万物互联的新一片星辰大">
-<meta name="twitter:image" content="http://robotshell.com/2019/08/16/os/harmony&fuchsia/HarmonyHistory.jpg">
+<meta name="twitter:title" content="Fuchisa Component介绍">
+<meta name="twitter:description" content="在Fuchsia系统中，Component是最基本的执行单元，他们对外提供能力也消费其他组件的能力。">
 
 
 
@@ -163,13 +156,13 @@
 
 
 
-  <link rel="canonical" href="http://robotshell.com/2019/08/16/os/harmony&fuchsia/">
+  <link rel="canonical" href="http://robotshell.com/2019/10/28/os/component/">
 
 
 
 
 
-  <title>Harmony&Fuchsia的相遇 | Robot Shell</title>
+  <title>Fuchisa Component介绍 | Robot Shell</title>
   
 
 
@@ -358,7 +351,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2019/08/16/os/harmony&fuchsia/">
+    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2019/10/28/os/component/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="robot">
@@ -375,7 +368,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Harmony&Fuchsia的相遇</h1>
+          <h1 class="post-title" itemprop="name headline">Fuchisa Component介绍</h1>
         
 
         <div class="post-meta">
@@ -387,8 +380,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-16T09:27:29+08:00">
-                2019-08-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-28T17:07:37+08:00">
+                2019-10-28
               </time>
             
 
@@ -403,8 +396,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-04T18:09:25+08:00">
-                2019-09-04
+              <time title="更新于" itemprop="dateModified" datetime="2019-10-28T17:07:37+08:00">
+                2019-10-28
               </time>
             
           </span>
@@ -464,39 +457,140 @@
       
 
       
-        <h1 id="一"><a href="#一" class="headerlink" title=" 一 "></a><center> 一 </center></h1><p>2019年8月9日华为正式发布鸿蒙系统，同时表示系统开源。鸿蒙系统的发布是在美国制裁华为的大背景下，华为手机业务极度依赖的android系统极有可能随时断供。在此节点下，自然而然的会让大众理解为是对android断供风险的抵御。但是，时代是进步的。华为重造一个android不过是重嚼别人嚼过的甘蔗，又有何味道呢。华为可是5G的引领者，5G绝非是速度更快的4G，它的领域是万物互联的新一片星辰大海。理所应当的（如果一切不是场战略骗局的话），鸿蒙系统当是这片大海中的一艘远洋巨舰。</p>
+        <p>在Fuchsia系统中，Component是最基本的执行单元，他们对外提供能力也消费其他组件的能力。</p>
 <a id="more"></a>
-<p>这么大的一片海，只要不是个瞎子，都是看的见的。做为Android这个航行了十年大船的舵手Google，自然早有预见。2019年6月29日Google悄然上线Fuchsia开发者网站，同时Fuchsia从诞生之时就已开源。<br>两相印证，鸿蒙和Fuchsia的同时出现并非偶然，也不是单纯的大国较量结果，它有更宏大的背景：人类新时代的到来。简略的说人类经历几次科技革命，从互联网到移动互联网再到即将或正在来临的万物互联网，获取信息的方式跟随连接方式变得的越来越多样。个体是分内外的，否则无所谓个体。所以有连接就有接口，有接口就有交互。OS的作用既是对这多种多样交互的统一。随着万物的逐渐互联，所需的交互方式越来越多，已有的OS已难以继续满足需求。不过像华为、像Google他们想到这个会更早，更深刻，他们在五年前、十年前早已想到并着手开发，所以有了FuchsiaOS，有了鸿蒙OS。他们都是人们交互需求下的正常产物。</p>
-<h1 id="二"><a href="#二" class="headerlink" title=" 二 "></a><center> 二 </center></h1><p>鸿蒙系统为何物，在近期的各种宣传下，大家多少有些了解了。现搜集整理如下：</p>
+
+<h1 id="Component-和-Component-Framework"><a href="#Component-和-Component-Framework" class="headerlink" title="Component 和　Component Framework"></a>Component 和　Component Framework</h1><p>在Ｆuchsia系统中，Component是运行于自己沙箱中的程序，他通过跨进程通信（FIDL）来与其他的Component的方式进行交互。<br>ComponentFramework是Fuchsia系统中面向组件的开发框架，组件框架负责运行几乎所有的软件。</p>
+<h1 id="组件化框架的优势"><a href="#组件化框架的优势" class="headerlink" title="组件化框架的优势"></a>组件化框架的优势</h1><p>组件化框架关注与功能的分离，它帮助开发人员开发简单的组件，然后再使用这些简单的组件组合成负责的系统。<br>每个组件只负责实现单一的功能。例如网卡驱动组件只向外暴露收发网络帧的硬件服务接口。这些组件都遵循一套共同的协议，而无需关心这些组件是否来自于不同的开发商或者使用不同的开发语言开发。<br>软件组合具有的优点如下：</p>
 <ul>
-<li>鸿蒙的发展历程<img src="/2019/08/16/os/harmony&fuchsia/HarmonyHistory.jpg" title="鸿蒙的发展历程"></li>
-<li>鸿蒙的架构<img src="/2019/08/16/os/harmony&fuchsia/HarmonyArch.jpg" title="鸿蒙的架构框图">
-逐层的看，应用层表达的是支持多终端；程序框架特意强调了是多用户；基础服务的底层是分布式；内核层当前是多个内核并存。鸿蒙微内核和LiteOS均为华为自主研发，而同时集成Linux内核，不知是当前能力不足无法解决一些问题，还是为更好的兼容当前的android平台应用所做的妥协。至于未来的架构，未来的事情未来再说吧。</li>
-<li>鸿蒙的四大技术特性</li>
+<li>可配置性：系统可以通过增加、删除、升级、替换不同的组件而改变行为。</li>
+<li>可扩展性：当增加一个组件时，系统的功能得到增长。</li>
+<li>可靠性：系统可以独立关闭或者重启故障组件。</li>
+<li>复用性：特定的组件可以通过组合来解决新问题。</li>
+<li>可测试性：组件可以进行单独测试和bug修改。</li>
+<li>一致性：组件使用相同的描述方式描述自己所能提供的能力。</li>
 </ul>
-<ol>
-<li><strong>分布式架构首次用于终端OS，实现跨终端无缝协同体验。</strong> 官方主要解释为实现了模块化接耦，对应不同平台可以弹性部署，实现跨终端无缝的协同体验。从发布会给出的架构图来看，分布式底层依赖分布式软总线，中间对硬件能力进行了虚拟化，使得不同的设备可以像调用自己的设备一样调用系统中其他设备上的硬件，分布式的数据管理可以使不同设备共享同一份用户数据，只是目前不知道到底是如何具体实现的。分布式的任务调度，例如可使得家庭中的各设备可以协同完成同一任务，即提高响应又能够进行全模态的交互。<img src="/2019/08/16/os/harmony&fuchsia/HarmonySpecDistributed.jpg" title="特性一：分布式架构"></li>
-<li><strong>确定时延引擎和高性能IPC</strong>，通过对交互进行实时性通道的划分，更好的保证用户交互体验的流畅。同时底层高效的IPC为进程的协作保驾护航（鸿蒙的微内核架构，如果没有很高效率的IPC，又如何敌的过宏内核的linux呢）。值的注意的是，这块特意提到了与Fuchsia（FIDL）的对比，鸿蒙的IPC效率是Fuchsia的5倍。<img src="/2019/08/16/os/harmony&fuchsia/HarmonySpecDelay.jpg" title="特性二：确定时延引擎"></li>
-<li><strong>基于微内核架构重塑终端设备可信安全</strong>, 现在看鸿蒙应该叫多内核环境。至于安全这件事，从来都是要便利买单的。<img src="/2019/08/16/os/harmony&fuchsia/HarmonySpecKernel.jpg" title="特性三：微内核多内核"></li>
-<li><strong>统一IDE支撑开发、多端部署</strong>。<h1 id="三"><a href="#三" class="headerlink" title=" 三 "></a><center> 三 </center></h1>Fuchsia 为何物，可能很多人就不太了解了。Fuchsia一直保持着低调和神秘，大家的关注度也不高，其实就连华为也是其重要的代码贡献者。在Fuchsia的开发者网站上，对Fuchsia的描述也只有两行：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Pink + Purple == Fuchsia (a new Operating System)</span><br><span class="line"></span><br><span class="line">Welcome to Fuchsia! This document has everything you need to get started with Fuchsia.</span><br><span class="line"></span><br><span class="line">Note: The Fuchsia source includes Zircon, the core platform that underpins Fuchsia. The Fuchsia build process will build Zircon as a side-effect; to work on Zircon only, read and follow Zircon&apos;s Getting Started doc.</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+<p>Fuchsia使用组件化技术来构造整个具有组合能力的软件新系统，组件框架有利于新软件的发布和更新。</p>
+<h1 id="一切皆组件"><a href="#一切皆组件" class="headerlink" title="一切皆组件"></a>一切皆组件</h1><p>组件无处不在，他们以相同的机制运行并无缝衔接，在Fuchsia系统中几乎一切程序都是以组件的形式存在的：</p>
 <ul>
-<li>Fuchsia 大事记<br>实在没啥好说的<ul>
-<li>2016年Google开发者大会发布</li>
-<li>2019年6月底上线开发者网站</li>
+<li>命令行工具</li>
+<li>设备驱动</li>
+<li>用户应用</li>
+<li>文件系统</li>
+<li>多媒体编解码器</li>
+<li>网络协议栈</li>
+<li>测试程序</li>
+<li>网页</li>
 </ul>
-</li>
-<li>Fuchsia 架构<br>Fuchsia的架构被谷歌形容为层叠蛋糕，大概如下图：<img src="/2019/08/16/os/harmony&fuchsia/FuchsiaLayer.jpg" title="Fuchsia的层叠蛋糕架构">
-从下往上，每一层的名字都是一种石头:<br>第一层是Fuchsia的内核层，该层为Zircon（皓石），类似于linux之于android。负责处理硬件访问和软件之间的通信，与鸿蒙系统的内核一样，Zircon也是微内核的架构（相比宏内核的高效率，微内核由于需要频繁的进程间通信会损耗一部分性能，但是对于分模块开发和提升安全性确是非常重要的优势）<br>第二层，名叫GarNet（石榴石），包括系统所需的各种底层功能，硬件驱动程序也在这一层，同时这一层也负责软件安装。<br>第三层，名叫Peridot（橄榄石），这一层主要负责支持Fuchsia的模块化应用程序设计，负责各模块之间的数据同步等，同时这一层也集成了Google Assisant。<br>第四层，名叫Topaz（黄玉石），是与应用开发者和使用用户关系最紧密的一层，该层可类比为Android中的系统应用层。</li>
-<li>Fuchsia的特点<br>关于Fuchsia的技术特点，零零碎碎，未找到官方统一的一个说明，有几点简单说明一下</li>
+<p>但是有几个例外：</p>
+<ul>
+<li>bootloaders</li>
+<li>设备固件</li>
+<li>kernels</li>
+<li>组件Manager自己的引导程序</li>
+<li>虚拟访客操作系统</li>
 </ul>
-<ol>
-<li>多层蛋糕这种结构，想必是Google从android吸取经验而来，这样分层，可以允许厂商独立替换其中某层，比方，再Peridot这一层有负责各模块数据同步的模块，该模块依赖于Google账号服务，对于国内的设备厂商可以实现自己的数据共享能力，但是同时还可以得到其他层的版本更新支持。</li>
-<li>最上层Topaz提供Flutter支持，更方便的接入大量的各种功能的应用</li>
-<li>Peridot层面向模块设计的应用程序，通过程序内模块的自由组合成用户的story（可理解为用户完成一项任务的各个步骤的集合），从而面向场景化使用，达到系统提供功能的风格一致的复用。这和android系统intent的设计理念高度相似。</li>
-<li>Peridot使用Google账号服务的模块间数据共享，各模块可能位于不同的终端设备上，又有一些鸿蒙系统分布式的味道。<h1 id="四"><a href="#四" class="headerlink" title=" 四 "></a><center> 四 </center></h1>在几乎相同的时间点，华为和Google，分别已鸿蒙系统和Fuchsia系统这两个有众多相似点的系统相遇。它们都面向未来的多种智能设备；微内核的结构都给了设备厂商开发部署各自模块的自由；都在多个设备之间可以无缝的共享数据自由切换；都没有再继续使用linux kernel作为系统的内核；并且都开源了。相遇的这个节点应该不是偶然，这东西方两大巨头的同时到位似乎预示着一个新的交互时代的来临。这次交互时代变革的规模比以往的范围要大的多，他是对万物的连接。<br>现在是大一统前的黎明，当紧随两艘巨舰的航迹。</li>
-</ol>
+<h1 id="组件的独立性"><a href="#组件的独立性" class="headerlink" title="组件的独立性"></a>组件的独立性</h1><p>首先，组件是一个程序：</p>
+<ul>
+<li>它是软件的执行单元</li>
+<li>它使用一个唯一的URL进行标识，通过此URL可以查询并实例化组件</li>
+<li>组件可以使用任何的编程语言实现，只要由合适的组件runner（类似运行环境，后文有描述）存在</li>
+<li>它有一份声明用来描述它可以做什么和自己使用它的能力</li>
+</ul>
+<p>然后，组件是一个独立的程序：</p>
+<ul>
+<li>每一个组件的实例都运行在自己的独立沙箱中。</li>
+<li>依据最小特权原则，组件被分配受限的权限以完成它的功能。</li>
+<li>组件不可以读取未被授权的其他组件</li>
+<li>组件的生命周期和状态独立于其他组件</li>
+<li>它主要通过IPC的方式与其他组件交互</li>
+<li>组件的错误和故障不会影响到整个系统的稳定。</li>
+</ul>
+<p>其次，组件是一个可组合的程序：</p>
+<ul>
+<li>组件可以组合其他的组件从而形成复杂的组件</li>
+<li>组件可以通过静态或者动态的方式，使用其他组件的URL获得其他组件的实例作为当前组件的子组件。</li>
+<li>它可以使用功能路由将自己的能力授权给自己的子组件。</li>
+</ul>
+<p>最终，组件是一个封闭的可以组合独立程序：</p>
+<ul>
+<li>组件有自己的封闭边界。</li>
+<li>组件可以在不影响调用者的情况下，改变自己的实现。</li>
+<li>组件以包含一切组件运行时所需的信息（包含共享库）的方式进行发布。</li>
+</ul>
+<h1 id="ComponentManager-及其启动"><a href="#ComponentManager-及其启动" class="headerlink" title="ComponentManager 及其启动"></a>ComponentManager 及其启动</h1><p>ComponentManager是Fuchsia组件框架的核心，它负责管理各组件的生命周期，对各组件进行授权管理和保持各组件的独立运行。<br>系统在启动的早期就启动组件管理器，然后组件管理器首先启动根组件，然后根组件像组件管理器发出请求，然后启动设备管理、文件系统、网络协议栈及其他必要的服务。<br>随着越来越多的组件启动，整个Fuchsia恢复生机，最终通过session framework启动用户交互，然后用户就可以控制系统了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">participant BootProcess</span><br><span class="line">participant ComponentManager</span><br><span class="line">participant RootComponent</span><br><span class="line">participant OtherComponent</span><br><span class="line">participant SessionFramework</span><br><span class="line"></span><br><span class="line">BootProcess-&gt;ComponentManager: 启动</span><br><span class="line">ComponentManager-&gt;RootComponent: 启动</span><br><span class="line">RootComponent-&gt;ComponentManager: 请求启动核心Component</span><br><span class="line">ComponentManager-&gt;OtherComponent: 启动设备管理、文件系统等</span><br><span class="line">BootProcess-&gt;SessionFramework: 启动UI</span><br></pre></td></tr></table></figure>
+
+<h1 id="组件实例"><a href="#组件实例" class="headerlink" title="组件实例"></a>组件实例</h1><p>组件的实例是一个组件运行时的副本，不同的组件实例之间互不影响，状态等也互不干扰。推断一个组件可以由多个组件实例，且他们之间互无关系。</p>
+<h2 id="组件实例的生命周期"><a href="#组件实例的生命周期" class="headerlink" title="组件实例的生命周期"></a>组件实例的生命周期</h2><p>组件的实体有几个主要的生命周期事件：create、start、stop和destory。不同于进程，组件实例在不运行时依然存在，所以一个组件的实例可以被重复的启动和停止。</p>
+<h3 id="create"><a href="#create" class="headerlink" title="create"></a>create</h3><p>当一个组件被创建时，ComponentManager将为它分配一个唯一标识符，并将它存储在ComponentManager的数据结构中，并使其功能可供其他组件使用。<br>一旦创建，组件实例可被启动和销毁。</p>
+<h3 id="start"><a href="#start" class="headerlink" title="start"></a>start</h3><p>启动组件实例，组件中的代码将得到执行并且可以调用被赋予的其他组件中的能力。<br>每一个组件的运行都有其理由，ComponentManager只启动那些正的有事要做的组件，比方说有其他组件要调用该组件的能力。</p>
+<h3 id="stop"><a href="#stop" class="headerlink" title="stop"></a>stop</h3><p>停止一个组件将停止该组件的程序运行，但是会保存组件运行到的状态，以便在下次运行时能够恢复组件的运行状态。ComponentManager可能由于以下的原因而停止一个组件：</p>
+<ul>
+<li>所有的客户端断开了连接</li>
+<li>其父组被停止</li>
+<li>当组件的包被更新</li>
+<li>当没有足够的资源运行该组件</li>
+<li>虽然有资源，但是其他的组件优先级更高</li>
+<li>组件被销毁</li>
+<li>系统关机</li>
+</ul>
+<p>组件可以实现一个生命周期Handler用来接收生命周期事件，但是在资源耗尽，崩溃和系统关机的情况下组件将收不到事件的通知。<br>一旦停止，组件实例可以被重启或者销毁。</p>
+<h3 id="destory"><a href="#destory" class="headerlink" title="destory"></a>destory</h3><p>销毁组件实例将释放他所占有的所有资源以及清楚其所有所状态。一旦被释放，组件实例将不能再被重启，再次启动同一组件，得到的将是不同的组件实例。</p>
+<h1 id="组件声明"><a href="#组件声明" class="headerlink" title="组件声明"></a>组件声明</h1><p>一个组件的声明是给机器看的，它描述了该组件可以做什么和如何运行。它包含ComponentManager实例化组件实例和与其他组件组合时所需的元数据。<br>每一个组件都有一份组件声明，对于在包中分发的组件，组件的声明通常采用组件清单文件的方式（Component manifest file）。<br>组件也可以通过其他的方式发布，例如通过web application的方式发布，这是需要与之配套的解析器和运行器（runner)，它们需要提供组件运行必须的声明。<br>例如，一个计算器组件声明可能包含如下信息：</p>
+<ul>
+<li>计算器的程序在包中所在的位置</li>
+<li>运行该组件的runner的名字</li>
+<li>保存计算器计算中间结果的持久化请求</li>
+<li>使用当前用户界面的请求</li>
+<li>请求公开允许其他组件使用进程间通信访问计算器累加器寄存器的功能。</li>
+</ul>
+<h1 id="组件URL"><a href="#组件URL" class="headerlink" title="组件URL"></a>组件URL</h1><p>组件的URL指明了组件声明、组件的程序及资源所在的位置。可以使用不同的URL Scheme从不同的源检索组件，例如：</p>
+<ul>
+<li>fuchsia-boot</li>
+</ul>
+<p>该组件是从系统启动img中解析的，用于在包系统可用之前检索在早期引导期间对系统操作至关重要的组件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eg: fuchsia-boot:///#meta/devcoordinator.cm</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>fuchsia-pkg</li>
+</ul>
+<p>组件由Fuchsia包解析器解析。此方案用于以包的形式分发的组件，包可以按需下载并保持最新。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eg: fuchsia-pkg://fuchsia.com/netstack#meta/netstack.cm</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>http/https</li>
+</ul>
+<p>组件被web解析器解析为web应用程序。该方案用于将基于web的内容集成到组件框架中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eg: https://fuchsia.dev</span><br></pre></td></tr></table></figure>
+
+<h1 id="组件的拓扑结构"><a href="#组件的拓扑结构" class="headerlink" title="组件的拓扑结构"></a>组件的拓扑结构</h1><p>组件的拓扑结构是一个抽象的数据结构，用来描述组件实例之间的交互关系，它有三部分组成：</p>
+<ul>
+<li>组件实例树：描述组件实例以什么关系组合起来（他们之间的父子关系）</li>
+<li>能力路由图：描述组件实例如何获得对其他实例功能的访问权（他们之间的供销关系）</li>
+<li>共享资源树：描述隔离在各自沙箱中的各组件对共享资源使用方式（他们的隔离关系）</li>
+</ul>
+<p>组件拓扑结构对组件的生命周期和功能的使用有很大的影响。</p>
+<h2 id="层次结构"><a href="#层次结构" class="headerlink" title="层次结构"></a>层次结构</h2><p>通过层次结构，一些简单的组件可以组合在一起形成一个复杂的组件。在层次结构中父组件创建其他组件的实例作为其子组件，父组件为其子组件赋予访问父组件能力的权限，同时通过功能路由的方式访问子组件的能力。子组件可以通过如下两种方式被创建：</p>
+<ul>
+<li>静态</li>
+</ul>
+<p>父组件在自己的声明中声明子组件，子组件在父组件更新声明删除子组件后将会自动销毁。</p>
+<ul>
+<li>动态</li>
+</ul>
+<p>父组件使用领域（ComponentManager组件树的一个子树）服务创建子组件并加载到父组件定义的组件集合中，对子组件的管理使用同样的方法。</p>
+<p>子组件永远依赖父组件；他们不能被重新分配，也不能比父组件长寿。当父组件被销毁时，所有的子组件也会被销毁。组件之间的拓扑关系代表了组件之间的父子关系，这种关系以组件实例树的形式存在。</p>
+<h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><p>子组件的能力不能直接对外提供，必须经由其父组件，这些功能是被封装的。这个特性类似于面向对象编程中的组合。</p>
+<h2 id="领域"><a href="#领域" class="headerlink" title="领域"></a>领域</h2><p>领域是由层次结构组成的组件实例的子树。每个领域都由一个组件实例根，并包含该实例的所有子实例及其子实例。领域是组件拓扑结构中重要的封装边界。每个领域的根都有某些特权来影响组件的行为，例如：</p>
+<ul>
+<li>声明能力如何在领域内 流入、流出和在流动</li>
+<li>绑定到子组件以访问其服务。</li>
+<li>创建和销毁子组件。</li>
+</ul>
+<h2 id="能力路由"><a href="#能力路由" class="headerlink" title="能力路由"></a>能力路由</h2><p>组件可以通过功能路由访问其他组件公开的功能。</p>
+<h2 id="Compartments"><a href="#Compartments" class="headerlink" title="Compartments"></a>Compartments</h2><p>Compartments是组件实例运行的隔离边界。它是维护组件的机密性、完整性和可用性的重要机制。运行于不同物理硬件、不同job、不同runner的组件之间是互相隔离的。上述的三层隔离是互相嵌套的。runner 运行于 job（类似于进程）中，而job运行于物理硬件上。kernel负责对job的调度。</p>
+<p>综上，组件是fuchsia运行程序的一个基本单位，在fuchsia分发pacakge时，一个包可以携带多个组件，组件有点类似于android 四大组件的感觉，但是感觉要更加独立，且还有自己的层级结构。运行时，组件的依赖需要依赖runner，在fuchsia的框架中，这个runner是可扩展的，这将极大的丰富fuchsia的生态。runner有点像解析器或者虚拟机的感觉。runner运行于job，job则类似于进程的概念，由kernel进行调度。<br>Fuchsia出现的新概念太多，需要类比学习帮助理解，多有不当之处，欢迎大家讨论。</p>
 
       
     </div>
@@ -554,7 +648,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://robotshell.com/2019/08/16/os/harmony&fuchsia/" title="Harmony&Fuchsia的相遇">http://robotshell.com/2019/08/16/os/harmony&fuchsia/</a>
+    <a href="http://robotshell.com/2019/10/28/os/component/" title="Fuchisa Component介绍">http://robotshell.com/2019/10/28/os/component/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -582,8 +676,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/26/robot-os/arch/vui2/" rel="next" title="Robot OS 框架杂谈（二）：语音交互各厂产品">
-                <i class="fa fa-chevron-left"></i> Robot OS 框架杂谈（二）：语音交互各厂产品
+              <a href="/2019/10/21/os/pm/" rel="next" title="Fuchisa之PackageManager">
+                <i class="fa fa-chevron-left"></i> Fuchisa之PackageManager
               </a>
             
           </div>
@@ -591,10 +685,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/30/os/what's fuchsia os/" rel="prev" title="Google的Fuchsia OS到底是什么">
-                Google的Fuchsia OS到底是什么 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -788,7 +878,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一"><span class="nav-number">1.</span> <span class="nav-text"> 一 </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二"><span class="nav-number">2.</span> <span class="nav-text"> 二 </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三"><span class="nav-number">3.</span> <span class="nav-text"> 三 </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四"><span class="nav-number">4.</span> <span class="nav-text"> 四 </span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Component-和-Component-Framework"><span class="nav-number">1.</span> <span class="nav-text">Component 和　Component Framework</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#组件化框架的优势"><span class="nav-number">2.</span> <span class="nav-text">组件化框架的优势</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一切皆组件"><span class="nav-number">3.</span> <span class="nav-text">一切皆组件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#组件的独立性"><span class="nav-number">4.</span> <span class="nav-text">组件的独立性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ComponentManager-及其启动"><span class="nav-number">5.</span> <span class="nav-text">ComponentManager 及其启动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#组件实例"><span class="nav-number">6.</span> <span class="nav-text">组件实例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#组件实例的生命周期"><span class="nav-number">6.1.</span> <span class="nav-text">组件实例的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#create"><span class="nav-number">6.1.1.</span> <span class="nav-text">create</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#start"><span class="nav-number">6.1.2.</span> <span class="nav-text">start</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stop"><span class="nav-number">6.1.3.</span> <span class="nav-text">stop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#destory"><span class="nav-number">6.1.4.</span> <span class="nav-text">destory</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#组件声明"><span class="nav-number">7.</span> <span class="nav-text">组件声明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#组件URL"><span class="nav-number">8.</span> <span class="nav-text">组件URL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#组件的拓扑结构"><span class="nav-number">9.</span> <span class="nav-text">组件的拓扑结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#层次结构"><span class="nav-number">9.1.</span> <span class="nav-text">层次结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#封装"><span class="nav-number">9.2.</span> <span class="nav-text">封装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#领域"><span class="nav-number">9.3.</span> <span class="nav-text">领域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#能力路由"><span class="nav-number">9.4.</span> <span class="nav-text">能力路由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compartments"><span class="nav-number">9.5.</span> <span class="nav-text">Compartments</span></a></li></ol></li></ol></div>
             
 
           </div>
