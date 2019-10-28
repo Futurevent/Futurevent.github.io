@@ -123,7 +123,7 @@
 <meta property="og:site_name" content="Robot Shell">
 <meta property="og:description" content="在Fuchsia系统中，Component是最基本的执行单元，他们对外提供能力也消费其他组件的能力。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-28T09:07:37.291Z">
+<meta property="og:updated_time" content="2019-10-28T09:14:43.010Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Fuchisa Component介绍">
 <meta name="twitter:description" content="在Fuchsia系统中，Component是最基本的执行单元，他们对外提供能力也消费其他组件的能力。">
@@ -396,7 +396,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-10-28T17:07:37+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-10-28T17:14:43+08:00">
                 2019-10-28
               </time>
             
@@ -519,7 +519,19 @@
 <li>组件以包含一切组件运行时所需的信息（包含共享库）的方式进行发布。</li>
 </ul>
 <h1 id="ComponentManager-及其启动"><a href="#ComponentManager-及其启动" class="headerlink" title="ComponentManager 及其启动"></a>ComponentManager 及其启动</h1><p>ComponentManager是Fuchsia组件框架的核心，它负责管理各组件的生命周期，对各组件进行授权管理和保持各组件的独立运行。<br>系统在启动的早期就启动组件管理器，然后组件管理器首先启动根组件，然后根组件像组件管理器发出请求，然后启动设备管理、文件系统、网络协议栈及其他必要的服务。<br>随着越来越多的组件启动，整个Fuchsia恢复生机，最终通过session framework启动用户交互，然后用户就可以控制系统了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">participant BootProcess</span><br><span class="line">participant ComponentManager</span><br><span class="line">participant RootComponent</span><br><span class="line">participant OtherComponent</span><br><span class="line">participant SessionFramework</span><br><span class="line"></span><br><span class="line">BootProcess-&gt;ComponentManager: 启动</span><br><span class="line">ComponentManager-&gt;RootComponent: 启动</span><br><span class="line">RootComponent-&gt;ComponentManager: 请求启动核心Component</span><br><span class="line">ComponentManager-&gt;OtherComponent: 启动设备管理、文件系统等</span><br><span class="line">BootProcess-&gt;SessionFramework: 启动UI</span><br></pre></td></tr></table></figure>
+<pre class="mermaid">sequenceDiagram
+
+participant BootProcess
+participant ComponentManager
+participant RootComponent
+participant OtherComponent
+participant SessionFramework
+
+BootProcess->>ComponentManager: 启动
+ComponentManager->>RootComponent: 启动
+RootComponent->>ComponentManager: 请求启动核心Component
+ComponentManager->>OtherComponent: 启动设备管理、文件系统等
+BootProcess->>SessionFramework: 启动UI</pre>
 
 <h1 id="组件实例"><a href="#组件实例" class="headerlink" title="组件实例"></a>组件实例</h1><p>组件的实例是一个组件运行时的副本，不同的组件实例之间互不影响，状态等也互不干扰。推断一个组件可以由多个组件实例，且他们之间互无关系。</p>
 <h2 id="组件实例的生命周期"><a href="#组件实例的生命周期" class="headerlink" title="组件实例的生命周期"></a>组件实例的生命周期</h2><p>组件的实体有几个主要的生命周期事件：create、start、stop和destory。不同于进程，组件实例在不运行时依然存在，所以一个组件的实例可以被重复的启动和停止。</p>
