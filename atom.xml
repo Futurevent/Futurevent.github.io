@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://robotshell.com/"/>
-  <updated>2019-10-28T09:14:43.010Z</updated>
+  <updated>2019-11-05T08:52:43.216Z</updated>
   <id>http://robotshell.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Component manifests介绍</title>
+    <link href="http://robotshell.com/2019/11/05/os/component%20manifest/"/>
+    <id>http://robotshell.com/2019/11/05/os/component manifest/</id>
+    <published>2019-11-05T08:52:43.000Z</published>
+    <updated>2019-11-05T08:52:43.216Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;清单文件是用来描述组件的一个描述文件，扩展名为.cmx。通常位于工程的meta目录下。描述一个组件通常包含如下几部分：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;关于如何运行组件的信息&lt;/li&gt;
+&lt;li&gt;子组件实例和组件集合的描述&lt;/li&gt;
+&lt;li&gt;描述如何在组件之间使用、发布和提供功能的路由规则。&lt;/li&gt;
+&lt;li&gt;自由形式的数据（“facets”）被组件框架忽略，但可以由第三方解释（类似android清单文件中的meta-data 数据）。&lt;/li&gt;&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="OS" scheme="http://robotshell.com/categories/os/"/>
+    
+    
+      <category term="OS" scheme="http://robotshell.com/tags/OS/"/>
+    
+  </entry>
   
   <entry>
     <title>Fuchisa Component介绍</title>
@@ -399,26 +424,6 @@
     <summary type="html">
     
       &lt;p&gt;Car Service 是 android O automotive 的核心实现。第一承担部分具体业务逻辑，第二向上为Car API 提供支撑，第三向下调用android api 或者调用 Vehicle Hal 获取车辆数据，控制车辆行为。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="android" scheme="http://robotshell.com/categories/android/"/>
-    
-    
-      <category term="android" scheme="http://robotshell.com/tags/android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android O Vehicle之架构介绍</title>
-    <link href="http://robotshell.com/2018/02/03/android/vehclearch/"/>
-    <id>http://robotshell.com/2018/02/03/android/vehclearch/</id>
-    <published>2018-02-03T10:28:31.000Z</published>
-    <updated>2019-09-24T07:59:23.382Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Android Automotive 是 Android Orea 中的一个特色功能，从AOSP的代码上看，android automotive 已经包含了从app层到framework层到hal层的各层级结构。本文简单介绍 Android Orea Vehicle 的架构形式&lt;/p&gt;
     
     </summary>
     
