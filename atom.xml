@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://robotshell.com/"/>
-  <updated>2019-11-05T08:52:43.216Z</updated>
+  <updated>2019-11-12T09:17:26.432Z</updated>
   <id>http://robotshell.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Component 能力介绍</title>
+    <link href="http://robotshell.com/2019/11/12/os/component%20capabilities/"/>
+    <id>http://robotshell.com/2019/11/12/os/component capabilities/</id>
+    <published>2019-11-12T09:17:26.000Z</published>
+    <updated>2019-11-12T09:17:26.432Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Capabilities 理解为能力、功能，就是赋予一个组件能够连接和读取其他组件提供的能力的权限。&lt;br&gt;fuchsia 中组件的能力，有三种，分别是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Directory 能力&lt;/li&gt;
+&lt;li&gt;Service 能力&lt;/li&gt;
+&lt;li&gt;Storage 能力&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="OS" scheme="http://robotshell.com/categories/os/"/>
+    
+    
+      <category term="OS" scheme="http://robotshell.com/tags/OS/"/>
+    
+  </entry>
   
   <entry>
     <title>Component manifests介绍</title>
@@ -404,26 +429,6 @@
     <summary type="html">
     
       &lt;p&gt;android o 在源码工程/package/service/目录下新增了一个目录Car, 做为android automotive的重要组成部分，这部分可理解为在android世界的基础上，调用android的api构造出的Vehicle框架，该框架将android这一系统获得从手机迁移到目前最大的智能设备————车上的能力。&lt;br&gt;从automotive 开始分析android O 的电源管理，一方面可以站在android api用户的角度，从调用逐层的深入下去直达kernel，另一方面也可以帮助理清android automotive的框架结构。对于android automotive的框架结构的更详细的介绍可以参考另外的说明，本文当然重点还是在于从头到位的串讲下android O的电源管理。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="android" scheme="http://robotshell.com/categories/android/"/>
-    
-    
-      <category term="android" scheme="http://robotshell.com/tags/android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android O Vehicle之Car Service</title>
-    <link href="http://robotshell.com/2018/02/03/android/carservice/"/>
-    <id>http://robotshell.com/2018/02/03/android/carservice/</id>
-    <published>2018-02-03T10:28:49.000Z</published>
-    <updated>2019-09-04T10:05:37.631Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Car Service 是 android O automotive 的核心实现。第一承担部分具体业务逻辑，第二向上为Car API 提供支撑，第三向下调用android api 或者调用 Vehicle Hal 获取车辆数据，控制车辆行为。&lt;/p&gt;
     
     </summary>
     
