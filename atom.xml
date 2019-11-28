@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://robotshell.com/"/>
-  <updated>2019-11-20T07:19:24.915Z</updated>
+  <updated>2019-11-28T08:55:39.271Z</updated>
   <id>http://robotshell.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Fuchsia模块化的四大组件之一</title>
+    <link href="http://robotshell.com/2019/11/28/os/modular%20component/"/>
+    <id>http://robotshell.com/2019/11/28/os/modular component/</id>
+    <published>2019-11-28T08:55:39.000Z</published>
+    <updated>2019-11-28T08:55:39.271Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在前文对于&lt;a href=&quot;https://www.robotshell.com/2019/11/20/os/modular/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Fuchsia模块化&lt;/a&gt;的介绍中提到，用户可以通过开发module、agent、entryprovider类别的组件来实现具体的业务逻辑，扩展系统的能力。这三大组件再结合由module组合而成的story，可以称之为是fuchsia系统内的四大组件。本文依次介绍这几种组件都是些什么。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="OS" scheme="http://robotshell.com/categories/os/"/>
+    
+    
+      <category term="OS" scheme="http://robotshell.com/tags/OS/"/>
+    
+  </entry>
   
   <entry>
     <title>Fuchsia模块化介绍</title>
@@ -409,26 +429,6 @@
 
 &lt;p&gt;注释写的很明白，用来指示当前设备是醒是睡还是处于半醒半睡间的某中状态，本文即从此处讲起。&lt;/p&gt;
 &lt;p&gt;无论设备电源状态如何变化，走了多少曲折的流程，最终会层层调用到对该变量的修改，用以指示设备电源变化后的状态，设备唤醒也不例外。常见的分析电源管理的文章多分析电源管理的框架结构及调用流程，鲜有对唤醒后，睡眠前其他模块所做工作的描述。本篇即主要阐述设备从睡眠状态唤醒，设置mWakefulness为WAKEFULNESS_AWAKE后，整个系统都做了些什么。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="android" scheme="http://robotshell.com/categories/android/"/>
-    
-    
-      <category term="android" scheme="http://robotshell.com/tags/android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android包管理之App安装前的校验</title>
-    <link href="http://robotshell.com/2018/02/06/android/package%20verify/"/>
-    <id>http://robotshell.com/2018/02/06/android/package verify/</id>
-    <published>2018-02-06T13:32:49.000Z</published>
-    <updated>2019-09-24T07:36:55.488Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;初识Package-Verification&quot;&gt;&lt;a href=&quot;#初识Package-Verification&quot; class=&quot;headerlink&quot; title=&quot;初识Package Verification&quot;&gt;&lt;/a&gt;初识Package Verification&lt;/h1&gt;&lt;p&gt;之前在做机器人操作系统的时候有过这样的需求，希望在安装应用的时候判断该应用是否符合机器人系统的操作规范，说白了就是需要扫描一下这个apk，是否符合某些规则。当然，这个需求可以在andoird 安装应用的过程实现。但是查看源码发现了Package Verification，这是一个没有多少文档介绍也没有相应demo的特性。&lt;/p&gt;
     
     </summary>
     
