@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://robotshell.com/"/>
-  <updated>2019-11-28T08:55:39.271Z</updated>
+  <updated>2019-12-05T09:35:15.487Z</updated>
   <id>http://robotshell.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Fuchsia模块化的四大组件之二</title>
+    <link href="http://robotshell.com/2019/12/05/os/modular%20component2/"/>
+    <id>http://robotshell.com/2019/12/05/os/modular component2/</id>
+    <published>2019-12-05T09:35:15.000Z</published>
+    <updated>2019-12-05T09:35:15.487Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;参考前文：&lt;br&gt;&lt;a href=&quot;https://www.robotshell.com/2019/11/20/os/modular/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Fuchsia模块化&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://www.robotshell.com/2019/11/28/os/modular%20component/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Fuchsia模块化的四大组件之一&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在前文对于&lt;a href=&quot;https://www.robotshell.com/2019/11/20/os/modular/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Fuchsia模块化&lt;/a&gt;的介绍中提到，用户可以通过开发module、agent、entryprovider类别的组件来实现具体的业务逻辑，扩展系统的能力。这三大组件再结合由module组合而成的story，可以称之为是fuchsia系统内的四大组件。本文依次介绍这几种组件都是些什么。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="OS" scheme="http://robotshell.com/categories/os/"/>
+    
+    
+      <category term="OS" scheme="http://robotshell.com/tags/OS/"/>
+    
+  </entry>
   
   <entry>
     <title>Fuchsia模块化的四大组件之一</title>
@@ -412,30 +433,6 @@
     
     
       <category term="技巧" scheme="http://robotshell.com/tags/%E6%8A%80%E5%B7%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>android O 电源管理之从设备唤醒谈起</title>
-    <link href="http://robotshell.com/2018/03/11/android/power%20wakeup/"/>
-    <id>http://robotshell.com/2018/03/11/android/power wakeup/</id>
-    <published>2018-03-11T05:39:30.000Z</published>
-    <updated>2019-09-04T10:07:17.040Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;为何从此谈起&quot;&gt;&lt;a href=&quot;#为何从此谈起&quot; class=&quot;headerlink&quot; title=&quot;为何从此谈起&quot;&gt;&lt;/a&gt;为何从此谈起&lt;/h1&gt;&lt;p&gt;andoird PowerManagerService 中有一个成员变量mWakefulness，其定义如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// Indicates whether the device is awake or asleep or somewhere in between.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// This is distinct from the screen power state, which is managed separately.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; mWakefulness;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;注释写的很明白，用来指示当前设备是醒是睡还是处于半醒半睡间的某中状态，本文即从此处讲起。&lt;/p&gt;
-&lt;p&gt;无论设备电源状态如何变化，走了多少曲折的流程，最终会层层调用到对该变量的修改，用以指示设备电源变化后的状态，设备唤醒也不例外。常见的分析电源管理的文章多分析电源管理的框架结构及调用流程，鲜有对唤醒后，睡眠前其他模块所做工作的描述。本篇即主要阐述设备从睡眠状态唤醒，设置mWakefulness为WAKEFULNESS_AWAKE后，整个系统都做了些什么。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="android" scheme="http://robotshell.com/categories/android/"/>
-    
-    
-      <category term="android" scheme="http://robotshell.com/tags/android/"/>
     
   </entry>
   

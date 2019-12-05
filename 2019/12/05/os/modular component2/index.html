@@ -97,7 +97,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="技巧,">
+  <meta name="keywords" content="OS,">
 
 
 
@@ -115,18 +115,18 @@
 
 
 
-<meta name="description" content="第一章 工作就得这么弄自己家的电脑，需要能写代码，也要能供不写代码的时候用，比起ubuntu来说，win10还是要好用非常多的，何况买的dell品牌台式机，win1o 是正版的，office是正版的，还有dell的一堆服务，废了多可惜啊，都是钱买的。所以一狠心，一咬牙装了个win10+ubuntu的双系统。 两年了，除了装系统的时候费了点事，一直以来大家相安无事，各过各的。ubuntu一路从16.">
-<meta name="keywords" content="技巧">
+<meta name="description" content="参考前文：Fuchsia模块化Fuchsia模块化的四大组件之一 在前文对于Fuchsia模块化的介绍中提到，用户可以通过开发module、agent、entryprovider类别的组件来实现具体的业务逻辑，扩展系统的能力。这三大组件再结合由module组合而成的story，可以称之为是fuchsia系统内的四大组件。本文依次介绍这几种组件都是些什么。">
+<meta name="keywords" content="OS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ubuntu grub 引导丢失修复">
-<meta property="og:url" content="http://robotshell.com/2018/03/13/skill/grub repair/index.html">
+<meta property="og:title" content="Fuchsia模块化的四大组件之二">
+<meta property="og:url" content="http://robotshell.com/2019/12/05/os/modular component2/index.html">
 <meta property="og:site_name" content="Robot Shell">
-<meta property="og:description" content="第一章 工作就得这么弄自己家的电脑，需要能写代码，也要能供不写代码的时候用，比起ubuntu来说，win10还是要好用非常多的，何况买的dell品牌台式机，win1o 是正版的，office是正版的，还有dell的一堆服务，废了多可惜啊，都是钱买的。所以一狠心，一咬牙装了个win10+ubuntu的双系统。 两年了，除了装系统的时候费了点事，一直以来大家相安无事，各过各的。ubuntu一路从16.">
+<meta property="og:description" content="参考前文：Fuchsia模块化Fuchsia模块化的四大组件之一 在前文对于Fuchsia模块化的介绍中提到，用户可以通过开发module、agent、entryprovider类别的组件来实现具体的业务逻辑，扩展系统的能力。这三大组件再结合由module组合而成的story，可以称之为是fuchsia系统内的四大组件。本文依次介绍这几种组件都是些什么。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-04T10:07:28.588Z">
+<meta property="og:updated_time" content="2019-12-05T09:35:15.487Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ubuntu grub 引导丢失修复">
-<meta name="twitter:description" content="第一章 工作就得这么弄自己家的电脑，需要能写代码，也要能供不写代码的时候用，比起ubuntu来说，win10还是要好用非常多的，何况买的dell品牌台式机，win1o 是正版的，office是正版的，还有dell的一堆服务，废了多可惜啊，都是钱买的。所以一狠心，一咬牙装了个win10+ubuntu的双系统。 两年了，除了装系统的时候费了点事，一直以来大家相安无事，各过各的。ubuntu一路从16.">
+<meta name="twitter:title" content="Fuchsia模块化的四大组件之二">
+<meta name="twitter:description" content="参考前文：Fuchsia模块化Fuchsia模块化的四大组件之一 在前文对于Fuchsia模块化的介绍中提到，用户可以通过开发module、agent、entryprovider类别的组件来实现具体的业务逻辑，扩展系统的能力。这三大组件再结合由module组合而成的story，可以称之为是fuchsia系统内的四大组件。本文依次介绍这几种组件都是些什么。">
 
 
 
@@ -156,13 +156,13 @@
 
 
 
-  <link rel="canonical" href="http://robotshell.com/2018/03/13/skill/grub repair/">
+  <link rel="canonical" href="http://robotshell.com/2019/12/05/os/modular component2/">
 
 
 
 
 
-  <title>ubuntu grub 引导丢失修复 | Robot Shell</title>
+  <title>Fuchsia模块化的四大组件之二 | Robot Shell</title>
   
 
 
@@ -351,7 +351,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2018/03/13/skill/grub repair/">
+    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2019/12/05/os/modular component2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="robot">
@@ -368,7 +368,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ubuntu grub 引导丢失修复</h1>
+          <h1 class="post-title" itemprop="name headline">Fuchsia模块化的四大组件之二</h1>
         
 
         <div class="post-meta">
@@ -380,8 +380,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-13T21:45:50+08:00">
-                2018-03-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-05T17:35:15+08:00">
+                2019-12-05
               </time>
             
 
@@ -396,8 +396,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-04T18:07:28+08:00">
-                2019-09-04
+              <time title="更新于" itemprop="dateModified" datetime="2019-12-05T17:35:15+08:00">
+                2019-12-05
               </time>
             
           </span>
@@ -415,8 +415,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/skill/" itemprop="url" rel="index">
-                    <span itemprop="name">技巧</span>
+                  <a href="/categories/os/" itemprop="url" rel="index">
+                    <span itemprop="name">OS</span>
                   </a>
                 </span>
 
@@ -457,23 +457,56 @@
       
 
       
-        <h1 id="第一章-工作就得这么弄"><a href="#第一章-工作就得这么弄" class="headerlink" title="第一章 工作就得这么弄"></a>第一章 工作就得这么弄</h1><p>自己家的电脑，需要能写代码，也要能供不写代码的时候用，比起ubuntu来说，win10还是要好用非常多的，何况买的dell品牌台式机，win1o 是正版的，office是正版的，还有dell的一堆服务，废了多可惜啊，都是钱买的。所以一狠心，一咬牙装了个win10+ubuntu的双系统。</p>
-<p>两年了，除了装系统的时候费了点事，一直以来大家相安无事，各过各的。ubuntu一路从16.04升级到了17.10没出过任何叉子，windows10？还好吧，一直以来也本本分分的。</p>
-<p>直到昨天晚上，都要睡觉了，翻着墙看了个乐视网的微电影。这有毛病吗？关机的时候，点错了，关机按钮点到了重启上，这有毛病吗？然后就重启了，然后就没出现grub的引导，直接进入了win10。心里暗骂一句，微软流氓，肯定是悄悄升级了，还改了efi文件。多大点事啊，上网找个攻略修一下也就好了，遂找了一篇，照着鼓捣。这次倒好，直接提示，没有可引导的设备。</p>
+        <p>参考前文：<br><a href="https://www.robotshell.com/2019/11/20/os/modular/" target="_blank" rel="noopener">Fuchsia模块化</a><br><a href="https://www.robotshell.com/2019/11/28/os/modular%20component/" target="_blank" rel="noopener">Fuchsia模块化的四大组件之一</a></p>
+<p>在前文对于<a href="https://www.robotshell.com/2019/11/20/os/modular/" target="_blank" rel="noopener">Fuchsia模块化</a>的介绍中提到，用户可以通过开发module、agent、entryprovider类别的组件来实现具体的业务逻辑，扩展系统的能力。这三大组件再结合由module组合而成的story，可以称之为是fuchsia系统内的四大组件。本文依次介绍这几种组件都是些什么。</p>
 <a id="more"></a>
-<h1 id="第二章-那无眠的夜"><a href="#第二章-那无眠的夜" class="headerlink" title="第二章 那无眠的夜"></a>第二章 那无眠的夜</h1><p>说来网上的文章也有些坑人，绝大多数都是legacy+mbr引导，对于uefi+gpt方式的引导，真是少，或者是怪我瞎？从11点弄到凌晨3、4点，尝试了无数遍easybcd，easyefi都没整成，放弃了，睡觉吧，反正现在都没有可引导的设备了。</p>
-<h1 id="第三章-需要一个livecd-启动盘"><a href="#第三章-需要一个livecd-启动盘" class="headerlink" title="第三章 需要一个livecd 启动盘"></a>第三章 需要一个livecd 启动盘</h1><p>还好，找着一个U盘，还好，里面还有个ubuntu系统。感谢Startup Disk createor ！！！</p>
-<h1 id="第四章-执行命令"><a href="#第四章-执行命令" class="headerlink" title="第四章 执行命令"></a>第四章 执行命令</h1><p>在坚持不起作用时，最好的方法是睡觉。觉醒后，从uefi u盘启动，执行如下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:yannubuntu/boot-repair &amp;&amp; sudo apt-get update</span><br></pre></td></tr></table></figure>
 
-<p>有提示，按回车</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y boot-repair &amp;&amp; boot-repair</span><br></pre></td></tr></table></figure>
+<h1 id="Agent"><a href="#Agent" class="headerlink" title="Agent"></a>Agent</h1><p>Agent组件运行于Story组件之外，agent没有UI界面。通常在单一的会话中，agent组件是单例的。Agent组件通常用来组织执行任务，可以将自己注册到系统框架中，在有需要时，框架可以唤起agent并执行任务。Agent用来向其他组件提供服务，其他组件（module、shell 或者是其他agent)可以连接到agent上，获取agent所提供的服务。</p>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>Agent可以访问模块化组件提供的如下两项服务：</p>
+<ul>
+<li>fuchsia.modular.ComponentContext</li>
+</ul>
+<p>用来获取组件化架构中各组件提供的服务</p>
+<ul>
+<li>fuchsia.modular.AgentContext</li>
+</ul>
+<p>用来执行agent的特有功能，例如创建实体引用、调度任务等。</p>
+<p>Agent通常需要向组件化框架提供如下两种服务：</p>
+<ul>
+<li>fuchsia.modular.Agent</li>
+</ul>
+<p>使用该服务框架可以转发其他组件的请求给该agent，agent收到请求后运行任务。</p>
+<ul>
+<li>fuchsia.modular.Lifecycle</li>
+</ul>
+<p>用来接收框架的生命周期的管理信号</p>
+<p>上述的几个服务在agent和框架之间建立了通信的通道，同时agent也可以向其他组件提供自定义的FIDL接口。</p>
+<h2 id="生命周期管理"><a href="#生命周期管理" class="headerlink" title="生命周期管理"></a>生命周期管理</h2><p>对于大多数agent，当其与框架建立连接时，框架将会分配AgentController给它。而当AgeentController与框架的连接断开且当前没有正在执行的任务时，agent将被框架终止。<br>Agent的AgentController可以由session mgr进行管理，在session的活跃期间，agent也将处于活跃状态。</p>
+<h2 id="通信机制"><a href="#通信机制" class="headerlink" title="通信机制"></a>通信机制</h2><p>组件与agent通信，有两种方式：自定义fidl服务 或者 消息队列。采取哪种方式，取决于具体的使用情况，FIDL的方式要求客户端和服务端同时存活，而消息对列的方式，消息的发送者和接收者可以有不同的声明周期。</p>
+<h3 id="FIDL服务"><a href="#FIDL服务" class="headerlink" title="FIDL服务"></a>FIDL服务</h3><p>客户端通过调用fuchsia::modular::Agent.Connect向模块化框架中的fuchsia.sys.ServiceProvider请求agent服务，调用成功将返回给调用者所请求的agent的唯一标识。任何添加到ServiceProvider中的service都可以通过Connect调用被获取。<br>当一个module在它的ComponetContext上调用ConnectToAgent，模块化框架将进行两步操作，一方面返回一个AgentController对象，用来控制被连接的agent的生命周期，直到调用AgentController的close方法，该agent将持续存活。当有多个客户端连接到该agent时，直到最后一个AgentController的close被调用，该Agent才会被框架所终止；另一方面框架通过ServiceProvider转发连接请求给正确的agent，并传递给agent一个唯一标识客户端的字符串。</p>
+<h3 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h3><p>通过消息队列发送的消息的方式，使得Module与Agent的生命周期分离，Agent向Module提供一个消息队列，Module可向该队列发送消息，而Agent监听该队列，当有消息到来时进行处理。</p>
+<h1 id="Entity-Provider"><a href="#Entity-Provider" class="headerlink" title="Entity Provider"></a>Entity Provider</h1><p>在之前的文章中曾经介绍过Entity，请参考<a href="https://www.robotshell.com/2019/09/16/os/entity/" target="_blank" rel="noopener">Fuchsia：万物皆实体</a></p>
+<p>Entity Provider实际上是个概念上的组件，Module、Agent等能对外提供Entity引用的组件皆可认为是一个组件的提供者。</p>
+<h2 id="何谓实体"><a href="#何谓实体" class="headerlink" title="何谓实体"></a>何谓实体</h2><p>从概念上将，实体就是一坨数据，有固定的类型。Agent可以创建实体并且在Module或者其他Agent间传递实体，该实体是属于创建它的Agent的，此Agent需要在其他组件访问该实体时向该实体填充数据。<br>实体是组件间传递结构化的语义数据的主要机制。举个例子，Google联系人Agent，可以创建com.fuchsia.Contact类型的实体对象用来表示一个联系人实体，联系人实体可以提供给需要联系人实体的组件使用，当其他组件需要一个联系人实体时，模块化组件调起Google联系人Agent，agent为其提供实体的应用及实体内部中的数据。</p>
+<h2 id="Agent如何产生实体"><a href="#Agent如何产生实体" class="headerlink" title="Agent如何产生实体"></a>Agent如何产生实体</h2><p>Agent通过调用如下方法产生实体</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AgentContext.GetReferenceFactory().CreateReference(cookie)</span><br></pre></td></tr></table></figure>
 
-<p>等一会，执行界面上的recommended repair 等着吧，一会就好了。当然也不能干等着，人家提示你forword的时候你就forword，提示打开终端执行命令，你就把他提示的命令复制到终端里执行一遭。若是失败了？那你就按他说的再做一遍也就成了。</p>
-<h1 id="第五章-大功告成"><a href="#第五章-大功告成" class="headerlink" title="第五章 大功告成"></a>第五章 大功告成</h1><p>撒花，撒花，看到grub 了，就是里边的内容有点多，那就进入ubuntu，必须说一下，还是ubuntu用起来顺手啊，关键是方便，进/boot分区下，把那些不会再用到的内核删了，然后执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-grub</span><br></pre></td></tr></table></figure>
+<p>其中的参数cookie用来标识一个实体对象。例如：cookie可以是字符串”<a href="mailto:joe@domain.com" target="_blank" rel="noopener">joe@domain.com</a>“，这个cookie可以用来标识一个名字叫joe的Contact类型的实体。当此方法被调用，将会返回一个实体应用的标识字符串。通过这个引用可以获取到实体中存储的数据，实体的应用可以被存储在磁盘上、ledger中，也可以在组件间传递。因为实体引用可以被存储在ledger中，意味着实体可以跨设备使用，可以在另外的设备上对该引用进行解引用，从而获取实体中存储的数据。<br>如下为创建一个实体的代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> component_context = sys::ComponentContext::Create();</span><br><span class="line"><span class="keyword">auto</span> agent_ctx = component_context-&gt;svc()</span><br><span class="line">      -&gt;Connect&lt;fuchsia::modular::AgentContext&gt;();</span><br><span class="line"></span><br><span class="line">fuchsia::modular::EntityReferenceFactory factory;</span><br><span class="line">agent_ctx-&gt;GetEntityReferenceFactory(factory.NewRequest());</span><br><span class="line">factory-&gt;CreateReference(<span class="string">"iamaperson@google.com"</span>, [] (<span class="built_in">std</span>::<span class="built_in">string</span> entity_reference) &#123;</span><br><span class="line">  <span class="comment">// Pass the |entity_reference| to a Module or Agent for consumption.</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<p>至此算是搞定了，记录一下，以兹纪念！</p>
+<h2 id="Module如何产生实体"><a href="#Module如何产生实体" class="headerlink" title="Module如何产生实体"></a>Module如何产生实体</h2><p>Module产生的实体的声明周期只存在于Module存活期间，当组合该Module的Story被删除后，Story中的Module所制造的实体引用将全部失效。Moulde通过调用ModuleContext.CreateEntity()创建实体对象，该调用需要提供实体的类型和实体的数据。<br>示例如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> component_context = sys::ComponentContext::Create();</span><br><span class="line"><span class="keyword">auto</span> module_ctx = component_context-&gt;svc()</span><br><span class="line">      -&gt;Connect&lt;fuchsia::modular::ModuleContext&gt;();</span><br><span class="line"></span><br><span class="line">fuchsia::mem::Buffer data;</span><br><span class="line">fsl::StringFromVmo(<span class="string">"iamaperson@google.com"</span>, &amp;data);</span><br><span class="line">module_ctx-&gt;CreateEntity(<span class="string">"com.fuchsia.Contact"</span>, <span class="built_in">std</span>::move(data).ToTransport(),</span><br><span class="line">                          entity.NewRequest(), [] (<span class="built_in">std</span>::<span class="built_in">string</span> entity_reference) &#123;</span><br><span class="line">  <span class="comment">// Pass the |entity_reference| to a Module or Agent for consumption.</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Agent或者Module如何从实体中取得数据"><a href="#Agent或者Module如何从实体中取得数据" class="headerlink" title="Agent或者Module如何从实体中取得数据"></a>Agent或者Module如何从实体中取得数据</h2><p>组件从实体中获取数据分两步，第一步将一个实体应用解析为一个实体接口，第二部通过此实体接口获得该实体的类型及数据。<br>实体引用的解引用，如下</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ComponentContext.GetEntityResolver().ResolveEntity(reference)</span><br></pre></td></tr></table></figure>
+
+<p>然后通过如下两个方法获取实体类型及数据</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Entity.GetTypes()</span><br><span class="line">Entity.GetData(<span class="keyword">typename</span>)</span><br></pre></td></tr></table></figure>
+
+<p>完整实例如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> component_context = sys::ComponentContext::Create();</span><br><span class="line"><span class="keyword">auto</span> component_ctx = component_context-&gt;svc()</span><br><span class="line">      -&gt;Connect&lt;fuchsia::modular::ComponentContext&gt;();</span><br><span class="line"></span><br><span class="line">fuchsia::modular::EntityResolverPtr resolver;</span><br><span class="line">fuchsia::modular::EntityPtr entity;</span><br><span class="line">component_ctx-&gt;GetEntityResolver(resolver.NewRequest());</span><br><span class="line"></span><br><span class="line">resolver-&gt;ResolveEntity(entity_reference, entity.NewRequest());</span><br><span class="line">entity-&gt;GetData(<span class="string">"com.fuchsia.Contact"</span>, [] (fuchsia::mem::BufferPtr data) &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Agent如何为实体提供数据"><a href="#Agent如何为实体提供数据" class="headerlink" title="Agent如何为实体提供数据"></a>Agent如何为实体提供数据</h2><p>Agent通过实现EntityProvider接口并导出给矿浆的方式来为实体提供数据。当组件调用Entity.GetData(type)时，框架首先唤起创建该实体引用的Agent，然后调用该Agent实现了的EntityProvider.GetData(cookie, type)方法，在此方法中即可实现数据的提供逻辑。<br>如此看来，也可将Entity Proider可以看做是实现了EntityProvider接口的组件。</p>
 
       
     </div>
@@ -531,7 +564,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://robotshell.com/2018/03/13/skill/grub repair/" title="ubuntu grub 引导丢失修复">http://robotshell.com/2018/03/13/skill/grub repair/</a>
+    <a href="http://robotshell.com/2019/12/05/os/modular component2/" title="Fuchsia模块化的四大组件之二">http://robotshell.com/2019/12/05/os/modular component2/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -546,7 +579,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/技巧/" rel="tag"># 技巧</a>
+            <a href="/tags/OS/" rel="tag"># OS</a>
           
         </div>
       
@@ -559,8 +592,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/11/android/power wakeup/" rel="next" title="android O 电源管理之从设备唤醒谈起">
-                <i class="fa fa-chevron-left"></i> android O 电源管理之从设备唤醒谈起
+              <a href="/2019/11/28/os/modular component/" rel="next" title="Fuchsia模块化的四大组件之一">
+                <i class="fa fa-chevron-left"></i> Fuchsia模块化的四大组件之一
               </a>
             
           </div>
@@ -568,10 +601,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/21/robot-os/arch/vui1/" rel="prev" title="Robot OS 框架杂谈">
-                Robot OS 框架杂谈 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -765,7 +794,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章-工作就得这么弄"><span class="nav-number">1.</span> <span class="nav-text">第一章 工作就得这么弄</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章-那无眠的夜"><span class="nav-number">2.</span> <span class="nav-text">第二章 那无眠的夜</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章-需要一个livecd-启动盘"><span class="nav-number">3.</span> <span class="nav-text">第三章 需要一个livecd 启动盘</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章-执行命令"><span class="nav-number">4.</span> <span class="nav-text">第四章 执行命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第五章-大功告成"><span class="nav-number">5.</span> <span class="nav-text">第五章 大功告成</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Agent"><span class="nav-number">1.</span> <span class="nav-text">Agent</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生命周期管理"><span class="nav-number">1.2.</span> <span class="nav-text">生命周期管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通信机制"><span class="nav-number">1.3.</span> <span class="nav-text">通信机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FIDL服务"><span class="nav-number">1.3.1.</span> <span class="nav-text">FIDL服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#消息队列"><span class="nav-number">1.3.2.</span> <span class="nav-text">消息队列</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Entity-Provider"><span class="nav-number">2.</span> <span class="nav-text">Entity Provider</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#何谓实体"><span class="nav-number">2.1.</span> <span class="nav-text">何谓实体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Agent如何产生实体"><span class="nav-number">2.2.</span> <span class="nav-text">Agent如何产生实体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Module如何产生实体"><span class="nav-number">2.3.</span> <span class="nav-text">Module如何产生实体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Agent或者Module如何从实体中取得数据"><span class="nav-number">2.4.</span> <span class="nav-text">Agent或者Module如何从实体中取得数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Agent如何为实体提供数据"><span class="nav-number">2.5.</span> <span class="nav-text">Agent如何为实体提供数据</span></a></li></ol></li></ol></div>
             
 
           </div>
