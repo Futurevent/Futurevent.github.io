@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://robotshell.com/"/>
-  <updated>2019-12-05T09:35:15.487Z</updated>
+  <updated>2019-12-12T09:41:54.592Z</updated>
   <id>http://robotshell.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Fuchsia模块化的四大组件之三</title>
+    <link href="http://robotshell.com/2019/12/12/os/modular%20component3/"/>
+    <id>http://robotshell.com/2019/12/12/os/modular component3/</id>
+    <published>2019-12-12T09:41:54.000Z</published>
+    <updated>2019-12-12T09:41:54.592Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;参考前文：&lt;br&gt;&lt;a href=&quot;https://www.robotshell.com/2019/11/20/os/modular/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Fuchsia模块化&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://www.robotshell.com/2019/11/28/os/modular%20component/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Fuchsia模块化的四大组件之一&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://www.robotshell.com/2019/12/05/os/modular%20component2/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Fuchsia模块化的四大组件之二&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在前文对于&lt;a href=&quot;https://www.robotshell.com/2019/11/20/os/modular/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Fuchsia模块化&lt;/a&gt;的介绍中提到，用户可以通过开发module、agent、entryprovider类别的组件来实现具体的业务逻辑，扩展系统的能力。这三大组件再结合由module组合而成的story，可以称之为是fuchsia系统内的四大组件。前面几篇文章依次对story、module、agent、entryprovider进行了介绍。在介绍story和module时，提高两个概念，用来承载story的storyshell和module 定义的用来处理请求的intent。本文对这两个角色简单的介绍下。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="OS" scheme="http://robotshell.com/categories/os/"/>
+    
+    
+      <category term="OS" scheme="http://robotshell.com/tags/OS/"/>
+    
+  </entry>
   
   <entry>
     <title>Fuchsia模块化的四大组件之二</title>
@@ -411,28 +432,6 @@
     
     
       <category term="机器人" scheme="http://robotshell.com/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu grub 引导丢失修复</title>
-    <link href="http://robotshell.com/2018/03/13/skill/grub%20repair/"/>
-    <id>http://robotshell.com/2018/03/13/skill/grub repair/</id>
-    <published>2018-03-13T13:45:50.000Z</published>
-    <updated>2019-09-04T10:07:28.588Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;第一章-工作就得这么弄&quot;&gt;&lt;a href=&quot;#第一章-工作就得这么弄&quot; class=&quot;headerlink&quot; title=&quot;第一章 工作就得这么弄&quot;&gt;&lt;/a&gt;第一章 工作就得这么弄&lt;/h1&gt;&lt;p&gt;自己家的电脑，需要能写代码，也要能供不写代码的时候用，比起ubuntu来说，win10还是要好用非常多的，何况买的dell品牌台式机，win1o 是正版的，office是正版的，还有dell的一堆服务，废了多可惜啊，都是钱买的。所以一狠心，一咬牙装了个win10+ubuntu的双系统。&lt;/p&gt;
-&lt;p&gt;两年了，除了装系统的时候费了点事，一直以来大家相安无事，各过各的。ubuntu一路从16.04升级到了17.10没出过任何叉子，windows10？还好吧，一直以来也本本分分的。&lt;/p&gt;
-&lt;p&gt;直到昨天晚上，都要睡觉了，翻着墙看了个乐视网的微电影。这有毛病吗？关机的时候，点错了，关机按钮点到了重启上，这有毛病吗？然后就重启了，然后就没出现grub的引导，直接进入了win10。心里暗骂一句，微软流氓，肯定是悄悄升级了，还改了efi文件。多大点事啊，上网找个攻略修一下也就好了，遂找了一篇，照着鼓捣。这次倒好，直接提示，没有可引导的设备。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技巧" scheme="http://robotshell.com/categories/skill/"/>
-    
-    
-      <category term="技巧" scheme="http://robotshell.com/tags/%E6%8A%80%E5%B7%A7/"/>
     
   </entry>
   

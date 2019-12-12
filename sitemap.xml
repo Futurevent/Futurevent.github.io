@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://robotshell.com/2019/12/12/os/modular%20component3/</loc>
+    
+    <lastmod>2019-12-12T09:41:54.592Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://robotshell.com/2019/12/05/os/modular%20component2/</loc>
     
     <lastmod>2019-12-05T09:35:15.487Z</lastmod>
@@ -352,7 +359,7 @@
   </url>
   
   <url>
-    <loc>http://robotshell.com/about/index.html</loc>
+    <loc>http://robotshell.com/categories/index.html</loc>
     
     <lastmod>2019-08-12T06:32:26.234Z</lastmod>
     
@@ -366,7 +373,7 @@
   </url>
   
   <url>
-    <loc>http://robotshell.com/categories/index.html</loc>
+    <loc>http://robotshell.com/about/index.html</loc>
     
     <lastmod>2019-08-12T06:32:26.234Z</lastmod>
     
