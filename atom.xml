@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://robotshell.com/"/>
-  <updated>2019-12-12T09:41:54.592Z</updated>
+  <updated>2019-12-20T04:11:10.201Z</updated>
   <id>http://robotshell.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>简述Fuchsia启动引导顺序</title>
+    <link href="http://robotshell.com/2019/12/20/os/boot/"/>
+    <id>http://robotshell.com/2019/12/20/os/boot/</id>
+    <published>2019-12-20T04:11:10.000Z</published>
+    <updated>2019-12-20T04:11:10.201Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本篇简述fuchsia系统几个核心manager的启动引导顺序。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="OS" scheme="http://robotshell.com/categories/os/"/>
+    
+    
+      <category term="OS" scheme="http://robotshell.com/tags/OS/"/>
+    
+  </entry>
   
   <entry>
     <title>Fuchsia模块化的四大组件之三</title>
@@ -410,28 +430,6 @@
     
     
       <category term="android" scheme="http://robotshell.com/tags/android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Robot OS 框架杂谈</title>
-    <link href="http://robotshell.com/2018/06/21/robot-os/arch/vui1/"/>
-    <id>http://robotshell.com/2018/06/21/robot-os/arch/vui1/</id>
-    <published>2018-06-21T06:51:22.000Z</published>
-    <updated>2019-09-24T06:21:53.392Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;大概是2015年开始，人工智能突起，出现了非常多家的机器人公司，其中有一类发力于家庭服务机器人。为了满足各家机器人的使用需要，各家争相开发自己的机器人OS，或者叫机器人框架。&lt;br&gt;时至今日，有的机器人OS已经死亡，有的奄奄一息，有的还在继续成长，有的已经成熟。有幸接触了几家的OS，现罗列如下，以作纪念。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="机器人OS" scheme="http://robotshell.com/categories/robot-os/"/>
-    
-      <category term="架构" scheme="http://robotshell.com/categories/robot-os/arch/"/>
-    
-    
-      <category term="机器人" scheme="http://robotshell.com/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
     
   </entry>
   

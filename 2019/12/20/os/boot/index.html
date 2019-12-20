@@ -97,7 +97,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="OS,">
 
 
 
@@ -115,16 +115,18 @@
 
 
 
-<meta name="description" content="Robot Shell is Future Event.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Robot Shell">
-<meta property="og:url" content="http://robotshell.com/archives/page/5/index.html">
+<meta name="description" content="本篇简述fuchsia系统几个核心manager的启动引导顺序。">
+<meta name="keywords" content="OS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简述Fuchsia启动引导顺序">
+<meta property="og:url" content="http://robotshell.com/2019/12/20/os/boot/index.html">
 <meta property="og:site_name" content="Robot Shell">
-<meta property="og:description" content="Robot Shell is Future Event.">
+<meta property="og:description" content="本篇简述fuchsia系统几个核心manager的启动引导顺序。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-20T04:11:10.201Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Robot Shell">
-<meta name="twitter:description" content="Robot Shell is Future Event.">
+<meta name="twitter:title" content="简述Fuchsia启动引导顺序">
+<meta name="twitter:description" content="本篇简述fuchsia系统几个核心manager的启动引导顺序。">
 
 
 
@@ -154,13 +156,13 @@
 
 
 
-  <link rel="canonical" href="http://robotshell.com/archives/page/5/">
+  <link rel="canonical" href="http://robotshell.com/2019/12/20/os/boot/">
 
 
 
 
 
-  <title>归档 | Robot Shell</title>
+  <title>简述Fuchsia启动引导顺序 | Robot Shell</title>
   
 
 
@@ -189,7 +191,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-archive">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -335,390 +337,274 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      <span class="archive-page-counter">
-        
-        
-         
-        
-        OK! 目前共计 50 篇日志。 继续努力。
-      </span>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://robotshell.com/2019/12/20/os/boot/">
 
-      
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="robot">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/robot.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Robot Shell">
+    </span>
+
+    
+      <header class="post-header">
 
         
         
+          <h1 class="post-title" itemprop="name headline">简述Fuchsia启动引导顺序</h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-20T12:11:10+08:00">
+                2019-12-20
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-12-20T12:11:10+08:00">
+                2019-12-20
+              </time>
+            
+          </span>
+
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/01/robot-os/test/autotest/" itemprop="url">
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
               
-                <span itemprop="name">语音交互系统的自动化测试思考</span>
+                <span class="post-meta-item-text">分类于</span>
               
-            </a>
-        
-      </h2>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/os/" itemprop="url" rel="index">
+                    <span itemprop="name">OS</span>
+                  </a>
+                </span>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-09-01T00:00:00+08:00" content="2017-09-01">
-          09-01
-        </time>
-      </div>
+                
+                
+              
+            </span>
+          
 
-    </header>
-  </article>
+          
+            
+          
 
+          
+          
 
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/31/robot-os/arch/rtlinux/" itemprop="url">
-              
-                <span itemprop="name">基于RT-Linux机器人控制系统实时性的探讨</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-08-31T00:00:00+08:00" content="2017-08-31">
-          08-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
+      
+        <p>本篇简述fuchsia系统几个核心manager的启动引导顺序。</p>
+<a id="more"></a>
+<h1 id="第一步-appmgr"><a href="#第一步-appmgr" class="headerlink" title="第一步 appmgr"></a>第一步 appmgr</h1><p>appmgr的任务是管理环境树和在环境中创建进程。被appmgr创建的进程拥有和它所在通信的通道zx::channel，通过该通道这些进程还可以进一步创建其他进程或者是嵌套的环境。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tips:</span><br><span class="line">环境 可以理解为是管理一组应用的接口，应用运行在环境中，环境提供这些应用运行所必须的服务，并对应用进行生命周期进行管理。</span><br></pre></td></tr></table></figure>
 
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/31/old/scrum&xp/" itemprop="url">
-              
-                <span itemprop="name">敏捷. 硝烟中的scrum和xp</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-08-31T00:00:00+08:00" content="2017-08-31">
-          08-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+<p>在启动时，appmgr会创建一个根环境，并在根环境中执行/system/data/appmgr/initial.config 文件中列出的初始化app，这些app会在根环境中创建嵌套的环境。该配置文件默认配置的应用为：bootstrap。</p>
+<h1 id="第二步-sysmgr"><a href="#第二步-sysmgr" class="headerlink" title="第二步 sysmgr"></a>第二步 sysmgr</h1><p>sysmgr的职责是创建引导环境，并在引导环境中创建一系列的初始化组件。<br>在引导环境中运行的sysmgr所提供的服务并非是bootstrp程序提供的。当sysmgr接收到对某服务的请求时，sysmgr会查找实现了该服务的应用然后启动它并创建服务，然后将对服务的请求转发给该服务。具体组件和服务的映射关系表存储于文件/system/data/bootstrap/services.config中。后续对同一服务的请求都将转发给运行起来的该服务。如果服务终止了，则后续服务的请求将导致该服务被重新启动。<br>sysmgr在启动过程中还会在引导环境创建一系列的其他组件，这些组件定义于/system/data/bootstrap/apps.config 文件</p>
+<h1 id="第三步-basemgr"><a href="#第三步-basemgr" class="headerlink" title="第三步 basemgr"></a>第三步 basemgr</h1><p>basemgr的职责是加载用户交互相关的流程：用户登录和用户管理<br>它首先会访问系统的根view，然后启动设备shell，在根view中绘制设备Shell（shell的定义参考<a href="https://www.robotshell.com/2019/12/12/os/modular%20component3/" target="_blank" rel="noopener">Fuchsia模块化的四大组件之三</a>，此处的shell 为baseshell）的UI以展示给用户交互界面。它同时通过User Provider FIDL API向外提供用户管理相关的数据库的服务。通过此API，设备shell可以进行用户的创建、删除、修改，以某用户进行登录或者是进行匿名登录。<br>添加新用户是使用帐户管理器服务完成的，该服务可以与身份提供程序进行对话，以获取访问用户ledger的id token。<br>当以一个已存在用户登录时，会开启一个sessionmgr实例，该会话会与用户的id token相绑定，也会和一个映射到basemgr命名空间的命名空间相绑定。<br>当以访客身份登录时，则不会有相应的用户id token，且会话的命名空间将是一个临时的命名空间。</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/30/android/fileobserver/" itemprop="url">
-              
-                <span itemprop="name">Android FileObserver 类使用指南</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-08-30T00:00:00+08:00" content="2017-08-30">
-          08-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/29/blog-skill/atom-skill/atom config/" itemprop="url">
-              
-                <span itemprop="name">Atom配置入门</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-08-29T00:00:00+08:00" content="2017-08-29">
-          08-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/19/java/javah/" itemprop="url">
-              
-                <span itemprop="name">Javah 命令详解</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-08-19T00:00:00+08:00" content="2017-08-19">
-          08-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/12/java/code standards/" itemprop="url">
-              
-                <span itemprop="name">java 编码规范</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-08-12T18:49:21+08:00" content="2017-08-12">
-          08-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/07/machine-learning/note2/" itemprop="url">
-              
-                <span itemprop="name">机器学习学习笔记（二）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-08-07T23:19:26+08:00" content="2017-08-07">
-          08-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/07/machine-learning/note1/" itemprop="url">
-              
-                <span itemprop="name">机器学习学习笔记（一）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-08-07T22:43:59+08:00" content="2017-08-07">
-          08-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/29/blog-skill/hexo-skill/HexoQuickStart/" itemprop="url">
-              
-                <span itemprop="name">Hexo Quick Start</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-07-29T00:00:00+08:00" content="2017-07-29">
-          07-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode_wechat_harmonyvsfuchsia.jpg" alt="robot wechat" style="width: 200px; max-width: 100%;">
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="robot WeChat Pay">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="robot Alipay">
+        <p>支付宝支付</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    robot
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://robotshell.com/2019/12/20/os/boot/" title="简述Fuchsia启动引导顺序">http://robotshell.com/2019/12/20/os/boot/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/OS/" rel="tag"># OS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/12/os/modular component3/" rel="next" title="Fuchsia模块化的四大组件之三">
+                <i class="fa fa-chevron-left"></i> Fuchsia模块化的四大组件之三
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微薄</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -726,6 +612,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDYzMy83MTg4"></div>
+    
+  </div>
+
 
         </div>
         
@@ -746,8 +638,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image" src="/images/robot.png" alt="robot">
@@ -841,6 +742,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一步-appmgr"><span class="nav-number">1.</span> <span class="nav-text">第一步 appmgr</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二步-sysmgr"><span class="nav-number">2.</span> <span class="nav-text">第二步 sysmgr</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三步-basemgr"><span class="nav-number">3.</span> <span class="nav-text">第三步 basemgr</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -992,6 +909,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
@@ -1020,6 +941,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
@@ -1346,39 +1278,7 @@
         onPopupClose();
       }
     });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
@@ -1396,6 +1296,18 @@
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
+
+
+
+
+
+  
+
+  
+
+  
+
+  
   
 
 
