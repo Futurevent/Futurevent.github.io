@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://robotshell.com/"/>
-  <updated>2019-12-20T04:11:10.201Z</updated>
+  <updated>2019-12-25T08:43:25.614Z</updated>
   <id>http://robotshell.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>简述Fuchsia内核Zircon</title>
+    <link href="http://robotshell.com/2019/12/25/os/zircon/"/>
+    <id>http://robotshell.com/2019/12/25/os/zircon/</id>
+    <published>2019-12-25T08:43:25.000Z</published>
+    <updated>2019-12-25T08:43:25.614Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Zircon是Fuchsia系统的内核。严格的讲，应该说Zircon是Fuchsia系统的核心，是Fuchsia系统的最底一层（回想下Fuchsia系统的四层蛋糕结构）。它由一个微内核（/zircon/kernel)和少量的用户空间代码组成。这部分用户空间代码是一些核心的服务、驱动和类库等（/zircon/system/necessary)，用于系统引导，与底层硬件交互、加载用户空间的进程等。Fuchsia将在Zircon之上构建出庞大的OS。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="OS" scheme="http://robotshell.com/categories/os/"/>
+    
+    
+      <category term="OS" scheme="http://robotshell.com/tags/OS/"/>
+    
+  </entry>
   
   <entry>
     <title>简述Fuchsia启动引导顺序</title>
@@ -408,28 +428,6 @@
     
     
       <category term="机器人" scheme="http://robotshell.com/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>android性能优化之帧率测试</title>
-    <link href="http://robotshell.com/2018/06/21/android/test/optimization%20frame%20rate/"/>
-    <id>http://robotshell.com/2018/06/21/android/test/optimization frame rate/</id>
-    <published>2018-06-21T10:17:49.000Z</published>
-    <updated>2019-09-04T10:08:23.570Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;作为一名anroid开发，经常会听到产品或者测试说，他们感觉界面卡顿。然而这感觉二字该如何修改？须得以数字说话方可。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="android" scheme="http://robotshell.com/categories/android/"/>
-    
-      <category term="测试" scheme="http://robotshell.com/categories/android/test/"/>
-    
-    
-      <category term="android" scheme="http://robotshell.com/tags/android/"/>
     
   </entry>
   
