@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://robotshell.com/2020/01/02/os/zircon2/</loc>
+    
+    <lastmod>2020-01-02T08:26:53.234Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://robotshell.com/2019/12/25/os/zircon/</loc>
     
     <lastmod>2019-12-25T08:43:25.614Z</lastmod>
@@ -373,14 +380,14 @@
   </url>
   
   <url>
-    <loc>http://robotshell.com/board/index.html</loc>
+    <loc>http://robotshell.com/categories/index.html</loc>
     
     <lastmod>2019-08-12T06:32:26.234Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://robotshell.com/categories/index.html</loc>
+    <loc>http://robotshell.com/board/index.html</loc>
     
     <lastmod>2019-08-12T06:32:26.234Z</lastmod>
     

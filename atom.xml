@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://robotshell.com/"/>
-  <updated>2019-12-25T08:43:25.614Z</updated>
+  <updated>2020-01-02T08:26:53.234Z</updated>
   <id>http://robotshell.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>简述Fuchsia内核Zircon二</title>
+    <link href="http://robotshell.com/2020/01/02/os/zircon2/"/>
+    <id>http://robotshell.com/2020/01/02/os/zircon2/</id>
+    <published>2020-01-02T08:26:53.000Z</published>
+    <updated>2020-01-02T08:26:53.234Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://www.robotshell.com/2019/12/25/os/zircon/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;上一篇&lt;/a&gt;对Fuchsia的最底下一层Zircon层进行了简单介绍，并介绍了几个相关的概念：SystemCall、Handle、Koid。本文继续简述Fuchsia的Zircon中涉及的几个概念。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="OS" scheme="http://robotshell.com/categories/os/"/>
+    
+    
+      <category term="OS" scheme="http://robotshell.com/tags/OS/"/>
+    
+  </entry>
   
   <entry>
     <title>简述Fuchsia内核Zircon</title>
@@ -406,28 +426,6 @@
     
     
       <category term="OS" scheme="http://robotshell.com/tags/OS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Robot OS 框架杂谈（二）：语音交互各厂产品</title>
-    <link href="http://robotshell.com/2018/06/26/robot-os/arch/vui2/"/>
-    <id>http://robotshell.com/2018/06/26/robot-os/arch/vui2/</id>
-    <published>2018-06-26T12:07:19.000Z</published>
-    <updated>2019-09-04T10:08:50.698Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;语音交互已经火了这么几年，涌现了许多的厂商。本文主要从什么是语音操作系统出发，到语音操作系统各公司的产品情况，到在语音交互下可以有哪些场景出发，做了总结。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="机器人OS" scheme="http://robotshell.com/categories/robot-os/"/>
-    
-      <category term="架构" scheme="http://robotshell.com/categories/robot-os/arch/"/>
-    
-    
-      <category term="机器人" scheme="http://robotshell.com/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
     
   </entry>
   
