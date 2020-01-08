@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://robotshell.com/"/>
-  <updated>2020-01-02T08:26:53.234Z</updated>
+  <updated>2020-01-08T07:59:02.165Z</updated>
   <id>http://robotshell.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>简述Fuchsia内核Zircon之LK</title>
+    <link href="http://robotshell.com/2020/01/08/os/zircon_LK/"/>
+    <id>http://robotshell.com/2020/01/08/os/zircon_LK/</id>
+    <published>2020-01-08T07:59:02.000Z</published>
+    <updated>2020-01-08T07:59:02.165Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Zircon是Fuchsia的内核部分，&lt;a href=&quot;https://www.robotshell.com/2020/01/02/os/zircon2/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;前面的几篇文章&lt;/a&gt;简述了Zircon的一些常见的概念。&lt;br&gt;Ziron是作为&lt;a href=&quot;https://github.com/littlekernel/lk&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;LK&lt;/a&gt;的一个分支产生的，本文主要简述LK与Zircon相关的一些事情。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="OS" scheme="http://robotshell.com/categories/os/"/>
+    
+    
+      <category term="OS" scheme="http://robotshell.com/tags/OS/"/>
+    
+  </entry>
   
   <entry>
     <title>简述Fuchsia内核Zircon二</title>
@@ -399,26 +419,6 @@
     <summary type="html">
     
       &lt;p&gt;2016年，谷歌开始了新一代操作系统Fuchsia OS的开发。该系统在当时被普遍认为是用来在将来替代Android系统的。然而，时间飞快，直到今日，Fuchsia OS似乎也没有太多的出现在大众的视野中，甚至很多从业人员对其也并不了解。实际上，Google也层低调的公布过一些进展，例如2017年的五月曾经发布过很有Fuchsia OS特征的Fuchsia OS的主界面，2018年层宣布Fuchsia OS成功在PiexlBook上成功运行。2019年的6月底，Goolge低调的上线了Fuchsia 的&lt;a href=&quot;https://fuchsia.dev/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;开发者网站&lt;/a&gt;，后又适逢华为鸿蒙系统的发布，而华为鸿蒙系统也被理解为是android系统的替代者，Fuchsia OS又重新回到了大众的视野。&lt;br&gt;随着人们对鸿蒙系统关注度的提高，我觉得最好能简要介绍下Fuchsia到底是什么。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="OS" scheme="http://robotshell.com/categories/os/"/>
-    
-    
-      <category term="OS" scheme="http://robotshell.com/tags/OS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Harmony&amp;Fuchsia的相遇</title>
-    <link href="http://robotshell.com/2019/08/16/os/harmony&amp;fuchsia/"/>
-    <id>http://robotshell.com/2019/08/16/os/harmony&amp;fuchsia/</id>
-    <published>2019-08-16T01:27:29.000Z</published>
-    <updated>2019-09-04T10:09:25.881Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;一&quot;&gt;&lt;a href=&quot;#一&quot; class=&quot;headerlink&quot; title=&quot; 一 &quot;&gt;&lt;/a&gt;&lt;center&gt; 一 &lt;/center&gt;&lt;/h1&gt;&lt;p&gt;2019年8月9日华为正式发布鸿蒙系统，同时表示系统开源。鸿蒙系统的发布是在美国制裁华为的大背景下，华为手机业务极度依赖的android系统极有可能随时断供。在此节点下，自然而然的会让大众理解为是对android断供风险的抵御。但是，时代是进步的。华为重造一个android不过是重嚼别人嚼过的甘蔗，又有何味道呢。华为可是5G的引领者，5G绝非是速度更快的4G，它的领域是万物互联的新一片星辰大海。理所应当的（如果一切不是场战略骗局的话），鸿蒙系统当是这片大海中的一艘远洋巨舰。&lt;/p&gt;
     
     </summary>
     
