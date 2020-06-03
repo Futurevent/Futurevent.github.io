@@ -1,3 +1,4 @@
+http://robotshell.com/2020/06/03/iot/iot_report_2020/
 http://robotshell.com/2020/01/08/os/zircon_LK/
 http://robotshell.com/2020/01/02/os/zircon2/
 http://robotshell.com/2019/12/25/os/zircon/
@@ -42,8 +43,8 @@ http://robotshell.com/2017/10/26/iot/8/
 http://robotshell.com/2017/10/26/iot/6/
 http://robotshell.com/2017/10/26/iot/10/
 http://robotshell.com/2017/09/01/robot-os/test/autotest/
-http://robotshell.com/2017/08/31/robot-os/arch/rtlinux/
 http://robotshell.com/2017/08/31/old/scrum&xp/
+http://robotshell.com/2017/08/31/robot-os/arch/rtlinux/
 http://robotshell.com/2017/08/30/android/fileobserver/
 http://robotshell.com/2017/08/29/blog-skill/atom-skill/atom config/
 http://robotshell.com/2017/08/19/java/javah/

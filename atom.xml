@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://robotshell.com/"/>
-  <updated>2020-03-23T10:56:08.830Z</updated>
+  <updated>2020-06-03T09:18:50.508Z</updated>
   <id>http://robotshell.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>中国物联网产业报告_2020</title>
+    <link href="http://robotshell.com/2020/06/03/iot/iot_report_2020/"/>
+    <id>http://robotshell.com/2020/06/03/iot/iot_report_2020/</id>
+    <published>2020-06-03T09:18:50.000Z</published>
+    <updated>2020-06-03T09:18:50.508Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+      <category term="物联网" scheme="http://robotshell.com/categories/iot/"/>
+    
+    
+      <category term="物联网" scheme="http://robotshell.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+  </entry>
   
   <entry>
     <title>简述Fuchsia内核Zircon之LK</title>
@@ -399,26 +422,6 @@
     <summary type="html">
     
       &lt;p&gt;相比之前的操作系统，Fuchsia做了很多的变革和特有的功能。Stories和Modules就是其中之一。这两个功能将颠覆之前对智能手机APP的使用方式，带来不一样的使用体验。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="OS" scheme="http://robotshell.com/categories/os/"/>
-    
-    
-      <category term="OS" scheme="http://robotshell.com/tags/OS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Google的Fuchsia OS到底是什么</title>
-    <link href="http://robotshell.com/2019/08/30/os/what&#39;s%20fuchsia%20os/"/>
-    <id>http://robotshell.com/2019/08/30/os/what&#39;s fuchsia os/</id>
-    <published>2019-08-30T07:20:23.000Z</published>
-    <updated>2020-03-23T10:56:08.756Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;2016年，谷歌开始了新一代操作系统Fuchsia OS的开发。该系统在当时被普遍认为是用来在将来替代Android系统的。然而，时间飞快，直到今日，Fuchsia OS似乎也没有太多的出现在大众的视野中，甚至很多从业人员对其也并不了解。实际上，Google也层低调的公布过一些进展，例如2017年的五月曾经发布过很有Fuchsia OS特征的Fuchsia OS的主界面，2018年层宣布Fuchsia OS成功在PiexlBook上成功运行。2019年的6月底，Goolge低调的上线了Fuchsia 的&lt;a href=&quot;https://fuchsia.dev/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;开发者网站&lt;/a&gt;，后又适逢华为鸿蒙系统的发布，而华为鸿蒙系统也被理解为是android系统的替代者，Fuchsia OS又重新回到了大众的视野。&lt;br&gt;随着人们对鸿蒙系统关注度的提高，我觉得最好能简要介绍下Fuchsia到底是什么。&lt;/p&gt;
     
     </summary>
     
